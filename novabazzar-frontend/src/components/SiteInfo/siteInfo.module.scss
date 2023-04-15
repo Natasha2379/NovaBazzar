@@ -1,0 +1,53 @@
+.siteInfoContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .siteInfoTop {
+        display: flex;
+        justify-content: space-between;
+        .siteInfoTagline {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 2rem;
+
+            span {
+                color: rgb(236, 72, 126);
+            }
+        }
+        .siteInfoImage {
+            width: 45%;
+        }
+    }
+
+    .siteInfoBottom {
+        display: flex;
+        justify-content: center;
+        padding: 1rem;
+        gap: 1rem;
+        width: 100%;
+
+        .siteInfoBox {
+            display: flex;
+            flex-direction: column;
+            padding: 1rem;
+            gap: 1rem;
+            background-color: rgb(236, 235, 235);
+            border-radius: 10px;
+
+            span {
+                font-size: 2rem;
+                font-weight: 600;
+                color: rgb(236, 72, 126);
+            }
+
+            p {
+                color: black;
+                font-size: 1.2rem;
+                font-weight: 600;
+            }
+        }
+    }
+}

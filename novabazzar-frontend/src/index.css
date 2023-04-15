@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Noto Sans", sans-serif;
+}
+
+button:focus,
+textarea:focus,
+input:focus {
+    outline: none;
+    border: none;
+}
+
+button,
+textarea,
+input {
+    outline: none;
+    border: none;
+}
+
+/* scrollBar */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #7b7979;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(49, 46, 46);
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+/* Hide Number Input Arrows */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}

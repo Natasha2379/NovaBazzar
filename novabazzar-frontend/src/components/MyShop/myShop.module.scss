@@ -1,0 +1,52 @@
+.myShopContainer {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+
+    .searchContainer {
+        display: flex;
+        // justify-content: center;
+        align-items: center;
+        width: 40%;
+
+        padding: 0.8rem 1rem;
+        margin: 0.5rem auto;
+        gap: 0.7rem;
+        background-color: rgb(234, 233, 233);
+        border: 2px solid rgb(149, 146, 146);
+        border-radius: 10px;
+
+        .searchIcon {
+            font-size: 1rem;
+        }
+
+        .search {
+            background-color: inherit;
+        }
+    }
+
+    .shopProductsContainer {
+        display: flex;
+        width: 100%;
+
+        .shopSidebar {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: flex-start;
+            padding: 1rem;
+            width: 20%;
+            border-right: 2px solid rgb(149, 146, 146);
+
+        }
+
+        .shopProducts {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 80%;
+            padding: 1rem;
+            gap: 1rem;
+        }
+    }
+}

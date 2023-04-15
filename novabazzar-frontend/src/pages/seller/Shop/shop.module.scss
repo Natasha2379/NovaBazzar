@@ -1,0 +1,31 @@
+.shopContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin: auto;
+    padding: 1rem;
+
+    max-width: 1200px;
+
+    .shopOptions {
+        display: flex;
+        list-style: none;
+        padding: 2rem 0.8rem;
+        font-family: "Times New Roman", Times, serif;
+        font-weight: 700;
+
+        .shopOption {
+            padding: 0 1rem;
+            font-family: inherit;
+            cursor: pointer;
+        }
+        .activeShopOption {
+            margin: 0 1rem;
+            font-family: inherit;
+            border-bottom: 3px solid rgb(18, 101, 224);
+            cursor: pointer;
+        }
+    }
+}
