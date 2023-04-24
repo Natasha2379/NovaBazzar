@@ -90,15 +90,18 @@ const deleteShop = async (req, res, next) => {
 };
 
 const getAllShops = async (req, res, next) => {
-	const search = req.query.search || "g";
-
+	console.log("hi");
+	const search = req.query.search || "";
 	try {
-		const shops = await Shop.find({
-			$or: [
-				{ shopName: { $regex: search, $options: "i" } },
-				// { categories: { $regex: search, $options: "i" } },
-			],
-		}).sort({ timestamp: -1 });
+		const shops = await Shop
+			.find
+			// $or: [
+			// 	{ shopName: { $regex: search, $options: "i" } },
+			// 	// { categories: { $regex: search, $options: "i" } },
+			// ],
+			()
+			.sort({ timestamp: -1 });
+		console.log(shops);
 
 		res.status(200).json({ shops, message: "all shops" });
 	} catch (err) {

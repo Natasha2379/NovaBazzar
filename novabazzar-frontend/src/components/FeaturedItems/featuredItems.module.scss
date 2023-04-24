@@ -1,0 +1,44 @@
+.featuredItemsContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .featuredItemsBanner {
+        width: 100%;
+        height: 200px;
+        border-radius: 15px;
+        background-color: green;
+    }
+
+    .featuredItemsSliderContainer {
+        width: 100%;
+        height: 250px;
+
+        .featureImagesSwiper {
+            width: 100%;
+            height: 100%;
+            background-position: center;
+            background-size: cover;
+            padding: 2rem;
+
+            .featuredItemSlide {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                // background-image: linear-gradient(
+                //     270.23deg,
+                //     #3e2d75 0.19%,
+                //     #3e2d75 48.95%,
+                //     rgba(62, 45, 117, 0) 99.79%
+                // );
+                background-color: grey;
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                border-radius: 15px;
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
+}

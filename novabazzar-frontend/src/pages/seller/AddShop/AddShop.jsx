@@ -31,7 +31,7 @@ const AddShop = () => {
 
     return (
         <div className={styles.addShopContainer}>
-            <form className={styles.addShopForm}>
+            <form className={styles.addShopForm} onSubmit={handleAddShop}>
                 <div className={styles.addShopHeading}>
                     Open your shop on Nova Bazzar for Free
                 </div>
@@ -92,11 +92,7 @@ const AddShop = () => {
                     onChange={(e) => setPhone(e.target.value)}
                     placeholder="Enter your Phone Number"
                 />
-                <button
-                    type="button"
-                    onClick={handleAddShop}
-                    className={styles.addShopSubmitButton}
-                >
+                <button type="submit" className={styles.addShopSubmitButton}>
                     Submit
                 </button>
             </form>

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import styles from "./shop.module.scss";
 
-import Topbar from "../../../components/TopBar/Topbar";
 import ShopBanner from "../../../components/ShopBanner/ShopBanner";
-import MyShop from "../../../components/MyShop/MyShop";
-// import MyBusiness from "../../../components/MyBusiness/MyBusiness";
+import MyShop from "../../../components/SellerShop/SellerShop";
+import MyBusiness from "../../../components/SellerBussiness/SellerBussiness";
+import MyOrders from "../../../components/SellerOrders/SellerOrders";
 import AddProduct from "../../../components/AddProduct/AddProduct";
 
 const Shop = () => {
@@ -12,7 +12,6 @@ const Shop = () => {
 
     return (
         <div className={styles.shopContainer}>
-            <Topbar />
             <ShopBanner />
             <ul className={styles.shopOptions}>
                 <li
@@ -26,7 +25,17 @@ const Shop = () => {
                     MyShop
                 </li>
                 <li
-                    // onClick={() => setActiveItem("mybusiness")}
+                    onClick={() => setActiveItem("myorders")}
+                    className={
+                        activeItem === "myorders"
+                            ? styles.activeShopOption
+                            : styles.shopOption
+                    }
+                >
+                    My Orders
+                </li>
+                <li
+                    onClick={() => setActiveItem("mybusiness")}
                     className={
                         activeItem === "mybusiness"
                             ? styles.activeShopOption
@@ -47,7 +56,8 @@ const Shop = () => {
                 </li>
             </ul>
             {activeItem === "myshop" && <MyShop />}
-            {/* {activeItem === "mybusiness" && <MyBusiness />} */}
+            {activeItem === "mybusiness" && <MyBusiness />}
+            {activeItem === "myorders" && <MyOrders />}
             {activeItem === "addproduct" && <AddProduct />}
         </div>
     );

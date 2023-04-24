@@ -15,22 +15,22 @@ const memoStorage = multer.memoryStorage();
 
 const upload = multer({ memoStorage });
 
-//ADD A PRODUCT
+//ADD A SHOP
 router.post("/add", addShop);
 
-//GET ALL PRODUCTS
+//GET ALL SHOPS
 router.get("/", getAllShops);
 
-//GET PRODUCT
+//GET SHOP
 router.get("/shop/:shopid", getShop);
 
-//EDIT PRODUCT DETAILS
+//EDIT SHOP DETAILS
 router.put("/shop/:shopid", editShopDetails);
 
-//DELETE PRODUCT
+//DELETE SHOP
 router.delete("/shop/:shopid", deleteShop);
 
-//UPLOAD PRODUCT PICTURE
+//UPLOAD SHOP PICTURE
 router.post(
 	"/upload-shop-image",
 	upload.single("shop-image"),

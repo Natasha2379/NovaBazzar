@@ -1,0 +1,18 @@
+.featuredProductsMainContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0.5rem;
+    gap: 1rem;
+
+    .featuredProductsHeading {
+        font-family: "Times New Roman", Times, serif;
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+
+    .featuredProductsContainer {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}

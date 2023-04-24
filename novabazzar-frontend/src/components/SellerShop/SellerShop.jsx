@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import styles from "./myShop.module.scss";
+import styles from "./sellerShop.module.scss";
 
 import { FiSearch } from "react-icons/fi";
 

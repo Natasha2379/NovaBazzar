@@ -132,10 +132,8 @@ export const getShopDetails = (shop_id) => {
 };
 
 //get all shops data
-export const getAllShopsDetails = (search) => {
-    return axios.get(
-        process.env.REACT_APP_SERVER_DOMAIN + `/api/shops/?search=${search}`,
-    );
+export const getAllShopsDetails = () => {
+    return axios.get(process.env.REACT_APP_SERVER_DOMAIN + `/api/shops`);
 };
 
 //edit shop data
