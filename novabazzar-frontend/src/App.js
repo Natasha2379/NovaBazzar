@@ -6,13 +6,14 @@ import Home from "./pages/Home/Home";
 import Shop from "./pages/seller/Shop/Shop";
 import AddShop from "./pages/seller/AddShop/AddShop";
 import EditProduct from "./components/EditProduct/EditProduct";
-import BuyerLogin from "./pages/buyer/BuyerLogin/BuyerLogin";
-import SellerLogin from "./pages/seller/SellerLogin/SellerLogin";
+import SellerLogin from "./pages/seller/sellerAccount/SellerLogin";
+import Account from "./pages/accountCreate/Account";
 
 import { addUser, addUserID, selectUserData } from "./redux/slices/userSlice";
 import jwtDecode from "jwt-decode";
 import { getUserDetails } from "./services/api";
 import Product from "./pages/Product/Product";
+import Cart from "./pages/cart/Cart";
 
 function App() {
     const user = useSelector(selectUserData);
@@ -41,8 +42,8 @@ function App() {
         <Router>
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/seller" element={<BuyerLogin />} />
-                <Route path="/buyer" element={<SellerLogin />} />
+                <Route path="/account" element={<Account />} />
+                <Route path="/seller" element={<SellerLogin />} />
                 <Route path="/addshop" element={<AddShop />} />
                 <Route path="/shop/:shopid" element={<Shop />} />
                 <Route path="/product/:productid" element={<Product />} />
@@ -50,6 +51,7 @@ function App() {
                     path="/editproduct/:productid"
                     element={<EditProduct />}
                 />
+                <Route path="/cart" element={<Cart />} />
             </Routes>
         </Router>
     );

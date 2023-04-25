@@ -11,7 +11,7 @@ const HomeTopbar = () => {
     console.log(search);
 
     return (
-        <div className={styles.topbarContainer}>
+        <div className={"styles. topbar flex align-center space"}>
             <div className={styles.topbarLogo}>Nova Bazzar</div>
             <div className={styles.topbarSearchContainer}>
                 <FiSearch className={styles.searchIcon} />

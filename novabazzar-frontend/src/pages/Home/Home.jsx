@@ -1,19 +1,23 @@
 import React from "react";
-import styles from "./home.module.scss";
+import "./Home.scss";
 
-import Topbar from "../../components/Topbar/Topbar";
-import FeaturedItems from "../../components/FeaturedItems/FeaturedItems";
 import FeaturedShops from "../../components/FeaturedShops/FeaturedShops";
 import FeaturedProducts from "../../components/FeaturedProducts/FeaturedProducts";
 import Footer from "../../components/Footer/Footer";
 
+//Natasha styling components
+import Navbar from "../../components/navbar/Navbar";
+import MainFeatured from "../../components/mainFeatured/MainFeatured";
+
 const Home = () => {
     return (
-        <div className={styles.homeContainer}>
-            <Topbar />
-            <FeaturedItems />
-            <FeaturedShops />
-            <FeaturedProducts />
+        <div className="homePage">
+            <Navbar />
+            <div className="home-container">
+                <MainFeatured />
+                <FeaturedShops />
+                <FeaturedProducts />
+            </div>
             <Footer />
         </div>
     );

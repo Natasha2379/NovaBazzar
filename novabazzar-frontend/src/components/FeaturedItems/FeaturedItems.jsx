@@ -13,12 +13,11 @@ import { Pagination } from "swiper";
 const FeaturedItems = () => {
     return (
         <div className={styles.featuredItemsContainer}>
-            <div className={styles.featuredItemsBanner}></div>
             <div className={styles.featuredItemsSliderContainer}>
                 <Swiper
-                    // pagination={{
-                    //     clickable: true,
-                    // }}
+                    pagination={{
+                        clickable: true,
+                    }}
                     slidesPerView={3.5}
                     spaceBetween={30}
                     modules={[Pagination]}
