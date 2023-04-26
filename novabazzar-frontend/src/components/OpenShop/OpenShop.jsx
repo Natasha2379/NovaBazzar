@@ -36,7 +36,7 @@ const OpenShop = () => {
                 <img src={ShopOpen} alt="" />
             </div>
             <div className="form-section ">
-                <form 
+                <form
                     className="addShopForm flex column"
                     onSubmit={handleAddShop}
                 >

@@ -22,6 +22,7 @@ const Shop = () => {
                             : styles.shopOption
                     }
                 >
+                    {" "}
                     MyShop
                 </li>
                 <li
