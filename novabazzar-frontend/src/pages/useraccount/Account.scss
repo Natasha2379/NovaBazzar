@@ -1,0 +1,48 @@
+.CreateAccountPage {
+   
+   
+
+    .accountInfo {
+        padding: 2% 10%;
+        background-color: rgb(245, 241, 241);
+         min-height: 70vh;
+        gap: 10px;
+
+        .userTabs {
+            flex: 1;
+            gap: 20px;
+            background-color: white;
+
+            .profileArea{
+                min-height: 300px;
+                padding: 20px;
+            }
+
+            .Tab {
+                font-family: inherit;
+                cursor: pointer;
+                 padding: 20px 30px;
+            }
+            .activeTab {
+
+                font-family: inherit;
+                color: aliceblue;
+                cursor: pointer;
+               padding: 20px 30px;
+                background-color: rgb(0, 102, 255);
+            }
+
+            li {
+                cursor: pointer;
+                list-style: none;
+            }
+        }
+        .details {
+            flex: 3;
+            background-color: white;
+            padding: 20px;
+        }
+    }
+
+    
+}

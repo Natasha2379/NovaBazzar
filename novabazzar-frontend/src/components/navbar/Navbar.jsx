@@ -12,7 +12,10 @@ const Navbar = () => {
                 <Link to="/" className="logo link">
                     NovaBazzar
                 </Link>
-                <div className="setLocation flex align-center">
+                <Link
+                    to="/location"
+                    className="setLocation link flex align-center"
+                >
                     <span>
                         <i className="fa-solid fa-location-dot"></i>
                     </span>
@@ -20,9 +23,9 @@ const Navbar = () => {
                     <span>
                         <i className="fa-solid fa-angle-down"></i>
                     </span>
-                </div>
+                </Link>
             </div>
-            <div className="search-bar flex align-center">
+            <Link to="/search" className="search-bar flex align-center link">
                 <span>
                     <i className="fa-solid fa-magnifying-glass"></i>
                 </span>
@@ -31,7 +34,7 @@ const Navbar = () => {
                     placeholder="Search shops/Products"
                     onChange={(e) => setSearch(e.target.value)}
                 />
-            </div>
+            </Link>
             <div className="links flex align-center">
                 <Link to="/cart" className="link">
                     Cart
@@ -39,7 +42,7 @@ const Navbar = () => {
                 <Link to="/seller" className="link">
                     Become a Seller
                 </Link>
-                <Link to="/account" className="link createAccount">
+                <Link to="/register" className="link createAccount">
                     Sign up
                 </Link>
             </div>

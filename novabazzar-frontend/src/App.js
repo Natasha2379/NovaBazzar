@@ -7,7 +7,13 @@ import Shop from "./pages/seller/Shop/Shop";
 import AddShop from "./pages/seller/AddShop/AddShop";
 import EditProduct from "./components/EditProduct/EditProduct";
 import SellerLogin from "./pages/seller/sellerAccount/SellerLogin";
-import Account from "./pages/accountCreate/Account";
+import SearchPage from "./pages/searchPage/SearchPage";
+import Location from "./pages/location/Location";
+
+// user account pages
+import ProfilePage from "./pages/useraccount/ProfilePage";
+import Register from "./pages/useraccount/Forms/RegisterPage";
+import Login from "./pages/useraccount/Forms/LoginPage";
 
 import { addUser, addUserID, selectUserData } from "./redux/slices/userSlice";
 import jwtDecode from "jwt-decode";
@@ -42,8 +48,11 @@ function App() {
         <Router>
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/account" element={<Account />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/userProfile" element={<ProfilePage />} />
                 <Route path="/seller" element={<SellerLogin />} />
+                <Route path="/search" element={<SearchPage />} />
                 <Route path="/addshop" element={<AddShop />} />
                 <Route path="/shop/:shopid" element={<Shop />} />
                 <Route path="/product/:productid" element={<Product />} />
@@ -52,6 +61,7 @@ function App() {
                     element={<EditProduct />}
                 />
                 <Route path="/cart" element={<Cart />} />
+                <Route path="/location" element={<Location />} />
             </Routes>
         </Router>
     );
