@@ -2,8 +2,38 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins";
+    font-family: "Poppins",sans-serif;
 }
+
+/* common styling  */
+.flex{
+    display: flex;
+}
+.abs-center{
+    align-items: center;
+    justify-content: center;
+}
+.justify-center{
+    justify-content: center;
+}
+.align-center{
+    align-items: center;
+}
+.space{
+    justify-content: space-between;
+}
+.wrap{
+    flex-wrap: wrap;
+}
+.column{
+    flex-direction: column;
+}
+.link{
+    text-decoration: none;
+}
+
+
+
 
 button:focus,
 textarea:focus,

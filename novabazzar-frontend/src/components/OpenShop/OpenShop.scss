@@ -1,0 +1,88 @@
+.ShopOpenForm {
+    height: 110vh;
+    padding: 3%;
+    .image-section,
+    .form-section {
+        flex: 1;
+    }
+
+    .image-section {
+        height: 100%;
+        img {
+            height: 100%;
+            width: 100%;
+        }
+        
+    }
+    .form-section {
+        background:linear-gradient(to left,white,rgb(0, 162, 255));
+        height: 100%;
+        width: 100%;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 100px;
+
+        .addShopForm {
+            gap: 30px;
+
+            .addShopHeading {
+                font-size: 2rem;
+                font-weight: 600;
+                color: white;
+            }
+            .addShopDesc {
+                font-size: 1rem;
+                font-weight: 500;
+            }
+            input {
+                height: 50px;
+                width: 100%;
+                border: 1px solid #999;
+                padding: 10px 20px;
+
+                &::placeholder {
+                    font-weight: 500;
+                    font-weight: 1.3rem;
+                }
+            }
+            .col {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+
+                input {
+                    width: 49%;
+                }
+
+                button{
+                    background-color: rgb(6, 98, 184);
+                    width: 49%;
+                }
+            }
+            .exact-location{
+                p{
+                    color: white;
+                }
+                .addShopLocation{
+                      height: 200px;
+                      
+                     
+                }
+                input{
+                    margin-top: 20px;
+                }
+            }
+            button{
+                 height: 50px;
+                 width: 150px;
+                 background-color: black;
+                 color: white;
+                 border-radius: 3px;
+                 cursor: pointer;
+                 width: 100%;
+            }
+        }
+    }
+}
