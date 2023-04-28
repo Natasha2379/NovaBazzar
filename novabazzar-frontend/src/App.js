@@ -3,10 +3,10 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import Home from "./pages/Home/Home";
-import Shop from "./pages/seller/Shop/Shop";
-import AddShop from "./pages/seller/AddShop/AddShop";
-import EditProduct from "./components/EditProduct/EditProduct";
-import SellerLogin from "./pages/seller/sellerAccount/SellerLogin";
+import Shop from "./pages/seller/shop/Shop";
+import AddShop from "./pages/seller/addShop/AddShop";
+import EditProduct from "./components/shopComponents/editProduct/EditProduct";
+import SellerLogin from "./pages/seller/sellerProfile/SellerProfile";
 import SearchPage from "./pages/searchPage/SearchPage";
 import Location from "./pages/location/Location";
 
@@ -18,7 +18,6 @@ import Login from "./pages/useraccount/Forms/LoginPage";
 import { addUser, addUserID, selectUserData } from "./redux/slices/userSlice";
 import jwtDecode from "jwt-decode";
 import { getUserDetails } from "./services/api";
-import Product from "./pages/Product/Product";
 import Cart from "./pages/cart/Cart";
 
 function App() {
@@ -55,7 +54,6 @@ function App() {
                 <Route path="/search" element={<SearchPage />} />
                 <Route path="/addshop" element={<AddShop />} />
                 <Route path="/shop/:shopid" element={<Shop />} />
-                <Route path="/product/:productid" element={<Product />} />
                 <Route
                     path="/editproduct/:productid"
                     element={<EditProduct />}

@@ -1,0 +1,48 @@
+.myShopContainer {
+    width: 100%;
+    gap: 50px;
+    margin-bottom: 50px;
+   
+
+    .searchContainer {
+        width: 40%;
+        margin: 3rem auto;
+        gap: 0.7rem;
+        background-color: rgb(249, 248, 248);
+        border: 2px solid rgb(149, 146, 146);
+        border-radius: 10px;
+        
+
+        span {
+            i {
+                font-size: 1.3rem;
+                margin-left: 10px;
+            }
+        }
+
+        input {
+            height: 100%;
+            width: 90%;
+            padding: 15px 10px;
+            background-color: inherit;
+            font-size: 1rem;
+        }
+    }
+
+    .shopProductsContainer {
+        width: 100%;
+
+        .shopSidebar {
+             padding: 20px;
+            flex: 1;
+            border-right: 1px solid black;
+            margin-right: 20px;
+            text-align: end;
+            
+        }
+
+        .shopProducts {
+            flex: 5;
+        }
+    }
+}

@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from "react";
-import styles from "./sellerShop.module.scss";
+import "./SellerShop.scss";
 
-import { FiSearch } from "react-icons/fi";
-
-import ShopSidebar from "../ShopSidebar/ShopSidebar";
-import ShopProduct from "../ShopProduct/ShopProduct";
-import { getAllProductsDetails } from "../../services/api";
+import ShopSlidebar from "../shopSlidebar/ShopSlidebar";
+import ShopProduct from "../shopProduct/ShopProduct";
+import { getAllProductsDetails } from "../../../services/api";
 
 const MyShop = () => {
     const [products, setProducts] = useState([]);
     const [search, setSearch] = useState("");
+    console.log(search);
 
     useEffect(() => {
         const fetchProducts = async () => {
@@ -24,21 +23,22 @@ const MyShop = () => {
     }, [search]);
 
     return (
-        <div className={styles.myShopContainer}>
-            <div className={styles.searchContainer}>
-                <FiSearch className={styles.searchIcon} />
-
+        <div className="myShopContainer flex column">
+            <div className="searchContainer flex align-center ">
+                <span>
+                    <i className="fa-solid fa-magnifying-glass"></i>
+                </span>
                 <input
-                    className={styles.search}
-                    placeholder={`Search "milk"`}
+                    type="text"
+                    placeholder="Search items"
                     onChange={(e) => setSearch(e.target.value)}
                 />
             </div>
-            <div className={styles.shopProductsContainer}>
-                <div className={styles.shopSidebar}>
-                    <ShopSidebar />
+            <div className="shopProductsContainer flex ">
+                <div className="shopSidebar">
+                    <ShopSlidebar />
                 </div>
-                <div className={styles.shopProducts}>
+                <div className="shopProducts">
                     {products?.map((product) => (
                         <ShopProduct key={product._id} product={product} />
                     ))}

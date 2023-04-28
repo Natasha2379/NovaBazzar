@@ -35,7 +35,7 @@
                 font-size: 1rem;
                 font-weight: 500;
             }
-            input {
+            input ,select{
                 height: 50px;
                 width: 100%;
                 border: 1px solid #999;
@@ -54,6 +54,17 @@
 
                 input {
                     width: 49%;
+                }
+                select{
+                    width: 49%;
+                    outline: none;
+                    font-size: 1rem;
+                    font-weight: 500;
+
+                    option{
+                       font-size: 1rem;
+                       font-weight: 500;
+                    }
                 }
 
                 button{
