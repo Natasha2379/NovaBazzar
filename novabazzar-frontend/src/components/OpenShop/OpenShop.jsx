@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./OpenShop.scss";
 import { addShop } from "../../services/api";
 import ShopOpen from "../../assets/openshop.jpg";
+import GoogleMap from "../../utils/GoogleMap";
 
 const OpenShop = () => {
     const [name, setName] = useState("");
@@ -11,6 +12,7 @@ const OpenShop = () => {
     const [city, setCity] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
+    const [location, setLocation] = useState("");
 
     const handleAddShop = async () => {
         const shopData = {
@@ -21,10 +23,11 @@ const OpenShop = () => {
             city,
             email,
             phone,
+            location,
         };
-
         try {
-            await addShop(shopData);
+            const res = await addShop(shopData);
+            console.log(res);
         } catch (error) {
             console.log(error);
         }
@@ -38,7 +41,7 @@ const OpenShop = () => {
             <div className="form-section ">
                 <form
                     className="addShopForm flex column"
-                    onSubmit={handleAddShop}
+                    // onSubmit={handleAddShop}
                 >
                     <div className="addShopHeading">Nova Bazzar</div>
                     <div className="addShopDesc">
@@ -86,18 +89,16 @@ const OpenShop = () => {
                             below
                         </p>
                         <div className="addShopLocation">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27750.888696524427!2d76.5067298!3d29.6077242!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390e030e2a0bbbc1%3A0x6f27bcb13fd6a158!2sFariabad%2C%20Haryana!5e0!3m2!1sen!2sin!4v1672811355409!5m2!1sen!2sin"
-                                title="Map"
-                                width="100%"
-                                height="100%"
-                                style={{ border: "none" }}
-                            ></iframe>
+                            <GoogleMap
+                                location={location}
+                                city={city}
+                                state={state}
+                            />
                         </div>
                         <input
                             type="text"
                             className="addShopInput"
-                            onChange={(e) => setCity(e.target.value)}
+                            onChange={(e) => setLocation(e.target.value)}
                             placeholder="Enter your exact location"
                         />
                     </div>
@@ -124,7 +125,12 @@ const OpenShop = () => {
                             placeholder="Enter OTP"
                         />
                     </div>
-                    <button type="submit" className="addShopSubmitButton">
+                    <button
+                        // type="submit"
+                        type="button"
+                        className="addShopSubmitButton"
+                        onClick={handleAddShop}
+                    >
                         Open Shop
                     </button>
                 </form>

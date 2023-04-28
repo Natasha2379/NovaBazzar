@@ -32,7 +32,11 @@
     text-decoration: none;
 }
 
-
+#googleMaps > div{
+    /* background-color: aquamarine; */
+    width: 45% !important;
+    height: 30% !important;
+}
 
 
 button:focus,

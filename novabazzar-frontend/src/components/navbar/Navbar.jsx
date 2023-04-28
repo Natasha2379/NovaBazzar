@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import "./Navbar.scss";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { selectUserData } from "../../redux/slices/userSlice";
 
 const Navbar = () => {
-    // const user = useSelector(selectUserData);
+    const user = useSelector(selectUserData);
     const [search, setSearch] = useState("");
     console.log(search);
     return (
@@ -42,9 +44,15 @@ const Navbar = () => {
                 <Link to="/seller" className="link">
                     Become a Seller
                 </Link>
-                <Link to="/register" className="link createAccount">
-                    Sign up
-                </Link>
+                {user ? (
+                    <Link to="/userProfile" className="link">
+                        My Account
+                    </Link>
+                ) : (
+                    <Link to="/register" className="link createAccount">
+                        Sign up
+                    </Link>
+                )}
             </div>
         </div>
     );

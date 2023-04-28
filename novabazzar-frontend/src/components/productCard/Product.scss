@@ -40,8 +40,8 @@
                     font-size: 1.7rem;
                 }
                 &:hover {
-                    background-color: green;
-                    color: white;
+                    color: tomato;
+                    // color: white;
                 }
             }
         }
@@ -49,7 +49,7 @@
         &:hover {
             .product-img {
                 img {
-                    transform: scale(1.5);
+                    transform: scale(1.1);
                 }
             }
         }
@@ -87,9 +87,11 @@
             }
             .buybtn {
                 background-color: rgb(243, 68, 5);
+                cursor: pointer;
             }
             .cartbtn {
                 background-color: #ffc013;
+                cursor: pointer;
             }
         }
     }

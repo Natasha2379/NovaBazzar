@@ -4,8 +4,7 @@ import shopImage from "../../../assets/banner.jpg";
 import { MdWatchLater } from "react-icons/md";
 import PropTypes from "prop-types";
 
-const ShopCard = (props) => {
-    console.log(props.shop);
+const ShopCard = () => {
     return (
         <div className={styles.shopCardContainer}>
             <div className={styles.shopCardImageContainer}>

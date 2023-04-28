@@ -1,6 +1,6 @@
 import React from "react";
 import "./SearchPage.scss";
-import Navbar from "../../components/navbar/Navbar";
+import Navbar from "../../components/Navbar/Navbar";
 
 const SearchPage = () => {
     return (

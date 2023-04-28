@@ -2,7 +2,7 @@ import React from "react";
 import "./SellerLogin.scss";
 
 import OpenShop from "../../../components/OpenShop/OpenShop";
-import Navbar from "../../../components/navbar/Navbar";
+import Navbar from "../../../components/Navbar/Navbar";
 
 const SellerLogin = () => {
     return (

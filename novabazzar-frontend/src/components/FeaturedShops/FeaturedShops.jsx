@@ -5,7 +5,6 @@ import { getAllShopsDetails } from "../../services/api";
 
 const FeaturedShops = () => {
     const [shops, setShops] = useState();
-    console.log(shops);
 
     useEffect(() => {
         const fetchShops = async () => {

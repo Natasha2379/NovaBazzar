@@ -7,7 +7,7 @@ import Shop from "./pages/seller/Shop/Shop";
 import AddShop from "./pages/seller/AddShop/AddShop";
 import EditProduct from "./components/EditProduct/EditProduct";
 import SellerLogin from "./pages/seller/sellerAccount/SellerLogin";
-import SearchPage from "./pages/searchPage/SearchPage";
+import SearchPage from "./pages/SearchPage/SearchPage";
 import Location from "./pages/location/Location";
 
 // user account pages
@@ -19,7 +19,7 @@ import { addUser, addUserID, selectUserData } from "./redux/slices/userSlice";
 import jwtDecode from "jwt-decode";
 import { getUserDetails } from "./services/api";
 import Product from "./pages/Product/Product";
-import Cart from "./pages/cart/Cart";
+import Cart from "./pages/Cart/Cart";
 
 function App() {
     const user = useSelector(selectUserData);
@@ -34,7 +34,7 @@ function App() {
                     const user_jwt = jwtDecode(jwt);
                     const { data } = await getUserDetails(user_jwt.user_id);
 
-                    dispatch(addUser(data));
+                    dispatch(addUser(data.user));
                     dispatch(addUserID(user_jwt.user_id));
                 }
             } catch (error) {
@@ -48,9 +48,15 @@ function App() {
         <Router>
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/register" element={<Register />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/userProfile" element={<ProfilePage />} />
+                <Route
+                    path="/register"
+                    element={user ? <Home /> : <Register />}
+                />
+                <Route path="/login" element={user ? <Home /> : <Login />} />
+                <Route
+                    path="/userProfile"
+                    element={user ? <ProfilePage /> : <Home />}
+                />
                 <Route path="/seller" element={<SellerLogin />} />
                 <Route path="/search" element={<SearchPage />} />
                 <Route path="/addshop" element={<AddShop />} />

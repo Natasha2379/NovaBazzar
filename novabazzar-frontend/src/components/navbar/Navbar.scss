@@ -1,8 +1,8 @@
-.navbar{
+.navbar {
     width: 100%;
-    height: 10vh;
+    height: 15vh;
     box-shadow: 0 0 2px gray;
-    padding: 0  30px;
+    padding: 30px;
     position: sticky;
     top: 0;
     right: 0;
@@ -11,30 +11,25 @@
     z-index: 9999;
     overflow: hidden;
 
-    .main{
-
-        .logo{
-
+    .main {
+        .logo {
             font-size: 2.3rem;
             font-weight: 600;
             color: rgb(82, 195, 243);
         }
-        .setLocation{
+        .setLocation {
             gap: 7px;
             width: 300px;
-            height: 40px;
+            // height: 40px;
             overflow: hidden;
             cursor: pointer;
 
-            
-            .location{
-               
+            .location {
                 overflow: hidden;
-
             }
         }
     }
-    .search-bar{
+    .search-bar {
         border: 1px solid #333;
         width: 450px;
         height: 45px;
@@ -43,38 +38,37 @@
         overflow: hidden;
         padding: 0 10px;
 
-        span i{
+        span i {
             font-size: 1.2rem;
             height: 100%;
             color: black;
         }
 
-        input{
+        input {
             height: 100%;
             width: 100%;
 
-            &::placeholder{
+            &::placeholder {
                 font-size: 1rem;
                 font-weight: 500;
             }
         }
     }
- 
-    .links{
+
+    .links {
         gap: 50px;
 
-        .link{
+        .link {
             font-size: 1.1rem;
             font-weight: 600;
             color: #333;
         }
 
-        .createAccount{
+        .createAccount {
             border-radius: 30px;
             padding: 12px 25px;
             background-color: black;
             color: white;
         }
     }
-    
 }

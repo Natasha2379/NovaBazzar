@@ -6,8 +6,8 @@ import FeaturedProducts from "../../components/FeaturedProducts/FeaturedProducts
 import Footer from "../../components/Footer/Footer";
 
 //Natasha styling components
-import Navbar from "../../components/navbar/Navbar";
-import MainFeatured from "../../components/mainFeatured/MainFeatured";
+import Navbar from "../../components/Navbar/Navbar";
+import MainFeatured from "../../components/MainFeatured/MainFeatured";
 
 const Home = () => {
     return (
