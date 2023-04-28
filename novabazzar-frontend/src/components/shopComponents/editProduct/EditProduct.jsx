@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import styles from "./editProduct.module.scss";
+import styles from "./EditProduct.scss";
 import {
     editProductDetails,
     getProductDetails,
     uploadProductImage,
-} from "../../services/api";
+} from "../../../services/api";
 
 const EditProduct = () => {
     const [categories, setCategories] = useState("");

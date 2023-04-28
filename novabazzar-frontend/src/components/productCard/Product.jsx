@@ -4,7 +4,7 @@ import image from "../../assets/apple.jpg";
 
 const Product = () => {
     return (
-        <div className="products flex align-center wrap">
+        <div className="products flex align-center space wrap">
             <div className="prdouct-card">
                 <div className="product-img">
                     <img src={image} alt="" />

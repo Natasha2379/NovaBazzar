@@ -1,0 +1,88 @@
+.shopProductContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    padding: 0.5rem;
+
+    border: 2px solid rgb(149, 146, 146);
+
+    .prdouct-card {
+        height: 360px;
+        width: 300px;
+        box-shadow: 0 0 3px gray;
+
+        .product-img {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                transition: 0.5s ease-in-out;
+                transform-origin: right;
+            }
+            .fav {
+                z-index: 99999;
+                position: absolute;
+                top: 10px;
+                right: 15px;
+
+                cursor: pointer;
+                height: 40px;
+                width: 40px;
+                background-color: white;
+                transition: 0.3s ease-in-out;
+
+                i {
+                    font-size: 1.7rem;
+                }
+                &:hover {
+                    background-color: green;
+                    color: white;
+                }
+            }
+        }
+        //   hover effect for image
+        &:hover {
+            .product-img {
+                img {
+                    transform: scale(1.5);
+                }
+            }
+        }
+        .content {
+            padding: 10px;
+            .product-name {
+                font-size: 18px;
+                font-weight: 400;
+                color: black;
+            }
+            .product-shop-name {
+                font-size: 17px;
+                font-weight: 500;
+                color: #666;
+            }
+            .price-rating {
+                h3 {
+                    color: #ff2020;
+                }
+                .rating {
+                    i {
+                        color: #ffd513;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}

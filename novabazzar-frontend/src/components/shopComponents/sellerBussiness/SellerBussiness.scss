@@ -1,0 +1,30 @@
+.seller-bussiness {
+    margin-block: 50px;
+
+    .top-items {
+        padding: 0 20px;
+        min-height: 200px;
+        gap: 30px;
+        .box {
+            height: 150px;
+            width: 50%;
+            border-radius: 30px;
+            color: black;
+            gap: 20px;
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+        .salesbox {
+            background-color: rgb(141, 246, 141);
+        }
+        .ordersbox {
+            background-color: rgb(238, 119, 76);
+        }
+        .products-box {
+            background-color: rgb(238, 238, 110);
+        }
+        .revenue-box {
+            background-color: rgb(96, 182, 240);
+        }
+    }
+}

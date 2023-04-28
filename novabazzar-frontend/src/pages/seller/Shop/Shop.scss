@@ -1,0 +1,26 @@
+.shopPage {
+    width: 100%;
+    .shopMainArea {
+        width: 90%;
+        margin: auto;
+
+        .shopTabs {
+            padding: 10px 30px;
+            margin-top: 50px;
+            gap: 100px;
+
+            li {
+                list-style: none;
+                font-size: 1.2rem;
+                font-weight: 500;
+                padding-bottom: 10px;
+                cursor: pointer;
+            }
+            .shopOption {
+            }
+            .activeShopOption {
+                border-bottom: 4px solid rgb(8, 86, 202);
+            }
+        }
+    }
+}
