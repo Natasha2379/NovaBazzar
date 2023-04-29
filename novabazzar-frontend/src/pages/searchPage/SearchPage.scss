@@ -1,0 +1,51 @@
+.searchpage {
+    .searchsection {
+        padding: 2%;
+        .top-section {
+            .recent-searches {
+                margin-block: 20px;
+                gap: 30px;
+                h2{
+                    margin-block: 20px;
+                }
+                .recent-choose {
+                    gap: 15px;
+
+                    .recents {
+                        padding: 12px 18px;
+                        background-color: #ebe5e5;
+                        border-radius: 30px;
+
+                        span {
+                            i {
+                                margin-inline: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .shops-items-section {
+            ul {
+                gap: 100px;
+
+                li {
+                    list-style: none;
+                    font-size: 1.3rem;
+                    font-weight: 500;
+                    cursor: pointer;
+                    padding-bottom: 10px;
+                }
+                .activeit {
+                    border-bottom: 3px solid black;
+                }
+                .notactive {
+                    color: #777;
+                }
+            }
+            .result-section {
+                margin-block: 50px;
+            }
+        }
+    }
+}

@@ -3,10 +3,10 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import Home from "./pages/Home/Home";
-import Shop from "./pages/Seller/Shop/Shop";
-import AddShop from "./pages/Seller/AddShop/AddShop";
-import EditProduct from "./components/ShopComponents/editProduct/EditProduct";
-import SellerLogin from "./pages/Seller/SellerLogin/SellerLogin";
+import Shop from "./pages/seller/Shop/shop";
+import AddShop from "./pages/seller/AddShop/AddShop";
+import EditProduct from "./components/shopComponents/EditProduct/EditProduct";
+import ProductDetail from "./pages/productDetail/ProductDetail";
 import SearchPage from "./pages/SearchPage/SearchPage";
 import Location from "./pages/Location/Location";
 
@@ -59,7 +59,7 @@ function App() {
                     path="/buyer/profile"
                     element={user ? <ProfilePage /> : <Home />}
                 />
-                <Route path="/seller/login" element={<SellerLogin />} />
+
                 <Route path="/search" element={<SearchPage />} />
                 <Route path="/seller/addshop" element={<AddShop />} />
                 <Route path="/shop/:shopid" element={<Shop />} />
@@ -69,6 +69,7 @@ function App() {
                 />
                 <Route path="/buyer/cart" element={<Cart />} />
                 <Route path="/location" element={<Location />} />
+                <Route path="/productdetail" element={<ProductDetail />} />
             </Routes>
         </Router>
     );

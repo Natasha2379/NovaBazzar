@@ -61,133 +61,139 @@ const OpenShop = () => {
     };
 
     return (
-        <div className="ShopOpenForm flex align-center ">
-            <div className="image-section">
-                <img src={ShopOpen} alt="" />
-            </div>
-            <div className="form-section ">
-                <form
-                    className="addShopForm flex column"
-                    onSubmit={handleAddShop}
-                >
-                    <div className="addShopHeading">Nova Bazzar</div>
-                    <div className="addShopDesc">
-                        Please give us few detailsso that we can help you to
-                        open your shop on Nova Bazzar, get your bussiness Online
-                        with Nova Bazzar free
-                    </div>
-                    <input
-                        type="text"
-                        className="addShopInput"
-                        onChange={(e) => setName(e.target.value)}
-                        placeholder="Enter Your Full Name"
-                    />
-                    <div className="col">
-                        <input
-                            type="text"
-                            className="addShopInput"
-                            onChange={(e) => setShopName(e.target.value)}
-                            placeholder="Enter your Shop Name"
-                        />
-                        <select
-                            name=""
-                            id="ProductCategory"
-                            className="addShopInput"
-                            onChange={(e) => setShopType(e.target.value)}
-                        >
-                            <option hidden>Select Shop Type</option>
-                            <option value="Kirana shop">Kirana shop</option>
-                            <option value="Medical shop">Medical shop</option>
-                            <option value="Clothes shop">Clothes shop</option>
-                            <option value="Electronics shop">
-                                Electronics shop
-                            </option>
-                        </select>
-                    </div>
-                    <div className="col">
-                        <input
-                            type="text"
-                            className="addShopInput"
-                            onChange={(e) => setState(e.target.value)}
-                            placeholder="Enter your state"
-                        />
-                        <input
-                            type="text"
-                            className="addShopInput"
-                            onChange={(e) => setCity(e.target.value)}
-                            placeholder="Enter your city"
-                        />
-                    </div>
-                    <div className="exact-location">
-                        <p>
-                            Choose the exact location of your shop and enter
-                            below
-                        </p>
-                        <div className="addShopLocation">
-                            <GoogleMap
-                                location={location}
-                                state={state}
-                                city={city}
-                            />
+        <div className="addshopPage">
+            <div className="ShopOpenForm flex align-center ">
+                <div className="image-section">
+                    <img src={ShopOpen} alt="" />
+                </div>
+                <div className="form-section ">
+                    <form
+                        className="addShopForm flex column"
+                        onSubmit={handleAddShop}
+                    >
+                        <div className="addShopHeading">Nova Bazzar</div>
+                        <div className="addShopDesc">
+                            Please give us few detailsso that we can help you to
+                            open your shop on Nova Bazzar, get your bussiness
+                            Online with Nova Bazzar free
                         </div>
                         <input
                             type="text"
                             className="addShopInput"
-                            onChange={(e) => setLocation(e.target.value)}
-                            placeholder="Enter your exact location"
+                            onChange={(e) => setName(e.target.value)}
+                            placeholder="Enter Your Full Name"
                         />
-                    </div>
-                    <div className="col">
-                        <input
-                            type="text"
-                            className="addShopInput"
-                            onChange={(e) => setEmail(e.target.value)}
-                            placeholder="Enter your Email"
-                        />
-                        <input
-                            type="text"
-                            className="addShopInput"
-                            onChange={(e) => setPhone(e.target.value)}
-                            placeholder="Enter your Phone Number"
-                        />
-                    </div>
-                    <div className="col">
-                        <button
-                            type="button"
-                            onClick={handleSendOTP}
-                            onFocus={() => setError(false)}
-                        >
-                            Send OTP
-                        </button>
-                        <input
-                            type="number"
-                            className="addShopInput"
-                            onChange={(e) => setOtp(e.target.value)}
-                            placeholder="Enter OTP"
-                        />
-                    </div>
-                    {error && (
-                        <p style={{ cursor: "pointer", color: "red" }}>
-                            {error}
-                        </p>
-                    )}
-                    {success && (
-                        <p style={{ cursor: "pointer", color: "green" }}>
-                            {success}
-                        </p>
-                    )}
-                    {otpVerfied ? (
-                        <button
-                            type="submit"
-                            className="addShopSubmitButton"
-                            style={{ cursor: "pointer" }}
-                        >
-                            Open Shop
-                        </button>
-                    ) : (
-                        ""
-                    )}
-                </form>
+                        <div className="col">
+                            <input
+                                type="text"
+                                className="addShopInput"
+                                onChange={(e) => setShopName(e.target.value)}
+                                placeholder="Enter your Shop Name"
+                            />
+                            <select
+                                name=""
+                                id="ProductCategory"
+                                className="addShopInput"
+                                onChange={(e) => setShopType(e.target.value)}
+                            >
+                                <option hidden>Select Shop Type</option>
+                                <option value="Kirana shop">Kirana shop</option>
+                                <option value="Medical shop">
+                                    Medical shop
+                                </option>
+                                <option value="Clothes shop">
+                                    Clothes shop
+                                </option>
+                                <option value="Electronics shop">
+                                    Electronics shop
+                                </option>
+                            </select>
+                        </div>
+                        <div className="col">
+                            <input
+                                type="text"
+                                className="addShopInput"
+                                onChange={(e) => setState(e.target.value)}
+                                placeholder="Enter your state"
+                            />
+                            <input
+                                type="text"
+                                className="addShopInput"
+                                onChange={(e) => setCity(e.target.value)}
+                                placeholder="Enter your city"
+                            />
+                        </div>
+                        <div className="exact-location">
+                            <p>
+                                Choose the exact location of your shop and enter
+                                below
+                            </p>
+                            <div className="addShopLocation">
+                                <GoogleMap
+                                    location={location}
+                                    state={state}
+                                    city={city}
+                                />
+                            </div>
+                            <input
+                                type="text"
+                                className="addShopInput"
+                                onChange={(e) => setLocation(e.target.value)}
+                                placeholder="Enter your exact location"
+                            />
+                        </div>
+                        <div className="col">
+                            <input
+                                type="text"
+                                className="addShopInput"
+                                onChange={(e) => setEmail(e.target.value)}
+                                placeholder="Enter your Email"
+                            />
+                            <input
+                                type="text"
+                                className="addShopInput"
+                                onChange={(e) => setPhone(e.target.value)}
+                                placeholder="Enter your Phone Number"
+                            />
+                        </div>
+                        <div className="col">
+                            <button
+                                type="button"
+                                onClick={handleSendOTP}
+                                onFocus={() => setError(false)}
+                            >
+                                Send OTP
+                            </button>
+                            <input
+                                type="number"
+                                className="addShopInput"
+                                onChange={(e) => setOtp(e.target.value)}
+                                placeholder="Enter OTP"
+                            />
+                        </div>
+                        {error && (
+                            <p style={{ cursor: "pointer", color: "red" }}>
+                                {error}
+                            </p>
+                        )}
+                        {success && (
+                            <p style={{ cursor: "pointer", color: "green" }}>
+                                {success}
+                            </p>
+                        )}
+                        {otpVerfied ? (
+                            <button
+                                type="submit"
+                                className="addShopSubmitButton"
+                                style={{ cursor: "pointer" }}
+                            >
+                                Open Shop
+                            </button>
+                        ) : (
+                            ""
+                        )}
+                    </form>
+                </div>
             </div>
         </div>
     );

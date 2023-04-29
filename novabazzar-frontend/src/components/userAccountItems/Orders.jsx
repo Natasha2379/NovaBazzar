@@ -1,6 +1,6 @@
 import React from "react";
 import "./UserAccount.scss";
-import Product from "../ProductCard/Product";
+import Product from "../productCard/product";
 
 const Orders = () => {
     return (

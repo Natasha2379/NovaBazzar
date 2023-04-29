@@ -1,102 +1,112 @@
-.ShopOpenForm {
-    // height: 110vh;
-    padding: 3%;
-    .image-section,
-    .form-section {
-        flex: 1;
-    }
-
-    .image-section {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 1rem;
+.addshopPage {
+    position: relative;
+    .ShopOpenForm {
+        padding: 3%;
         height: 100%;
-        img {
-            height: 90%;
-            width: 90%;
+
+        .image-section,
+        .form-section {
+            flex: 1;
         }
-        
-    }
-    .form-section {
-        background:linear-gradient(to left,white,rgb(0, 162, 255));
-        height: 100%;
-        width: 100%;
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        gap: 100px;
 
-        .addShopForm {
-            gap: 30px;
 
-            .addShopHeading {
-                font-size: 2rem;
-                font-weight: 600;
-                color: white;
+        .image-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            height: 100%;
+            img {
+                height: 90%;
+                width: 90%;
             }
-            .addShopDesc {
-                font-size: 1rem;
-                font-weight: 500;
-            }
-            input ,select{
-                height: 50px;
-                width: 100%;
-                border: 1px solid #999;
-                padding: 10px 20px;
+        }
+        .form-section {
+            background: linear-gradient(to left, white, rgb(0, 162, 255));
+            height: 100%;
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 100px;
 
-                &::placeholder {
-                    font-weight: 500;
-                    font-weight: 1.3rem;
-                }
-            }
-            .col {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
+            .addShopForm {
+                gap: 30px;
 
-
-                input {
-                    width: 49%;
-                }
-                select{
-                    width: 49%;
-                    outline: none;
-                    font-size: 1rem;
-                    font-weight: 500;
-
-                    option{
-                       font-size: 1rem;
-                       font-weight: 500;
-                    }
-                }
-
-                button{
-                    background-color: rgb(6, 98, 184);
-                    width: 49%;
-                }
-            }
-            .exact-location{
-                p{
+                .addShopHeading {
+                    font-size: 2rem;
+                    font-weight: 600;
                     color: white;
                 }
-                .addShopLocation{
-                      height: 200px;
-                      
-                     
+                .addShopDesc {
+                    font-size: 1rem;
+                    font-weight: 500;
                 }
-                input{
-                    margin-top: 20px;
+                input,
+                select {
+                    height: 50px;
+                    width: 100%;
+                    border: 1px solid #999;
+                    padding: 10px 20px;
+
+                    &::placeholder {
+                        font-weight: 500;
+                        font-weight: 1.3rem;
+                    }
                 }
-            }
-            button{
-                 height: 50px;
-                 width: 150px;
-                 background-color: black;
-                 color: white;
-                 border-radius: 3px;
-                 cursor: pointer;
-                 width: 100%;
+                .col {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    input {
+                        width: 49%;
+                    }
+                    select {
+                        width: 49%;
+                        outline: none;
+                        font-size: 1rem;
+                        font-weight: 500;
+
+                        option {
+                            font-size: 1rem;
+                            font-weight: 500;
+                        }
+                    }
+
+                    button {
+                        background-color: rgb(6, 98, 184);
+                        width: 49%;
+                    }
+                }
+                .exact-location {
+
+                    p {
+                        margin-bottom: 20px;
+                        color: white;
+                    }
+                    .addShopLocation {
+                        height: 100px;
+                        width: 100%;
+                        
+                    }
+
+                    input{
+                        margin-top: 290px;
+                        
+                        
+
+                    }
+                }
+                button {
+                    height: 50px;
+                    width: 150px;
+                    background-color: black;
+                    color: white;
+                    border-radius: 3px;
+                    cursor: pointer;
+                    width: 100%;
+                }
             }
         }
     }

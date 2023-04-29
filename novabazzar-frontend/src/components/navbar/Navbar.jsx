@@ -41,7 +41,7 @@ const Navbar = () => {
                 <Link to="/buyer/cart" className="link">
                     Cart
                 </Link>
-                <Link to="/seller/login" className="link">
+                <Link to="/seller/addshop" className="link">
                     Become a Seller
                 </Link>
                 {user ? (

@@ -1,12 +1,15 @@
 import React from "react";
 import "./Cart.scss";
-import Navbar from "../../components/Navbar/Navbar";
+import Navbar from "../../components/Navbar/navbar";
+import CartShop from "../../components/cartShop/CartShop";
 
 const Cart = () => {
     return (
         <div className="cartPage">
             <Navbar />
-            <div className="cart-section">cart items</div>
+            <div className="cart-section">
+                <CartShop />
+            </div>
         </div>
     );
 };

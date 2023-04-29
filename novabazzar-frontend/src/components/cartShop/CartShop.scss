@@ -1,0 +1,39 @@
+.cartbyshop {
+    width: 100%;
+    box-shadow: 0 0 3px gray;
+    margin-top: 50px;
+    .shop-name {
+        padding: 20px;
+        text-align: start;
+        font-size: 1.5rem;
+        font-weight: 500;
+        border-bottom: 1px solid #666;
+    }
+    .cart-items {
+        padding: 10px 20px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .bottom-section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 30px;
+        border-top: 1px solid #666;
+        .total-items,
+        .total-price {
+            font-size: 1.3rem;
+            font-weight: 500;
+        }
+        button {
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 500;
+            color: white;
+            background-color: green;
+        }
+    }
+}
