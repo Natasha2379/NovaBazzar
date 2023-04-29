@@ -5,15 +5,17 @@ const cookieParser = require("cookie-parser");
 const dotenv = require("dotenv");
 const cors = require("cors");
 
-const sellerRouter = require("./routes/seller");
+const userRouter = require("./routes/user");
 const productRouter = require("./routes/product");
 const shopRouter = require("./routes/shop");
+const { PORT } = require("./config/dev");
+const { ATLAS_URI } = require("./config/dev");
 
 const app = express();
 dotenv.config();
 
-const PORT = process.env.PORT || 5000;
-const URI = process.env.ATLAS_URI;
+const RUN_PORT = PORT || 5000;
+const URI = ATLAS_URI;
 
 mongoose.set("strictQuery", false);
 mongoose
@@ -30,7 +32,7 @@ app.use(cookieParser());
 app.use(express.json());
 
 //routes
-app.use("/api/sellers", sellerRouter);
+app.use("/api/users", userRouter);
 app.use("/api/products", productRouter);
 app.use("/api/shops", shopRouter);
 
@@ -43,6 +45,6 @@ app.use((err, req, res, next) => {
 	});
 });
 
-app.listen(PORT, () => {
+app.listen(RUN_PORT, () => {
 	console.log(`app is running on port ${PORT}`);
 });

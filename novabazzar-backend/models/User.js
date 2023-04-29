@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const SellerSchema = new Schema(
+const UserSchema = new Schema(
 	{
 		name: {
 			type: String,
@@ -10,7 +10,7 @@ const SellerSchema = new Schema(
 		username: {
 			type: String,
 			unique: true,
-			required: true,
+			// required: true,
 		},
 		email: {
 			type: String,
@@ -38,6 +38,6 @@ const SellerSchema = new Schema(
 	{ timestamps: true }
 );
 
-const Seller = mongoose.model("Seller", SellerSchema);
+const User = mongoose.model("User", UserSchema);
 
-module.exports = Seller;
+module.exports = User;

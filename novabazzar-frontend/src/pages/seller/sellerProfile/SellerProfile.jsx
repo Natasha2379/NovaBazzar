@@ -1,8 +1,8 @@
 import React from "react";
 import "./SellerProfile.scss";
 
-const SellerLogin = () => {
+const SellerProfile = () => {
     return <div className="sellerAccountPage">seller Profile page</div>;
 };
 
-export default SellerLogin;
+export default SellerProfile;

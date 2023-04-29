@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./accountform.scss";
+import "./AccountForms.scss";
 import { Link, useNavigate } from "react-router-dom";
 import { registerUser } from "../../services/api";
 
@@ -69,7 +69,7 @@ const Register = () => {
                 </button>
                 <p>
                     Already have a account?{" "}
-                    <Link to="/login" className="link">
+                    <Link to="/buyer/login" className="link">
                         Login now
                     </Link>
                 </p>

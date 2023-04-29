@@ -38,18 +38,18 @@ const Navbar = () => {
                 />
             </Link>
             <div className="links flex align-center">
-                <Link to="/cart" className="link">
+                <Link to="/buyer/cart" className="link">
                     Cart
                 </Link>
-                <Link to="/seller" className="link">
+                <Link to="/seller/login" className="link">
                     Become a Seller
                 </Link>
                 {user ? (
-                    <Link to="/userProfile" className="link">
+                    <Link to="/buyer/profile" className="link">
                         My Account
                     </Link>
                 ) : (
-                    <Link to="/register" className="link createAccount">
+                    <Link to="/buyer/register" className="link createAccount">
                         Sign up
                     </Link>
                 )}

@@ -1,6 +1,6 @@
 import React from "react";
 
-import Product from "../productCard/Product";
+import Product from "../ProductCard/Product";
 
 const Favorites = () => {
     return (

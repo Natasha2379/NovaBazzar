@@ -9,11 +9,15 @@ const {
 	editShopDetails,
 	deleteShop,
 	uploadShopImage,
+	getOtpForShopVerification,
 } = require("../controllers/shop");
 
 const memoStorage = multer.memoryStorage();
 
 const upload = multer({ memoStorage });
+
+//OTP FOR SHOP
+router.post("/addshop-otp", getOtpForShopVerification);
 
 //ADD A SHOP
 router.post("/add", addShop);

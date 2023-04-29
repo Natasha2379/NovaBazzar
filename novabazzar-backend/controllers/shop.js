@@ -3,6 +3,49 @@ const { createError } = require("../utils/Error");
 const { s3 } = require("../utils/awsS3");
 const { v4: uuidv4 } = require("uuid");
 
+const { EMAIL_FROM, SIB_API } = require("../config/dev");
+
+const Sib = require("sib-api-v3-sdk");
+
+const client = Sib.ApiClient.instance;
+
+const apiKey = client.authentications["api-key"];
+apiKey.apiKey = SIB_API;
+
+const tranEmailApi = new Sib.TransactionalEmailsApi();
+const sender = {
+	email: EMAIL_FROM,
+	name: "NovaBazzar",
+};
+
+const getOtpForShopVerification = async (req, res, next) => {
+	//otp
+	let otp = "";
+	const characters = "0123456789";
+	for (let i = 0; i < 4; i++)
+		otp += characters[Math.floor(Math.random() * characters.length)];
+
+	try {
+		const receivers = [{ email: req.body.email }];
+		const emailData = {
+			sender,
+			to: receivers,
+			subject: "Welcome to NovaBazzar",
+			htmlContent: ` <h3 style=text-align:center;> OTP to open shop <b>${otp}<b> </h3>`,
+		};
+
+		await tranEmailApi.sendTransacEmail(emailData);
+
+		return res.status(200).json({
+			message: "OTP Sent Successfully!",
+			otp,
+		});
+	} catch (err) {
+		console.log(err);
+		next(err);
+	}
+};
+
 const addShop = async (req, res, next) => {
 	const name = req.body.name;
 	const shopName = req.body.shopName;
@@ -90,7 +133,6 @@ const deleteShop = async (req, res, next) => {
 };
 
 const getAllShops = async (req, res, next) => {
-	console.log("hi");
 	const search = req.query.search || "";
 	try {
 		const shops = await Shop
@@ -101,7 +143,6 @@ const getAllShops = async (req, res, next) => {
 			// ],
 			()
 			.sort({ timestamp: -1 });
-		console.log(shops);
 
 		res.status(200).json({ shops, message: "all shops" });
 	} catch (err) {
@@ -141,6 +182,7 @@ const uploadShopImage = async (req, res, next) => {
 };
 
 module.exports = {
+	getOtpForShopVerification,
 	addShop,
 	getAllShops,
 	getShop,

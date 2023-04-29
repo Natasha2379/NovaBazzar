@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./AddShop.scss";
-import { addShop } from "../../../services/api";
+import GoogleMap from "../../../utils/GoogleMap";
+import { addShop, getOTP } from "../../../services/api";
 import ShopOpen from "../../../assets/openshop.jpg";
 
 const OpenShop = () => {
@@ -11,6 +12,35 @@ const OpenShop = () => {
     const [city, setCity] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
+    const [location, setLocation] = useState("");
+    const [systemOTP, setSystemOTP] = useState("");
+    const [otp, setOtp] = useState("");
+    const [otpVerfied, setOtpVerfied] = useState(false);
+    const [error, setError] = useState("");
+    const [success, setSuccess] = useState("");
+
+    const handleSendOTP = async () => {
+        try {
+            const res = await getOTP({ email });
+            setSystemOTP(res.data.otp);
+            setSuccess("otp sent");
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    useEffect(() => {
+        if (otp.length === 4) {
+            if (systemOTP === otp) {
+                setOtpVerfied(true);
+                setSuccess("otp verified!!");
+            } else {
+                setError("invalid otp!!");
+            }
+        } else {
+            setError("");
+        }
+    }, [otp]);
 
     const handleAddShop = async () => {
         const shopData = {
@@ -21,8 +51,8 @@ const OpenShop = () => {
             city,
             email,
             phone,
+            location,
         };
-
         try {
             await addShop(shopData);
         } catch (error) {
@@ -65,9 +95,7 @@ const OpenShop = () => {
                             className="addShopInput"
                             onChange={(e) => setShopType(e.target.value)}
                         >
-                            <option value="Select Shop Category">
-                                Select Shop Category
-                            </option>
+                            <option hidden>Select Shop Type</option>
                             <option value="Kirana shop">Kirana shop</option>
                             <option value="Medical shop">Medical shop</option>
                             <option value="Clothes shop">Clothes shop</option>
@@ -96,18 +124,16 @@ const OpenShop = () => {
                             below
                         </p>
                         <div className="addShopLocation">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27750.888696524427!2d76.5067298!3d29.6077242!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390e030e2a0bbbc1%3A0x6f27bcb13fd6a158!2sFariabad%2C%20Haryana!5e0!3m2!1sen!2sin!4v1672811355409!5m2!1sen!2sin"
-                                title="Map"
-                                width="100%"
-                                height="100%"
-                                style={{ border: "none" }}
-                            ></iframe>
+                            <GoogleMap
+                                location={location}
+                                state={state}
+                                city={city}
+                            />
                         </div>
                         <input
                             type="text"
                             className="addShopInput"
-                            onChange={(e) => setCity(e.target.value)}
+                            onChange={(e) => setLocation(e.target.value)}
                             placeholder="Enter your exact location"
                         />
                     </div>
@@ -126,17 +152,41 @@ const OpenShop = () => {
                         />
                     </div>
                     <div className="col">
-                        <button type="button">Send OTP</button>
+                        <button
+                            type="button"
+                            onClick={handleSendOTP}
+                            onFocus={() => setError(false)}
+                        >
+                            Send OTP
+                        </button>
                         <input
-                            type="text"
+                            type="number"
                             className="addShopInput"
-                            onChange={(e) => setPhone(e.target.value)}
+                            onChange={(e) => setOtp(e.target.value)}
                             placeholder="Enter OTP"
                         />
                     </div>
-                    <button type="submit" className="addShopSubmitButton">
-                        Open Shop
-                    </button>
+                    {error && (
+                        <p style={{ cursor: "pointer", color: "red" }}>
+                            {error}
+                        </p>
+                    )}
+                    {success && (
+                        <p style={{ cursor: "pointer", color: "green" }}>
+                            {success}
+                        </p>
+                    )}
+                    {otpVerfied ? (
+                        <button
+                            type="submit"
+                            className="addShopSubmitButton"
+                            style={{ cursor: "pointer" }}
+                        >
+                            Open Shop
+                        </button>
+                    ) : (
+                        ""
+                    )}
                 </form>
             </div>
         </div>

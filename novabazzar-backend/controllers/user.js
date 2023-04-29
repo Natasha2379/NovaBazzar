@@ -1,17 +1,17 @@
-const Seller = require("../models/Seller");
+const User = require("../models/User");
 const { createError } = require("../utils/Error");
 const { s3 } = require("../utils/awsS3");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const { v4: uuidv4 } = require("uuid");
 
-const registerSeller = async (req, res, next) => {
+const registerUser = async (req, res, next) => {
 	const username = req.body.username;
 	const email = req.body.email;
 	const phone = req.body.phone;
 	const password = await bcrypt.hash(req.body.password, 10);
 
-	const newSellerData = {
+	const newUserData = {
 		name: req.body.name,
 		username,
 		email,
@@ -20,26 +20,26 @@ const registerSeller = async (req, res, next) => {
 		profile_picture: "",
 	};
 
-	const newSeller = new Seller(newSellerData);
+	const newUser = new User(newUserData);
 
 	try {
-		const emailCheck = await Seller.findOne({ email });
+		const emailCheck = await User.findOne({ email });
 		if (emailCheck) return next(createError(409, "email already registered!"));
 
-		const phoneCheck = await Seller.findOne({ phone });
+		const phoneCheck = await User.findOne({ phone });
 		if (phoneCheck)
 			return next(createError(409, "phone no. already registered!"));
 
-		const usernameCheck = await Seller.findOne({ username });
+		const usernameCheck = await User.findOne({ username });
 		if (usernameCheck) return next(createError(409, "username not available!"));
 
-		const seller = await newSeller.save();
+		const user = await newUser.save();
 
 		const token = jwt.sign(
 			{
 				name: username,
 				email: email,
-				seller_id: seller._id,
+				user_id: user._id,
 			},
 			process.env.JWT
 		);
@@ -53,27 +53,27 @@ const registerSeller = async (req, res, next) => {
 	}
 };
 
-const loginSeller = async (req, res, next) => {
+const loginUser = async (req, res, next) => {
 	const username = req.body.username;
 	const pass = req.body.password;
 	const email = req.body.email;
 
 	try {
-		const seller = await Seller.findOne({
-			$or: [{ username }, { email: username }],
+		const user = await User.findOne({
+			$or: [{ username }, { email }],
 		});
 
-		if (!seller) return next(createError(404, "seller not found!"));
+		if (!user) return next(createError(404, "user not found!"));
 
-		const isCorrect = await bcrypt.compare(pass, seller.password);
+		const isCorrect = await bcrypt.compare(pass, user.password);
 
 		if (!isCorrect) return next(createError(400, "Wrong Credentials!"));
 
 		const token = jwt.sign(
 			{
-				name: seller.username,
-				email: seller.email,
-				seller_id: seller._id,
+				name: user.username,
+				email: user.email,
+				user_id: user._id,
 			},
 			process.env.JWT
 		);
@@ -87,95 +87,91 @@ const loginSeller = async (req, res, next) => {
 	}
 };
 
-const getSeller = async (req, res, next) => {
+const getUser = async (req, res, next) => {
 	try {
-		const seller = await Seller.findOne({ _id: req.params.sellerid });
+		const user = await User.findOne({ _id: req.params.userid });
 
-		if (!seller) return next(createError(404, "seller not found!"));
+		if (!user) return next(createError(404, "user not found!"));
 
-		res.status(200).json({ seller, message: "seller details" });
+		res.status(200).json({ user, message: "user details" });
 	} catch (err) {
 		next(err);
 	}
 };
 
-const editSellerDetails = async (req, res, next) => {
+const editUserDetails = async (req, res, next) => {
 	try {
-		const seller = await Seller.findOne({ _id: req.params.sellerid });
+		const user = await User.findOne({ _id: req.params.userid });
 
-		if (!seller) return next(createError(404, "seller not found!"));
+		if (!user) return next(createError(404, "user not found!"));
 
-		const updatedSeller = {
-			...seller._doc,
+		const updatedUser = {
+			...user._doc,
 			name: req.body.name,
 			email: req.body.name,
 			phone: req.body.phone,
 			profile_picture: req.body.profile_pic,
 		};
 
-		const latestSeller = await Seller.findByIdAndUpdate(
-			req.params.sellerid,
-			{ $set: updatedSeller },
+		const latestUser = await User.findByIdAndUpdate(
+			req.params.userid,
+			{ $set: updatedUser },
 			{ new: true }
 		);
 
-		return res
-			.status(200)
-			.json({ message: "seller updated", seller: latestSeller });
+		return res.status(200).json({ message: "user updated", user: latestUser });
 	} catch (err) {
 		next(err);
 	}
 };
 
-const editSellerPassword = async (req, res, next) => {
+const editUserPassword = async (req, res, next) => {
 	try {
-		const seller = await Seller.findOne({ _id: req.params.sellerid });
+		const user = await User.findOne({ _id: req.params.userid });
 
-		if (!seller) return next(createError(404, "seller not found!"));
+		if (!user) return next(createError(404, "user not found!"));
 
 		if (!req.body.password)
 			return next(createError(409, "password cannot be empty!"));
 
 		const hashedPassword = await bcrypt.hash(req.body.password, 10);
 
-		const updatedSeller = { ...seller._doc, password: hashedPassword };
+		const updatedUser = { ...user._doc, password: hashedPassword };
 
-		const latestSeller = await Seller.findByIdAndUpdate(
-			req.params.sellerid,
-			{ $set: updatedSeller },
+		const latestUser = await User.findByIdAndUpdate(
+			req.params.userid,
+			{ $set: updatedUser },
 			{ new: true }
 		);
 
-		return res
-			.status(200)
-			.json({ message: "seller updated", seller: latestSeller });
+		return res.status(200).json({ message: "user updated", user: latestUser });
 	} catch (err) {
 		console.log(err);
 		next(err);
 	}
 };
 
-const deleteSeller = async (req, res, next) => {
+const deleteUser = async (req, res, next) => {
 	try {
-		await Seller.findByIdAndDelete(req.params.sellerid);
+		await User.findByIdAndDelete(req.params.userid);
 
-		res.status(200).json({ message: "seller has been deleted" });
+		res.status(200).json({ message: "user has been deleted" });
 	} catch (err) {
 		next(err);
 	}
 };
 
-const getAllSellers = async (req, res, next) => {
+const getAllUsers = async (req, res, next) => {
 	try {
-		const sellers = await Seller.find().sort({ timestamp: -1 });
+		const users = await User.find().sort({ timestamp: -1 });
 
-		res.status(200).json({ sellers, message: "all sellers" });
+		res.status(200).json({ users, message: "all users" });
 	} catch (err) {
 		next(err);
 	}
 };
 
-const uploadSellersProfileImage = async (req, res, next) => {
+const uploadUsersProfileImage = async (req, res, next) => {
 	const file = req.file;
 	const filename = `${uuidv4()}.${file.mimetype.split("/")[1]}`;
 
@@ -186,7 +182,7 @@ const uploadSellersProfileImage = async (req, res, next) => {
 	try {
 		const params = {
 			Bucket: process.env.BUCKET,
-			Key: `sellers/${filename}`,
+			Key: `users/${filename}`,
 			Body: file.buffer,
 		};
 
@@ -208,12 +204,12 @@ const uploadSellersProfileImage = async (req, res, next) => {
 };
 
 module.exports = {
-	registerSeller,
-	loginSeller,
-	getAllSellers,
-	getSeller,
-	editSellerDetails,
-	editSellerPassword,
-	deleteSeller,
-	uploadSellersProfileImage,
+	registerUser,
+	loginUser,
+	getAllUsers,
+	getUser,
+	editUserDetails,
+	editUserPassword,
+	deleteUser,
+	uploadUsersProfileImage,
 };

@@ -1,6 +1,6 @@
 import React from "react";
 import "./FormPages.scss";
-import Login from "../../../components/useraccountform/Login";
+import Login from "../../../components/UserAccountForms/Login";
 
 const LoginPage = () => {
     return (

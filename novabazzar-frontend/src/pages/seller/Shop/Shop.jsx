@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "./Shop.scss";
 
-import ShopBanner from "../../../components/shopComponents/shopBanner/ShopBanner";
-import MyShop from "../../../components/shopComponents/sellerShop/SellerShop";
-import MyBusiness from "../../../components/shopComponents/sellerBussiness/SellerBussiness";
-import MyOrders from "../../../components/shopComponents/sellerOrders/SellerOrders";
-import AddProduct from "../../../components/shopComponents/addProduct/AddProduct";
+import ShopBanner from "../../../components/ShopComponents/shopBanner/ShopBanner";
+import MyShop from "../../../components/ShopComponents/sellerShop/SellerShop";
+import MyBusiness from "../../../components/ShopComponents/sellerBussiness/SellerBussiness";
+import MyOrders from "../../../components/ShopComponents/sellerOrders/SellerOrders";
+import AddProduct from "../../../components/ShopComponents/addProduct/AddProduct";
 
 const Shop = () => {
     const [activeItem, setActiveItem] = useState("myshop");

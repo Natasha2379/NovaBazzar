@@ -117,6 +117,14 @@ export const uploadProductImage = (formData) => {
 
 /***************************** SHOPS *****************************/
 //function to add shop
+export const getOTP = (form) => {
+    return axios.post(
+        process.env.REACT_APP_SERVER_DOMAIN + "/api/shops/addshop-otp",
+        form,
+    );
+};
+
+//function to add shop
 export const addShop = (form) => {
     return axios.post(
         process.env.REACT_APP_SERVER_DOMAIN + "/api/shops/add",

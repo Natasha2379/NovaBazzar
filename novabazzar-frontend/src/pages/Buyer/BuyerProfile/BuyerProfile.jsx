@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import "./Account.scss";
+import "./BuyerProfile.scss";
 
 //items to show
-import Profile from "../../components/userAccountItems/Profile";
-import Favorites from "../../components/userAccountItems/Favorites";
-import EditProfile from "../../components/userAccountItems/EditProfile";
-import Orders from "../../components/userAccountItems/Orders";
+import Profile from "../../../components/UserAccountItems/Profile";
+import Favorites from "../../../components/UserAccountItems/Favorites";
+import EditProfile from "../../../components/UserAccountItems/EditProfile";
+import Orders from "../../../components/UserAccountItems/Orders";
 import { useDispatch } from "react-redux";
-import { logout } from "../../redux/slices/userSlice";
+import { logout } from "../../../redux/slices/userSlice";
 import { useNavigate } from "react-router-dom";
 
-const Account = () => {
+const BuyerProfile = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -19,7 +19,7 @@ const Account = () => {
     const handleLogout = () => {
         dispatch(logout());
         localStorage.clear();
-        navigate("/login");
+        navigate("/buyer/login");
     };
     return (
         <div className="CreateAccountPage ">
@@ -71,4 +71,4 @@ const Account = () => {
     );
 };
 
-export default Account;
+export default BuyerProfile;
