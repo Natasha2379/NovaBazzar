@@ -3,18 +3,18 @@ const { createError } = require("../utils/Error");
 const { s3 } = require("../utils/awsS3");
 const { v4: uuidv4 } = require("uuid");
 
-const { EMAIL_FROM, SIB_API } = require("../config/dev");
+// const { EMAIL_FROM, SIB_API } = require("../config/dev");
 
 const Sib = require("sib-api-v3-sdk");
 
 const client = Sib.ApiClient.instance;
 
 const apiKey = client.authentications["api-key"];
-apiKey.apiKey = SIB_API;
+apiKey.apiKey = process.env.SIB_API;
 
 const tranEmailApi = new Sib.TransactionalEmailsApi();
 const sender = {
-	email: EMAIL_FROM,
+	email: process.env.EMAIL_FROM,
 	name: "NovaBazzar",
 };
 

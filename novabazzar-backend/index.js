@@ -8,14 +8,14 @@ const cors = require("cors");
 const userRouter = require("./routes/user");
 const productRouter = require("./routes/product");
 const shopRouter = require("./routes/shop");
-const { PORT } = require("./config/dev");
-const { ATLAS_URI } = require("./config/dev");
+// const { PORT } = require("./config/dev");
+// const { ATLAS_URI } = require("./config/dev");
 
 const app = express();
 dotenv.config();
 
-const RUN_PORT = PORT || 5000;
-const URI = ATLAS_URI;
+const RUN_PORT = process.env.PORT || 5000;
+const URI = process.env.ATLAS_URI;
 
 mongoose.set("strictQuery", false);
 mongoose
@@ -46,5 +46,5 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(RUN_PORT, () => {
-	console.log(`app is running on port ${PORT}`);
+	console.log(`app is running on port ${RUN_PORT}`);
 });
