@@ -19,7 +19,7 @@ const Login = () => {
             console.log(res);
             localStorage.setItem("access_token", res?.data?.token);
             navigate("/");
-            window.location.reload();
+            // window.location.reload();
         } catch (error) {
             console.log(error);
         }
@@ -47,7 +47,7 @@ const Login = () => {
                 </button>
                 <p>
                     {`Don't have an account? `}
-                    <Link to="/register" className="link">
+                    <Link to="/buyer/register" className="link">
                         Register now
                     </Link>
                 </p>

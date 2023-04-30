@@ -1,6 +1,6 @@
 import React from "react";
 import "./Cart.scss";
-import Navbar from "../../components/Navbar/navbar";
+import Navbar from "../../components/Navbar/Navbar";
 import CartShop from "../../components/cartShop/CartShop";
 
 const Cart = () => {

@@ -1,13 +1,13 @@
 import React from "react";
 import "./ProductDetail.scss";
-import Navbar from "../../components/Navbar/navbar";
+import Navbar from "../../components/Navbar/Navbar";
 import img1 from "../../assets/shoes.jpg";
 import img2 from "../../assets/apple.jpg";
 import img3 from "../../assets/jacket.jpg";
 import img4 from "../../assets/sellerLogin.jpg";
 import img5 from "../../assets/openshop.jpg";
 import img6 from "../../assets/banner.jpg";
-import Product from "../../components/productCard/product";
+import Product from "../../components/ProductCard/Product";
 
 const ProductDetail = () => {
     return (

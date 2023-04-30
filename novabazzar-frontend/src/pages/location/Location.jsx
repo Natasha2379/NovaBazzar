@@ -1,6 +1,6 @@
 import React from "react";
 import "./Location.scss";
-import Navbar from "../../components/Navbar/navbar";
+import Navbar from "../../components/Navbar/Navbar";
 
 const Location = () => {
     return (

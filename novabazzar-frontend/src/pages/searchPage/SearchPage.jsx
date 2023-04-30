@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./SearchPage.scss";
-import Navbar from "../../components/Navbar/navbar";
+import Navbar from "../../components/Navbar/Navbar";
 import ShopCard from "../../components/shopCard/ShopCard";
-import ProductCard from "../../components/productCard/product";
+import ProductCard from "../../components/ProductCard/Product";
 
 const SearchPage = () => {
     const [activeItem, setActiveItem] = useState("shops");
