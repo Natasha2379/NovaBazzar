@@ -14,18 +14,6 @@ const Navbar = () => {
                 <Link to="/" className="logo link">
                     NovaBazzar
                 </Link>
-                <Link
-                    to="/location"
-                    className="setLocation link flex align-center"
-                >
-                    <span>
-                        <i className="fa-solid fa-location-dot"></i>
-                    </span>
-                    <span className="location">Add your location</span>
-                    <span>
-                        <i className="fa-solid fa-angle-down"></i>
-                    </span>
-                </Link>
             </div>
             <Link to="/search" className="search-bar flex align-center link">
                 <span>
@@ -33,7 +21,7 @@ const Navbar = () => {
                 </span>
                 <input
                     type="text"
-                    placeholder="Search shops/Products"
+                    placeholder="Search shops/Products in your area"
                     onChange={(e) => setSearch(e.target.value)}
                 />
             </Link>

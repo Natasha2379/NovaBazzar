@@ -14,7 +14,7 @@ const ShopBanner = () => {
                 <div className="shop-type">Kirana shop</div>
                 <div className="shop-location">Yamalpuri,jaipaur,Rajasthan</div>
                 <div className="shop-status">
-                    <button>Open</button>
+                    <i className="fa-solid fa-unlock"></i>
                 </div>
             </div>
         </div>

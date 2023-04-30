@@ -1,58 +1,51 @@
-.shopBanner{
+.shopBanner {
     height: 400px;
     width: 100%;
     padding: 0 5%;
     color: white;
-    background:linear-gradient(to left,aqua,rgb(24, 126, 221)) ;
-    .shop-img{
-        flex :1;
+    background: linear-gradient(to left, aqua, rgb(24, 126, 221));
+    .shop-img {
+        flex: 1;
         padding: 20px;
 
-        img{
+        img {
             width: 300px;
             height: 300px;
             object-fit: cover;
             border-radius: 10px;
         }
     }
-    .shopkepperDetails{
-         flex :2;
-         gap: 20px;
+    .shopkepperDetails {
+        flex: 2;
+        gap: 20px;
 
-         .shop-name{
+        .shop-name {
             font-size: 25px;
             font-weight: 600;
-         }
-         .shopkepper-name,.shop-type{
+        }
+        .shopkepper-name,
+        .shop-type {
             font-size: 20px;
             font-weight: 500;
-         }
-         .shop-type{
+        }
+        .shop-type {
             font-size: 18px;
             font-weight: 500;
-         }
+        }
 
-         .shop-status{
-            button{
-                padding: 12px 40px;
-                background-color: green;
+        .shop-status {
+            i {
+                font-size: 3rem;
                 color: white;
-                border-radius: 10px;
-                
-                &:hover{
-                    background-color: gray;
-                    color: black;
 
+                &:hover {
+                    color: black;
                 }
             }
-            .shop-location{
+            .shop-location {
                 font-size: 15px;
                 font-weight: 500;
             }
-            
-         }
-         
-
-        
+        }
     }
 }
