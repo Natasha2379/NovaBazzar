@@ -4,7 +4,7 @@
 
     .addProductForm {
         gap: 0.5rem;
-        width: 40%;
+        width: 50%;
         height: 100%;
         margin: auto;
         padding: 2rem;
@@ -16,55 +16,101 @@
             color: rgb(8, 133, 133);
         }
 
+        .addProductInput{
+            border: 1px solid #444;
+            padding: 12px;
+        }
         .addProductDesc {
             font-size: 0.9rem;
             margin-bottom: 0.7rem;
             color: gray;
         }
-        .addProductImageInputContainer {
-            margin-bottom: 30px;
-        }
-        .addProductInput {
-            padding: 0.9rem;
-            border: 1px solid black;
-            font-size: 1rem;
-        }
 
-        .addProductSubHeading {
-            font-size: 1rem;
-            margin-block: 0.9rem;
-        }
+        .cover-img {
+            .addProductImageInputContainer {
+                margin-bottom: 30px;
+                height: 150px;
+                width: 150px;
+                position: relative;
+                border: 1px solid #666;
+                border-radius: 10px;
+                overflow: hidden;
 
-        .addProductImageInput {
-            display: none;
+                .addProductImageInput {
+                    display: none;
+                }
+                .addProductImageText {
+                    font-size: 3rem;
+                    font-weight: 600;
+                    cursor: pointer;
+                    position: absolute;
+                    top: 40px;
+                    bottom: 60px;
+                    left: 50px;
+
+                    &:hover {
+                        color: cornflowerblue;
+                    }
+                }
+            }
+            .addProductInput {
+                border: 1px solid black;
+                font-size: 1rem;
+            }
+
+            .addProductSubHeading {
+                font-size: 1rem;
+                margin-block: 0.9rem;
+            }
         }
-         .product-description{
+        .gallery-img-area {
+            height: 150px;
+            width: 100%;
+            .addProductSubHeading {
+                font-size: 1rem;
+                margin-block: 0.5rem;
+            }
+
+            .images-section {
+                height: 80%;
+                width: 100%;
+
+                .addProductImageInputContainer {
+                    height: 80%;
+                    width: 100%;
+                    margin-inline: 10px;
+                    position: relative;
+                    border: 1px solid #666;
+                    border-radius: 10px;
+                    overflow: hidden;
+                    .gallery-img {
+                        .addProductImageInput {
+                            display: none;
+                        }
+                        .addProductImageText {
+                            position: absolute;
+                            top: 30px;
+                            bottom: 40px;
+                            left: 30px;
+                            font-size: 2rem;
+                        }
+                    }
+                }
+            }
+        }
+        .product-description {
             height: 200px;
-           
 
-            textarea{
+            textarea {
                 height: 100%;
                 width: 100%;
                 padding: 10px;
                 border: 2px solid black;
                 font-size: 1rem;
 
-                &::placeholder{
+                &::placeholder {
                     font-size: 1rem;
                 }
-            }
-         }
-        .addProductImageText {
-            font-size: 1rem;
-            font-weight: 600;
-            border: 1px solid black;
-            padding: 30px 50px;
-            border-radius: 10px;
-            cursor: pointer;
-
-            &:hover {
-                background-color: cornflowerblue;
-                color: white;
             }
         }
 

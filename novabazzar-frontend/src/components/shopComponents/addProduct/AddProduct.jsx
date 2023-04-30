@@ -100,41 +100,124 @@ const AddProduct = () => {
                     placeholder="Enter Product Name"
                 />
 
-                <div className="addProductSubHeading">Product Cover Image</div>
-                <div
-                    className="addProductImageInputContainer"
-                    onClick={handleCoverImageUpload}
-                    style={{
-                        backgroundImage: `url(${coverImage})`,
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
-                        backgroundRepeat: "no-repeat",
-                    }}
-                >
-                    <input
-                        type="file"
-                        className="addProductImageInput"
-                        id="coverImage"
-                        accept="image/*"
-                        onChange={handleCoverImageChange}
-                    />
-                    <span className="addProductImageText">Add Image</span>
+                <div className="cover-img">
+                    <p className="addProductSubHeading">
+                        Add Product Cover Image
+                    </p>
+                    <div
+                        className="addProductImageInputContainer"
+                        onClick={handleCoverImageUpload}
+                        style={{
+                            backgroundImage: `url(${coverImage})`,
+                            backgroundSize: "cover",
+                            backgroundPosition: "center",
+                            backgroundRepeat: "no-repeat",
+                        }}
+                    >
+                        <input
+                            type="file"
+                            className="addProductImageInput"
+                            id="coverImage"
+                            accept="image/*"
+                            onChange={handleCoverImageChange}
+                        />
+                        <span className="addProductImageText">
+                            <i className="fa-solid fa-upload"></i>
+                        </span>
+                    </div>
                 </div>
-                <div className="addProductSubHeading">
-                    Product Gallery Images (limit 5)
-                </div>
-                <div
-                    className="addProductImageInputContainer"
-                    onClick={handleProductGalleryImageUpload}
-                >
-                    <input
-                        type="file"
-                        className="addProductImageInput"
-                        id="productGallery"
-                        multiple
-                        accept="image/*"
-                    />
-                    <span className="addProductImageText">Add Image</span>
+
+                <div className="gallery-img-area">
+                    <p className="addProductSubHeading">
+                        Add Product Gallery Images
+                    </p>
+                    <div className="images-section flex align-center">
+                        <div
+                            className="addProductImageInputContainer"
+                            onClick={handleProductGalleryImageUpload}
+                        >
+                            <span className="gallery-img">
+                                <input
+                                    type="file"
+                                    className="addProductImageInput"
+                                    id="productGallery"
+                                    multiple
+                                    accept="image/*"
+                                />
+                                <span className="addProductImageText">
+                                    <i className="fa-solid fa-upload"></i>
+                                </span>
+                            </span>
+                        </div>
+                        <div
+                            className="addProductImageInputContainer"
+                            onClick={handleProductGalleryImageUpload}
+                        >
+                            <span className="gallery-img">
+                                <input
+                                    type="file"
+                                    className="addProductImageInput"
+                                    id="productGallery"
+                                    multiple
+                                    accept="image/*"
+                                />
+                                <span className="addProductImageText">
+                                    <i className="fa-solid fa-upload"></i>
+                                </span>
+                            </span>
+                        </div>
+                        <div
+                            className="addProductImageInputContainer"
+                            onClick={handleProductGalleryImageUpload}
+                        >
+                            <span className="gallery-img">
+                                <input
+                                    type="file"
+                                    className="addProductImageInput"
+                                    id="productGallery"
+                                    multiple
+                                    accept="image/*"
+                                />
+                                <span className="addProductImageText">
+                                    <i className="fa-solid fa-upload"></i>
+                                </span>
+                            </span>
+                        </div>
+                        <div
+                            className="addProductImageInputContainer"
+                            onClick={handleProductGalleryImageUpload}
+                        >
+                            <span className="gallery-img">
+                                <input
+                                    type="file"
+                                    className="addProductImageInput"
+                                    id="productGallery"
+                                    multiple
+                                    accept="image/*"
+                                />
+                                <span className="addProductImageText">
+                                    <i className="fa-solid fa-upload"></i>
+                                </span>
+                            </span>
+                        </div>
+                        <div
+                            className="addProductImageInputContainer"
+                            onClick={handleProductGalleryImageUpload}
+                        >
+                            <span className="gallery-img">
+                                <input
+                                    type="file"
+                                    className="addProductImageInput"
+                                    id="productGallery"
+                                    multiple
+                                    accept="image/*"
+                                />
+                                <span className="addProductImageText">
+                                    <i className="fa-solid fa-upload"></i>
+                                </span>
+                            </span>
+                        </div>
+                    </div>
                 </div>
                 <div className="product-description">
                     <textarea
@@ -146,7 +229,6 @@ const AddProduct = () => {
                         onChange={(e) => setDesc(e.target.value)}
                     ></textarea>
                 </div>
-
                 <input
                     type="number"
                     className="addProductInput"
