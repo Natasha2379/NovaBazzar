@@ -1,11 +1,14 @@
 .products {
-    gap: 30px;
+    gap: 10px;
+    margin-left: 10px;
 
     .prdouct-card {
         height: 350px;
         width: 270px;
         box-shadow: 0 0 3px gray;
         background-color: white;
+        transition: 0.2s ease-in-out;
+        transform-origin: center;
         cursor: pointer;
         overflow: hidden;
 
@@ -47,14 +50,10 @@
                 }
             }
         }
-        //   hover effect for image
+
         &:hover {
-            .product-img {
-                height: 100%;
-                img {
-                    transform: scale(1.1);
-                }
-            }
+            transform: scale(1.1);
+            z-index: 999999;
         }
         .content {
             padding: 10px;

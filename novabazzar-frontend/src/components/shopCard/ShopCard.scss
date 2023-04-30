@@ -1,22 +1,25 @@
 .shops {
-    width: 100%;
+    width: 97%;
     height: 100%;
-    gap: 40px;
+    margin: auto;
+    row-gap: 20px;
+    column-gap: 50px;
 
     .shop-card {
-        height: 200px;
-        width: 400px;
+        height: 300px;
+        width: 300px;
         border-radius: 10px;
         gap: 10px;
-        padding: 10px;
-        transition: 0.2s ease-in-out;
         box-shadow: 0 0 3px gray;
         cursor: pointer;
         transition: 0.3s ease-in-out;
         transform-origin: center;
+        background-color: white;
+        overflow: hidden;
+        color: black;
 
         .shop-img {
-            flex: 2;
+            height: 60%;
 
             img {
                 height: 100%;
@@ -25,9 +28,30 @@
             }
         }
         .shop-detail {
-            flex: 3;
+            padding: 5px 10px;
+            flex: 1;
             align-items: flex-start;
-            gap: 20px;
+            gap: 7px;
+
+            .col{
+               gap: 70px;
+               flex: 1;
+
+               p{
+                min-width: 70%;
+               }
+
+               i{
+                font-size: 2rem;
+               }
+               .fa-unlock{
+                   color: green;
+               }
+               .fa-lock{
+                color: gray;
+               }
+
+            }
         }
 
         &:hover {

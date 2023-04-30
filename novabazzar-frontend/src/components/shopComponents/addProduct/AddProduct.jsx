@@ -223,9 +223,9 @@ const AddProduct = () => {
                     <textarea
                         name=""
                         id=""
-                        cols="30"
+                        cols="20"
                         rows="10"
-                        placeholder="Write something about Product"
+                        placeholder="Write something about Product in 100 words only"
                         onChange={(e) => setDesc(e.target.value)}
                     ></textarea>
                 </div>

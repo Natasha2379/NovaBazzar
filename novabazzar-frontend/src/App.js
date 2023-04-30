@@ -8,8 +8,7 @@ import AddShop from "./pages/Seller/AddShop/AddShop";
 import EditProduct from "./components/ShopComponents/editProduct/EditProduct";
 import ProductDetail from "./pages/productDetail/ProductDetail";
 import SearchPage from "./pages/SearchPage/SearchPage";
-import Location from "./pages/Location/Location";
-
+import SellerProfile from "./pages/seller/SellerProfile/sellerProfile";
 // user account pages
 import ProfilePage from "./pages/Buyer/BuyerProfile/BuyerProfile";
 import Register from "./pages/Buyer/Forms/RegisterPage";
@@ -59,6 +58,7 @@ function App() {
                     path="/buyer/profile"
                     element={user ? <ProfilePage /> : <Home />}
                 />
+                <Route path="/profile" element={<ProfilePage />} />
 
                 <Route path="/search" element={<SearchPage />} />
                 <Route path="/seller/addshop" element={<AddShop />} />
@@ -68,8 +68,8 @@ function App() {
                     element={<EditProduct />}
                 />
                 <Route path="/buyer/cart" element={<Cart />} />
-                <Route path="/location" element={<Location />} />
                 <Route path="/productdetail" element={<ProductDetail />} />
+                <Route path="/sellerprofile" element={<SellerProfile />} />
             </Routes>
         </Router>
     );

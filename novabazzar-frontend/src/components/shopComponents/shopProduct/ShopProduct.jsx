@@ -22,7 +22,7 @@ const ShopProduct = (props) => {
                         <h5>Babli shop,Yakimpur</h5>
                     </div>
                     <div className="price-rating flex space align-center">
-                        <h3>${45}kg</h3>
+                        <h3>₹{45}kg</h3>
                         <div className="rating">
                             <i className="fa fa-star"></i>
                             <i className="fa fa-star"></i>

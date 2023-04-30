@@ -3,12 +3,11 @@ import "./Home.scss";
 
 import FeaturedShops from "../../components/FeaturedShops/FeaturedShops";
 import FeaturedProducts from "../../components/FeaturedProducts/FeaturedProducts";
-import Footer from "../../components/Footer/Footer";
 
 //Natasha styling components
-import Navbar from "../../components/Navbar/Navbar";
-import MainFeatured from "../../components/MainFeatured/MainFeatured";
-
+import Navbar from "../../components/Navbar/navbar";
+import MainFeatured from "../../components/MainFeatured/mainFeatured";
+import Footer from "../../components/Footer/Footer";
 const Home = () => {
     return (
         <div className="homePage">

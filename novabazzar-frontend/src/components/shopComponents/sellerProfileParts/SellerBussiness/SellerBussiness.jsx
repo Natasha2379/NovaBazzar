@@ -4,7 +4,7 @@ import "./SellerBussiness.scss";
 const SellerBussiness = () => {
     return (
         <div className="seller-bussiness">
-            <div className="top-items flex align-center ">
+            <div className="top-items flex align-center column ">
                 <div className="box  salesbox flex abs-center column">
                     <p className="sales">Total Sales</p>
                     <p>27</p>
