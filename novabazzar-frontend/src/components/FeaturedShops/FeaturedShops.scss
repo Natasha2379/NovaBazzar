@@ -1,0 +1,29 @@
+.featured-shops{
+    height: 50vh;
+    margin-block: 50px;
+    gap: 20px;
+    padding: 0 20px;
+
+    .shop-box{
+        height: 70%;
+        width: 100%;
+        background-color: white;
+        color: rgb(5, 121, 237);
+        text-align: center;
+        border-radius: 20px;
+        overflow: hidden;
+         box-shadow:  0 0 3px gray;
+
+        img{
+            height: 80%;
+            width: 100%;
+            object-fit: cover;
+            background-color: white;
+        }
+        p{
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+    }
+}

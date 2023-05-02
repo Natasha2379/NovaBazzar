@@ -9,38 +9,63 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Pagination } from "swiper";
+
+// slider images
+import img1 from "../../assets/ear-watch.jpg";
+import img5 from "../../assets/clothes1.png";
+import img2 from "../../assets/Fashion-accessories.jpg";
+import img3 from "../../assets/med2.jpg";
+import img4 from "../../assets/aryuveda.jpg";
+import img6 from "../../assets/fruits-veg.jpg";
+import img7 from "../../assets/ac-cooler-fan.jpg";
+import img8 from "../../assets/mob-lap.jpg";
+import facecare from "../../assets/facecare1.jpg";
+import haircut from "../../assets/haircut.png";
+
 const MainFeatured = () => {
     return (
-        <div className="main-featured flex align-center ">
-            <div className="main-content">
-                <h1>
-                    NovaBazzar is an platform <br /> where you can search any
-                    shop
-                </h1>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Enim exercitationem, molestiae nemo consequuntur nostrum
-                    recusandae totam ratione similique blanditiis quo.
-                </p>
-            </div>
-            <div className="main-sliders flex abs-center ">
-                <Swiper
-                    className="swiper "
-                    // pagination={{
-                    //     clickable: true,
-                    // }}
-                    slidesPerView={3.5}
-                    spaceBetween={30}
-                    modules={[Pagination]}
-                    loop={true}
-                >
-                    <SwiperSlide className="slide-items">Slide 1</SwiperSlide>
-                    <SwiperSlide className="slide-items">Slide 2</SwiperSlide>
-                    <SwiperSlide className="slide-items">Slide 3</SwiperSlide>
-                    <SwiperSlide className="slide-items">Slide 4</SwiperSlide>
-                    <SwiperSlide className="slide-items">Slide 5</SwiperSlide>
-                </Swiper>
-            </div>
+        <div className="main-sliders ">
+            <Swiper
+                className="swiper"
+                // pagination={{
+                //     clickable: true,
+                // }}
+                slidesPerView={3.5}
+                spaceBetween={30}
+                modules={[Pagination]}
+                loop={true}
+            >
+                <SwiperSlide className="slide-items">
+                    <img src={img1} alt="" />
+                </SwiperSlide>
+                <SwiperSlide className="slide-items">
+                    <img src={img2} alt="" />
+                </SwiperSlide>
+                <SwiperSlide className="slide-items">
+                    <img src={facecare} alt="" />
+                </SwiperSlide>
+                <SwiperSlide className="slide-items">
+                    <img src={img4} alt="" />
+                </SwiperSlide>
+                <SwiperSlide className="slide-items">
+                    <img src={img5} alt="" />
+                </SwiperSlide>
+                <SwiperSlide className="slide-items">
+                    <img src={img6} alt="" />
+                </SwiperSlide>
+                <SwiperSlide className="slide-items">
+                    <img src={img7} alt="" />
+                </SwiperSlide>
+                <SwiperSlide className="slide-items">
+                    <img src={img3} alt="" />
+                </SwiperSlide>
+                <SwiperSlide className="slide-items">
+                    <img src={haircut} alt="" />
+                </SwiperSlide>
+                <SwiperSlide className="slide-items">
+                    <img src={img8} alt="" />
+                </SwiperSlide>
+            </Swiper>
         </div>
     );
 };

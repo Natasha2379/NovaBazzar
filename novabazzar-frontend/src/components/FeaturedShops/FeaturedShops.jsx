@@ -1,35 +1,33 @@
-import React, { useEffect, useState } from "react";
-import styles from "./featuredShops.module.scss";
-import ShopCard from "./ShopCard/ShopCard";
-import { getAllShopsDetails } from "../../services/api";
+import React from "react";
+import "./FeaturedShops.scss";
+import Kirana from "../../assets/kiranashop.jpg";
+import Electronics from "../../assets/elecronics-img.png";
+import Clothes from "../../assets/clothes-img.avif";
+import Medicines from "../../assets/medicines.avif";
+import haircut from "../../assets/haircut.png";
 
 const FeaturedShops = () => {
-    const [shops, setShops] = useState();
-
-    useEffect(() => {
-        const fetchShops = async () => {
-            try {
-                const res = await getAllShopsDetails();
-                setShops(res.data.shops);
-            } catch (error) {
-                console.log(error);
-            }
-        };
-        fetchShops();
-    }, []);
-
     return (
-        <div className={styles.featuredShopsMainContainer}>
-            <div className={styles.featuredShopsHeading}>Some Main Shops</div>
-            <div className={styles.featuredShopsContainer}>
-                {shops?.map((shop) => (
-                    <ShopCard shops={shops} key={shop._id} />
-                ))}
-                <ShopCard />
-                <ShopCard />
-                <ShopCard />
-                <ShopCard />
-                <ShopCard />
+        <div className="featured-shops flex align-center">
+            <div className="shop-box">
+                <img src={Kirana} alt="" />
+                <p>Kirana shop</p>
+            </div>
+            <div className="shop-box">
+                <img src={Medicines} alt="" />
+                <p>Medical shop</p>
+            </div>
+            <div className="shop-box">
+                <img src={Clothes} alt="" />
+                <p>Clothes shop</p>
+            </div>
+            <div className="shop-box">
+                <img src={haircut} alt="" />
+                <p>Parlour shop</p>
+            </div>
+            <div className="shop-box">
+                <img src={Electronics} alt="" />
+                <p>Electronics shop</p>
             </div>
         </div>
     );

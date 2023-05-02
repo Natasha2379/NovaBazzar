@@ -1,0 +1,34 @@
+.featured-products {
+    width: 100%;
+    margin-block: 50px;
+    gap: 50px;
+
+    .kirana,
+    .clothes,
+    .electronics,
+    .medical,
+    .salon {
+        width: 100%;
+        gap: 20px;
+
+        .products-category {
+            width: 100%;
+            height: 270px;
+            background-color: white;
+            box-shadow: 0 0 3px gray;
+            padding: 5px;
+            img {
+                height: 80%;
+                width: 100%;
+                object-fit: cover;
+                object-position: center center;
+            }
+            p {
+                text-align: center;
+                margin-top: 10px;
+                font-size: 1.1rem;
+                font-weight: 600;
+            }
+        }
+    }
+}
