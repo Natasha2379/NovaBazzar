@@ -115,6 +115,9 @@ const OpenShop = () => {
                                 <option value="Electronics shop">
                                     Electronics shop
                                 </option>
+                                <option value="Electronics shop">
+                                    Parlour shop
+                                </option>
                             </select>
                         </div>
                         <div className="col">
