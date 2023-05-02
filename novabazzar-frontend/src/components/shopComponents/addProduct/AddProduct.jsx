@@ -1,9 +1,14 @@
 import React, { useState } from "react";
 import "./AddProduct.scss";
 import { addProduct, uploadProductImage } from "../../../services/api";
+import { useSelector } from "react-redux";
+import { selectUser_ID } from "../../../redux/slices/userSlice";
 // import ProductCategoryData from "../CategoryData";
 
 const AddProduct = () => {
+    const userId = useSelector(selectUser_ID);
+    const shopId = location.pathname.split("/")[2];
+
     const [categories, setCategories] = useState("");
     const [name, setName] = useState("");
     const [coverImage, setCoverImage] = useState();
@@ -40,6 +45,8 @@ const AddProduct = () => {
             desc,
             quantity,
             price,
+            userId,
+            shopId,
         };
 
         try {
@@ -53,7 +60,7 @@ const AddProduct = () => {
         <div className="addProductContainer">
             <form
                 className="addProductForm flex column"
-                onSubmit={handleAddProduct}
+                // onSubmit={handleAddProduct}
             >
                 <div className="addProductHeading">Add Product to you Shop</div>
                 <div className="addProductDesc">
@@ -241,7 +248,11 @@ const AddProduct = () => {
                     onChange={(e) => setPrice(e.target.value)}
                     placeholder="Enter Price"
                 />
-                <button type="submit" className="addProductSubmitButton">
+                <button
+                    type="button"
+                    onClick={handleAddProduct}
+                    className="addProductSubmitButton"
+                >
                     Submit
                 </button>
             </form>

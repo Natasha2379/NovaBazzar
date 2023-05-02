@@ -8,7 +8,7 @@ import AddShop from "./pages/Seller/AddShop/AddShop";
 import EditProduct from "./components/ShopComponents/editProduct/EditProduct";
 import ProductDetail from "./pages/productDetail/ProductDetail";
 import SearchPage from "./pages/SearchPage/SearchPage";
-import SellerProfile from "./pages/seller/SellerProfile/sellerProfile";
+import SellerProfile from "./pages/Seller/SellerProfile/SellerProfile";
 // user account pages
 import ProfilePage from "./pages/Buyer/BuyerProfile/BuyerProfile";
 import Register from "./pages/Buyer/Forms/RegisterPage";
@@ -21,7 +21,6 @@ import Cart from "./pages/Cart/Cart";
 
 function App() {
     const user = useSelector(selectUserData);
-    console.log(user);
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -58,18 +57,30 @@ function App() {
                     path="/buyer/profile"
                     element={user ? <ProfilePage /> : <Home />}
                 />
-                <Route path="/profile" element={<ProfilePage />} />
+                <Route
+                    path="/profile"
+                    element={user ? <ProfilePage /> : <Login />}
+                />
 
                 <Route path="/search" element={<SearchPage />} />
-                <Route path="/seller/addshop" element={<AddShop />} />
+                <Route
+                    path="/seller/addshop"
+                    element={user ? <AddShop /> : <Login />}
+                />
                 <Route path="/shop/:shopid" element={<Shop />} />
                 <Route
                     path="/editproduct/:productid"
                     element={<EditProduct />}
                 />
-                <Route path="/buyer/cart" element={<Cart />} />
+                <Route
+                    path="/buyer/cart"
+                    element={user ? <Cart /> : <Login />}
+                />
                 <Route path="/productdetail" element={<ProductDetail />} />
-                <Route path="/sellerprofile" element={<SellerProfile />} />
+                <Route
+                    path="/sellerprofile"
+                    element={user ? <SellerProfile /> : <Login />}
+                />
             </Routes>
         </Router>
     );

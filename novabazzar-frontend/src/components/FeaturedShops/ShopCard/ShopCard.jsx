@@ -3,20 +3,25 @@ import styles from "./shopCard.module.scss";
 import shopImage from "../../../assets/banner.jpg";
 import { MdWatchLater } from "react-icons/md";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
-const ShopCard = () => {
+const ShopCard = (props) => {
+    console.log(props.shop);
     return (
-        <div className={styles.shopCardContainer}>
+        <Link
+            to={`/shop/${props.shop._id}`}
+            className={styles.shopCardContainer}
+        >
             <div className={styles.shopCardImageContainer}>
                 <img src={shopImage} alt="shopImage" />
             </div>
             <div className={styles.shopCardInformationContainer}>
                 <div className={styles.shopCardShopName}>
-                    Fruits N Vegetables
+                    {props?.shop?.shopName}
                 </div>
                 <div className={styles.shopCardShopAddress}>
                     <div className={styles.shopCardLocation}>
-                        Masjid Moth Village
+                        {props?.shop?.city}, {props?.shop?.state}
                     </div>
                     <div className={styles.shopCardTimeContainer}>
                         <div>25.6km</div>
@@ -25,7 +30,7 @@ const ShopCard = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </Link>
     );
 };
 

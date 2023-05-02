@@ -9,7 +9,8 @@ const FeaturedProducts = () => {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const res = await getAllProductsDetails("");
+                const res = await getAllProductsDetails();
+                console.log(res);
                 setProducts(res.data.products);
             } catch (error) {
                 console.log(error);

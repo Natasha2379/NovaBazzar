@@ -8,6 +8,7 @@ const Navbar = () => {
     const user = useSelector(selectUserData);
     const [search, setSearch] = useState("");
     console.log(search);
+
     return (
         <div className="navbar flex align-center space">
             <div className="main ">

@@ -23,13 +23,8 @@ const FeaturedShops = () => {
             <div className={styles.featuredShopsHeading}>Some Main Shops</div>
             <div className={styles.featuredShopsContainer}>
                 {shops?.map((shop) => (
-                    <ShopCard shops={shops} key={shop._id} />
+                    <ShopCard shop={shop} key={shop._id} />
                 ))}
-                <ShopCard />
-                <ShopCard />
-                <ShopCard />
-                <ShopCard />
-                <ShopCard />
             </div>
         </div>
     );

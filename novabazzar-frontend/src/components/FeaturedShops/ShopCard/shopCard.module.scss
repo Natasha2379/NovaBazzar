@@ -11,13 +11,14 @@
     -webkit-box-shadow: 0 0 5px 2px #cac5c5;
     -moz-box-shadow: 0 0 5px 2px #cac5c5;
     box-shadow: 0 0 5px 2px #cac5c5;
+    text-decoration: none;
 
     .shopCardImageContainer {
         display: flex;
         justify-content: center;
         align-items: center;
         object-fit: cover;
-        
+
         height: 120px;
 
         img {
@@ -37,6 +38,7 @@
             font-size: 1.5rem;
             font-weight: 600;
             font-family: "Poppins", sans-serif;
+            color: black;
         }
 
         .shopCardShopAddress {
@@ -54,7 +56,7 @@
 
             .shopCardTimeContainer {
                 font-size: 0.9rem;
-                font-family: "Poppins", sans-serif; 
+                font-family: "Poppins", sans-serif;
                 display: flex;
                 gap: 0.3rem;
 

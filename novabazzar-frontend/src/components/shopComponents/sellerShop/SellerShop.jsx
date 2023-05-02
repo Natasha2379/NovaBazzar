@@ -3,17 +3,18 @@ import "./SellerShop.scss";
 
 import ShopSlidebar from "../shopSlidebar/ShopSlidebar";
 import ShopProduct from "../shopProduct/ShopProduct";
-import { getAllProductsDetails } from "../../../services/api";
+import { getAllShopProducts } from "../../../services/api";
 
 const MyShop = () => {
     const [products, setProducts] = useState([]);
     const [search, setSearch] = useState("");
-    console.log(search);
+    const shopId = location.pathname.split("/")[2];
 
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const res = await getAllProductsDetails(search);
+                const res = await getAllShopProducts(shopId);
+                console.log(res.data);
                 setProducts(res.data.products);
             } catch (error) {
                 console.log(error);

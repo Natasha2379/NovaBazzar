@@ -6,25 +6,25 @@ const CartItem = () => {
     return (
         <>
             <div className="cart-item">
-                <div class="img-area">
+                <div className="img-area">
                     <img src={image} alt="" />
                 </div>
-                <div class="item-name">Flower</div>
-                <div class="item-quantity">
+                <div className="item-name">Flower</div>
+                <div className="item-quantity">
                     <input type="number" name="" id="" placeholder="0" />
                 </div>
-                <div class="item-price">$49</div>
+                <div className="item-price">$49</div>
                 <button>Remove</button>
             </div>
             <div className="cart-item">
-                <div class="img-area">
+                <div className="img-area">
                     <img src={image} alt="" />
                 </div>
-                <div class="item-name">Flower</div>
-                <div class="item-quantity">
+                <div className="item-name">Flower</div>
+                <div className="item-quantity">
                     <input type="number" name="" id="" placeholder="0" />
                 </div>
-                <div class="item-price">$49</div>
+                <div className="item-price">$49</div>
                 <button>Remove</button>
             </div>
         </>

@@ -11,7 +11,7 @@ const ShopProduct = (props) => {
                 <div className="product-img">
                     <img src={image} alt="" />
                     <span className="fav flex abs-center">
-                        <i class="fa fa-heart"></i>
+                        <i className="fa fa-heart"></i>
                     </span>
                 </div>
                 <div className="content">

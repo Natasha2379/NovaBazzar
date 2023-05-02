@@ -20,10 +20,10 @@ const ProductDetail = () => {
                 </div>
                 <div className="product-detail-section">
                     <div className="product-images-section">
-                        <div class="main-img">
+                        <div className="main-img">
                             <img src={img1} alt="" />
                         </div>
-                        <div class="gallery-images">
+                        <div className="gallery-images">
                             <img src={img2} alt="" />
                             <img src={img3} alt="" />
                             <img src={img4} alt="" />
@@ -31,7 +31,7 @@ const ProductDetail = () => {
                             <img src={img6} alt="" />
                         </div>
                     </div>
-                    <div class="product-about-section">
+                    <div className="product-about-section">
                         <div className="product-name">Coca-Cola Soft Drink</div>
                         <div className="product-quantity">750 ml</div>
                         <div className="product-price">$ 40</div>

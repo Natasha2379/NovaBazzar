@@ -3,8 +3,13 @@ import "./AddShop.scss";
 import GoogleMap from "../../../utils/GoogleMap";
 import { addShop, getOTP } from "../../../services/api";
 import ShopOpen from "../../../assets/openshop.jpg";
+import { useSelector } from "react-redux";
+import { selectUser_ID } from "../../../redux/slices/userSlice";
+import { useNavigate } from "react-router-dom";
 
 const OpenShop = () => {
+    const navigate = useNavigate();
+    const userId = useSelector(selectUser_ID);
     const [name, setName] = useState("");
     const [shopName, setShopName] = useState("");
     const [shopType, setShopType] = useState("");
@@ -52,9 +57,12 @@ const OpenShop = () => {
             email,
             phone,
             location,
+            userId,
         };
         try {
-            await addShop(shopData);
+            const res = await addShop(shopData);
+            console.log(res.data.shop._id);
+            navigate(`/shop/${res.data.shop._id}`);
         } catch (error) {
             console.log(error);
         }
@@ -69,7 +77,7 @@ const OpenShop = () => {
                 <div className="form-section ">
                     <form
                         className="addShopForm flex column"
-                        onSubmit={handleAddShop}
+                        // onSubmit={handleAddShop}
                     >
                         <div className="addShopHeading">Nova Bazzar</div>
                         <div className="addShopDesc">
@@ -183,9 +191,10 @@ const OpenShop = () => {
                         )}
                         {otpVerfied ? (
                             <button
-                                type="submit"
+                                type="button"
                                 className="addShopSubmitButton"
                                 style={{ cursor: "pointer" }}
+                                onClick={handleAddShop}
                             >
                                 Open Shop
                             </button>
