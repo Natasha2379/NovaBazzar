@@ -12,7 +12,7 @@ const AddProduct = () => {
     const [categories, setCategories] = useState("");
     const [name, setName] = useState("");
     const [coverImage, setCoverImage] = useState();
-    // const [galleryImages, setGalleryImages] = useState();
+    const [galleryImages, setGalleryImages] = useState([]);
     const [quantity, setQuantity] = useState(0);
     const [price, setPrice] = useState(0);
     const [desc, setDesc] = useState("");
@@ -29,9 +29,21 @@ const AddProduct = () => {
         try {
             const formData = new FormData();
             formData.append("product-image", e.target.files[0]);
-
             const res = await uploadProductImage(formData);
             setCoverImage(res.data.url);
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    const handleGalleryImageChange = async (e) => {
+        try {
+            const formData = new FormData();
+            formData.append("product-image", e.target.files[0]);
+            console.log([...formData]);
+            const res = await uploadProductImage(formData);
+            console.log(res);
+            setGalleryImages([...galleryImages, res.data.url]);
         } catch (error) {
             console.log(error);
         }
@@ -42,6 +54,7 @@ const AddProduct = () => {
             categories,
             name,
             coverImage,
+            galleryImages,
             desc,
             quantity,
             price,
@@ -116,6 +129,7 @@ const AddProduct = () => {
                         onClick={handleCoverImageUpload}
                         style={{
                             backgroundImage: `url(${coverImage})`,
+                            // backgroundColor: "red",
                             backgroundSize: "cover",
                             backgroundPosition: "center",
                             backgroundRepeat: "no-repeat",
@@ -128,9 +142,11 @@ const AddProduct = () => {
                             accept="image/*"
                             onChange={handleCoverImageChange}
                         />
-                        <span className="addProductImageText">
-                            <i className="fa-solid fa-upload"></i>
-                        </span>
+                        {!coverImage && (
+                            <span className="addProductImageText">
+                                <i className="fa-solid fa-upload"></i>
+                            </span>
+                        )}
                     </div>
                 </div>
 
@@ -142,6 +158,13 @@ const AddProduct = () => {
                         <div
                             className="addProductImageInputContainer"
                             onClick={handleProductGalleryImageUpload}
+                            style={{
+                                backgroundImage: `url(${galleryImages[0]})`,
+                                // backgroundColor: "red",
+                                backgroundSize: "cover",
+                                backgroundPosition: "center",
+                                backgroundRepeat: "no-repeat",
+                            }}
                         >
                             <span className="gallery-img">
                                 <input
@@ -149,16 +172,26 @@ const AddProduct = () => {
                                     className="addProductImageInput"
                                     id="productGallery"
                                     multiple
+                                    onChange={handleGalleryImageChange}
                                     accept="image/*"
                                 />
-                                <span className="addProductImageText">
-                                    <i className="fa-solid fa-upload"></i>
-                                </span>
+                                {!galleryImages[0] && (
+                                    <span className="addProductImageText">
+                                        <i className="fa-solid fa-upload"></i>
+                                    </span>
+                                )}
                             </span>
                         </div>
                         <div
                             className="addProductImageInputContainer"
                             onClick={handleProductGalleryImageUpload}
+                            style={{
+                                backgroundImage: `url(${galleryImages[1]})`,
+                                // backgroundColor: "red",
+                                backgroundSize: "cover",
+                                backgroundPosition: "center",
+                                backgroundRepeat: "no-repeat",
+                            }}
                         >
                             <span className="gallery-img">
                                 <input
@@ -166,16 +199,26 @@ const AddProduct = () => {
                                     className="addProductImageInput"
                                     id="productGallery"
                                     multiple
+                                    onChange={handleGalleryImageChange}
                                     accept="image/*"
                                 />
-                                <span className="addProductImageText">
-                                    <i className="fa-solid fa-upload"></i>
-                                </span>
+                                {!galleryImages[1] && (
+                                    <span className="addProductImageText">
+                                        <i className="fa-solid fa-upload"></i>
+                                    </span>
+                                )}
                             </span>
                         </div>
                         <div
                             className="addProductImageInputContainer"
                             onClick={handleProductGalleryImageUpload}
+                            style={{
+                                backgroundImage: `url(${galleryImages[2]})`,
+                                // backgroundColor: "red",
+                                backgroundSize: "cover",
+                                backgroundPosition: "center",
+                                backgroundRepeat: "no-repeat",
+                            }}
                         >
                             <span className="gallery-img">
                                 <input
@@ -183,16 +226,26 @@ const AddProduct = () => {
                                     className="addProductImageInput"
                                     id="productGallery"
                                     multiple
+                                    onChange={handleGalleryImageChange}
                                     accept="image/*"
                                 />
-                                <span className="addProductImageText">
-                                    <i className="fa-solid fa-upload"></i>
-                                </span>
+                                {!galleryImages[2] && (
+                                    <span className="addProductImageText">
+                                        <i className="fa-solid fa-upload"></i>
+                                    </span>
+                                )}
                             </span>
                         </div>
                         <div
                             className="addProductImageInputContainer"
                             onClick={handleProductGalleryImageUpload}
+                            style={{
+                                backgroundImage: `url(${galleryImages[3]})`,
+                                // backgroundColor: "red",
+                                backgroundSize: "cover",
+                                backgroundPosition: "center",
+                                backgroundRepeat: "no-repeat",
+                            }}
                         >
                             <span className="gallery-img">
                                 <input
@@ -200,16 +253,26 @@ const AddProduct = () => {
                                     className="addProductImageInput"
                                     id="productGallery"
                                     multiple
+                                    onChange={handleGalleryImageChange}
                                     accept="image/*"
                                 />
-                                <span className="addProductImageText">
-                                    <i className="fa-solid fa-upload"></i>
-                                </span>
+                                {!galleryImages[3] && (
+                                    <span className="addProductImageText">
+                                        <i className="fa-solid fa-upload"></i>
+                                    </span>
+                                )}
                             </span>
                         </div>
                         <div
                             className="addProductImageInputContainer"
                             onClick={handleProductGalleryImageUpload}
+                            style={{
+                                backgroundImage: `url(${galleryImages[4]})`,
+                                // backgroundColor: "red",
+                                backgroundSize: "cover",
+                                backgroundPosition: "center",
+                                backgroundRepeat: "no-repeat",
+                            }}
                         >
                             <span className="gallery-img">
                                 <input
@@ -217,11 +280,14 @@ const AddProduct = () => {
                                     className="addProductImageInput"
                                     id="productGallery"
                                     multiple
+                                    onChange={handleGalleryImageChange}
                                     accept="image/*"
                                 />
-                                <span className="addProductImageText">
-                                    <i className="fa-solid fa-upload"></i>
-                                </span>
+                                {!galleryImages[4] && (
+                                    <span className="addProductImageText">
+                                        <i className="fa-solid fa-upload"></i>
+                                    </span>
+                                )}
                             </span>
                         </div>
                     </div>

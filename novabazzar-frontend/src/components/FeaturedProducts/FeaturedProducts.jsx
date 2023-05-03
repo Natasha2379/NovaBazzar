@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./FeaturedProducts.scss";
 
 // kirana
@@ -37,14 +37,15 @@ import wedding from "../../assets/weddingspecial.jpg";
 import facecare from "../../assets/facecare1.jpg";
 
 const FeaturedProducts = () => {
-    const [products, setProducts] = useState();
+    // const [products, setProducts] = useState();
+    // console.log(products);
 
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const res = await getAllProductsDetails();
-                console.log(res);
-                setProducts(res.data.products);
+                // const res = await getAllProductsDetail();
+                // console.log(res);
+                // setProducts(res.data.products);
             } catch (error) {
                 console.log(error);
             }

@@ -30,8 +30,8 @@ const MainFeatured = () => {
                 // pagination={{
                 //     clickable: true,
                 // }}
-                slidesPerView={3.5}
-                spaceBetween={30}
+                slidesPerView={1}
+                // spaceBetween={30}
                 modules={[Pagination]}
                 loop={true}
             >
