@@ -9,7 +9,16 @@
     .medical,
     .salon {
         width: 100%;
-        gap: 20px;
+
+        h2{
+            margin-block: 20px;
+            color: rgb(5, 121, 237);
+        }
+
+        .categories {
+            width: 100%;
+            gap: 20px;
+        }
 
         .products-category {
             width: 100%;
@@ -17,6 +26,7 @@
             background-color: white;
             box-shadow: 0 0 3px gray;
             padding: 5px;
+
             img {
                 height: 80%;
                 width: 100%;
@@ -25,7 +35,7 @@
             }
             p {
                 text-align: center;
-                margin-top: 10px;
+                margin-top: 7px;
                 font-size: 1.1rem;
                 font-weight: 600;
             }

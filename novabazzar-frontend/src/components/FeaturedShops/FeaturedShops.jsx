@@ -23,7 +23,7 @@ const FeaturedShops = () => {
             </div>
             <div className="shop-box">
                 <img src={haircut} alt="" />
-                <p>Parlour shop</p>
+                <p>Parlour </p>
             </div>
             <div className="shop-box">
                 <img src={Electronics} alt="" />

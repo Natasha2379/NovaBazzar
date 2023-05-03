@@ -3,9 +3,9 @@ import "./FeaturedProducts.scss";
 
 // kirana
 import Grocery from "../../assets/fruits-veg.jpg";
-import Drinks from "../../assets/drinks.jpg";
+import Drinks from "../../assets/drink-items.jpg";
 import CleaningAccessories from "../../assets/cleaning-items2.jpg";
-import Instantfood from "../../assets/instant-food.jpg";
+import Instantfood from "../../assets/instant-foods.jpg";
 import Dailyitems from "../../assets/morning-items.jpg";
 
 // clothes
@@ -39,116 +39,141 @@ import facecare from "../../assets/facecare1.jpg";
 const FeaturedProducts = () => {
     return (
         <div className="featured-products flex column">
-            <div className="kirana flex align-center">
-                <div className="products-category">
-                    <img src={Grocery} alt="" />
-                    <p>Grocery Items</p>
+            <div className="kirana ">
+                <div className="heading">
+                    <h2>Kirana shop popular product categories</h2>
                 </div>
-                <div className="products-category">
-                    <img src={Drinks} alt="" />
-                    <p>Drink Items</p>
-                </div>
-                <div className="products-category">
-                    <img src={CleaningAccessories} alt="" />
-                    <p>Cleaning Essentials</p>
-                </div>
-                <div className="products-category">
-                    <img src={Instantfood} alt="" />
-                    <p>Instant Foods</p>
-                </div>
-                <div className="products-category">
-                    <img src={Dailyitems} alt="" />
-                    <p>Morning Items</p>
-                </div>
-            </div>
-
-            <div className="clothes flex align-center">
-                <div className="products-category">
-                    <img src={Men} alt="" />
-                    <p>Men</p>
-                </div>
-                <div className="products-category">
-                    <img src={Women} alt="" />
-                    <p>Women</p>
-                </div>
-                <div className="products-category">
-                    <img src={Footwear} alt="" />
-                    <p>Footware</p>
-                </div>
-                <div className="products-category">
-                    <img src={Watches} alt="" />
-                    <p>Watches</p>
-                </div>
-                <div className="products-category">
-                    <img src={Fashion} alt="" />
-                    <p>Fashion Accessories</p>
-                </div>
-            </div>
-            <div className="salon flex align-center">
-                <div className="products-category">
-                    <img src={haircut} alt="" />
-                    <p>Hair cut & color</p>
-                </div>
-                <div className="products-category">
-                    <img src={facecare} alt="" />
-                    <p>Face care</p>
-                </div>
-                <div className="products-category">
-                    <img src={threading} alt="" />
-                    <p>Threading & Waxing</p>
-                </div>
-                <div className="products-category">
-                    <img src={wedding} alt="" />
-                    <p>Wedding Special</p>
-                </div>
-                <div className="products-category">
-                    <img src={menicure} alt="" />
-                    <p>Menicure & Pedicure</p>
-                </div>
-            </div>
-            <div className="electronics flex align-center">
-                <div className="products-category">
-                    <img src={headphones} alt="" />
-                    <p>Headphones & Smart Watches</p>
-                </div>
-                <div className="products-category">
-                    <img src={tv} alt="" />
-                    <p>Smart televisions & Speakers</p>
-                </div>
-                <div className="products-category">
-                    <img src={machine} alt="" />
-                    <p>Washing Machine & Refrigators</p>
-                </div>
-                <div className="products-category">
-                    <img src={fans} alt="" />
-                    <p>Air conditioner,Cooler & Fans</p>
-                </div>
-                <div className="products-category">
-                    <img src={moblap} alt="" />
-                    <p>Moblie & Computers</p>
+                <div className="categories flex align-center">
+                    <div className="products-category">
+                        <img src={Grocery} alt="" />
+                        <p>Fruits & Vegetables</p>
+                    </div>
+                    <div className="products-category">
+                        <img src={Drinks} alt="" />
+                        <p>Drink Items</p>
+                    </div>
+                    <div className="products-category">
+                        <img src={CleaningAccessories} alt="" />
+                        <p>Cleaning Essentials</p>
+                    </div>
+                    <div className="products-category">
+                        <img src={Instantfood} alt="" />
+                        <p>Instant Foods</p>
+                    </div>
+                    <div className="products-category">
+                        <img src={Dailyitems} alt="" />
+                        <p>Morning Items</p>
+                    </div>
                 </div>
             </div>
 
-            <div className="medical flex align-center">
-                <div className="products-category">
-                    <img src={Vitamins} alt="" />
-                    <p>Vitamins,Nutrisions & Supplements</p>
+            <div className="clothes ">
+                <div className="heading">
+                    <h2>Fashion shop popular product categories</h2>
                 </div>
-                <div className="products-category">
-                    <img src={aryuveda} alt="" />
-                    <p>Aryuveda</p>
+                <div className="categories flex align-center">
+                    <div className="products-category">
+                        <img src={Men} alt="" />
+                        <p>T-shirts & Shirts</p>
+                    </div>
+                    <div className="products-category">
+                        <img src={Women} alt="" />
+                        <p>Tops & Tees</p>
+                    </div>
+                    <div className="products-category">
+                        <img src={Footwear} alt="" />
+                        <p>Footware</p>
+                    </div>
+                    <div className="products-category">
+                        <img src={Watches} alt="" />
+                        <p>Watches</p>
+                    </div>
+                    <div className="products-category">
+                        <img src={Fashion} alt="" />
+                        <p>Fashion Accessories</p>
+                    </div>
                 </div>
-                <div className="products-category">
-                    <img src={devices} alt="" />
-                    <p>Health care devices</p>
+            </div>
+            <div className="salon ">
+                <div className="heading">
+                    <h2>Parlour shop popular service categories</h2>
                 </div>
-                <div className="products-category">
-                    <img src={care} alt="" />
-                    <p>Personal & Home care</p>
+                <div className="categories flex align-center">
+                    <div className="products-category">
+                        <img src={haircut} alt="" />
+                        <p>Hair cut & color</p>
+                    </div>
+                    <div className="products-category">
+                        <img src={facecare} alt="" />
+                        <p>Face care</p>
+                    </div>
+                    <div className="products-category">
+                        <img src={threading} alt="" />
+                        <p>Threading & Waxing</p>
+                    </div>
+                    <div className="products-category">
+                        <img src={wedding} alt="" />
+                        <p>Wedding Special</p>
+                    </div>
+                    <div className="products-category">
+                        <img src={menicure} alt="" />
+                        <p>Menicure & Pedicure</p>
+                    </div>
                 </div>
-                <div className="products-category">
-                    <img src={homapathy} alt="" />
-                    <p>Homapathy</p>
+            </div>
+            <div className="electronics ">
+                <div className="heading">
+                    <h2>Electronics shop popular product categories</h2>
+                </div>
+                <div className="categories flex align-center">
+                    <div className="products-category">
+                        <img src={headphones} alt="" />
+                        <p>Headphones & Smart Watches</p>
+                    </div>
+                    <div className="products-category">
+                        <img src={tv} alt="" />
+                        <p>Smart televisions & Speakers</p>
+                    </div>
+                    <div className="products-category">
+                        <img src={machine} alt="" />
+                        <p>Washing Machine & Refrigators</p>
+                    </div>
+                    <div className="products-category">
+                        <img src={fans} alt="" />
+                        <p>Air conditioner,Cooler & Fans</p>
+                    </div>
+                    <div className="products-category">
+                        <img src={moblap} alt="" />
+                        <p>Moblie & Computers</p>
+                    </div>
+                </div>
+            </div>
+
+            <div className="medical ">
+                <div className="heading">
+                    <h2>Medical shop popular product categories</h2>
+                </div>
+                <div className="categories flex align-center">
+                    <div className="products-category">
+                        <img src={Vitamins} alt="" />
+                        <p>Vitamins,Nutrisions & Supplements</p>
+                    </div>
+                    <div className="products-category">
+                        <img src={aryuveda} alt="" />
+                        <p>Aryuveda</p>
+                    </div>
+                    <div className="products-category">
+                        <img src={devices} alt="" />
+                        <p>Health care devices</p>
+                    </div>
+                    <div className="products-category">
+                        <img src={care} alt="" />
+                        <p>Personal & Home care</p>
+                    </div>
+                    <div className="products-category">
+                        <img src={homapathy} alt="" />
+                        <p>Homapathy</p>
+                    </div>
                 </div>
             </div>
         </div>

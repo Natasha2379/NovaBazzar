@@ -9,6 +9,7 @@ import EditProduct from "./components/shopComponents/EditProduct/EditProduct";
 import ProductDetail from "./pages/productDetail/ProductDetail";
 import SearchPage from "./pages/SearchPage/SearchPage";
 import SellerProfile from "./pages/seller/SellerProfile/sellerProfile";
+import PlaceOrder from "./pages/orderPage/OrderPage";
 // user account pages
 import ProfilePage from "./pages/Buyer/BuyerProfile/BuyerProfile";
 import Register from "./pages/Buyer/Forms/RegisterPage";
@@ -70,6 +71,7 @@ function App() {
                 <Route path="/buyer/cart" element={<Cart />} />
                 <Route path="/productdetail" element={<ProductDetail />} />
                 <Route path="/sellerprofile" element={<SellerProfile />} />
+                <Route path="/placeorder" element={<PlaceOrder />} />
             </Routes>
         </Router>
     );

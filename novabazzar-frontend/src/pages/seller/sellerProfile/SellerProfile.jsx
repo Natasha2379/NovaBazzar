@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./SellerProfile.scss";
-import image from "../../../assets//homeImage.png";
+import image from "../../../assets/sellerLogin.jpg";
 
 import SellerBussiness from "../../../components/shopComponents/sellerProfileParts/SellerBussiness/SellerBussiness";
 import EditShopProfile from "../../../components/shopComponents/sellerProfileParts/ProfileArea/EditShopProfile";

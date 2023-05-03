@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Product = () => {
     return (
-        <div className="products flex align-center wrap">
+        <div className="products flex wrap">
             <Link to="/productdetail" className="prdouct-card link">
                 <div className="product-img">
                     <img src={image} alt="" />
@@ -21,7 +21,7 @@ const Product = () => {
                         <h5>Babli shop,Yakimpur</h5>
                     </div>
                     <div className="price-rating flex space align-center">
-                        <h3>₹ {45}kg</h3>
+                        <h4>₹ {45}kg</h4>
                         <div className="rating">
                             <i className="fa fa-star"></i>
                             <i className="fa fa-star"></i>
@@ -46,7 +46,7 @@ const Product = () => {
                         <h5>Babli shop,Yakimpur</h5>
                     </div>
                     <div className="price-rating flex space align-center">
-                        <h3>₹ {45}kg</h3>
+                        <h4>₹ {45}kg</h4>
                         <div className="rating">
                             <i className="fa fa-star"></i>
                             <i className="fa fa-star"></i>
@@ -71,7 +71,7 @@ const Product = () => {
                         <h5>Babli shop,Yakimpur</h5>
                     </div>
                     <div className="price-rating flex space align-center">
-                        <h3>₹ {45}kg</h3>
+                        <h4>₹ {45}kg</h4>
                         <div className="rating">
                             <i className="fa fa-star"></i>
                             <i className="fa fa-star"></i>
@@ -96,7 +96,7 @@ const Product = () => {
                         <h5>Babli shop,Yakimpur</h5>
                     </div>
                     <div className="price-rating flex space align-center">
-                        <h3>₹ {45}kg</h3>
+                        <h4>₹ {45}kg</h4>
                         <div className="rating">
                             <i className="fa fa-star"></i>
                             <i className="fa fa-star"></i>
@@ -121,7 +121,7 @@ const Product = () => {
                         <h5>Babli shop,Yakimpur</h5>
                     </div>
                     <div className="price-rating flex space align-center">
-                        <h3>₹ {45}kg</h3>
+                        <h4>₹ {45}kg</h4>
                         <div className="rating">
                             <i className="fa fa-star"></i>
                             <i className="fa fa-star"></i>
@@ -146,7 +146,7 @@ const Product = () => {
                         <h5>Babli shop,Yakimpur</h5>
                     </div>
                     <div className="price-rating flex space align-center">
-                        <h3>₹ {45}kg</h3>
+                        <h4>₹ {45}kg</h4>
                         <div className="rating">
                             <i className="fa fa-star"></i>
                             <i className="fa fa-star"></i>
@@ -171,7 +171,7 @@ const Product = () => {
                         <h5>Babli shop,Yakimpur</h5>
                     </div>
                     <div className="price-rating flex space align-center">
-                        <h3>₹ {45}kg</h3>
+                        <h4>₹ {45}kg</h4>
                         <div className="rating">
                             <i className="fa fa-star"></i>
                             <i className="fa fa-star"></i>
@@ -196,7 +196,7 @@ const Product = () => {
                         <h5>Babli shop,Yakimpur</h5>
                     </div>
                     <div className="price-rating flex space align-center">
-                        <h3>₹ {45}kg</h3>
+                        <h4>₹ {45}kg</h4>
                         <div className="rating">
                             <i className="fa fa-star"></i>
                             <i className="fa fa-star"></i>
