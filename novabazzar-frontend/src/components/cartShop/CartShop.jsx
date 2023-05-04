@@ -24,7 +24,7 @@ const CartShop = () => {
                 <div class="bottom-section">
                     <div class="total-items">Total items : 1</div>
                     <div class="total-price">Total Price 50</div>
-                    <button>Buy Now</button>
+                    <button>Book Now</button>
                 </div>
             </div>
         </>
