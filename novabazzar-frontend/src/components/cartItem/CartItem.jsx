@@ -13,7 +13,7 @@ const CartItem = () => {
                 <div className="item-quantity">
                     <input type="number" name="" id="" placeholder="0" />
                 </div>
-                <div className="item-price">$49</div>
+                <div class="item-price">₹ 49</div>
                 <button>Remove</button>
             </div>
             <div className="cart-item">
@@ -24,7 +24,7 @@ const CartItem = () => {
                 <div className="item-quantity">
                     <input type="number" name="" id="" placeholder="0" />
                 </div>
-                <div className="item-price">$49</div>
+                <div class="item-price">₹ 49</div>
                 <button>Remove</button>
             </div>
         </>

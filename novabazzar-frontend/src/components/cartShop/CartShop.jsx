@@ -21,10 +21,10 @@ const CartShop = () => {
                 <div className="cart-items">
                     <CartItem />
                 </div>
-                <div className="bottom-section">
-                    <div className="total-items">Total items : 1</div>
-                    <div className="total-price">Total Price 50</div>
-                    <button>Buy Now</button>
+                <div class="bottom-section">
+                    <div class="total-items">Total items : 1</div>
+                    <div class="total-price">Total Price 50</div>
+                    <button>Book Now</button>
                 </div>
             </div>
         </>
