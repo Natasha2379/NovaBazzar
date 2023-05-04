@@ -7,7 +7,7 @@ import { selectUser_ID } from "../../../redux/slices/userSlice";
 
 const AddProduct = () => {
     const userId = useSelector(selectUser_ID);
-    const shopId = location.pathname.split("/")[2];
+    const shopId = window.location.pathname.split("/")[2];
 
     const [categories, setCategories] = useState("");
     const [name, setName] = useState("");

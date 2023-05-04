@@ -1,8 +1,12 @@
 .searchpage {
+    
+    width: 100vw;
     .searchsection {
+        width: 100vw;
         padding: 2% 0;
      
         .shops-items-section {
+            width: 100vw;
              
             
             ul {
@@ -23,6 +27,12 @@
                 }
             }
             .result-section {
+                display: flex;
+                flex-wrap: nowrap;
+                width: 100%;
+                padding: 1rem;
+                gap: 1rem;
+                // background-color: red;
                 padding-inline: auto;
                 margin-block: 50px;
             }

@@ -8,7 +8,7 @@ import { getAllShopProducts } from "../../../services/api";
 const MyShop = () => {
     const [products, setProducts] = useState([]);
     const [search, setSearch] = useState("");
-    const shopId = location.pathname.split("/")[2];
+    const shopId = window.location.pathname.split("/")[2];
 
     useEffect(() => {
         const fetchProducts = async () => {

@@ -13,7 +13,7 @@ const EditProduct = () => {
     // const [galleryImages, setGalleryImages] = useState();
     const [quantity, setQuantity] = useState(0);
     const [price, setPrice] = useState(0);
-    const product_id = location.pathname.split("/")[2];
+    const product_id = window.location.pathname.split("/")[2];
 
     const handleCoverImageUpload = () => {
         document.getElementById("coverImage").click();

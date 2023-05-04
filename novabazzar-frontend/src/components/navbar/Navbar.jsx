@@ -1,13 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Navbar.scss";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectUserData } from "../../redux/slices/userSlice";
 
-const Navbar = () => {
+const Navbar = (props) => {
     const user = useSelector(selectUserData);
-    const [search, setSearch] = useState("");
-    console.log(search);
 
     return (
         <div className="navbar flex align-center space">
@@ -23,7 +21,7 @@ const Navbar = () => {
                 <input
                     type="text"
                     placeholder="Search shops/Products in your area"
-                    onChange={(e) => setSearch(e.target.value)}
+                    onChange={(e) => props.setSearch(e.target.value)}
                 />
             </Link>
             <div className="links flex align-center">

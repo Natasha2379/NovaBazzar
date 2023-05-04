@@ -4,7 +4,7 @@ import bannerImage from "../../../assets/banner.jpg";
 import { getShopDetails } from "../../../services/api";
 
 const ShopBanner = () => {
-    const shopId = location.pathname.split("/")[2];
+    const shopId = window.location.pathname.split("/")[2];
     const [shopDetails, setShopDetails] = useState();
 
     useEffect(() => {
@@ -18,6 +18,7 @@ const ShopBanner = () => {
         };
         fetchShop();
     }, []);
+
     return (
         <div className="shopBanner flex align-center ">
             <div className="shop-img">
