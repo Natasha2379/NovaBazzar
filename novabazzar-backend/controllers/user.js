@@ -6,18 +6,19 @@ const jwt = require("jsonwebtoken");
 const { v4: uuidv4 } = require("uuid");
 
 const registerUser = async (req, res, next) => {
-	const username = req.body.username;
+	// const username = req.body.username;
 	const email = req.body.email;
 	const phone = req.body.phone;
 	const password = await bcrypt.hash(req.body.password, 10);
 
 	const newUserData = {
 		name: req.body.name,
-		username,
+		// username,
 		email,
 		phone,
 		password,
 		profile_picture: "",
+		favourites: [],
 	};
 
 	const newUser = new User(newUserData);
@@ -30,14 +31,13 @@ const registerUser = async (req, res, next) => {
 		if (phoneCheck)
 			return next(createError(409, "phone no. already registered!"));
 
-		const usernameCheck = await User.findOne({ username });
-		if (usernameCheck) return next(createError(409, "username not available!"));
+		// const usernameCheck = await User.findOne({ username });
+		// if (usernameCheck) return next(createError(409, "username not available!"));
 
 		const user = await newUser.save();
 
 		const token = jwt.sign(
 			{
-				name: username,
 				email: email,
 				user_id: user._id,
 			},
@@ -66,6 +66,7 @@ const loginUser = async (req, res, next) => {
 		if (!user) return next(createError(404, "user not found!"));
 
 		const isCorrect = await bcrypt.compare(pass, user.password);
+		console.log(isCorrect);
 
 		if (!isCorrect) return next(createError(400, "Wrong Credentials!"));
 
@@ -100,6 +101,7 @@ const getUser = async (req, res, next) => {
 };
 
 const editUserDetails = async (req, res, next) => {
+
 	try {
 		const user = await User.findOne({ _id: req.params.userid });
 
@@ -120,6 +122,30 @@ const editUserDetails = async (req, res, next) => {
 		);
 
 		return res.status(200).json({ message: "user updated", user: latestUser });
+	} catch (err) {
+		next(err);
+	}
+};
+
+const editUserFavs = async (req, res, next) => {
+
+	try {
+		const user = await User.findOne({ _id: req.params.userid });
+
+		if (!user) return next(createError(404, "user not found!"));
+
+		const updatedUser = {
+			...user._doc,
+			favourites: req.body,
+		};
+
+		const latestUser = await User.findByIdAndUpdate(
+			req.params.userid,
+			{ $set: updatedUser },
+			{ new: true }
+		);
+
+		return res.status(200).json({ message: "fav edited", user: latestUser });
 	} catch (err) {
 		next(err);
 	}
@@ -182,7 +208,7 @@ const uploadUsersProfileImage = async (req, res, next) => {
 	try {
 		const params = {
 			Bucket: process.env.BUCKET,
-			Key: `users/${filename}`,
+			Key: `${filename}`,
 			Body: file.buffer,
 		};
 
@@ -212,4 +238,5 @@ module.exports = {
 	editUserPassword,
 	deleteUser,
 	uploadUsersProfileImage,
+	editUserFavs,
 };

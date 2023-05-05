@@ -35,10 +35,6 @@ router.put("/shop/:shopid", editShopDetails);
 router.delete("/shop/:shopid", deleteShop);
 
 //UPLOAD SHOP PICTURE
-router.post(
-	"/upload-shop-image",
-	upload.single("shop-image"),
-	uploadShopImage
-);
+router.post("/upload-shop-image", upload.single("shop-image"), uploadShopImage);
 
 module.exports = router;

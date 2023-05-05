@@ -10,11 +10,12 @@ const Sib = require("sib-api-v3-sdk");
 const client = Sib.ApiClient.instance;
 
 const apiKey = client.authentications["api-key"];
-apiKey.apiKey = process.env.SIB_API;
+apiKey.apiKey =
+	"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";
 
 const tranEmailApi = new Sib.TransactionalEmailsApi();
 const sender = {
-	email: process.env.EMAIL_FROM,
+	email: "jaiprakash02082001@gmail.com",
 	name: "NovaBazzar",
 };
 
@@ -50,8 +51,10 @@ const addShop = async (req, res, next) => {
 	const name = req.body.name;
 	const shopName = req.body.shopName;
 	const shopType = req.body.shopType;
+	const userId = req.body.userId;
 	const state = req.body.state;
 	const city = req.body.city;
+	const location = req.body.location;
 	const email = req.body.email;
 	const phone = req.body.phone;
 
@@ -59,8 +62,10 @@ const addShop = async (req, res, next) => {
 		fullName: name,
 		shopName,
 		shopType,
+		userId,
 		state,
 		city,
+		location,
 		email,
 		phone,
 	};
@@ -75,7 +80,6 @@ const addShop = async (req, res, next) => {
 			shop,
 		});
 	} catch (err) {
-		console.log(err);
 		next(err);
 	}
 };
@@ -98,13 +102,13 @@ const editShopDetails = async (req, res, next) => {
 
 		if (!shop) return next(createError(404, "shop not found!"));
 
-		const categories = req.body.categories.split(",");
-
 		const updatedShop = {
 			...shop._doc,
 			shopName: req.body.shopName,
 			shopType: req.body.shopType,
+			categories: req.body.categories,
 			state: req.body.state,
+			location: req.body.location,
 			city: req.body.city,
 			email: req.body.email,
 			phone: req.body.phone,
@@ -134,15 +138,30 @@ const deleteShop = async (req, res, next) => {
 
 const getAllShops = async (req, res, next) => {
 	const search = req.query.search || "";
+
+	let typeFilter;
+	if (req.query.type === "null") {
+		typeFilter = "all";
+	} else {
+		typeFilter = req.query.type;
+	}
+
+	const types = [
+		"Kirana shop",
+		"Medical shop",
+		"Clothes shop",
+		"Parlour shop",
+		"Electronics shop",
+	];
+	typeFilter === "all"
+		? (typeFilter = [...types])
+		: (typeFilter = typeFilter.split(","));
+
 	try {
-		const shops = await Shop
-			.find
-			// $or: [
-			// 	{ shopName: { $regex: search, $options: "i" } },
-			// 	// { categories: { $regex: search, $options: "i" } },
-			// ],
-			()
-			.sort({ timestamp: -1 });
+		const shops = await Shop.find({
+			$or: [{ shopName: { $regex: search, $options: "i" } }],
+			shopType: { $in: [...typeFilter] },
+		}).sort({ timestamp: -1 });
 
 		res.status(200).json({ shops, message: "all shops" });
 	} catch (err) {
@@ -160,7 +179,7 @@ const uploadShopImage = async (req, res, next) => {
 	try {
 		const params = {
 			Bucket: process.env.BUCKET,
-			Key: `shops/${filename}`,
+			Key: `${filename}`,
 			Body: file.buffer,
 		};
 

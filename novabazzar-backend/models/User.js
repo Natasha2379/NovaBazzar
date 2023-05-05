@@ -7,11 +7,11 @@ const UserSchema = new Schema(
 			type: String,
 			default: "",
 		},
-		username: {
-			type: String,
-			unique: true,
-			// required: true,
-		},
+		// username: {
+		// 	type: String,
+		// 	unique: true,
+		// 	// required: true,
+		// },
 		email: {
 			type: String,
 			unique: true,
@@ -33,6 +33,10 @@ const UserSchema = new Schema(
 		profile_picture: {
 			type: String,
 			default: "",
+		},
+		favourites: {
+			type: [String],
+			default: [],
 		},
 	},
 	{ timestamps: true }

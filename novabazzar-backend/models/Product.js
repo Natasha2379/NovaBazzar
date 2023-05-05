@@ -7,8 +7,20 @@ const ProductSchema = new Schema(
 			type: String,
 			default: "",
 		},
+		desc: {
+			type: String,
+			default: "",
+		},
+		userId: {
+			type: String,
+			default: "",
+		},
+		shopId: {
+			type: String,
+			default: "",
+		},
 		categories: {
-			type: [String],
+			type: String,
 			required: true,
 		},
 		coverImage: {

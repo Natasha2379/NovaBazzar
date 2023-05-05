@@ -11,6 +11,7 @@ const {
 	editUserPassword,
 	deleteUser,
 	uploadUsersProfileImage,
+	editUserFavs,
 } = require("../controllers/user");
 
 const memoStorage = multer.memoryStorage();
@@ -31,6 +32,9 @@ router.get("/user/:userid", getUser);
 
 //EDIT USER DETAILS
 router.put("/user/:userid", editUserDetails);
+
+//EDIT USER FAVS
+router.put("/user-fav/:userid", editUserFavs);
 
 //EDIT USER PASSWORD
 router.put("/user-password/:userid", editUserPassword);

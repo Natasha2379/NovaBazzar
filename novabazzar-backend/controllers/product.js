@@ -5,15 +5,23 @@ const { v4: uuidv4 } = require("uuid");
 
 const addProduct = async (req, res, next) => {
 	const name = req.body.name;
-	const categories = req.body.categories.split(",");
+	const desc = req.body.desc;
+	const categories = req.body.categories;
 	const coverImage = req.body.coverImage;
+	const galleryImages = req.body.galleryImages;
+	const shopId = req.body.shopId;
+	const userId = req.body.userId;
 	const quantity = req.body.quantity;
 	const price = req.body.price;
 
 	const newProductData = {
 		name,
+		desc,
 		categories,
+		shopId,
+		userId,
 		coverImage,
+		galleryImages,
 		quantity,
 		price,
 	};
@@ -28,7 +36,6 @@ const addProduct = async (req, res, next) => {
 			product,
 		});
 	} catch (err) {
-		console.log(err);
 		next(err);
 	}
 };
@@ -90,13 +97,104 @@ const getAllProducts = async (req, res, next) => {
 
 	try {
 		const products = await Product.find({
-			$or: [
-				{ name: { $regex: search, $options: "i" } },
-				// { categories: { $regex: search, $options: "i" } },
-			],
+			name: { $regex: search, $options: "i" },
 		}).sort({ timestamp: -1 });
 
 		res.status(200).json({ products, message: "all products" });
+	} catch (err) {
+		next(err);
+	}
+};
+
+const getAllShopProducts = async (req, res, next) => {
+	const search = req.query.search || "";
+
+	let typeFilter;
+	if (req.query.type) {
+		typeFilter = req.query.type;
+	} else {
+		typeFilter = "all";
+	}
+
+	const types = [
+		"Laptops & Desktops & Computer Accessories",
+		"Headphones",
+		"Smart Wearables",
+		"Styling Devices",
+		"Cameras",
+		"Tablets",
+		"Mobile Accessories",
+		"Speakers & Video",
+		"Gaming Accessories",
+		"TVs & Smart Televisions",
+		"Washing Machines & ",
+		"Kitchen Appliances",
+		"Air Conditioners & Fans & Air Coolers",
+		"Home Appliances",
+		"Microwace Ovens",
+		"Hair cutting & color",
+		"Manicure & Pedicure",
+		"Threading & Face wax",
+		"Facial & Cleanup",
+		"Bleach & Detan",
+		"Wedding special",
+		"Waxing",
+		"Face care",
+		"Shave/beard grooming",
+		"Vitamins & Supplements",
+		"Nutritional Drinks",
+		"Personal Care",
+		"Ayruveda",
+		"Pain Relief",
+		"Homeopathy",
+		"Health Condition",
+		"Accessories & Wearables",
+		"Diabetic Care",
+		"Mother and Baby Care",
+		"Health Food and Drinks",
+		"Healthcare Devices",
+		"Home Care",
+		"Skin Care",
+		"Pet Care",
+		"Jeans",
+		"T-Shirts & Shirts",
+		"Trousers",
+		"Kurta & Sets",
+		"Accessories",
+		"Dresses",
+		"Tops & Tees",
+		"Kurti & Sets",
+		"Sarees",
+		"Heels & Flats",
+		"Footwear",
+		"Fruits & Vegetables",
+		"Atta,Rice & Dal",
+		"Home & Office",
+		"Daily ,Bread & egg",
+		"Cold Drinks & Juice",
+		"Snacks & Munchies",
+		"Breakfast & Instant Food",
+		"Tea ,Coffee & Health Drinks",
+		"Sauces & Spread",
+		"Cleaning Essentials",
+		"Sweet Tooth",
+		"Bakery & Biscuits",
+	];
+
+	typeFilter === "all"
+		? (typeFilter = [...types])
+		: (typeFilter = typeFilter.split(","));
+
+	try {
+		const products = await Product.find({
+			$and: [
+				{ shopId: req.params.shopid },
+				{ name: { $regex: search, $options: "i" } },
+				{ categories: { $in: [...typeFilter] } },
+			],
+		});
+
+		res.status(200).json({ products, message: "shop products" });
 	} catch (err) {
 		next(err);
 	}
@@ -112,7 +210,7 @@ const uploadProductImage = async (req, res, next) => {
 	try {
 		const params = {
 			Bucket: process.env.BUCKET,
-			Key: `products/${filename}`,
+			Key: `${filename}`,
 			Body: file.buffer,
 		};
 
@@ -136,6 +234,7 @@ const uploadProductImage = async (req, res, next) => {
 module.exports = {
 	addProduct,
 	getAllProducts,
+	getAllShopProducts,
 	getProduct,
 	editProductDetails,
 	deleteProduct,

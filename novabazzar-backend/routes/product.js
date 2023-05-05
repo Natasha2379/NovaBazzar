@@ -9,6 +9,7 @@ const {
 	editProductDetails,
 	deleteProduct,
 	uploadProductImage,
+	getAllShopProducts,
 } = require("../controllers/product");
 
 const memoStorage = multer.memoryStorage();
@@ -20,6 +21,9 @@ router.post("/add", addProduct);
 
 //GET ALL PRODUCTS
 router.get("/", getAllProducts);
+
+//GET ALL SHOP PRODUCTS
+router.get("/shop/:shopid", getAllShopProducts);
 
 //GET PRODUCT
 router.get("/product/:productid", getProduct);

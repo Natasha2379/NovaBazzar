@@ -17,11 +17,20 @@ const ShopSchema = new Schema(
 			required: true,
 			default: "",
 		},
+		userId: {
+			type: String,
+			required: true,
+			default: "",
+		},
 		state: {
 			type: String,
 			default: "",
 		},
 		city: {
+			type: String,
+			default: "",
+		},
+		location: {
 			type: String,
 			default: "",
 		},
@@ -32,6 +41,11 @@ const ShopSchema = new Schema(
 		phone: {
 			type: String,
 			required: true,
+		},
+		open: {
+			type: String,
+			required: true,
+			default: true,
 		},
 	},
 	{ timestamps: true }
