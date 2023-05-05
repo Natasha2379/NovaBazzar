@@ -29,6 +29,7 @@ const OpenShop = () => {
             const res = await getOTP({ email });
             setSystemOTP(res.data.otp);
             setSuccess("otp sent");
+            window.alert("otp sent");
         } catch (error) {
             console.log(error);
         }
@@ -39,13 +40,14 @@ const OpenShop = () => {
             if (systemOTP === otp) {
                 setOtpVerfied(true);
                 setSuccess("otp verified!!");
+                window.alert("otp verified, you can create shop now");
             } else {
                 setError("invalid otp!!");
             }
         } else {
             setError("");
         }
-    }, [otp]);
+    }, [otp, systemOTP]);
 
     const handleAddShop = async () => {
         const shopData = {

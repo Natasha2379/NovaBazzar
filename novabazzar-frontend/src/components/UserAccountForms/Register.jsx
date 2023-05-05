@@ -25,7 +25,7 @@ const Register = () => {
         try {
             const res = await registerUser(userData);
             console.log(res);
-            navigate("/");
+            navigate("/buyer/login");
         } catch (error) {
             console.log(error);
         }

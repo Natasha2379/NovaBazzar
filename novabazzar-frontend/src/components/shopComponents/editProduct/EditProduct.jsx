@@ -24,7 +24,7 @@ const EditProduct = () => {
     };
 
     useEffect(() => {
-        const fetchProducts = async () => {
+        const fetchProduct = async () => {
             try {
                 const res = await getProductDetails(product_id);
                 setName(res?.data?.product.name);
@@ -34,8 +34,8 @@ const EditProduct = () => {
                 console.log(error);
             }
         };
-        fetchProducts();
-    }, []);
+        fetchProduct();
+    }, [product_id]);
 
     const handleCoverImageChange = async (e) => {
         try {

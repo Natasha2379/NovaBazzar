@@ -3,9 +3,16 @@ import "./AddProduct.scss";
 import { addProduct, uploadProductImage } from "../../../services/api";
 import { useSelector } from "react-redux";
 import { selectUser_ID } from "../../../redux/slices/userSlice";
+import {
+    ClothesProductCategoryData,
+    ElectronicsProductCategoryData,
+    KiranaProductCategoryData,
+    MedicalProductCategoryData,
+    ParlourProductCategoryData,
+} from "../CategoryData";
 // import ProductCategoryData from "../CategoryData";
 
-const AddProduct = () => {
+const AddProduct = (props) => {
     const userId = useSelector(selectUser_ID);
     const shopId = window.location.pathname.split("/")[2];
 
@@ -89,29 +96,36 @@ const AddProduct = () => {
                     <option value="Select your Category">
                         Select your Category
                     </option>
-                    <option value="Fruits">Fruits</option>
-                    <option value="Vegetables">Vegetables</option>
-                    <option value="Daily ,Bread & egg">
-                        Daily ,Bread & egg
-                    </option>
-                    <option value="Cold Drinks & Juice">
-                        Cold Drinks & Juice
-                    </option>
-                    <option value="Snacks & Munchies">Snacks & Munchies</option>
-                    <option value="Breakfast & Instant Food">
-                        Breakfast & Instant Food
-                    </option>
-                    <option value="Sweet Tooth">Sweet Tooth</option>
-                    <option value="Bakery & Biscuits">Bakery & Biscuits</option>
-                    <option value="Tea ,Coffee & Health Drinks">
-                        Tea ,Coffee & Health Drinks
-                    </option>
-                    <option value="Atta,Rice & Dal">Atta,Rice & Dal</option>
-                    <option value="Sauces & Spread">Sauces & Spread</option>
-                    <option value="Cleaning Essentials">
-                        Cleaning Essentials
-                    </option>
-                    <option value="Home & Office">Home & Office</option>
+                    {props.shop?.shopType === "Kirana shop" &&
+                        KiranaProductCategoryData.KiranaProductCategories.map(
+                            (category) => (
+                                <option value={category}>{category}</option>
+                            ),
+                        )}
+                    {props.shop?.shopType === "Clothes shop" &&
+                        ClothesProductCategoryData.ClothesProductCategories.map(
+                            (category) => (
+                                <option value={category}>{category}</option>
+                            ),
+                        )}
+                    {props.shop?.shopType === "Medical shop" &&
+                        MedicalProductCategoryData.MedicalProductCategories.map(
+                            (category) => (
+                                <option value={category}>{category}</option>
+                            ),
+                        )}
+                    {props.shop?.shopType === "Electronics shop" &&
+                        ElectronicsProductCategoryData.ElectronicsProductCategories.map(
+                            (category) => (
+                                <option value={category}>{category}</option>
+                            ),
+                        )}
+                    {props.shop?.shopType === "Parlour shop" &&
+                        ParlourProductCategoryData.ParlourProductCategories.map(
+                            (category) => (
+                                <option value={category}>{category}</option>
+                            ),
+                        )}
                 </select>
                 <input
                     type="text"

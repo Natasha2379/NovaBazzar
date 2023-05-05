@@ -1,6 +1,6 @@
 import React from "react";
 import "./OrderPage.scss";
-import Navbar from "../../components/Navbar/navbar";
+import Navbar from "../../components/Navbar/Navbar";
 
 const BuyPage = () => {
     return (
@@ -25,11 +25,11 @@ const BuyPage = () => {
                     </h3>
                     <div className="follow-us flex align-center column">
                         <h3>Follow us on</h3>
-                        <a href="#">Instagram</a>
-                        <a href="#">Twitter</a>
-                        <a href="#">LinkedIn</a>
-                        <a href="#">Facebook</a>
-                        <a href="#">Whatsapp</a>
+                        <a href="/#">Instagram</a>
+                        <a href="/#">Twitter</a>
+                        <a href="/#">LinkedIn</a>
+                        <a href="/#">Facebook</a>
+                        <a href="/#">Whatsapp</a>
                     </div>
                 </div>
             </div>

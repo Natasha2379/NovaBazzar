@@ -33,7 +33,7 @@ const Navbar = (props) => {
                 </Link>
                 {user ? (
                     <Link to="/buyer/profile" className="link">
-                        My Account
+                        {user?.name}
                     </Link>
                 ) : (
                     <Link to="/buyer/register" className="link createAccount">

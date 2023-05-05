@@ -1,31 +1,43 @@
 import React, { useEffect, useState } from "react";
 import "./Product.scss";
 import image from "../../assets/shoes.jpg";
-import { getShopDetails } from "../../services/api";
-import { useSelector } from "react-redux";
-import { selectUserData } from "../../redux/slices/userSlice";
+import { editUserFavs, getShopDetails } from "../../services/api";
+import { useDispatch, useSelector } from "react-redux";
+import { addUser, selectUserData } from "../../redux/slices/userSlice";
+import { Link } from "react-router-dom";
 
 const Product = (props) => {
+    const dispatch = useDispatch();
     const user = useSelector(selectUserData);
     const [shop, setShop] = useState();
-    const [favourites, setFavourites] = useState([]);
 
     useEffect(() => {
         const fetchShop = async () => {
-            try {
-                const res = await getShopDetails(props.product.shopId);
-                console.log(res.data);
-                setShop(res.data.products);
-            } catch (error) {
-                console.log(error);
+            if (props.product?.shopId) {
+                try {
+                    const res = await getShopDetails(props.product?.shopId);
+
+                    setShop(res.data.products);
+                } catch (error) {
+                    console.log(error);
+                }
             }
         };
         fetchShop();
-        setFavourites(user?.favourites);
-    }, [props.product, user]);
+    }, [props.product?.shopId, user]);
 
+    const editfavs = async (favs) => {
+        try {
+            const res = await editUserFavs(favs, user._id);
+            dispatch(addUser(res.data.user));
+        } catch (error) {
+            console.log(error);
+        }
+    };
+    useEffect(() => {
+        editfavs(props.favouriteIds);
+    }, []);
 
-    
     return (
         <div className="products flex align-center wrap">
             <div className="prdouct-card link">
@@ -35,27 +47,55 @@ const Product = (props) => {
                         className="fav flex abs-center"
                         style={{ backgroundColor: "inherit" }}
                     >
-                        {favourites?.includes(props?.product?._id) ? (
+                        {props.favouriteIds?.includes(props?.product?._id) ? (
                             <i
                                 className="fa fa-heart"
-                                style={{ color: "red" }}
+                                style={{ color: "red", zIndex: "99" }}
+                                onClick={async () => {
+                                    props.setFavouriteIds(
+                                        props.favouriteIds.filter(
+                                            (item) =>
+                                                item !== props.product?._id,
+                                        ),
+                                    );
+                                    await editfavs(
+                                        props.favouriteIds.filter(
+                                            (item) =>
+                                                item !== props.product?._id,
+                                        ),
+                                    );
+                                    window.location.reload();
+                                }}
                             ></i>
                         ) : (
                             <i
                                 className="fa fa-heart"
-                                style={{ color: "white" }}
+                                style={{ color: "white", zIndex: "99" }}
+                                onClick={async () => {
+                                    props.setFavouriteIds([
+                                        ...props.favouriteIds,
+                                        props.product?._id,
+                                    ]);
+                                    await editfavs([
+                                        ...props.favouriteIds,
+                                        props.product?._id,
+                                    ]);
+                                    window.location.reload();
+                                }}
                             ></i>
                         )}
                     </span>
                 </div>
-                <div className="content">
+                <Link
+                    to={`/productdetail/${props.product?._id}`}
+                    className="content"
+                >
                     <div className="product-name">
                         <h3>{props.product?.name}</h3>
                     </div>
                     <div className="product-shop-name">
                         <h5>
                             {shop?.shopName}, {shop?.location}, {shop?.shopCity}
-                            r
                         </h5>
                     </div>
                     <div className="price-rating flex space align-center">
@@ -67,7 +107,7 @@ const Product = (props) => {
                             <i className="fa fa-star"></i>
                         </div>
                     </div>
-                </div>
+                </Link>
             </div>
         </div>
     );

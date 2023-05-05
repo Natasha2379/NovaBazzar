@@ -2,7 +2,6 @@
     width: 100%;
     gap: 50px;
     margin-bottom: 50px;
-   
 
     .searchContainer {
         width: 40%;
@@ -11,7 +10,6 @@
         background-color: rgb(249, 248, 248);
         border: 2px solid rgb(149, 146, 146);
         border-radius: 10px;
-        
 
         span {
             i {
@@ -33,15 +31,16 @@
         width: 100%;
 
         .shopSidebar {
-             padding: 20px;
+            padding: 20px;
             flex: 1;
             border-right: 1px solid black;
             margin-right: 20px;
             text-align: end;
-            
         }
 
         .shopProducts {
+            display: flex;
+            gap: 1rem;
             flex: 5;
         }
     }

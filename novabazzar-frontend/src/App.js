@@ -8,7 +8,7 @@ import AddShop from "./pages/Seller/AddShop/AddShop";
 import EditProduct from "./components/ShopComponents/editProduct/EditProduct";
 import ProductDetail from "./pages/productDetail/ProductDetail";
 import SearchPage from "./pages/SearchPage/SearchPage";
-import SellerProfile from "./pages/seller/SellerProfile/sellerProfile";
+import SellerProfile from "./pages/Seller/SellerProfile/SellerProfile";
 import PlaceOrder from "./pages/orderPage/OrderPage";
 // user account pages
 import ProfilePage from "./pages/Buyer/BuyerProfile/BuyerProfile";
@@ -77,7 +77,7 @@ function App() {
                     path="/buyer/cart"
                     element={user ? <Cart /> : <Login />}
                 />
-                <Route path="/productdetail" element={<ProductDetail />} />
+                <Route path="/productdetail/:productid" element={<ProductDetail />} />
                 <Route path="/sellerprofile" element={<SellerProfile />} />
                 <Route path="/placeorder" element={<PlaceOrder />} />
             </Routes>

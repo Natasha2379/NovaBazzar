@@ -2,11 +2,16 @@ import React, { useEffect, useState } from "react";
 import "./SearchPage.scss";
 import Navbar from "../../components/Navbar/Navbar";
 import ShopCard from "../../components/shopCard/ShopCard";
-import ProductCard from "../../components/ProductCard/Product";
+import Product from "../../components/ProductCard/Product";
 import Footer from "../../components/Footer/Footer";
 import { getAllProductsDetails, getAllShopsDetails } from "../../services/api";
+import { useSelector } from "react-redux";
+import { selectUserData } from "../../redux/slices/userSlice";
 
 const SearchPage = () => {
+    const [favouriteIds, setFavouriteIds] = useState([]);
+    const user = useSelector(selectUserData);
+
     const queryString = window.location.search;
     const queryParams = new URLSearchParams(queryString);
     const paramValue = queryParams.get("type");
@@ -31,6 +36,10 @@ const SearchPage = () => {
         fetchProductsAndShops();
         setType(paramValue);
     }, [search, type, paramValue]);
+
+    useEffect(() => {
+        setFavouriteIds(user?.favourites);
+    }, [user]);
 
     return (
         <div className="searchpage">
@@ -69,9 +78,11 @@ const SearchPage = () => {
                             ))}
                         {activeItem === "products" &&
                             products?.map((product) => (
-                                <ProductCard
+                                <Product
                                     product={product}
                                     key={product._id}
+                                    favouriteIds={favouriteIds}
+                                    setFavouriteIds={setFavouriteIds}
                                 />
                             ))}
                     </div>

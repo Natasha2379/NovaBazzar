@@ -10,7 +10,7 @@
             justify-content: center;
             gap: 30px;
             background: linear-gradient(to right, aqua, rgb(0, 115, 255));
-
+            
             div {
                 font-size: 1.5rem;
                 font-weight: 600;
@@ -18,9 +18,10 @@
             }
         }
         .product-detail-section {
-            height: 70vh;
+            padding: 1rem 0;
+            // height: 70vh;
             display: flex;
-            align-items: center;
+            // align-items: center;
             padding: 5%;
             .product-images-section {
                 height: 100%;

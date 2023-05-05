@@ -10,17 +10,14 @@ const cartSlice = createSlice({
     initialState,
     reducers: {
         addItem: (state, action) => {
-            state.items.push(action.payload);
+            state.items.push(action.payload.id);
             state.totalCost += action.payload.price;
         },
         removeItem: (state, action) => {
-            const removedItem = state.items.find(
-                (item) => item.id === action.payload,
-            );
             state.items = state.items.filter(
-                (item) => item.id !== action.payload,
+                (item) => item !== action.payload.id,
             );
-            state.totalCost -= removedItem.price;
+            state.totalCost -= action.payload.price;
         },
         emptyCart: (state) => {
             state.items = [];

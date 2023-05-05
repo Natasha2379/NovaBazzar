@@ -1,5 +1,6 @@
 import axios from "axios";
-const REACT_APP_SERVER_DOMAIN = "http://localhost:8000";
+// const REACT_APP_SERVER_DOMAIN = "http://localhost:8000"; //local server
+const REACT_APP_SERVER_DOMAIN = "https://ijpkaushik-novabazzar.onrender.com"; // deployed server
 
 /***************************** USERS *****************************/
 //function to register
@@ -27,6 +28,14 @@ export const editUserDetails = (user_id, userData) => {
     return axios.put(
         REACT_APP_SERVER_DOMAIN + "/api/users/user/" + user_id,
         userData,
+    );
+};
+
+//add product to fav
+export const editUserFavs = (favourites, user_id) => {
+    return axios.put(
+        REACT_APP_SERVER_DOMAIN + "/api/users/user-fav/" + user_id,
+        favourites,
     );
 };
 
@@ -72,8 +81,13 @@ export const getAllProductsDetails = (search) => {
 };
 
 //get all products data
-export const getAllShopProducts = (shopid) => {
-    return axios.get(REACT_APP_SERVER_DOMAIN + `/api/products/shop/` + shopid);
+export const getAllShopProducts = (shopid, search, type) => {
+    return axios.get(
+        REACT_APP_SERVER_DOMAIN +
+            `/api/products/shop/` +
+            shopid +
+            `?search=${search}&type=${type}`,
+    );
 };
 
 //edit product data

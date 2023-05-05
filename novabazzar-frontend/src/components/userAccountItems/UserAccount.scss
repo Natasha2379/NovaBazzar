@@ -65,6 +65,9 @@
 }
 //my favorites items styling
 .myfavourites {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     width: 100%;
     padding: 10px;
 }

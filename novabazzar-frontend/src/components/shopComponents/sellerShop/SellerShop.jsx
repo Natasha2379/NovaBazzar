@@ -5,23 +5,26 @@ import ShopSlidebar from "../shopSlidebar/ShopSlidebar";
 import ShopProduct from "../shopProduct/ShopProduct";
 import { getAllShopProducts } from "../../../services/api";
 
-const MyShop = () => {
+const MyShop = (props) => {
     const [products, setProducts] = useState([]);
     const [search, setSearch] = useState("");
+    const [type, setType] = useState("all");
+
     const shopId = window.location.pathname.split("/")[2];
 
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const res = await getAllShopProducts(shopId);
-                console.log(res.data);
+                const res = await getAllShopProducts(shopId, search, type);
+
                 setProducts(res.data.products);
             } catch (error) {
                 console.log(error);
             }
         };
+
         fetchProducts();
-    }, [search]);
+    }, [search, shopId, type]);
 
     return (
         <div className="myShopContainer flex column">
@@ -37,8 +40,9 @@ const MyShop = () => {
             </div>
             <div className="shopProductsContainer flex ">
                 <div className="shopSidebar">
-                    <ShopSlidebar />
+                    <ShopSlidebar shop={props.shop} setType={setType} />
                 </div>
+
                 <div className="shopProducts">
                     {products?.map((product) => (
                         <ShopProduct key={product._id} product={product} />

@@ -13,7 +13,7 @@ const ShopProduct = (props) => {
             try {
                 const res = await getShopDetails(props.product.shopId);
                 console.log(res.data);
-                setShop(res.data.products);
+                setShop(res.data.shop);
             } catch (error) {
                 console.log(error);
             }
@@ -23,7 +23,10 @@ const ShopProduct = (props) => {
 
     return (
         <div className="shopProductContainer">
-            <div className="prdouct-card">
+            <Link
+                to={`/productdetail/${props.product._id}`}
+                className="prdouct-card"
+            >
                 <div className="product-img">
                     <img src={props.product.coverImage || image} alt="" />
                     <span className="fav flex abs-center">
@@ -36,7 +39,7 @@ const ShopProduct = (props) => {
                     </div>
                     <div className="product-shop-name">
                         <h5>
-                            {shop?.shopName}, {shop?.location}, {shop?.shopCity}
+                            {shop?.shopName}, {shop?.location},{shop?.city}
                         </h5>
                     </div>
                     <div className="price-rating flex space align-center">
@@ -49,13 +52,13 @@ const ShopProduct = (props) => {
                         </div>
                     </div>
                 </div>
-                <Link
+                <div
                     to={`/editproduct/${props.product._id}`}
                     className="shopProductEditButton"
                 >
                     Edit
-                </Link>
-            </div>
+                </div>
+            </Link>
         </div>
     );
 };

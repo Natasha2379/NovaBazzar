@@ -4,15 +4,18 @@
     justify-content: center;
     align-items: center;
     width: 20%;
-    padding: 0.5rem;
 
-    border: 2px solid rgb(149, 146, 146);
-
+    
     .prdouct-card {
-        height: 360px;
-        width: 300px;
+        width: 100%;
+        text-decoration: none;
+        color: inherit;
+        // height: 360px;
+        // width: 300px;
+        border: 2px solid rgb(149, 146, 146);
         box-shadow: 0 0 3px gray;
-
+        padding: 0.5rem;
+        
         .product-img {
             position: relative;
             width: 100%;
@@ -40,15 +43,14 @@
                 cursor: pointer;
                 height: 40px;
                 width: 40px;
-                background-color: white;
+                // background-color: white;
                 transition: 0.3s ease-in-out;
 
                 i {
                     font-size: 1.7rem;
                 }
                 &:hover {
-                    background-color: green;
-                    color: white;
+                    color: tomato;
                 }
             }
         }
@@ -61,7 +63,6 @@
             }
         }
         .content {
-            padding: 10px;
             .product-name {
                 font-size: 18px;
                 font-weight: 400;
@@ -84,5 +85,6 @@
                 }
             }
         }
+
     }
 }
