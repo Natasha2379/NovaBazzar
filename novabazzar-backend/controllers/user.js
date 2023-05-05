@@ -54,19 +54,17 @@ const registerUser = async (req, res, next) => {
 };
 
 const loginUser = async (req, res, next) => {
-	const username = req.body.username;
 	const pass = req.body.password;
 	const email = req.body.email;
 
 	try {
 		const user = await User.findOne({
-			$or: [{ username }, { email }],
+			$or: [{ email }, { phone: email }],
 		});
 
 		if (!user) return next(createError(404, "user not found!"));
 
 		const isCorrect = await bcrypt.compare(pass, user.password);
-		console.log(isCorrect);
 
 		if (!isCorrect) return next(createError(400, "Wrong Credentials!"));
 
@@ -101,7 +99,6 @@ const getUser = async (req, res, next) => {
 };
 
 const editUserDetails = async (req, res, next) => {
-
 	try {
 		const user = await User.findOne({ _id: req.params.userid });
 
@@ -128,7 +125,6 @@ const editUserDetails = async (req, res, next) => {
 };
 
 const editUserFavs = async (req, res, next) => {
-
 	try {
 		const user = await User.findOne({ _id: req.params.userid });
 
