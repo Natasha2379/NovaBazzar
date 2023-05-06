@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./Shop.scss";
 
-import ShopBanner from "../../../components/ShopComponents/shopBanner/ShopBanner";
-import MyShop from "../../../components/ShopComponents/sellerShop/SellerShop";
-import MyOrders from "../../../components/ShopComponents/sellerOrders/SellerOrders";
-import AddProduct from "../../../components/ShopComponents/addProduct/AddProduct";
-import SellerNav from "../../../components/ShopComponents/SellerNav/SellerNav";
+import ShopBanner from "../../../components/shopComponents/ShopBanner/ShopBanner";
+import MyShop from "../../../components/shopComponents/SellerShop/SellerShop";
+import MyOrders from "../../../components/shopComponents/SellerOrders/sellerOrders";
+import AddProduct from "../../../components/shopComponents/AddProduct/AddProduct";
+import SellerNav from "../../../components/shopComponents/SellerNav/SellerNav";
 import { getShopDetails } from "../../../services/api";
 import { useSelector } from "react-redux";
 import { selectUser_ID } from "../../../redux/slices/userSlice";
@@ -43,7 +43,7 @@ const Shop = () => {
                         }
                     >
                         {" "}
-                        {shop?.userId === userid ? "MyShop" : "Shop Items"}
+                        {shop?.userId === userid ? "MyShop" : ""}
                     </li>
                     <li
                         onClick={() => setActiveItem("myorders")}

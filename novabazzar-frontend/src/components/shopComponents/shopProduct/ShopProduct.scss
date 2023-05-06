@@ -1,90 +1,94 @@
-.shopProductContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 20%;
+.shop-product-card {
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+    height: 320px;
+    width: 250px;
+    border: 2px solid rgb(149, 146, 146);
+    box-shadow: 0 0 3px gray;
+    padding: 0.5rem;
 
-    
-    .prdouct-card {
+    .product-img {
+        position: relative;
         width: 100%;
-        text-decoration: none;
-        color: inherit;
-        // height: 360px;
-        // width: 300px;
-        border: 2px solid rgb(149, 146, 146);
-        box-shadow: 0 0 3px gray;
-        padding: 0.5rem;
-        
-        .product-img {
-            position: relative;
+        height: 60%;
+        overflow: hidden;
+        position: relative;
+
+        img {
             width: 100%;
-            height: 200px;
-            overflow: hidden;
-            position: relative;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            transition: 0.5s ease-in-out;
+            transform-origin: right;
+        }
+        .fav {
+            z-index: 99999;
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            cursor: pointer;
+            height: 40px;
+            width: 40px;
+            transition: 0.3s ease-in-out;
 
+            i {
+                font-size: 1.7rem;
+            }
+            &:hover {
+                color: crimson;
+            }
+        }
+    }
+    //   hover effect for image
+    &:hover {
+        .product-img {
             img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                transition: 0.5s ease-in-out;
-                transform-origin: right;
+                transform: scale(1.5);
             }
-            .fav {
-                z-index: 99999;
-                position: absolute;
-                top: 10px;
-                right: 15px;
-
-                cursor: pointer;
-                height: 40px;
-                width: 40px;
-                // background-color: white;
-                transition: 0.3s ease-in-out;
-
+        }
+    }
+    .content {
+        
+        gap: 10px;
+        .product-name {
+            font-size: 1rem;
+            color: black;
+        }
+        .product-shop-name {
+            font-size: 15px;
+            font-weight: 500;
+            color: #666;
+        }
+        .price-rating {
+            h3 {
+                color: #ff2020;
+            }
+            .rating {
                 i {
-                    font-size: 1.7rem;
-                }
-                &:hover {
-                    color: tomato;
+                    color: #ffd513;
+                    cursor: pointer;
                 }
             }
         }
-        //   hover effect for image
-        &:hover {
-            .product-img {
-                img {
-                    transform: scale(1.5);
-                }
-            }
-        }
-        .content {
-            .product-name {
-                font-size: 18px;
-                font-weight: 400;
-                color: black;
-            }
-            .product-shop-name {
-                font-size: 17px;
-                font-weight: 500;
-                color: #666;
-            }
-            .price-rating {
-                h3 {
-                    color: #ff2020;
-                }
-                .rating {
-                    i {
-                        color: #ffd513;
-                        cursor: pointer;
-                    }
-                }
-            }
-        }
-
+    }
+    .shopProductEditButton{
+        border: 3px solid green;
+        color:green;
+        font-size: 1.2rem;
+        font-weight: 600;
+        padding: 7px 20px;
+        text-align: center;
+        width: 90px;
+        border-radius: 20px;
+        margin: auto;
+        position: absolute;
+        bottom: 10px;
+        left: 50px;
+        right: 50px;
     }
 }

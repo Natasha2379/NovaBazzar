@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./SearchPage.scss";
 import Navbar from "../../components/Navbar/Navbar";
 import ShopCard from "../../components/shopCard/ShopCard";
-import Product from "../../components/ProductCard/Product";
+import Product from "../../components/productCard/Product";
 import Footer from "../../components/Footer/Footer";
 import { getAllProductsDetails, getAllShopsDetails } from "../../services/api";
 import { useSelector } from "react-redux";
@@ -45,7 +45,7 @@ const SearchPage = () => {
         <div className="searchpage">
             <Navbar search={search} setSearch={setSearch} />
             <div className="searchsection">
-                <div className="shops-items-section">
+                <div className="shops-items-section flex  column">
                     <ul className="flex abs-center">
                         <li
                             onClick={() => setActiveItem("shops")}
@@ -56,7 +56,7 @@ const SearchPage = () => {
                             }
                         >
                             {" "}
-                            Shops{shops?.length}+
+                            Shops{`(${shops?.length})`}
                         </li>
                         <li
                             onClick={() => setActiveItem("products")}
@@ -67,11 +67,11 @@ const SearchPage = () => {
                             }
                         >
                             {" "}
-                            Products{products?.length}+
+                            Products{`(${products?.length})`}
                         </li>
                     </ul>
 
-                    <div className="result-section">
+                    <div className="result-section flex wrap ">
                         {activeItem === "shops" &&
                             shops?.map((shop) => (
                                 <ShopCard shop={shop} key={shop._id} />

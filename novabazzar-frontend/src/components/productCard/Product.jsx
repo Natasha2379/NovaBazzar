@@ -39,77 +39,73 @@ const Product = (props) => {
     }, []);
 
     return (
-        <div className="products flex align-center wrap">
-            <div className="prdouct-card link">
-                <div className="product-img">
-                    <img src={props?.product?.coverImage || image} alt="" />
-                    <span
-                        className="fav flex abs-center"
-                        style={{ backgroundColor: "inherit" }}
-                    >
-                        {props.favouriteIds?.includes(props?.product?._id) ? (
-                            <i
-                                className="fa fa-heart"
-                                style={{ color: "red", zIndex: "99" }}
-                                onClick={async () => {
-                                    props.setFavouriteIds(
-                                        props.favouriteIds.filter(
-                                            (item) =>
-                                                item !== props.product?._id,
-                                        ),
-                                    );
-                                    await editfavs(
-                                        props.favouriteIds.filter(
-                                            (item) =>
-                                                item !== props.product?._id,
-                                        ),
-                                    );
-                                    window.location.reload();
-                                }}
-                            ></i>
-                        ) : (
-                            <i
-                                className="fa fa-heart"
-                                style={{ color: "white", zIndex: "99" }}
-                                onClick={async () => {
-                                    props.setFavouriteIds([
-                                        ...props.favouriteIds,
-                                        props.product?._id,
-                                    ]);
-                                    await editfavs([
-                                        ...props.favouriteIds,
-                                        props.product?._id,
-                                    ]);
-                                    window.location.reload();
-                                }}
-                            ></i>
-                        )}
-                    </span>
-                </div>
-                <Link
-                    to={`/productdetail/${props.product?._id}`}
-                    className="content"
+        <Link
+            to={`/productdetail/${props.product?._id}`}
+            className="prdouct-card link "
+        >
+            <div className="product-img">
+                <img src={props?.product?.coverImage || image} alt="" />
+                <span
+                    className="fav flex abs-center"
+                    style={{ backgroundColor: "inherit" }}
                 >
-                    <div className="product-name">
-                        <h3>{props.product?.name}</h3>
-                    </div>
-                    <div className="product-shop-name">
-                        <h5>
-                            {shop?.shopName}, {shop?.location}, {shop?.shopCity}
-                        </h5>
-                    </div>
-                    <div className="price-rating flex space align-center">
-                        <h3>₹ {props.product?.price}kg</h3>
-                        <div className="rating">
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                        </div>
-                    </div>
-                </Link>
+                    {props.favouriteIds?.includes(props?.product?._id) ? (
+                        <i
+                            className="fa fa-heart"
+                            style={{ color: "red", zIndex: "99" }}
+                            onClick={async () => {
+                                props.setFavouriteIds(
+                                    props.favouriteIds.filter(
+                                        (item) => item !== props.product?._id,
+                                    ),
+                                );
+                                await editfavs(
+                                    props.favouriteIds.filter(
+                                        (item) => item !== props.product?._id,
+                                    ),
+                                );
+                                window.location.reload();
+                            }}
+                        ></i>
+                    ) : (
+                        <i
+                            className="fa fa-heart"
+                            style={{ color: "white", zIndex: "99" }}
+                            onClick={async () => {
+                                props.setFavouriteIds([
+                                    ...props.favouriteIds,
+                                    props.product?._id,
+                                ]);
+                                await editfavs([
+                                    ...props.favouriteIds,
+                                    props.product?._id,
+                                ]);
+                                window.location.reload();
+                            }}
+                        ></i>
+                    )}
+                </span>
             </div>
-        </div>
+            <div className="content">
+                <div className="product-name">
+                    <h3>{props.product?.name}</h3>
+                </div>
+                <div className="product-shop-name">
+                    <h5>
+                        {shop?.shopName},{shop?.location},{shop?.shopCity}
+                    </h5>
+                </div>
+                <div className="price-rating flex space align-center">
+                    <h3>₹ {props.product?.price}kg</h3>
+                    <div className="rating">
+                        <i className="fa fa-star"></i>
+                        <i className="fa fa-star"></i>
+                        <i className="fa fa-star"></i>
+                        <i className="fa fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </Link>
     );
 };
 

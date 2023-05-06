@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./SellerShop.scss";
 
-import ShopSlidebar from "../shopSlidebar/ShopSlidebar";
+import ShopSlidebar from "../ShopSlidebar/ShopSlidebar";
 import ShopProduct from "../shopProduct/ShopProduct";
 import { getAllShopProducts } from "../../../services/api";
 
@@ -43,7 +43,7 @@ const MyShop = (props) => {
                     <ShopSlidebar shop={props.shop} setType={setType} />
                 </div>
 
-                <div className="shopProducts">
+                <div className="shopProducts flex wrap">
                     {products?.map((product) => (
                         <ShopProduct key={product._id} product={product} />
                     ))}

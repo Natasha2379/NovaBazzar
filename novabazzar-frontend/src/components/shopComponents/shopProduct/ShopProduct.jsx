@@ -22,44 +22,37 @@ const ShopProduct = (props) => {
     }, [props.product]);
 
     return (
-        <div className="shopProductContainer">
-            <Link
-                to={`/productdetail/${props.product._id}`}
-                className="prdouct-card"
+        <Link
+            to={`/productdetail/${props.product._id}`}
+            className="shop-product-card"
+        >
+            <div className="product-img">
+                <img src={props.product.coverImage || image} alt="" />
+                <span className="fav flex abs-center">
+                    <i className="fa fa-heart"></i>
+                </span>
+            </div>
+            <div className="content flex column">
+                <div className="product-name">
+                    <h3>{props.product.name}</h3>
+                </div>
+                <div className="price-rating flex space align-center">
+                    <h3>₹{props.product.price}kg</h3>
+                    <div className="rating">
+                        <i className="fa fa-star"></i>
+                        <i className="fa fa-star"></i>
+                        <i className="fa fa-star"></i>
+                        <i className="fa fa-star"></i>
+                    </div>
+                </div>
+            </div>
+            <div
+                to={`/editproduct/${props.product._id}`}
+                className="shopProductEditButton "
             >
-                <div className="product-img">
-                    <img src={props.product.coverImage || image} alt="" />
-                    <span className="fav flex abs-center">
-                        <i className="fa fa-heart"></i>
-                    </span>
-                </div>
-                <div className="content">
-                    <div className="product-name">
-                        <h3>{props.product.name}</h3>
-                    </div>
-                    <div className="product-shop-name">
-                        <h5>
-                            {shop?.shopName}, {shop?.location},{shop?.city}
-                        </h5>
-                    </div>
-                    <div className="price-rating flex space align-center">
-                        <h3>₹{props.product.price}kg</h3>
-                        <div className="rating">
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-                <div
-                    to={`/editproduct/${props.product._id}`}
-                    className="shopProductEditButton"
-                >
-                    Edit
-                </div>
-            </Link>
-        </div>
+                Edit
+            </div>
+        </Link>
     );
 };
 

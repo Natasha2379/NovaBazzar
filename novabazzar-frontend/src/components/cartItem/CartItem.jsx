@@ -47,31 +47,22 @@ const CartItem = (props) => {
         dispatch(removeItem({ id: props.item, price: product.price }));
     };
     return (
-        <>
-            <div className="cartbyshop">
+        <div className="cart-item flex ">
+            <div className="row flex align-center space">
+                <div className="img-area">
+                    <img src={product?.CoverImage || image} alt="" />
+                </div>
+                <div className="item-name">{product?.name}</div>
                 <div className="shop-name">{shop?.shopName}</div>
-                <div className="cart-items"></div>
-                <div className="cart-item">
-                    <div className="img-area">
-                        <img src={product?.CoverImage || image} alt="" />
-                    </div>
-                    <div className="item-name">{product?.name}</div>
-                    <div className="item-quantity">
-                        <input type="number" name="" id="" placeholder="0" />
-                    </div>
-                    <div class="item-price">₹ {product?.price}</div>
-                    <button onClick={handleRemoveFromCart}>Remove</button>
-                </div>
-
-                <div className="bottom-section">
-                    <div className="total-items">
-                        Total items : {cartItems.length}
-                    </div>
-                    <div className="total-price">Total Price: {totalPrice}</div>
-                    <button>Buy Now</button>
-                </div>
             </div>
-        </>
+            <div className="row flex align-center space">
+                <div className="item-quantity">
+                    <input type="number" name="" id="" placeholder="1" />
+                </div>
+                <div class="item-price">₹ {product?.price}</div>
+                <button onClick={handleRemoveFromCart}>Remove</button>
+            </div>
+        </div>
     );
 };
 

@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import "./BuyerProfile.scss";
 
 //items to show
-import Profile from "../../../components/UserAccountItems/Profile";
-import Favorites from "../../../components/UserAccountItems/Favorites";
-import EditProfile from "../../../components/UserAccountItems/EditProfile";
-import Orders from "../../../components/UserAccountItems/Orders";
+import Profile from "../../../components/userAccountItems/Profile";
+import Favorites from "../../../components/userAccountItems/Favorites";
+import EditProfile from "../../../components/userAccountItems/EditProfile";
+import Orders from "../../../components/userAccountItems/Orders";
 import { useDispatch } from "react-redux";
 import { logout } from "../../../redux/slices/userSlice";
 import { useNavigate } from "react-router-dom";

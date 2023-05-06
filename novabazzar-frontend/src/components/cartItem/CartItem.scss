@@ -1,47 +1,56 @@
 .cart-item {
-    height: 80px;
+    height: 120px;
     width: 100%;
-    background-color: rgb(243, 246, 245);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    background-color: white;
+    border-bottom: 2px solid #d4cfcf;
+    gap: 10px;
 
-    .img-area {
-        height: 80px;
-        width: 80px;
-        img {
+    .row {
+        padding: 10px;
+      
+        flex: 1;
+
+        .img-area {
             height: 100%;
-            width: 100%;
-            object-fit: cover;
-        }
-    }
-    .item-name {
-        font-size: 1rem;
-        font-weight: 600;
-    }
-    .item-quantity {
-        input {
-            height: 40px;
             width: 100px;
-            border-radius: 5px;
-            font-size: 1.3rem;
-            padding: 0 10px;
-            color: gray;
-            outline: none;
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
         }
-    }
-    .item-price {
-        font-size: 1.2rem;
-        font-weight: 500;
-    }
-    button {
-        padding: 12px 24px;
-        border-radius: 10px;
-        font-size: 1rem;
-        font-weight: 500;
-        margin-right: 20px;
-        background-color: red;
-        color: white;
-        border: none;
+        .item-name {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        .item-quantity {
+            input {
+                height: 40px;
+                width: 100px;
+                border-radius: 5px;
+                font-size: 1.3rem;
+                padding: 0 10px;
+                color: gray;
+                outline: none;
+                background-color: aliceblue;
+            }
+        }
+
+        .item-price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: green;
+        }
+        button {
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 500;
+            margin-right: 20px;
+            background-color: red;
+            color: white;
+            border: none;
+            width: 120px;
+        }
     }
 }

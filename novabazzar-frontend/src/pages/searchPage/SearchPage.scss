@@ -1,11 +1,11 @@
 .searchpage {
-    
-    width: 100vw;
+    width: 100%;
     .searchsection {
         width: 100vw;
         padding: 2% 0;
 
         .shops-items-section {
+            gap: 30px;
             ul {
                 gap: 100px;
 
@@ -24,14 +24,11 @@
                 }
             }
             .result-section {
-                display: flex;
-                flex-wrap: nowrap;
-                width: 100%;
-                padding: 1rem;
-                gap: 1rem;
-                // background-color: red;
-                padding-inline: auto;
-                margin-block: 50px;
+               width: 95%;
+               height: 100%;
+               margin: auto;
+               gap: 30px;
+            //    padding: 0 20px;
             }
         }
     }
