@@ -53,6 +53,18 @@ const SellerOrders = () => {
                     <button>Booked</button>
                 </div>
             </div>
+            <div className="product-detail flex align-center space">
+                <div className="img-area">
+                    <img src={image} alt="" />
+                </div>
+
+                <div className="product-name">Apple</div>
+                <div className="product-quantity">1 Kg</div>
+
+                <div className="book-btn">
+                    <button>Booked</button>
+                </div>
+            </div>
         </div>
     );
 };

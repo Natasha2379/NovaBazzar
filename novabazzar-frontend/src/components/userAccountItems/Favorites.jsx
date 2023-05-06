@@ -33,7 +33,7 @@ const Favorites = () => {
     }, []);
 
     return (
-        <div className="myfavourites">
+        <div className="myfavourites flex wrap ">
             {favourites.map((product, index) => (
                 <Product
                     product={product}

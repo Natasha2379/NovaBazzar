@@ -95,7 +95,7 @@ const ProductDetail = () => {
                         <div className="product-quantity">
                             {product?.quantity}
                         </div>
-                        <div className="product-price">$ {product?.price}</div>
+                        <div className="product-price">₹ {product?.price}</div>
                         <div className="buttons-section">
                             <button
                                 className="cartbtn"
@@ -103,33 +103,11 @@ const ProductDetail = () => {
                             >
                                 Add to cart
                             </button>
-                            {/* <button className="buybtn">Buy now</button> */}
                         </div>
-                        <div className="product-desc">
-                            {/* Lorem, ipsum dolor sit amet consectetur adipisicing
-                            quibusdam rerum mollitia quod commodi itaque, vitae
-                            facilis ducimus dolore similique magnam error quo
-                            voluptatum ullam distinctio! is doloribus enim sint,
-                            soluta animi quibusdam culpa dolorem odit voluptatem
-                            obcaecati? Repellendus voluptas nesciunt nulla ex,
-                            recusandae velit numquam sed dolores soluta placeat
-                            doloribus. Lorem ipsum dolor sit amet consectetur
-                            adipisicing elit. Nostrum aperiam dolorum facilis
-                            dolore, vero consequatur, non saepe et, cupiditate
-                            officia pariatur placeat velit praesentium omnis
-                            esse dicta consectetur nihil? Aliquid libero
-                            asperiores quisquam cupiditate ad tempore
-                            consequatur aliquam numquam ducimus id totam minus,
-                            quia fugit reiciendis quod ut voluptates culpa. */}
-                            {product?.desc}
-                        </div>
+                        <div className="product-desc">{product?.desc}</div>
                     </div>
                 </div>
             </div>
-            {/* <div className="related-products-section">
-                <h2>Related items</h2>
-                <Product />
-            </div> */}
         </div>
     );
 };

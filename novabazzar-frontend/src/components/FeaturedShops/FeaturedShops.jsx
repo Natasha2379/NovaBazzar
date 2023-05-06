@@ -10,23 +10,23 @@ import { Link } from "react-router-dom";
 const FeaturedShops = () => {
     return (
         <div className="featured-shops flex align-center">
-            <Link to={`search/?type=Kirana shop`} className="shop-box">
+            <Link to={`search/?type=Kirana shop`} className="shop-box link">
                 <img src={Kirana} alt="" />
                 <p>Kirana shop</p>
             </Link>
-            <Link to={`search/?type=Medical shop`} className="shop-box">
+            <Link to={`search/?type=Medical shop`} className="shop-box link">
                 <img src={Medicines} alt="" />
                 <p>Medical shop</p>
             </Link>
-            <Link to={`search/?type=Clothes shop`} className="shop-box">
+            <Link to={`search/?type=Clothes shop`} className="shop-box link">
                 <img src={Clothes} alt="" />
                 <p>Clothes shop</p>
             </Link>
-            <Link to={`search/?type=Parlour shop`} className="shop-box">
+            <Link to={`search/?type=Parlour shop`} className="shop-box link">
                 <img src={haircut} alt="" />
                 <p>Parlour shop</p>
             </Link>
-            <Link to={`search/?type=Electronics shop`} className="shop-box">
+            <Link to={`search/?type=Electronics shop`} className="shop-box link">
                 <img src={Electronics} alt="" />
                 <p>Electronics shop</p>
             </Link>

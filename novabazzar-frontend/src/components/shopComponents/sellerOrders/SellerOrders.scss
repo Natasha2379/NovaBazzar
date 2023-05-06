@@ -2,7 +2,6 @@
     padding: 20px;
     gap: 20px;
     overflow: hidden;
-    margin-block: 50px;
 
     .product-detail {
         width: 100%;
@@ -12,7 +11,6 @@
         .img-area {
             height: 100%;
             width: 20%;
-            
 
             img {
                 height: 100%;
@@ -20,37 +18,35 @@
                 object-fit: contain;
             }
         }
-        .product-name{
+        .product-name {
             font-size: 1.5rem;
             font-weight: 500;
         }
-        .product-quantity{
+        .product-quantity {
             font-size: 1.3rem;
             font-weight: 600;
             color: gray;
         }
-        button{
-        
-
+        button {
         }
-        .book-btn , .sold-btn{
+        .book-btn,
+        .sold-btn {
             margin-right: 20px;
             button {
                 padding: 12px 0;
                 width: 100px;
                 font-size: 1rem;
                 border-radius: 20px;
-                
             }
         }
         .book-btn {
-            button{
+            button {
                 background-color: green;
                 color: white;
             }
         }
-        .sold-btn{
-            button{
+        .sold-btn {
+            button {
                 background-color: black;
                 color: white;
             }
