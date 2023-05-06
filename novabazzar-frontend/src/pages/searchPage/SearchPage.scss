@@ -28,7 +28,7 @@
                height: 100%;
                margin: auto;
                gap: 30px;
-            //    padding: 0 20px;
+            
             }
         }
     }
@@ -40,7 +40,7 @@
         height: 100%;
 
         .searchsection {
-            padding: 3% 0;
+           
 
             .shops-items-section {
                 width: 100%;
@@ -48,6 +48,10 @@
                 ul {
                     width: 100%;
                     gap: 50px;
+                }
+                .result-section{
+                    width: 90%;
+                    margin: auto;
                 }
             }
         }
@@ -59,7 +63,7 @@
         height: 100%;
 
         .searchsection {
-            padding: 5% 0;
+            
 
             .shops-items-section {
                 width: 100%;
@@ -67,6 +71,12 @@
                 ul {
                     width: 100%;
                     gap: 20px;
+                }
+                .result-section{
+                    width: 90%;
+                    margin: auto;
+
+                   
                 }
             }
         }

@@ -60,7 +60,7 @@ const FeaturedProducts = () => {
                 <div className="heading">
                     <h2>Kirana shop popular product categories</h2>
                 </div>
-                <div className="categories flex align-center">
+                <div className="categories flex align-center wrap">
                     <Link
                         to={`search/?type=Fruits & Vegetables`}
                         className="products-category link"
@@ -103,7 +103,7 @@ const FeaturedProducts = () => {
                 <div className="heading">
                     <h2>Fashion shop popular product categories</h2>
                 </div>
-                <div className="categories flex align-center">
+                <div className="categories flex align-center wrap">
                     <Link
                         to={`search/?type=T-shirts & Shirts`}
                         className="products-category link"
@@ -145,7 +145,7 @@ const FeaturedProducts = () => {
                 <div className="heading">
                     <h2>Parlour shop popular service categories</h2>
                 </div>
-                <div className="categories flex align-center">
+                <div className="categories flex align-center wrap">
                     <Link
                         to={`search/?type=Hair cut & color`}
                         className="products-category link"
@@ -187,7 +187,7 @@ const FeaturedProducts = () => {
                 <div className="heading">
                     <h2>Electronics shop popular product categories</h2>
                 </div>
-                <div className="categories flex align-center">
+                <div className="categories flex align-center wrap">
                     <Link
                         to={`search/?type=Headphones & Smart Watches`}
                         className="products-category link"
@@ -230,7 +230,7 @@ const FeaturedProducts = () => {
                 <div className="heading">
                     <h2>Medical shop popular product categories</h2>
                 </div>
-                <div className="categories flex align-center">
+                <div className="categories flex align-center wrap">
                     <Link
                         to={`search/?type=Vitamins,Nutrisions & Supplements`}
                         className="products-category link"

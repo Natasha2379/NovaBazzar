@@ -48,7 +48,6 @@
                 transform: scale(1.5);
             }
         }
-        
     }
     .content {
         text-decoration: none;
@@ -81,25 +80,20 @@
 }
 
 @media screen and (max-width: 768px) {
-    .products {
-        width: 100%;
-        height: 100%;
-        gap: 30px;
-
-        .prdouct-card {
-            width: 30%;
-        }
+    .prdouct-card {
+        width: 47%;
     }
 }
 @media screen and (max-width: 500px) {
-    .products {
-        width: 100%;
-        height: 100%;
-        gap: 0;
-        padding: 0;
-
-        .prdouct-card {
-            width: 50%;
-        }
+    .prdouct-card {
+        width: 70%;
+        margin: auto;
     }
 }
+@media screen and (max-width: 320px) {
+    .prdouct-card {
+        width: 100%;
+        
+    }
+}
+

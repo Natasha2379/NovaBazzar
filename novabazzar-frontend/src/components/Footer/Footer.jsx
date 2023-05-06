@@ -3,7 +3,7 @@ import "./Footer.scss";
 import { Link } from "react-router-dom";
 const Footer = () => {
     return (
-        <div className="footer flex space">
+        <div className="footer flex space ">
             <div className="row flex ">
                 <Link to="/" className="logo link">
                     NovaBazzar
