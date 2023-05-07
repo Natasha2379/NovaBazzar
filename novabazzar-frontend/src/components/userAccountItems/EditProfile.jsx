@@ -58,7 +58,7 @@ const EditProfile = () => {
                             user?.profile_picture || profileImage
                         })`,
                         // backgroundColor: "red",
-                        backgroundSize: "profile",
+                        backgroundSize: "cover",
                         backgroundPosition: "center",
                         backgroundRepeat: "no-repeat",
                     }}

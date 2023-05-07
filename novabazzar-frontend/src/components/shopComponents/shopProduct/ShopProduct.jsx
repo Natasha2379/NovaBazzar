@@ -16,7 +16,11 @@ const ShopProduct = (props) => {
 
     const handleAddToCart = () => {
         dispatch(
-            addItem({ id: props.product._id, price: props.product.price, quantity : 1 }),
+            addItem({
+                id: props.product._id,
+                price: props.product.price,
+                quantity: 1,
+            }),
         );
         navigate("/buyer/cart");
     };
@@ -37,6 +41,14 @@ const ShopProduct = (props) => {
         <div className="shop-product-card">
             <div className="product-img">
                 <img src={props.product?.coverImage || image} alt="" />
+                {userId === shop?.userId ? (
+                    <span className="delete flex abs-center">
+                        <i class="fa-solid fa-trash"></i>
+                    </span>
+                ) : (
+                    <span></span>
+                )}
+
                 <span className="fav flex abs-center">
                     <i className="fa fa-heart"></i>
                 </span>

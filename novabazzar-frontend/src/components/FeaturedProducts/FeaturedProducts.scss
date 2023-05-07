@@ -13,7 +13,7 @@
 
         h2 {
             margin-block: 20px;
-            color: rgb(5, 121, 237);
+            color: black;
         }
 
         .categories {
@@ -22,7 +22,7 @@
         }
 
         .products-category {
-            width: 100%;
+            width: 243px;
             height: 270px;
             background-color: white;
             box-shadow: 0 0 3px gray;
@@ -39,6 +39,52 @@
                 margin-top: 7px;
                 font-size: 1.1rem;
                 font-weight: 600;
+                color: #333;
+            }
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    .featured-products {
+        height: 100%;
+        width: 100%;
+        .kirana,
+        .clothes,
+        .electronics,
+        .medical,
+        .salon {
+            width: 100%;
+
+            h2 {
+                margin-block: 20px;
+                color: rgb(5, 121, 237);
+            }
+
+            .categories {
+                width: 100%;
+                gap: 20px;
+
+            }
+
+            .products-category {
+                width: 45%;
+                height: 300px;
+                background-color: white;
+                box-shadow: 0 0 3px gray;
+                padding: 20px;
+
+                img {
+                    height: 90%;
+                    width: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                }
+                p {
+                    text-align: center;
+                    margin-top: 7px;
+                    font-size: 1.1rem;
+                    font-weight: 600;
+                }
             }
         }
     }
@@ -60,13 +106,14 @@
             }
 
             .categories {
-                width: 100%;
+                width: 80%;
                 gap: 20px;
+                margin: auto;
             }
 
             .products-category {
                 width: 100%;
-                height: 270px;
+                height: 300px;
                 background-color: white;
                 box-shadow: 0 0 3px gray;
                 padding: 5px;

@@ -55,3 +55,71 @@
         }
     }
 }
+@media screen and (max-width : 768px) {
+    .cart-item{
+        height: 100%;
+        width: 100%;
+
+        .row{
+            flex-direction: column;
+            gap: 20px;
+
+            .img-area {
+                height: 100px;
+                width: 100px;
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width : 500px) {
+    .cart-item{
+        height: 100%;
+        width: 100%;
+
+        .row{
+            flex-direction: column;
+            gap: 20px;
+
+            .img-area {
+                height: 100px;
+                width: 100px;
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width : 320px) {
+    .cart-item{
+        height: 100%;
+        width: 100%;
+        flex-direction: column;
+
+        .row{
+            flex-direction: column;
+            gap: 10px;
+
+            .img-area {
+                height: 100px;
+                width: 100px;
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            button{
+                padding: 10px ;
+            }
+        }
+    }
+}

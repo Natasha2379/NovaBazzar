@@ -1,5 +1,15 @@
 import React, { useEffect, useState } from "react";
 import "./ProductDetail.scss";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+
+// import required modules
+import { Pagination } from "swiper";
+
 import Navbar from "../../components/Navbar/Navbar";
 import img1 from "../../assets/shoes.jpg";
 import img2 from "../../assets/apple.jpg";
@@ -66,31 +76,50 @@ const ProductDetail = () => {
                 </div>
                 <div className="product-detail-section">
                     <div className="product-images-section">
-                        <div className="main-img">
-                            <img src={product?.coverImage || img1} alt="" />
-                        </div>
-                        <div className="gallery-images">
-                            <img
-                                src={product?.galleryImages?.at(0) || img2}
-                                alt=""
-                            />
-                            <img
-                                src={product?.galleryImages?.at(1) || img3}
-                                alt=""
-                            />
-                            <img
-                                src={product?.galleryImages?.at(2) || img4}
-                                alt=""
-                            />
-                            <img
-                                src={product?.galleryImages?.at(3) || img5}
-                                alt=""
-                            />
-                            <img
-                                src={product?.galleryImages?.at(4) || img6}
-                                alt=""
-                            />
-                        </div>
+                        <Swiper
+                            className="swiper"
+                            pagination={{
+                                clickable: true,
+                            }}
+                            slidesPerView={1}
+                            // spaceBetween={30}
+                            modules={[Pagination]}
+                            loop={true}
+                        >
+                            <SwiperSlide className="slide-items">
+                                <img src={product?.coverImage || img1} alt="" />
+                            </SwiperSlide>
+                            <SwiperSlide className="slide-items">
+                                <img
+                                    src={product?.galleryImages?.at(0) || img2}
+                                    alt=""
+                                />
+                            </SwiperSlide>
+                            <SwiperSlide className="slide-items">
+                                <img
+                                    src={product?.galleryImages?.at(1) || img3}
+                                    alt=""
+                                />
+                            </SwiperSlide>
+                            <SwiperSlide className="slide-items">
+                                <img
+                                    src={product?.galleryImages?.at(2) || img4}
+                                    alt=""
+                                />
+                            </SwiperSlide>
+                            <SwiperSlide className="slide-items">
+                                <img
+                                    src={product?.galleryImages?.at(3) || img5}
+                                    alt=""
+                                />
+                            </SwiperSlide>
+                            <SwiperSlide className="slide-items">
+                                <img
+                                    src={product?.galleryImages?.at(4) || img6}
+                                    alt=""
+                                />
+                            </SwiperSlide>
+                        </Swiper>
                     </div>
                     <div className="product-about-section">
                         <div className="product-name">{product?.name}</div>

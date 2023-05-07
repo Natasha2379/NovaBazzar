@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./SellerShop.scss";
 
-import ShopSlidebar from "../shopSlidebar/ShopSlidebar";
+import ShopSlidebar from "../ShopSlidebar/ShopSlidebar";
 import ShopProduct from "../shopProduct/ShopProduct";
 import { getAllShopProducts } from "../../../services/api";
 

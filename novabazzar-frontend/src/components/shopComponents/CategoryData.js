@@ -2,7 +2,7 @@ export const KiranaProductCategoryData = {
     id: 1,
     ShopCategory: "Kirana shop",
     KiranaProductCategories: [
-        "all",
+        // "All",
         "Fruits & Vegetables",
         "Atta,Rice & Dal",
         "Home & Office",
@@ -22,7 +22,7 @@ export const ClothesProductCategoryData = {
     id: 2,
     ShopCategory: "Clothes shop",
     ClothesProductCategories: [
-        "all",
+        // "All",
         "Jeans",
         "T-Shirts & Shirts",
         "Trousers",
@@ -41,7 +41,7 @@ export const MedicalProductCategoryData = {
     id: 3,
     ShopCategory: "Medical shop",
     MedicalProductCategories: [
-        "all",
+        // "All",
         "Vitamins & Supplements",
         "Nutritional Drinks",
         "Personal Care",
@@ -64,7 +64,7 @@ export const ElectronicsProductCategoryData = {
     id: 4,
     ShopCategory: "Electronics Shop",
     ElectronicsProductCategories: [
-        "all",
+        // "All",
         "Laptops & Desktops & Computer Accessories",
         "Headphones",
         "Smart Wearables",
@@ -87,7 +87,7 @@ export const ParlourProductCategoryData = {
     id: 4,
     ShopCategory: "Parlour Shop",
     ParlourServiceCategories: [
-        "all",
+        // "All",
         "Hair cutting & color",
         "Manicure & Pedicure",
         "Threading & Face wax",

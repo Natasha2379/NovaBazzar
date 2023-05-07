@@ -1,5 +1,6 @@
 .ProductDetailPage {
     height: 100%;
+    width: 100%;
 
     .product-detail {
         .shop-detail-section {
@@ -10,7 +11,7 @@
             justify-content: center;
             gap: 30px;
             background: linear-gradient(to right, aqua, rgb(0, 115, 255));
-            
+
             div {
                 font-size: 1.5rem;
                 font-weight: 600;
@@ -18,35 +19,29 @@
             }
         }
         .product-detail-section {
-            padding: 1rem 0;
-            // height: 70vh;
             display: flex;
-            // align-items: center;
+            flex-direction: column;
             padding: 5%;
             .product-images-section {
-                height: 100%;
                 width: 100%;
-                flex: 1;
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
-                .main-img {
-                    height: 50vh;
-                    width: 57vh;
-                    img {
+                height: 70vh;
+                .swiper {
+                    height: 100%;
+                    width: 100%;
+
+                    .slide-items {
                         height: 100%;
                         width: 100%;
-                        object-fit: cover;
-                    }
-                }
-                .gallery-images {
-                    height: 120px;
-                    width: 100%;
-                    img {
-                        height: 100%;
-                        width: 100px;
-                        object-fit: cover;
-                        margin-right: 10px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        img {
+                            height: 100%;
+                            width: 50vw;
+                            object-fit: cover;
+                            padding-bottom: 50px;
+                        }
                     }
                 }
             }
@@ -83,7 +78,6 @@
                         font-weight: 600;
                         color: white;
                         border: none;
-                        
                     }
                     .cartbtn {
                         background-color: green;
@@ -100,13 +94,112 @@
             }
         }
     }
-    .related-products-section{
-        padding:  5%;
+    .related-products-section {
+        padding: 5%;
         margin-block: 20px;
 
-        h2{
+        h2 {
             margin-block: 20px;
         }
-    
     }
 }
+
+@media screen and (max-width: 500px) {
+    .ProductDetailPage {
+        .product-detail {
+            .shop-detail-section {
+                height: 70px;
+                width: 100%;
+                padding: 0 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+
+                div {
+                    font-size: 1.2rem;
+                    font-weight: 600;
+                    color: white;
+
+                }
+            }
+            .product-detail-section {
+                .product-images-section {
+                    width: 100%;
+                    height: 70vh;
+
+                    .swiper {
+                        height: 100%;
+                        width: 100%;
+    
+                        .slide-items {
+                            height: 100%;
+                            width: 100%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+    
+                            img {
+                                height: 100%;
+                                width: 100vw;
+                                object-fit: cover;
+                                padding-bottom: 50px;
+                            }
+                        }
+                    }
+                }
+                .product-about-section{
+                    .product-name{
+                        font-size: 1.4rem;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 320px) {
+    .ProductDetailPage {
+        .product-detail {
+            .shop-detail-section {
+                height: 50px;
+
+                div {
+                    font-size: 1rem;
+                    font-weight: 600;
+                    color: white;
+                }
+            }
+            .product-detail-section {
+                .product-images-section {
+                    width: 100%;
+                    height: 50vh;
+
+                    .swiper {
+                        height: 100%;
+                        width: 100%;
+    
+                        .slide-items {
+                            height: 100%;
+                            width: 100%;
+    
+                            img {
+                                height: 100%;
+                                width: 90vw;
+                                object-fit: cover;
+                            }
+                        }
+                    }
+                }
+                .product-about-section{
+                    .product-name{
+                      font-size: 1.1rem;
+                      font-weight: 600;
+                    }
+                  }
+            }
+            
+        }
+    }
+}
+
+

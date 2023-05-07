@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./SellerProfile.scss";
 import image from "../../../assets/sellerLogin.jpg";
 
-import SellerBussiness from "../../../components/ShopComponents/sellerProfileParts/SellerBussiness/SellerBussiness";
-import EditShopProfile from "../../../components/ShopComponents/sellerProfileParts/ProfileArea/EditShopProfile";
+import SellerBussiness from "../../../components/shopComponents/sellerProfileParts/SellerBussiness/SellerBussiness";
+import EditShopProfile from "../../../components/shopComponents/sellerProfileParts/ProfileArea/EditShopProfile";
 import { getShopOfUser } from "../../../services/api";
 import { useSelector } from "react-redux";
 import { selectUser_ID } from "../../../redux/slices/userSlice";
