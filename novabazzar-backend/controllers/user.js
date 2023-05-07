@@ -107,7 +107,7 @@ const editUserDetails = async (req, res, next) => {
 		const updatedUser = {
 			...user._doc,
 			name: req.body.name,
-			email: req.body.name,
+			email: req.body.email,
 			phone: req.body.phone,
 			profile_picture: req.body.profile_picture,
 		};

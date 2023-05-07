@@ -95,10 +95,105 @@ const deleteProduct = async (req, res, next) => {
 const getAllProducts = async (req, res, next) => {
 	const search = req.query.search || "";
 
+	let sort = req.query.sort || "price";
+	req.query.sort ? (sort = req.query.sort.split(",")) : (sort = [sort]);
+	let sortBy = {};
+	if (sort[1]) {
+		sortBy[sort[0]] = sort[1];
+	} else {
+		sortBy[sort[0]] = "asc";
+	}
+
+	let typeFilter;
+	if (req.query.type != "null" && req.query.type != "undefined") {
+		typeFilter = req.query.type;
+	} else {
+		typeFilter = "all";
+	}
+
+	const types = [
+		"Laptops & Desktops & Computer Accessories",
+		"Headphones",
+		"Smart Wearables",
+		"Styling Devices",
+		"Cameras",
+		"Tablets",
+		"Mobile Accessories",
+		"Speakers & Video",
+		"Gaming Accessories",
+		"TVs & Smart Televisions",
+		"Washing Machines & ",
+		"Kitchen Appliances",
+		"Air Conditioners & Fans & Air Coolers",
+		"Home Appliances",
+		"Microwace Ovens",
+		"Hair cutting & color",
+		"Manicure & Pedicure",
+		"Threading & Face wax",
+		"Facial & Cleanup",
+		"Bleach & Detan",
+		"Wedding special",
+		"Waxing",
+		"Face care",
+		"Shave/beard grooming",
+		"Vitamins & Supplements",
+		"Nutritional Drinks",
+		"Personal Care",
+		"Ayruveda",
+		"Pain Relief",
+		"Homeopathy",
+		"Health Condition",
+		"Accessories & Wearables",
+		"Diabetic Care",
+		"Mother and Baby Care",
+		"Health Food and Drinks",
+		"Healthcare Devices",
+		"Home Care",
+		"Skin Care",
+		"Pet Care",
+		"Jeans",
+		"T-Shirts & Shirts",
+		"Trousers",
+		"Kurta & Sets",
+		"Accessories",
+		"Dresses",
+		"Tops & Tees",
+		"Kurti & Sets",
+		"Sarees",
+		"Heels & Flats",
+		"Footwear",
+		"Fruits & Vegetables",
+		"Atta,Rice & Dal",
+		"Home & Office",
+		"Daily ,Bread & egg",
+		"Cold Drinks & Juice",
+		"Snacks & Munchies",
+		"Breakfast & Instant Food",
+		"Tea ,Coffee & Health Drinks",
+		"Sauces & Spread",
+		"Cleaning Essentials",
+		"Sweet Tooth",
+		"Bakery & Biscuits",
+	];
+
+	typeFilter === "all"
+		? (typeFilter = [...types])
+		: (typeFilter = typeFilter.split(","));
+
 	try {
 		const products = await Product.find({
-			name: { $regex: search, $options: "i" },
-		}).sort({ timestamp: -1 });
+			$and: [
+				{
+					$or: [
+						{
+							name: { $regex: search, $options: "i" },
+						},
+						{ categories: { $regex: search, $options: "i" } },
+					],
+				},
+				{ categories: { $in: [...typeFilter] } },
+			],
+		}).sort(sortBy);
 
 		res.status(200).json({ products, message: "all products" });
 	} catch (err) {
@@ -114,6 +209,15 @@ const getAllShopProducts = async (req, res, next) => {
 		typeFilter = req.query.type;
 	} else {
 		typeFilter = "all";
+	}
+
+	let sort = req.query.sort || "price";
+	req.query.sort ? (sort = req.query.sort.split(",")) : (sort = [sort]);
+	let sortBy = {};
+	if (sort[1]) {
+		sortBy[sort[0]] = sort[1];
+	} else {
+		sortBy[sort[0]] = "asc";
 	}
 
 	const types = [
@@ -192,7 +296,7 @@ const getAllShopProducts = async (req, res, next) => {
 				{ name: { $regex: search, $options: "i" } },
 				{ categories: { $in: [...typeFilter] } },
 			],
-		});
+		}).sort(sortBy);
 
 		res.status(200).json({ products, message: "shop products" });
 	} catch (err) {
