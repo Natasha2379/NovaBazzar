@@ -1,6 +1,6 @@
 import axios from "axios";
-//const REACT_APP_SERVER_DOMAIN = "http://localhost:8000"; //local server
- const REACT_APP_SERVER_DOMAIN = "https://ijpkaushik-novabazzar.onrender.com"; // deployed server
+// const REACT_APP_SERVER_DOMAIN = "http://localhost:8000"; //local server
+const REACT_APP_SERVER_DOMAIN = "https://ijpkaushik-novabazzar.onrender.com"; // deployed server
 
 /***************************** USERS *****************************/
 //function to register
@@ -74,19 +74,20 @@ export const getProductDetails = (product_id) => {
 };
 
 //get all products data
-export const getAllProductsDetails = (search) => {
+export const getAllProductsDetails = (search, sort, type) => {
     return axios.get(
-        REACT_APP_SERVER_DOMAIN + `/api/products/?search=${search}`,
+        REACT_APP_SERVER_DOMAIN +
+            `/api/products/?search=${search}&sort=${sort?.sort},${sort?.order}&type=${type}`,
     );
 };
 
 //get all products data
-export const getAllShopProducts = (shopid, search, type) => {
+export const getAllShopProducts = (shopid, search, type, sort) => {
     return axios.get(
         REACT_APP_SERVER_DOMAIN +
             `/api/products/shop/` +
             shopid +
-            `?search=${search}&type=${type}`,
+            `?search=${search}&type=${type}&sort=${sort?.sort},${sort?.order}`,
     );
 };
 
@@ -192,5 +193,7 @@ export const editOrderDetails = (order_id, orderData) => {
 
 //delete order data
 export const deleteOrderDetails = (order_id) => {
-    return axios.delete(REACT_APP_SERVER_DOMAIN + "/api/orders/order/" + order_id);
+    return axios.delete(
+        REACT_APP_SERVER_DOMAIN + "/api/orders/order/" + order_id,
+    );
 };

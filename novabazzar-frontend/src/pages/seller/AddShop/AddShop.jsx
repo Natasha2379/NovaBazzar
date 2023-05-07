@@ -25,6 +25,19 @@ const OpenShop = () => {
     const [success, setSuccess] = useState("");
 
     const handleSendOTP = async () => {
+        if (
+            !name ||
+            !shopName ||
+            !shopType ||
+            !state ||
+            !city ||
+            !email ||
+            !phone ||
+            !location
+        ) {
+            window.alert("please enter all details");
+            return;
+        }
         try {
             const res = await getOTP({ email });
             setSystemOTP(res.data.otp);

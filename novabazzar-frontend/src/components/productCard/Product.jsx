@@ -17,7 +17,7 @@ const Product = (props) => {
                 try {
                     const res = await getShopDetails(props.product?.shopId);
 
-                    setShop(res.data.products);
+                    setShop(res.data.shop);
                 } catch (error) {
                     console.log(error);
                 }

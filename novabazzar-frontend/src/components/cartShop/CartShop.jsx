@@ -18,6 +18,10 @@ const CartShop = () => {
     const dispatch = useDispatch();
 
     const handlePlaceOrder = async () => {
+        if (cartItems.length === 0) {
+            window.alert("cart is empty");
+            return;
+        }
         try {
             const res = await addOrder({
                 buyerId: userId,

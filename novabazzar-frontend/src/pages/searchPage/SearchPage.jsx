@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./SearchPage.scss";
 import Navbar from "../../components/Navbar/Navbar";
 import ShopCard from "../../components/shopCard/ShopCard";
-import Product from "../../components/productCard/Product";
+import Product from "../../components/ProductCard/Product";
 import Footer from "../../components/Footer/Footer";
 import { getAllProductsDetails, getAllShopsDetails } from "../../services/api";
 import { useSelector } from "react-redux";
@@ -14,19 +14,22 @@ const SearchPage = () => {
 
     const queryString = window.location.search;
     const queryParams = new URLSearchParams(queryString);
-    const paramValue = queryParams.get("type");
+    const shoptype = queryParams.get("stype");
+    const producttype = queryParams.get("ptype");
 
     const [activeItem, setActiveItem] = useState("shops");
     const [search, setSearch] = useState("");
-    const [type, setType] = useState(paramValue);
+    const [stype, setsType] = useState(shoptype);
+    const [ptype, setpType] = useState(shoptype);
     const [shops, setShops] = useState();
     const [products, setProducts] = useState();
+    const [sort, setSort] = useState({ sort: "price", order: "desc" });
 
     useEffect(() => {
         const fetchProductsAndShops = async () => {
             try {
-                const res = await getAllShopsDetails(search, type);
-                const res2 = await getAllProductsDetails(search);
+                const res = await getAllShopsDetails(search, stype);
+                const res2 = await getAllProductsDetails(search, sort, ptype);
                 setShops(res.data.shops);
                 setProducts(res2.data.products);
             } catch (error) {
@@ -34,8 +37,9 @@ const SearchPage = () => {
             }
         };
         fetchProductsAndShops();
-        setType(paramValue);
-    }, [search, type, paramValue]);
+        setsType(shoptype);
+        setpType(producttype);
+    }, [search, stype, ptype, sort, producttype, shoptype]);
 
     useEffect(() => {
         setFavouriteIds(user?.favourites);
@@ -69,6 +73,29 @@ const SearchPage = () => {
                             {" "}
                             Products{`(${products?.length})`}
                         </li>
+                        <div style={{ cursor: "pointer" }}>
+                            <span
+                                onClick={() =>
+                                    setSort({
+                                        sort: "price",
+                                        order: "asc",
+                                    })
+                                }
+                            >
+                                ASC
+                            </span>{" "}
+                            <br />
+                            <span
+                                onClick={() =>
+                                    setSort({
+                                        sort: "price",
+                                        order: "desc",
+                                    })
+                                }
+                            >
+                                DESC
+                            </span>
+                        </div>
                     </ul>
 
                     <div className="result-section flex wrap ">

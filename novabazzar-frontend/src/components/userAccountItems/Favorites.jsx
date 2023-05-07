@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import Product from "../productCard/Product";
+import Product from "../ProductCard/Product";
 import { useSelector } from "react-redux";
 import { selectUserData } from "../../redux/slices/userSlice";
 import { getProductDetails } from "../../services/api";
@@ -8,22 +8,27 @@ import { getProductDetails } from "../../services/api";
 const Favorites = () => {
     const user = useSelector(selectUserData);
     const [favouriteIds, setFavouriteIds] = useState([]);
-    const [favourites, setFavourites] = useState([]);
 
     useEffect(() => {
         setFavouriteIds(user?.favourites);
     }, [user]);
-    console.log(favourites);
+    // console.log(favourites);
+    // console.log(favouriteIds);
+
+    const [favourites, setFavourites] = useState([]);
 
     useEffect(() => {
         const fetchProduct = async () => {
             user?.favourites.map(async (item) => {
                 try {
                     const res = await getProductDetails(item);
-                    setFavourites((favourites) => [
-                        ...favourites,
-                        res.data.product,
-                    ]);
+                    const productToAdd = res.data.product;
+                    if (!favourites.find((p) => p.id === productToAdd.id)) {
+                        setFavourites((prevFavourites) => [
+                            ...prevFavourites,
+                            productToAdd,
+                        ]);
+                    }
                 } catch (error) {
                     console.log(error);
                 }

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./SellerShop.scss";
 
-import ShopSlidebar from "../ShopSlidebar/ShopSlidebar";
+import ShopSlidebar from "../shopSlidebar/ShopSlidebar";
 import ShopProduct from "../shopProduct/ShopProduct";
 import { getAllShopProducts } from "../../../services/api";
 
@@ -9,13 +9,19 @@ const MyShop = (props) => {
     const [products, setProducts] = useState([]);
     const [search, setSearch] = useState("");
     const [type, setType] = useState("all");
+    const [sort, setSort] = useState({ sort: "price", order: "desc" });
 
     const shopId = window.location.pathname.split("/")[2];
 
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const res = await getAllShopProducts(shopId, search, type);
+                const res = await getAllShopProducts(
+                    shopId,
+                    search,
+                    type,
+                    sort,
+                );
 
                 setProducts(res.data.products);
             } catch (error) {
@@ -24,7 +30,7 @@ const MyShop = (props) => {
         };
 
         fetchProducts();
-    }, [search, shopId, type]);
+    }, [search, shopId, sort, type]);
 
     return (
         <div className="myShopContainer flex column">

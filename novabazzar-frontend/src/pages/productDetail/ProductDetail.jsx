@@ -21,7 +21,7 @@ import img6 from "../../assets/banner.jpg";
 import { getProductDetails, getShopDetails } from "../../services/api";
 import { addItem } from "../../redux/slices/cartSlice";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const ProductDetail = () => {
     const navigate = useNavigate();
@@ -68,12 +68,12 @@ const ProductDetail = () => {
         <div className="ProductDetailPage">
             <Navbar />
             <div className="product-detail">
-                <div className="shop-detail-section">
+                <Link to={`/shop/${shop?._id}`} className="shop-detail-section">
                     <div className="shop-name">{shop?.shopName}</div>
                     <div className="shop-location">
                         {shop?.location}, {shop?.city}
                     </div>
-                </div>
+                </Link>
                 <div className="product-detail-section">
                     <div className="product-images-section">
                         <Swiper
