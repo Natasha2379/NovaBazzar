@@ -43,9 +43,13 @@ const ShopSchema = new Schema(
 			required: true,
 		},
 		open: {
-			type: String,
+			type: Boolean,
 			required: true,
 			default: true,
+		},
+		shopImage: {
+			type: String,
+			default: "",
 		},
 	},
 	{ timestamps: true }

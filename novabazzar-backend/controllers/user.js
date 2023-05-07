@@ -109,7 +109,7 @@ const editUserDetails = async (req, res, next) => {
 			name: req.body.name,
 			email: req.body.name,
 			phone: req.body.phone,
-			profile_picture: req.body.profile_pic,
+			profile_picture: req.body.profile_picture,
 		};
 
 		const latestUser = await User.findByIdAndUpdate(
@@ -217,7 +217,7 @@ const uploadUsersProfileImage = async (req, res, next) => {
 			console.log(`File uploaded successfully. ${data?.Location}`);
 			return res.status(200).json({
 				message: "image uploaded",
-				url: data.Location,
+				url: data?.Location,
 			});
 		});
 	} catch (err) {

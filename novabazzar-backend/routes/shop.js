@@ -10,6 +10,7 @@ const {
 	deleteShop,
 	uploadShopImage,
 	getOtpForShopVerification,
+	getUsersShop,
 } = require("../controllers/shop");
 
 const memoStorage = multer.memoryStorage();
@@ -27,6 +28,9 @@ router.get("/", getAllShops);
 
 //GET SHOP
 router.get("/shop/:shopid", getShop);
+
+//GET USER'S SHOP
+router.get("/user-shop/:userid", getUsersShop);
 
 //EDIT SHOP DETAILS
 router.put("/shop/:shopid", editShopDetails);

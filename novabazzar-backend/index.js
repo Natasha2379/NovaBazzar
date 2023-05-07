@@ -8,6 +8,7 @@ const cors = require("cors");
 const userRouter = require("./routes/user");
 const productRouter = require("./routes/product");
 const shopRouter = require("./routes/shop");
+const orderRouter = require("./routes/order");
 // const { PORT } = require("./config/dev");
 // const { ATLAS_URI } = require("./config/dev");
 
@@ -35,6 +36,7 @@ app.use(express.json());
 app.use("/api/users", userRouter);
 app.use("/api/products", productRouter);
 app.use("/api/shops", shopRouter);
+app.use("/api/orders", orderRouter);
 
 //error handler
 app.use((err, req, res, next) => {

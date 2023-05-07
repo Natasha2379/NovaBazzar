@@ -223,7 +223,7 @@ const uploadProductImage = async (req, res, next) => {
 			console.log(`File uploaded successfully. ${data?.Location}`);
 			return res.status(200).json({
 				message: "image uploaded",
-				url: data.Location,
+				url: data?.Location,
 			});
 		});
 	} catch (err) {

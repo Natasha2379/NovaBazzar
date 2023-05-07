@@ -96,6 +96,18 @@ const getShop = async (req, res, next) => {
 	}
 };
 
+const getUsersShop = async (req, res, next) => {
+	try {
+		const shop = await Shop.findOne({ userId: req.params.userid });
+
+		if (!shop) return next(createError(404, "shop not found!"));
+
+		res.status(200).json({ shop, message: "shop details" });
+	} catch (err) {
+		next(err);
+	}
+};
+
 const editShopDetails = async (req, res, next) => {
 	try {
 		const shop = await Shop.findOne({ _id: req.params.shopid });
@@ -112,6 +124,8 @@ const editShopDetails = async (req, res, next) => {
 			city: req.body.city,
 			email: req.body.email,
 			phone: req.body.phone,
+			open: req.body.open,
+			shopImage: req.body.shopImage,
 		};
 
 		const latestShop = await Shop.findByIdAndUpdate(
@@ -192,7 +206,7 @@ const uploadShopImage = async (req, res, next) => {
 			console.log(`File uploaded successfully. ${data?.Location}`);
 			return res.status(200).json({
 				message: "image uploaded",
-				url: data.Location,
+				url: data?.Location,
 			});
 		});
 	} catch (err) {
@@ -208,4 +222,5 @@ module.exports = {
 	editShopDetails,
 	deleteShop,
 	uploadShopImage,
+	getUsersShop,
 };
