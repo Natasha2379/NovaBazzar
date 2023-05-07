@@ -9,7 +9,7 @@ const Profile = () => {
     return (
         <div className="myprofile flex abs-center column">
             <div className="profile-img">
-                <img src={image} alt="" />
+                <img src={user?.profile_picture || image} alt="" />
             </div>
             <div className="my-details">
                 <div className="my-name">{user?.name}</div>

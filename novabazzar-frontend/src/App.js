@@ -3,12 +3,12 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import Home from "./pages/Home/Home";
-import Shop from "./pages/seller/Shop/Shop";
-import AddShop from "./pages/seller/AddShop/AddShop";
-import EditProduct from "./components/shopComponents/EditProduct/EditProduct";
+import Shop from "./pages/Seller/Shop/Shop";
+import AddShop from "./pages/Seller/AddShop/AddShop";
+import EditProduct from "./components/ShopComponents/editProduct/EditProduct";
 import ProductDetail from "./pages/productDetail/ProductDetail";
 import SearchPage from "./pages/SearchPage/SearchPage";
-import SellerProfile from "./pages/seller/SellerProfile/SellerProfile";
+import SellerProfile from "./pages/Seller/SellerProfile/SellerProfile";
 // user account pages
 import ProfilePage from "./pages/Buyer/BuyerProfile/BuyerProfile";
 import Register from "./pages/Buyer/Forms/RegisterPage";

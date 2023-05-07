@@ -53,11 +53,13 @@
         }
     }
     .content {
-        
         gap: 10px;
         .product-name {
             font-size: 1rem;
             color: black;
+            h3 {
+                text-decoration: none;
+            }
         }
         .product-shop-name {
             font-size: 15px;
@@ -76,9 +78,9 @@
             }
         }
     }
-    .shopProductEditButton{
+    .shopProductEditButton {
         border: 3px solid green;
-        color:green;
+        color: green;
         font-size: 1.2rem;
         font-weight: 600;
         padding: 7px 20px;
@@ -90,5 +92,6 @@
         bottom: 10px;
         left: 50px;
         right: 50px;
+        cursor: pointer;
     }
 }

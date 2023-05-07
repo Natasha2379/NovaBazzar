@@ -1,11 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Navbar.scss";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectUserData } from "../../redux/slices/userSlice";
+import { getShopOfUser } from "../../services/api";
 
 const Navbar = (props) => {
     const user = useSelector(selectUserData);
+    const [shop, setShop] = useState();
+
+    useEffect(() => {
+        const fetchShop = async () => {
+            try {
+                const res = await getShopOfUser(user?._id);
+                setShop(res.data.shop);
+            } catch (error) {
+                console.log(error);
+            }
+        };
+        fetchShop();
+    }, [user]);
 
     return (
         <div className="navbar flex align-center column ">
@@ -20,9 +34,15 @@ const Navbar = (props) => {
                         <Link to="/buyer/cart" className="link">
                             Cart
                         </Link>
-                        <Link to="/seller/addshop" className="link">
-                            Become a Seller
-                        </Link>
+                        {shop ? (
+                            <Link to={`/shop/${shop._id}`} className="link">
+                                My Shop
+                            </Link>
+                        ) : (
+                            <Link to="/seller/addshop" className="link">
+                                Become a Seller
+                            </Link>
+                        )}
                         {user ? (
                             <Link to="/buyer/profile" className="link">
                                 {user?.name}

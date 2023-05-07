@@ -21,7 +21,9 @@ const ProductDetail = () => {
     const dispatch = useDispatch();
 
     const handleAddToCart = () => {
-        dispatch(addItem({ id: product_id, price: product.price }));
+        dispatch(
+            addItem({ id: product_id, price: product.price, quantity: 1 }),
+        );
         navigate("/buyer/cart");
     };
 

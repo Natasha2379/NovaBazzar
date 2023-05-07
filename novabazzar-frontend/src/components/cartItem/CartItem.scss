@@ -7,7 +7,7 @@
 
     .row {
         padding: 10px;
-      
+
         flex: 1;
 
         .img-area {
@@ -51,6 +51,7 @@
             color: white;
             border: none;
             width: 120px;
+            cursor: pointer;
         }
     }
 }

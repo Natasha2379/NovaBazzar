@@ -20,7 +20,7 @@
             }
         }
 
-        label {
+        .uploadImageDiv {
             font-size: 1.3rem;
             font-weight: 500;
             background-color: cornflowerblue;
@@ -71,8 +71,45 @@
 }
 
 .ordersTab {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     padding: 10px;
+    gap: 1rem;
+
+    .orderContainer {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+        padding: 1rem;
+        background-color: rgb(231, 231, 225);
+        border: 1px solid black;
+
+        .orderHeading {
+            padding: 0.5rem 0;
+        }
+        .book-btn {
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            width: 100%;
+            margin-right: 20px;
+
+            button {
+                padding: 12px 0;
+                width: 100px;
+                font-size: 1rem;
+                border-radius: 20px;
+            }
+        }
+        .book-btn {
+            button {
+                background-color: orangered;
+                cursor: pointer;
+                color: white;
+            }
+        }
+    }
 }
 
 //Profile section styling

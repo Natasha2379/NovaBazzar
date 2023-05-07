@@ -1,26 +1,20 @@
 import React, { useEffect, useState } from "react";
 import "./CartItem.scss";
 import image from "../../assets/shoes.jpg";
-import { useDispatch, useSelector } from "react-redux";
-import {
-    removeItem,
-    selectCartItems,
-    selectCartTotalCost,
-} from "../../redux/slices/cartSlice";
+import { useDispatch } from "react-redux";
+import { increaseItem, removeItem } from "../../redux/slices/cartSlice";
 import { getProductDetails, getShopDetails } from "../../services/api";
 
 const CartItem = (props) => {
-    const totalPrice = useSelector(selectCartTotalCost);
-    const cartItems = useSelector(selectCartItems);
-
     const [product, setProduct] = useState();
     const [shop, setShop] = useState();
+    const [quantity, setQuantity] = useState(1);
     const dispatch = useDispatch();
 
     useEffect(() => {
         const fetchProduct = async () => {
             try {
-                const res = await getProductDetails(props.item);
+                const res = await getProductDetails(props.item.id);
                 setProduct(res.data.product);
             } catch (error) {
                 console.log(error);
@@ -43,8 +37,24 @@ const CartItem = (props) => {
         fetchShop();
     }, [product]);
 
+    const handleItemIncrease = (value) => {
+        dispatch(
+            increaseItem({
+                id: props.item.id,
+                price: product.price,
+                quantity: value,
+            }),
+        );
+    };
+
     const handleRemoveFromCart = () => {
-        dispatch(removeItem({ id: props.item, price: product.price }));
+        dispatch(
+            removeItem({
+                id: props.item.id,
+                price: product.price,
+                quantity: props.item.quantity,
+            }),
+        );
     };
     return (
         <div className="cart-item flex ">
@@ -57,9 +67,18 @@ const CartItem = (props) => {
             </div>
             <div className="row flex align-center space">
                 <div className="item-quantity">
-                    <input type="number" name="" id="" placeholder="1" />
+                    <input
+                        type="number"
+                        value={quantity}
+                        id=""
+                        placeholder=""
+                        onChange={(e) => {
+                            setQuantity(e.target.value);
+                            handleItemIncrease(e.target.value);
+                        }}
+                    />
                 </div>
-                <div class="item-price">₹ {product?.price}</div>
+                <div className="item-price">₹ {product?.price * quantity}</div>
                 <button onClick={handleRemoveFromCart}>Remove</button>
             </div>
         </div>

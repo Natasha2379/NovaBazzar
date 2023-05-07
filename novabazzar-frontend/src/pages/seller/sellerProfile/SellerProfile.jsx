@@ -1,26 +1,47 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./SellerProfile.scss";
 import image from "../../../assets/sellerLogin.jpg";
 
-import SellerBussiness from "../../../components/shopComponents/sellerProfileParts/SellerBussiness/SellerBussiness";
-import EditShopProfile from "../../../components/shopComponents/sellerProfileParts/ProfileArea/EditShopProfile";
+import SellerBussiness from "../../../components/ShopComponents/sellerProfileParts/SellerBussiness/SellerBussiness";
+import EditShopProfile from "../../../components/ShopComponents/sellerProfileParts/ProfileArea/EditShopProfile";
+import { getShopOfUser } from "../../../services/api";
+import { useSelector } from "react-redux";
+import { selectUser_ID } from "../../../redux/slices/userSlice";
 
 const SellerProfile = () => {
-    const [active, setActive] = useState("favorites");
+    const userid = useSelector(selectUser_ID);
+    const [active, setActive] = useState("MyBusiness");
+    const [shop, setShop] = useState();
+
+    const fetchShop = async () => {
+        try {
+            const { data } = await getShopOfUser(userid);
+            setShop(data.shop);
+        } catch (error) {
+            console.log(error);
+        }
+    };
+    useEffect(() => {
+        fetchShop();
+    }, [userid]);
     return (
         <div className="sellerAccountPage">
             <h2>My Shop Profile page</h2>
             <img src={image} alt="" />
             <div className="shop-banner-details flex align-center space">
-                <div className="shop-name">My Shop name</div>
-                <div className="shop-type">my Shop type</div>
-                <div className="shop-location">my Shop location</div>
+                <div className="shop-name">{shop?.shopName}</div>
+                <div className="shop-type">{shop?.shopType}</div>
+                <div className="shop-location">
+                    {shop?.location}, {shop?.city}, {shop?.state}
+                </div>
             </div>
             <div className="shop-details-area flex ">
                 <ul className="SellerTabs flex column">
                     <li
-                        onClick={() => setActive("favorites")}
-                        className={active === "favorites" ? "activeTab" : "Tab"}
+                        onClick={() => setActive("MyBusiness")}
+                        className={
+                            active === "MyBusiness" ? "activeTab" : "Tab"
+                        }
                     >
                         {" "}
                         My Business
@@ -37,8 +58,14 @@ const SellerProfile = () => {
                     </li>
                 </ul>
                 <div className="details">
-                    {active === "favorites" && <SellerBussiness />}
-                    {active === "editProfile" && <EditShopProfile />}
+                    {active === "MyBusiness" && <SellerBussiness />}
+                    {active === "editProfile" && (
+                        <EditShopProfile
+                            shop={shop}
+                            setShop={setShop}
+                            fetchShop={fetchShop}
+                        />
+                    )}
                 </div>
             </div>
         </div>

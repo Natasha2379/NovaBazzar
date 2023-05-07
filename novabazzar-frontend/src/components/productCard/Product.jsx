@@ -39,10 +39,7 @@ const Product = (props) => {
     }, []);
 
     return (
-        <Link
-            to={`/productdetail/${props.product?._id}`}
-            className="prdouct-card link "
-        >
+        <div className="prdouct-card link ">
             <div className="product-img">
                 <img src={props?.product?.coverImage || image} alt="" />
                 <span
@@ -64,7 +61,7 @@ const Product = (props) => {
                                         (item) => item !== props.product?._id,
                                     ),
                                 );
-                                window.location.reload();
+                                // window.location.reload();
                             }}
                         ></i>
                     ) : (
@@ -80,13 +77,16 @@ const Product = (props) => {
                                     ...props.favouriteIds,
                                     props.product?._id,
                                 ]);
-                                window.location.reload();
+                                // window.location.reload();
                             }}
                         ></i>
                     )}
                 </span>
             </div>
-            <div className="content">
+            <Link
+                to={`/productdetail/${props.product?._id}`}
+                className="content"
+            >
                 <div className="product-name">
                     <h3>{props.product?.name}</h3>
                 </div>
@@ -96,7 +96,9 @@ const Product = (props) => {
                     </h5>
                 </div>
                 <div className="price-rating flex space align-center">
-                    <h3>₹ {props.product?.price}kg</h3>
+                    <h3 style={{ color: "black" }}>
+                        ₹ {props.product?.price}kg
+                    </h3>
                     <div className="rating">
                         <i className="fa fa-star"></i>
                         <i className="fa fa-star"></i>
@@ -104,8 +106,8 @@ const Product = (props) => {
                         <i className="fa fa-star"></i>
                     </div>
                 </div>
-            </div>
-        </Link>
+            </Link>
+        </div>
     );
 };
 

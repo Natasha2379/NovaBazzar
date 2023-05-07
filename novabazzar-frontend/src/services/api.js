@@ -1,6 +1,6 @@
 import axios from "axios";
-// const REACT_APP_SERVER_DOMAIN = "http://localhost:8000"; //local server
-const REACT_APP_SERVER_DOMAIN = "https://ijpkaushik-novabazzar.onrender.com"; // deployed server
+const REACT_APP_SERVER_DOMAIN = "http://localhost:8000"; //local server
+// const REACT_APP_SERVER_DOMAIN = "https://ijpkaushik-novabazzar.onrender.com"; // deployed server
 
 /***************************** USERS *****************************/
 //function to register
@@ -129,9 +129,15 @@ export const getShopDetails = (shop_id) => {
     return axios.get(REACT_APP_SERVER_DOMAIN + "/api/shops/shop/" + shop_id);
 };
 
+//get shop of user
+export const getShopOfUser = (user_id) => {
+    return axios.get(
+        REACT_APP_SERVER_DOMAIN + "/api/shops/user-shop/" + user_id,
+    );
+};
+
 //get all shops data
 export const getAllShopsDetails = (search, type) => {
-    console.log("search" + search + "type" + type);
     return axios.get(
         REACT_APP_SERVER_DOMAIN + `/api/shops/?type=${type}&search=${search}`,
     );
@@ -156,4 +162,35 @@ export const uploadShopImage = (formData) => {
         REACT_APP_SERVER_DOMAIN + "/api/shops/upload-shop-image",
         formData,
     );
+};
+
+/***************************** ORDERS *****************************/
+//function to place order
+export const addOrder = (form) => {
+    return axios.post(REACT_APP_SERVER_DOMAIN + "/api/orders/add", form);
+};
+
+//get order data
+export const getOrderDetails = (order_id) => {
+    return axios.get(REACT_APP_SERVER_DOMAIN + "/api/orders/order/" + order_id);
+};
+
+//get order of user
+export const getOrdersOfUser = (user_id) => {
+    return axios.get(
+        REACT_APP_SERVER_DOMAIN + "/api/orders/user-order/" + user_id,
+    );
+};
+
+//edit order data
+export const editOrderDetails = (order_id, orderData) => {
+    return axios.put(
+        REACT_APP_SERVER_DOMAIN + "/api/orders/order/" + order_id,
+        orderData,
+    );
+};
+
+//delete order data
+export const deleteOrderDetails = (order_id) => {
+    return axios.delete(REACT_APP_SERVER_DOMAIN + "/api/orders/order/" + order_id);
 };

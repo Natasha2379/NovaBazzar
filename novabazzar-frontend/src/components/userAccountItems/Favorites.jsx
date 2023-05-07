@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import Product from "../productCard/Product";
+import Product from "../ProductCard/Product";
 import { useSelector } from "react-redux";
 import { selectUserData } from "../../redux/slices/userSlice";
 import { getProductDetails } from "../../services/api";
@@ -34,14 +34,16 @@ const Favorites = () => {
 
     return (
         <div className="myfavourites flex wrap ">
-            {favourites.map((product, index) => (
-                <Product
-                    product={product}
-                    key={index}
-                    favouriteIds={favouriteIds}
-                    setFavouriteIds={setFavouriteIds}
-                />
-            ))}
+            {favourites.length
+                ? favourites.map((product, index) => (
+                      <Product
+                          product={product}
+                          key={index}
+                          favouriteIds={favouriteIds}
+                          setFavouriteIds={setFavouriteIds}
+                      />
+                  ))
+                : " YOU HAVE NOT ADDED ANY PRODUCT TO FAVOURITES..."}
         </div>
     );
 };
