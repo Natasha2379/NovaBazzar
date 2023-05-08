@@ -23,8 +23,41 @@
             }
         }
     }
-    .shop-items{
+    .shop-items {
         margin-block: 10px;
-        
+    }
+}
+@media screen and (max-width: 500px) {
+    .shopPage {
+        width: 100%;
+        .shopMainArea {
+            width: 100%;
+            .shopTabs {
+                gap: 70px;
+
+                li {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .shopPage {
+        width: 100%;
+        height: 100%;
+        .shopMainArea {
+            width: 100%;
+            .shopTabs {
+                width: 100%;
+                gap: 20px;
+                padding: 10px ;
+
+                li {
+                    font-size: 1rem;
+                }
+            }
+        }
     }
 }

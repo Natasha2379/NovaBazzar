@@ -15,7 +15,7 @@ const ShopCard = (props) => {
                 await editShopDetails(props.shop._id, { open: status });
                 window.location.reload();
             }
-    } catch (error) {
+        } catch (error) {
             console.log(error);
         }
     };
@@ -26,14 +26,14 @@ const ShopCard = (props) => {
                 <img src={image} alt="" />
             </Link>
             <div className="shop-detail flex column">
-                <div className="col flex align-center">
+                <div className="col1 flex align-center column">
                     <h3>{props.shop.shopName}</h3>
-                    <h4>{props.shop.shopType}</h4>
-                </div>
-                <div className="col flex align-center">
                     <p>
                         {props.shop.location}, {props.shop.city}
                     </p>
+                </div>
+                <div className="col2 flex align-center ">
+                    <h4>{props.shop.shopType}</h4>
                     {
                         <div className="shop-status">
                             {props.shop?.open === true && (

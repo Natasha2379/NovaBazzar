@@ -4,9 +4,8 @@
     color: inherit;
     height: 320px;
     width: 250px;
-    border: 2px solid rgb(149, 146, 146);
-    box-shadow: 0 0 3px gray;
     padding: 0.5rem;
+    border: 1px solid #edeaea;
 
     .product-img {
         position: relative;
@@ -67,6 +66,7 @@
         }
     }
     .content {
+        margin-top: 10px;
         gap: 10px;
         .product-name {
             font-size: 1rem;
@@ -108,4 +108,141 @@
         right: 50px;
         cursor: pointer;
     }
+}
+
+@media screen and (max-width : 768px) {
+    .shop-product-card{
+        height: 300px;
+        width: 230px;
+    }
+}
+@media screen and (max-width : 500px) {
+    .shop-product-card{
+        height: 300px;
+        width: 50%;
+
+        .product-img{
+            .fav{
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                cursor: pointer;
+                height: 20px;
+                width: 20px;
+
+                i {
+                    font-size: 1.3rem;
+                }
+                   
+            }
+            .delete{
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                cursor: pointer;
+                height: 20px;
+                width: 20px;
+
+                i {
+                    font-size: 1.3rem;
+                }
+            }
+        }
+        .shopProductEditButton {
+            border: 2px solid green;
+            color: green;
+            font-size: 1.2rem;
+            font-weight: 500;
+            padding: 5px 10px;
+            text-align: center;
+            width: 90px;
+            border-radius: 20px;
+            margin: auto;
+            position: absolute;
+            bottom: 10px;
+            left: 50px;
+            right: 50px;
+            cursor: pointer;
+        }
+    }
+}
+
+@media screen and (max-width : 320px) {
+    .shop-product-card{
+        width: 50%;
+        height: 300px;
+
+        .product-img{
+            .fav{
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                cursor: pointer;
+                height: 20px;
+                width: 20px;
+
+                i {
+                    font-size: 1.1rem;
+                }
+                   
+            }
+            .delete{
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                cursor: pointer;
+                height: 20px;
+                width: 20px;
+
+                i {
+                    font-size: 1.1rem;
+                }
+            }
+        }
+
+        .content {
+            margin-top: 10px;
+            gap: 10px;
+            .product-name {
+                font-size: .89rem;
+                color: black;
+                h3 {
+                    text-decoration: none;
+                }
+            }
+            .product-shop-name {
+                font-size: 13px;
+                font-weight: 500;
+                color: #666;
+            }
+            .price-rating {
+                h3 {
+                    color: #ff2020;
+                }
+                .rating {
+                    i {
+                        color: #ffd513;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+        .shopProductEditButton {
+            border: 2px solid green;
+            color: green;
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 5px;
+            text-align: center;
+            width: 70px;
+            border-radius: 20px;
+            margin: auto;
+            position: absolute;
+            bottom: 10px;
+            left: 40px;
+            right: 50px;
+            cursor: pointer;
+        }
+    }
+
 }

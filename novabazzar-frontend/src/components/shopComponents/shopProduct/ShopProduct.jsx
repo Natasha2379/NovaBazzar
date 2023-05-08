@@ -133,13 +133,13 @@ const ShopProduct = (props) => {
             </div>
             <Link
                 to={`/productdetail/${props.product._id}`}
-                className="content flex column"
+                className="content flex column link"
             >
                 <div className="product-name">
                     <h3>{props.product?.name}</h3>
                 </div>
                 <div className="price-rating flex space align-center">
-                    <h3>₹{props.product?.price}kg</h3>
+                    <h3>₹{props.product?.price}</h3>
                     <div className="rating">
                         <i className="fa fa-star"></i>
                         <i className="fa fa-star"></i>
@@ -151,16 +151,16 @@ const ShopProduct = (props) => {
             {userId === shop?.userId ? (
                 <Link
                     to={`/editproduct/${props.product?._id}`}
-                    className="shopProductEditButton "
+                    className="shopProductEditButton link"
                 >
                     Edit
                 </Link>
             ) : (
                 <div
                     onClick={handleAddToCart}
-                    className="shopProductEditButton "
+                    className="shopProductEditButton link"
                 >
-                    ADD+
+                    Add
                 </div>
             )}
         </div>

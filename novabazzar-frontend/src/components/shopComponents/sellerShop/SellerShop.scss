@@ -8,7 +8,7 @@
         margin: 3rem auto;
         gap: 0.7rem;
         background-color: rgb(249, 248, 248);
-        border: 2px solid rgb(149, 146, 146);
+        border: 1px solid rgb(149, 146, 146);
         border-radius: 10px;
 
         span {
@@ -29,7 +29,7 @@
 
     .shopProductsContainer {
         width: 100%;
-
+        height: 100%;
         .shopSidebar {
             padding: 20px;
             flex: 1;
@@ -43,6 +43,110 @@
             width: 100%;
             height: 100%;
             gap: 30px;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .myShopContainer {
+        column-gap: 30px;
+        .searchContainer {
+            width: 70%;
+            margin: 20px auto;
+
+            span {
+                i {
+                    flex: 1rem;
+                }
+            }
+
+            input {
+                height: 100%;
+                padding: 12px 10px;
+            }
+        }
+        .shopProductsContainer {
+            height: 100%;
+            width: 100%;
+            .shopSidebar {
+                flex: 1;
+            }
+            .shopProducts {
+                flex: 3;
+                width: 100%;
+                height: 100%;
+                gap: 10px;
+            }
+        }
+    }
+}
+@media screen and (max-width: 500px) {
+    .myShopContainer {
+        column-gap: 30px;
+        .searchContainer {
+            width: 90%;
+            overflow: hidden;
+            margin: 20px auto;
+
+            span {
+                i {
+                    flex: 1rem;
+                }
+            }
+
+            input {
+                height: 100%;
+                padding: 12px 10px;
+            }
+        }
+        .shopProductsContainer {
+            height: 100%;
+            width: 100%;
+            flex-direction: column;
+            .shopSidebar {
+                flex: 1;
+            }
+            .shopProducts {
+                flex: 3;
+                width: 100%;
+                height: 100%;
+                gap: 0px;
+            }
+        }
+    }
+}
+@media screen and (max-width: 320px) {
+    .myShopContainer {
+        column-gap: 30px;
+        .searchContainer {
+            width: 90%;
+            overflow: hidden;
+            margin: 20px auto;
+
+            span {
+                i {
+                    flex: 1rem;
+                }
+            }
+
+            input {
+                height: 100%;
+                padding: 10px 2px;
+            }
+        }
+        .shopProductsContainer {
+            height: 100%;
+            width: 100%;
+            flex-direction: column;
+            .shopSidebar {
+                flex: 1;
+            }
+            .shopProducts {
+                flex: 3;
+                width: 100%;
+                height: 100%;
+                gap: 0px;
+            }
         }
     }
 }
