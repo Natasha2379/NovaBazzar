@@ -153,13 +153,17 @@ const deleteShop = async (req, res, next) => {
 
 const getAllShops = async (req, res, next) => {
 	const search = req.query.search || "";
-	const location = req.query.location || "";
-
+	let location = req.query.location || "";
+	console.log(req.query.location);
 	let typeFilter;
 	if (req.query.type === "null") {
 		typeFilter = "all";
 	} else {
 		typeFilter = req.query.type;
+	}
+
+	if (location === "null" || location === "undefined") {
+		location = "";
 	}
 
 	const types = [
