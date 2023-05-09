@@ -139,8 +139,6 @@ export const getShopOfUser = (user_id) => {
 
 //get all shops data
 export const getAllShopsDetails = (search, type, location) => {
-    console.log(search, type, location);
-
     return axios.get(
         REACT_APP_SERVER_DOMAIN +
             `/api/shops/?type=${type}&search=${search}&location=${location}`,

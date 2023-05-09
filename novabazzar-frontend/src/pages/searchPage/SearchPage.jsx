@@ -11,10 +11,12 @@ import { selectUserData } from "../../redux/slices/userSlice";
 const SearchPage = () => {
     const [favourites, setFavourites] = useState([]);
     const user = useSelector(selectUserData);
-    const [userLocation, setUserLocation] = useState();
+    const [userLocation, setUserLocation] = useState("");
     useEffect(() => {
         const userLocation = localStorage.getItem("location");
-        setUserLocation(userLocation);
+        if (userLocation) {
+            setUserLocation(userLocation);
+        }
     }, []);
 
     const queryString = window.location.search;
@@ -31,6 +33,7 @@ const SearchPage = () => {
     const [sort, setSort] = useState({ sort: "price", order: "desc" });
 
     useEffect(() => {
+        console.log(search, stype, userLocation);
         const fetchShops = async () => {
             try {
                 const res = await getAllShopsDetails(
@@ -135,22 +138,17 @@ const SearchPage = () => {
 
                     <div className="result-section flex wrap ">
                         {activeItem === "shops" && (
-                            <>
+                            <div>
                                 {userLocation && (
-                                    <>
-                                        <span>SHOPS IN {userLocation}</span>
-
-                                        <div>
-                                            {shops?.map((shop) => (
-                                                <ShopCard
-                                                    shop={shop}
-                                                    key={shop._id}
-                                                />
-                                            ))}
-                                        </div>
-                                    </>
+                                    <span>SHOPS IN {userLocation}</span>
                                 )}
-                            </>
+
+                                <div className="shopResult">
+                                    {shops?.map((shop) => (
+                                        <ShopCard shop={shop} key={shop._id} />
+                                    ))}
+                                </div>
+                            </div>
                         )}
                         {activeItem === "products" &&
                             products?.map((product) => (

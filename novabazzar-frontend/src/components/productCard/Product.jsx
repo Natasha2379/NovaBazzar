@@ -37,7 +37,7 @@ const Product = (props) => {
     };
 
     const fetchFavIds = () => {
-        user.favourites?.map((fav) =>
+        user?.favourites?.map((fav) =>
             setFavouriteIds((prev) => [...prev, fav._id]),
         );
     };
@@ -60,14 +60,14 @@ const Product = (props) => {
                             style={{ color: "red", zIndex: "99" }}
                             onClick={async () => {
                                 props.setFavourites(
-                                    props.favourites?.filter(
+                                    props?.favourites?.filter(
                                         (item) =>
                                             item?._id !== props.product?._id,
                                     ),
                                 );
 
                                 await editfavs(
-                                    props.favourites.filter(
+                                    props?.favourites.filter(
                                         (item) =>
                                             item?._id !== props.product?._id,
                                     ),
@@ -82,12 +82,12 @@ const Product = (props) => {
                             style={{ color: "white", zIndex: "99" }}
                             onClick={async () => {
                                 props.setFavourites([
-                                    ...props.favourites,
-                                    props.product,
+                                    ...props?.favourites,
+                                    props?.product,
                                 ]);
                                 await editfavs([
-                                    ...props.favourites,
-                                    props.product,
+                                    ...props?.favourites,
+                                    props?.product,
                                 ]);
                                 // window.location.reload();
                             }}
