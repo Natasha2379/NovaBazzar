@@ -130,14 +130,14 @@ const editUserFavs = async (req, res, next) => {
 
 		if (!user) return next(createError(404, "user not found!"));
 
-		const updatedUser = {
-			...user._doc,
-			favourites: req.body,
-		};
-
 		const latestUser = await User.findByIdAndUpdate(
 			req.params.userid,
-			{ $set: updatedUser },
+			{
+				$set: {
+					...user._doc,
+					favourites: req.body,
+				},
+			},
 			{ new: true }
 		);
 

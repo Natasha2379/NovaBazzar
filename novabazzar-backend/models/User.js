@@ -35,7 +35,7 @@ const UserSchema = new Schema(
 			default: "",
 		},
 		favourites: {
-			type: [String],
+			type: [Object],
 			default: [],
 		},
 	},
