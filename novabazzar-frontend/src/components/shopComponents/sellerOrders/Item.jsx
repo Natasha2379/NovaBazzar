@@ -17,16 +17,13 @@ const Item = (props) => {
     }, [props]);
 
     return (
-        <div className="seller-orders flex column">
-            <div className="product-detail flex align-center space">
-                <div className="img-area">
-                    <img src={product?.coverImage} alt="" />
-                </div>
-
-                <div className="product-name">{product?.name}</div>
-                <div className="product-quantity">{props.item?.quantity}</div>
-                <div className="product-quantity">Rs. {props.item?.price}</div>
+        <div className="product-detail flex align-center space wrap">
+            <div className="img-area">
+                <img src={product?.coverImage} alt="" />
             </div>
+            <div className="product-name">{product?.name}</div>
+            <div className="product-quantity">{props.item?.quantity}</div>
+            <div className="product-quantity">Rs. {props.item?.price}</div>
         </div>
     );
 };

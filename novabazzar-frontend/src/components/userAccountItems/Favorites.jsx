@@ -42,6 +42,7 @@ const Favorites = () => {
                           key={index}
                           favourites={favourites}
                           setFavourites={setFavourites}
+                          className="fav-product"
                       />
                   ))
                 : " YOU HAVE NOT ADDED ANY PRODUCT TO FAVOURITES..."}

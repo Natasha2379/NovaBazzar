@@ -37,17 +37,17 @@ const Orders = () => {
             {orders?.length
                 ? orders?.map((order) => (
                       <div className="orderContainer">
-                          <div className="orderHeading">
+                          {/* <div className="orderHeading">
                               <b>OrderID:</b> {order?._id}
-                          </div>
+                          </div> */}
                           <MyOrders order={order} key={order._id} />
-                          <div className="book-btn">
+                          {/* <div className="book-btn">
                               <button
                                   onClick={() => handleOrderCancel(order._id)}
                               >
                                   Cancel
                               </button>
-                          </div>
+                          </div> */}
                       </div>
                   ))
                 : "YOU HAVE NO ORDERS..."}

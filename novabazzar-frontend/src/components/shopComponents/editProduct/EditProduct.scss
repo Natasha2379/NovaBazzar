@@ -4,10 +4,9 @@
 
     .addProductForm {
         gap: 0.5rem;
-        width: 50%;
-        height: 100%;
-        margin: auto;
-        padding: 2rem;
+        flex-direction: column;
+        width: 100%;
+        padding: 1rem;
         border: 1px solid black;
         gap: 20px;
         .addProductHeading {
