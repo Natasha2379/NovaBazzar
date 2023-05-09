@@ -1,18 +1,19 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import Home from "./pages/Home/Home";
-import Shop from "./pages/seller/Shop/Shop";
-import AddShop from "./pages/seller/AddShop/AddShop";
-import EditProduct from "./components/shopComponents/EditProduct/EditProduct";
+import Shop from "./pages/Seller/Shop/Shop";
+import AddShop from "./pages/Seller/AddShop/AddShop";
+import EditProduct from "./components/ShopComponents/editProduct/EditProduct";
 import ProductDetail from "./pages/productDetail/ProductDetail";
 import SearchPage from "./pages/SearchPage/SearchPage";
-import SellerProfile from "./pages/seller/SellerProfile/SellerProfile";
+import SellerProfile from "./pages/Seller/SellerProfile/SellerProfile";
 // user account pages
 import ProfilePage from "./pages/Buyer/BuyerProfile/BuyerProfile";
 import Register from "./pages/Buyer/Forms/RegisterPage";
 import Login from "./pages/Buyer/Forms/LoginPage";
+import Location from "./pages/Location/Location";
 
 import { addUser, addUserID, selectUserData } from "./redux/slices/userSlice";
 import jwtDecode from "jwt-decode";
@@ -22,9 +23,13 @@ import Cart from "./pages/Cart/Cart";
 function App() {
     const user = useSelector(selectUserData);
     const dispatch = useDispatch();
+    const [userLocation, setUserLocation] = useState();
 
+    useEffect(() => {}, []);
     useEffect(() => {
         const assignUser = async () => {
+            const userLocation = localStorage.getItem("location");
+            setUserLocation(userLocation);
             const jwt = localStorage.getItem("access_token");
             try {
                 if (jwt) {
@@ -76,8 +81,20 @@ function App() {
                     path="/buyer/cart"
                     element={user ? <Cart /> : <Login />}
                 />
-                <Route path="/productdetail/:productid" element={<ProductDetail />} />
+                <Route
+                    path="/productdetail/:productid"
+                    element={<ProductDetail />}
+                />
                 <Route path="/sellerprofile" element={<SellerProfile />} />
+                <Route
+                    path="/location"
+                    element={
+                        <Location
+                            userLocation={userLocation}
+                            setUserLocation={setUserLocation}
+                        />
+                    }
+                />
             </Routes>
         </Router>
     );

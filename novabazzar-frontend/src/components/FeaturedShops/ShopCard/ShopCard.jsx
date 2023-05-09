@@ -13,7 +13,10 @@ const ShopCard = (props) => {
             className={styles.shopCardContainer}
         >
             <div className={styles.shopCardImageContainer}>
-                <img src={shopImage} alt="shopImage" />
+                <img
+                    src={props?.shop?.shopImage || shopImage}
+                    alt="shopImage"
+                />
             </div>
             <div className={styles.shopCardInformationContainer}>
                 <div className={styles.shopCardShopName}>

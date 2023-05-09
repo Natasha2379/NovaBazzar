@@ -20,6 +20,7 @@ const Login = () => {
             navigate("/");
             window.location.reload();
         } catch (error) {
+            window.alert(error.response.data.message)
             console.log(error);
         }
     };

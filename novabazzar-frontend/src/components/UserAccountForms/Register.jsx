@@ -13,7 +13,12 @@ const Register = () => {
 
     const handleRegister = async () => {
         if (password !== confirmPassword) {
-            console.log("password mismatched");
+            window.alert("password mismatch");
+            return;
+        }
+
+        if (!name || !email || !phone || !password) {
+            window.alert("please enter all details");
             return;
         }
         const userData = {

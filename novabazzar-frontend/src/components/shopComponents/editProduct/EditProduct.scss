@@ -1,67 +1,123 @@
-.editProductContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    height: 100vh;
-    width: 40%;
+.addProductContainer {
+    width: 100%;
+    margin-block: 50px;
 
-    .editProductForm {
-        display: flex;
+    .addProductForm {
         gap: 0.5rem;
-        flex-direction: column;
-
-        width: 100%;
-        padding: 1rem;
+        width: 50%;
+        height: 100%;
+        margin: auto;
+        padding: 2rem;
         border: 1px solid black;
-
-        .editProductHeading {
-            font-family: "Times New Roman", Times, serif;
+        gap: 20px;
+        .addProductHeading {
             font-size: 1.2rem;
             font-weight: 800;
+            color: rgb(8, 133, 133);
         }
 
-        .editProductDesc {
-            font-family: "Times New Roman", Times, serif;
+        .addProductInput{
+            border: 1px solid #444;
+            padding: 13px;
+            font-size: 1rem;
+        }
+        .addProductDesc {
             font-size: 0.9rem;
             margin-bottom: 0.7rem;
+            color: gray;
         }
 
-        .editProductInput {
-            padding: 0.5rem;
-            border: 1px solid black;
+        .cover-img {
+            .addProductImageInputContainer {
+                margin-bottom: 30px;
+                height: 150px;
+                width: 150px;
+                position: relative;
+                border: 1px solid #666;
+                border-radius: 10px;
+                overflow: hidden;
+
+                .addProductImageInput {
+                    display: none;
+                }
+                .addProductImageText {
+                    font-size: 3rem;
+                    font-weight: 600;
+                    cursor: pointer;
+                    position: absolute;
+                    top: 40px;
+                    bottom: 60px;
+                    left: 50px;
+
+                    &:hover {
+                        color: cornflowerblue;
+                    }
+                }
+            }
+            .addProductInput {
+                border: 1px solid black;
+                font-size: 1rem;
+            }
+
+            .addProductSubHeading {
+                font-size: 1rem;
+                margin-block: 0.9rem;
+            }
+        }
+        .gallery-img-area {
+            height: 150px;
+            width: 100%;
+            .addProductSubHeading {
+                font-size: 1rem;
+                margin-block: 0.5rem;
+            }
+
+            .images-section {
+                height: 80%;
+                width: 100%;
+
+                .addProductImageInputContainer {
+                    height: 80%;
+                    width: 100%;
+                    margin-inline: 10px;
+                    position: relative;
+                    border: 1px solid #666;
+                    border-radius: 10px;
+                    overflow: hidden;
+                    .gallery-img {
+                        .addProductImageInput {
+                            display: none;
+                        }
+                        .addProductImageText {
+                            position: absolute;
+                            top: 30px;
+                            bottom: 40px;
+                            left: 30px;
+                            font-size: 2rem;
+                        }
+                    }
+                }
+            }
+        }
+        .product-description {
+            height: 200px;
+            
+            textarea {
+                height: 100%;
+                width: 100%;
+                padding: 10px;
+                border: 2px solid black;
+                font-size: 1rem;
+
+                &::placeholder {
+                    font-size: 1rem;
+                }
+            }
         }
 
-        .editProductSubHeading {
-            font-family: "Times New Roman", Times, serif;
-            font-size: 0.9rem;
-            margin-top: 0.7rem;
-        }
-
-        .editProductImageInputContainer {
-            display: flex;
-            padding: 2.5rem 4rem;
-            width: fit-content;
-
-            border: 1px solid black;
-            border-radius: 10px;
-            position: relative;
-
-            cursor: pointer;
-        }
-
-        .editProductImageInput {
-            display: none;
-        }
-
-        .editProductImageText {
-            // font-family: "Times New Roman", Times, serif;
-            font-size: 0.7rem;
-        }
-
-        .editProductSubmitButton {
-            font-size: 0.7rem;
-            padding: 0.5rem 2rem;
+        .addProductSubmitButton {
+            font-size: 1.1rem;
+            padding: 12px 25px;
             color: whitesmoke;
             background-color: rgb(18, 101, 224);
             width: fit-content;

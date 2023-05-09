@@ -9,15 +9,18 @@ import {
 } from "../CategoryData";
 
 const ShopSlidebar = (props) => {
+    console.log(props.type);
     return (
         <div className="shopSlidebar">
             <h3>Product Categories</h3>
-            {props.shop?.shopType === "Kirana shop" && (
+            {props.shop?.shopType === "Kiranashop" && (
                 <ul className="flex column ">
                     {KiranaProductCategoryData.KiranaProductCategories.map(
                         (category) => (
                             <li
-                                onClick={() => props.setType(category)}
+                                onClick={() =>
+                                    props.setType(category.replaceAll(" ", ""))
+                                }
                                 key={category}
                             >
                                 {category}
@@ -26,12 +29,14 @@ const ShopSlidebar = (props) => {
                     )}
                 </ul>
             )}
-            {props.shop?.shopType === "Clothes shop" && (
+            {props.shop?.shopType === "Clothesshop" && (
                 <ul className="flex column ">
                     {ClothesProductCategoryData.ClothesProductCategories.map(
                         (category) => (
                             <li
-                                onClick={() => props.setType(category)}
+                                onClick={() =>
+                                    props.setType(category.replaceAll(" ", ""))
+                                }
                                 key={category}
                             >
                                 {category}
@@ -40,12 +45,14 @@ const ShopSlidebar = (props) => {
                     )}
                 </ul>
             )}
-            {props.shop?.shopType === "Medical shop" && (
+            {props.shop?.shopType === "Medicalshop" && (
                 <ul className="flex column ">
                     {MedicalProductCategoryData.MedicalProductCategories.map(
                         (category) => (
                             <li
-                                onClick={() => props.setType(category)}
+                                onClick={() =>
+                                    props.setType(category.replaceAll(" ", ""))
+                                }
                                 key={category}
                             >
                                 {category}
@@ -54,12 +61,14 @@ const ShopSlidebar = (props) => {
                     )}
                 </ul>
             )}
-            {props.shop?.shopType === "Electronics shop" && (
+            {props.shop?.shopType === "Electronicsshop" && (
                 <ul className="flex column ">
                     {ElectronicsProductCategoryData.ElectronicsProductCategories.map(
                         (category) => (
                             <li
-                                onClick={() => props.setType(category)}
+                                onClick={() =>
+                                    props.setType(category.replaceAll(" ", ""))
+                                }
                                 key={category}
                             >
                                 {category}
@@ -68,11 +77,18 @@ const ShopSlidebar = (props) => {
                     )}
                 </ul>
             )}
-            {props.shop?.shopType === "Parlour shop" && (
+            {props.shop?.shopType === "Parlourshop" && (
                 <ul className="flex column ">
                     {ParlourProductCategoryData.ParlourProductCategories.map(
                         (category) => (
-                            <li key={category}>{category}</li>
+                            <li
+                                key={category}
+                                onClick={() =>
+                                    props.setType(category.replaceAll(" ", ""))
+                                }
+                            >
+                                {category}
+                            </li>
                         ),
                     )}
                 </ul>

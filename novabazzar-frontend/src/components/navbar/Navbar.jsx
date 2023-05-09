@@ -4,16 +4,20 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectUserData } from "../../redux/slices/userSlice";
 import { getShopOfUser } from "../../services/api";
+import { selectCartItems } from "../../redux/slices/cartSlice";
 
 const Navbar = (props) => {
+    const items = useSelector(selectCartItems);
     const user = useSelector(selectUserData);
     const [shop, setShop] = useState();
 
     useEffect(() => {
         const fetchShop = async () => {
             try {
-                const res = await getShopOfUser(user?._id);
-                setShop(res.data.shop);
+                if (user) {
+                    const res = await getShopOfUser(user?._id);
+                    setShop(res.data.shop);
+                }
             } catch (error) {
                 console.log(error);
             }
@@ -29,10 +33,36 @@ const Navbar = (props) => {
                         <Link to="/" className="logo link">
                             NovaBazzar
                         </Link>
+
+                        <Link
+                            to="/location"
+                            className="setLocation link flex align-center"
+                        >
+                            {props.userLocation ? (
+                                <div>
+                                    <span>
+                                        <i className="fa-solid fa-location-dot"></i>
+                                    </span>{" "}
+                                    <span>{props.userLocation}</span>
+                                </div>
+                            ) : (
+                                <div>
+                                    <span>
+                                        <i className="fa-solid fa-location-dot"></i>
+                                    </span>
+                                    <span className="location">
+                                        Add your location
+                                    </span>
+                                    <span>
+                                        <i className="fa-solid fa-angle-down"></i>
+                                    </span>
+                                </div>
+                            )}
+                        </Link>
                     </div>
                     <div className="links flex align-center">
                         <Link to="/buyer/cart" className="link">
-                            Cart
+                            Cart ({items.length && <span>{items.length}</span>})
                         </Link>
                         {shop ? (
                             <Link to={`/shop/${shop._id}`} className="link">

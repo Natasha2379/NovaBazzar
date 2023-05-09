@@ -5,6 +5,11 @@ import { editShopDetails, uploadShopImage } from "../../../../services/api";
 
 const EditShopProfile = (props) => {
     const [shopImage, setProfileImage] = useState();
+    const [name, setName] = useState("");
+    const [shopName, setShopName] = useState("");
+    const [location, setLocation] = useState();
+    const [email, setEmail] = useState("");
+    const [phone, setPhone] = useState("");
 
     const handleProfileImageUpload = () => {
         document.getElementById("shopImage").click();
@@ -25,9 +30,27 @@ const EditShopProfile = (props) => {
             console.log(error);
         }
     };
+
+    const handleShopEdit = async () => {
+        try {
+            const res = await editShopDetails(props.shop?._id, {
+                name,
+                shopName,
+                location,
+                phone,
+                email,
+            });
+            console.log(res);
+        } catch (error) {
+            console.log(error);
+        }
+    };
     return (
         <div className="edit-seller-profile">
-            <form className="EditProfile flex abs-center column">
+            <form
+                className="EditProfile flex abs-center column"
+                onSubmit={handleShopEdit}
+            >
                 <div className="shop-img flex  column align--center">
                     <span
                         className="image"
@@ -62,6 +85,7 @@ const EditShopProfile = (props) => {
                             <input
                                 type="text"
                                 placeholder={props.shop?.fullName}
+                                onChange={(e) => setName(e.target.value)}
                             />
                         </span>
                     </div>
@@ -71,18 +95,18 @@ const EditShopProfile = (props) => {
                             <input
                                 type="text"
                                 placeholder={props.shop?.shopName}
+                                onChange={(e) => setShopName(e.target.value)}
                             />
                         </span>
                     </div>
                     <div className="user-name">
-                        <span
-                            className="title"
-                            placeholder={props.shop?.location}
-                        >
-                            My Shop Location
-                        </span>
+                        <span className="title">My Shop Location</span>
                         <span>
-                            <input type="text" />
+                            <input
+                                type="text"
+                                placeholder={props.shop?.location}
+                                onChange={(e) => setLocation(e.target.value)}
+                            />
                         </span>
                     </div>
                     <div className="user-email">
@@ -91,6 +115,7 @@ const EditShopProfile = (props) => {
                             <input
                                 type="email"
                                 placeholder={props.shop?.email}
+                                onChange={(e) => setEmail(e.target.value)}
                             />
                         </span>
                     </div>
@@ -100,10 +125,15 @@ const EditShopProfile = (props) => {
                             <input
                                 type="text"
                                 placeholder={props.shop?.phone}
+                                onChange={(e) => setPhone(e.target.value)}
                             />
                         </span>
                     </div>
-                    <button className="submit" type="submit">
+                    <button
+                        className="submit"
+                        type="submit"
+                        // onClick={handleShopEdit}
+                    >
                         Submit
                     </button>
                 </div>

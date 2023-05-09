@@ -25,9 +25,7 @@ const CartShop = () => {
         try {
             const res = await addOrder({
                 buyerId: userId,
-                // shopId: "",
                 items: cartItems,
-                totalPrice,
             });
             console.log(res);
         } catch (error) {

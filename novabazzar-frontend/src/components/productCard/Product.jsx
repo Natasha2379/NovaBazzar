@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 const Product = (props) => {
     const dispatch = useDispatch();
     const user = useSelector(selectUserData);
+    const [favouriteIds, setFavouriteIds] = useState([]);
     const [shop, setShop] = useState();
 
     useEffect(() => {
@@ -28,15 +29,22 @@ const Product = (props) => {
 
     const editfavs = async (favs) => {
         try {
-            const res = await editUserFavs(favs, user._id);
+            const res = await editUserFavs(favs, user?._id);
             dispatch(addUser(res.data.user));
         } catch (error) {
             console.log(error);
         }
     };
+
+    const fetchFavIds = () => {
+        user.favourites?.map((fav) =>
+            setFavouriteIds((prev) => [...prev, fav._id]),
+        );
+    };
+
     useEffect(() => {
-        editfavs(props.favouriteIds);
-    }, []);
+        fetchFavIds();
+    }, [user]);
 
     return (
         <div className="prdouct-card link ">
@@ -46,22 +54,26 @@ const Product = (props) => {
                     className="fav flex abs-center"
                     style={{ backgroundColor: "inherit" }}
                 >
-                    {props.favouriteIds?.includes(props?.product?._id) ? (
+                    {favouriteIds?.includes(props?.product?._id) ? (
                         <i
                             className="fa fa-heart"
                             style={{ color: "red", zIndex: "99" }}
                             onClick={async () => {
-                                props.setFavouriteIds(
-                                    props.favouriteIds.filter(
-                                        (item) => item !== props.product?._id,
+                                props.setFavourites(
+                                    props.favourites?.filter(
+                                        (item) =>
+                                            item?._id !== props.product?._id,
                                     ),
                                 );
+
                                 await editfavs(
-                                    props.favouriteIds.filter(
-                                        (item) => item !== props.product?._id,
+                                    props.favourites.filter(
+                                        (item) =>
+                                            item?._id !== props.product?._id,
                                     ),
                                 );
-                                // window.location.reload();
+                                fetchFavIds();
+                                window.location.reload();
                             }}
                         ></i>
                     ) : (
@@ -69,13 +81,13 @@ const Product = (props) => {
                             className="fa fa-heart"
                             style={{ color: "white", zIndex: "99" }}
                             onClick={async () => {
-                                props.setFavouriteIds([
-                                    ...props.favouriteIds,
-                                    props.product?._id,
+                                props.setFavourites([
+                                    ...props.favourites,
+                                    props.product,
                                 ]);
                                 await editfavs([
-                                    ...props.favouriteIds,
-                                    props.product?._id,
+                                    ...props.favourites,
+                                    props.product,
                                 ]);
                                 // window.location.reload();
                             }}
@@ -92,7 +104,8 @@ const Product = (props) => {
                 </div>
                 <div className="product-shop-name">
                     <h5>
-                        {shop?.shopName},{shop?.location},{shop?.shopCity}
+                        {shop?.shopName},&nbsp;{shop?.location},&nbsp;
+                        {shop?.city}
                     </h5>
                 </div>
                 <div className="price-rating flex space align-center">

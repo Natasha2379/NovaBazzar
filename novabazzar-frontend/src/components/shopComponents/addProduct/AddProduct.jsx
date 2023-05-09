@@ -57,6 +57,18 @@ const AddProduct = (props) => {
     };
 
     const handleAddProduct = async () => {
+        if (
+            !categories ||
+            !name ||
+            !coverImage ||
+            galleryImages.length === 0 ||
+            !desc ||
+            !quantity ||
+            !price
+        ) {
+            window.alert("kindly fill all details");
+            return;
+        }
         const productData = {
             categories,
             name,
@@ -71,6 +83,7 @@ const AddProduct = (props) => {
 
         try {
             await addProduct(productData);
+            window.location.reload();
         } catch (error) {
             console.log(error);
         }
@@ -96,34 +109,59 @@ const AddProduct = (props) => {
                     <option value="Select your Category">
                         Select your Category
                     </option>
-                    {props.shop?.shopType === "Kirana shop" &&
+                    {props.shop?.shopType === "Kiranashop" &&
                         KiranaProductCategoryData.KiranaProductCategories.map(
-                            (category) => (
-                                <option value={category}>{category}</option>
+                            (category, indx) => (
+                                <option
+                                    key={indx}
+                                    value={category.replaceAll(" ", "")}
+                                >
+                                    {category}
+                                </option>
                             ),
                         )}
-                    {props.shop?.shopType === "Clothes shop" &&
+                    {props.shop?.shopType === "Clothesshop" &&
                         ClothesProductCategoryData.ClothesProductCategories.map(
-                            (category) => (
-                                <option value={category}>{category}</option>
+                            (category, indx) => (
+                                <option
+                                    key={indx}
+                                    value={category.replaceAll(" ", "")}
+                                >
+                                    {category}
+                                </option>
                             ),
                         )}
-                    {props.shop?.shopType === "Medical shop" &&
+                    {props.shop?.shopType === "Medicalshop" &&
                         MedicalProductCategoryData.MedicalProductCategories.map(
-                            (category) => (
-                                <option value={category}>{category}</option>
+                            (category, indx) => (
+                                <option
+                                    key={indx}
+                                    value={category.replaceAll(" ", "")}
+                                >
+                                    {category}
+                                </option>
                             ),
                         )}
-                    {props.shop?.shopType === "Electronics shop" &&
+                    {props.shop?.shopType === "Electronicsshop" &&
                         ElectronicsProductCategoryData.ElectronicsProductCategories.map(
-                            (category) => (
-                                <option value={category}>{category}</option>
+                            (category, indx) => (
+                                <option
+                                    key={indx}
+                                    value={category.replaceAll(" ", "")}
+                                >
+                                    {category}
+                                </option>
                             ),
                         )}
-                    {props.shop?.shopType === "Parlour shop" &&
+                    {props.shop?.shopType === "Parlourshop" &&
                         ParlourProductCategoryData.ParlourProductCategories.map(
-                            (category) => (
-                                <option value={category}>{category}</option>
+                            (category, indx) => (
+                                <option
+                                    key={indx}
+                                    value={category.replaceAll(" ", "")}
+                                >
+                                    {category}
+                                </option>
                             ),
                         )}
                 </select>

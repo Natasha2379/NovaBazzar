@@ -2,22 +2,27 @@ import React, { useEffect, useState } from "react";
 import "./SearchPage.scss";
 import Navbar from "../../components/Navbar/Navbar";
 import ShopCard from "../../components/shopCard/ShopCard";
-import Product from "../../components/productCard/Product";
+import Product from "../../components/ProductCard/Product";
 import Footer from "../../components/Footer/Footer";
 import { getAllProductsDetails, getAllShopsDetails } from "../../services/api";
 import { useSelector } from "react-redux";
 import { selectUserData } from "../../redux/slices/userSlice";
 
 const SearchPage = () => {
-    const [favouriteIds, setFavouriteIds] = useState([]);
+    const [favourites, setFavourites] = useState([]);
     const user = useSelector(selectUserData);
+    const [userLocation, setUserLocation] = useState();
+    useEffect(() => {
+        const userLocation = localStorage.getItem("location");
+        setUserLocation(userLocation);
+    }, []);
 
     const queryString = window.location.search;
     const queryParams = new URLSearchParams(queryString);
     const shoptype = queryParams.get("stype");
     const producttype = queryParams.get("ptype");
 
-    const [activeItem, setActiveItem] = useState("shops");
+    const [activeItem, setActiveItem] = useState();
     const [search, setSearch] = useState("");
     const [stype, setsType] = useState(shoptype);
     const [ptype, setpType] = useState(shoptype);
@@ -26,28 +31,58 @@ const SearchPage = () => {
     const [sort, setSort] = useState({ sort: "price", order: "desc" });
 
     useEffect(() => {
-        const fetchProductsAndShops = async () => {
+        const fetchShops = async () => {
             try {
-                const res = await getAllShopsDetails(search, stype);
-                const res2 = await getAllProductsDetails(search, sort, ptype);
+                const res = await getAllShopsDetails(
+                    search,
+                    stype,
+                    userLocation,
+                );
                 setShops(res.data.shops);
-                setProducts(res2.data.products);
             } catch (error) {
                 console.log(error);
             }
         };
-        fetchProductsAndShops();
+        fetchShops();
         setsType(shoptype);
         setpType(producttype);
-    }, [search, stype, ptype, sort, producttype, shoptype]);
+        if (ptype) {
+            setActiveItem("products");
+        } else {
+            setActiveItem("shops");
+        }
+    }, [search, stype, ptype, producttype, shoptype, userLocation]);
 
     useEffect(() => {
-        setFavouriteIds(user?.favourites);
+        const fetchProducts = async () => {
+            try {
+                const res = await getAllProductsDetails(search, sort, ptype);
+                setProducts(res.data.products);
+            } catch (error) {
+                console.log(error);
+            }
+        };
+        fetchProducts();
+        setsType(shoptype);
+        setpType(producttype);
+        // if (ptype) {
+        //     setActiveItem("products");
+        // } else {
+        //     setActiveItem("shops");
+        // }
+    }, [search, stype, ptype, sort, producttype, shoptype, userLocation]);
+
+    useEffect(() => {
+        setFavourites(user?.favourites);
     }, [user]);
 
     return (
         <div className="searchpage">
-            <Navbar search={search} setSearch={setSearch} />
+            <Navbar
+                search={search}
+                setSearch={setSearch}
+                userLocation={userLocation}
+            />
             <div className="searchsection">
                 <div className="shops-items-section flex  column">
                     <ul className="flex abs-center">
@@ -99,17 +134,31 @@ const SearchPage = () => {
                     </ul>
 
                     <div className="result-section flex wrap ">
-                        {activeItem === "shops" &&
-                            shops?.map((shop) => (
-                                <ShopCard shop={shop} key={shop._id} />
-                            ))}
+                        {activeItem === "shops" && (
+                            <>
+                                {userLocation && (
+                                    <>
+                                        <span>SHOPS IN {userLocation}</span>
+
+                                        <div>
+                                            {shops?.map((shop) => (
+                                                <ShopCard
+                                                    shop={shop}
+                                                    key={shop._id}
+                                                />
+                                            ))}
+                                        </div>
+                                    </>
+                                )}
+                            </>
+                        )}
                         {activeItem === "products" &&
                             products?.map((product) => (
                                 <Product
                                     product={product}
                                     key={product._id}
-                                    favouriteIds={favouriteIds}
-                                    setFavouriteIds={setFavouriteIds}
+                                    favourites={favourites}
+                                    setFavourites={setFavourites}
                                 />
                             ))}
                     </div>

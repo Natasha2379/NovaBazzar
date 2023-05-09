@@ -3,17 +3,18 @@ import { getProductDetails } from "../../../services/api";
 
 const Item = (props) => {
     const [product, setProduct] = useState();
+
     useEffect(() => {
         const fetchProduct = async () => {
             try {
-                const res = await getProductDetails(props.item?.id);
+                const res = await getProductDetails(props?.item?.productId);
                 setProduct(res.data.product);
             } catch (err) {
                 console.log(err);
             }
         };
         fetchProduct();
-    }, [props.item]);
+    }, [props]);
 
     return (
         <div className="seller-orders flex column">

@@ -1,21 +1,19 @@
 import React, { useEffect, useState } from "react";
 
-import Product from "../productCard/Product";
+import Product from "../ProductCard/Product";
 import { useSelector } from "react-redux";
 import { selectUserData } from "../../redux/slices/userSlice";
 import { getProductDetails } from "../../services/api";
 
 const Favorites = () => {
     const user = useSelector(selectUserData);
-    const [favouriteIds, setFavouriteIds] = useState([]);
+    const [favourites, setFavourites] = useState([]);
 
     useEffect(() => {
-        setFavouriteIds(user?.favourites);
+        setFavourites(user?.favourites);
     }, [user]);
     // console.log(favourites);
     // console.log(favouriteIds);
-
-    const [favourites, setFavourites] = useState([]);
 
     useEffect(() => {
         const fetchProduct = async () => {
@@ -23,12 +21,10 @@ const Favorites = () => {
                 try {
                     const res = await getProductDetails(item);
                     const productToAdd = res.data.product;
-                    if (!favourites.find((p) => p.id === productToAdd.id)) {
-                        setFavourites((prevFavourites) => [
-                            ...prevFavourites,
-                            productToAdd,
-                        ]);
-                    }
+                    setFavourites((prevFavourites) => [
+                        ...prevFavourites,
+                        productToAdd,
+                    ]);
                 } catch (error) {
                     console.log(error);
                 }
@@ -44,8 +40,8 @@ const Favorites = () => {
                       <Product
                           product={product}
                           key={index}
-                          favouriteIds={favouriteIds}
-                          setFavouriteIds={setFavouriteIds}
+                          favourites={favourites}
+                          setFavourites={setFavourites}
                       />
                   ))
                 : " YOU HAVE NOT ADDED ANY PRODUCT TO FAVOURITES..."}

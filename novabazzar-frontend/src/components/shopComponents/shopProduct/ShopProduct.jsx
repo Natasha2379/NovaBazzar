@@ -27,7 +27,9 @@ const ShopProduct = (props) => {
     const handleAddToCart = () => {
         dispatch(
             addItem({
-                id: props.product?._id,
+                productId: props.product?._id,
+                shopId: props.product?.shopId,
+                sellerId: props.product?.userId,
                 price: props.product?.price,
                 quantity: 1,
             }),
@@ -44,8 +46,14 @@ const ShopProduct = (props) => {
         }
     };
 
+    const fetchFavIds = () => {
+        user?.favourites?.map((fav) =>
+            setFavouriteIds((prev) => [...prev, fav?._id]),
+        );
+    };
+
     useEffect(() => {
-        setFavouriteIds(user?.favourites);
+        fetchFavIds();
     }, [user]);
 
     // useEffect(() => {
@@ -99,31 +107,35 @@ const ShopProduct = (props) => {
                             className="fa fa-heart"
                             style={{ color: "red", zIndex: "99" }}
                             onClick={async () => {
-                                setFavouriteIds(
-                                    favouriteIds.filter(
-                                        (item) => item !== props.product?._id,
+                                props.setFavourites(
+                                    props.favourites?.filter(
+                                        (item) =>
+                                            item?._id !== props.product?._id,
                                     ),
                                 );
+
                                 await editfavs(
-                                    favouriteIds.filter(
-                                        (item) => item !== props.product?._id,
+                                    props.favourites.filter(
+                                        (item) =>
+                                            item?._id !== props.product?._id,
                                     ),
                                 );
-                                // window.location.reload();
+                                fetchFavIds();
+                                window.location.reload();
                             }}
                         ></i>
                     ) : (
                         <i
                             className="fa fa-heart"
-                            style={{ color: "black", zIndex: "99" }}
+                            style={{ color: "white", zIndex: "99" }}
                             onClick={async () => {
-                                setFavouriteIds([
-                                    ...favouriteIds,
-                                    props.product?._id,
+                                props.setFavourites([
+                                    ...props.favourites,
+                                    props.product,
                                 ]);
                                 await editfavs([
-                                    ...favouriteIds,
-                                    props.product?._id,
+                                    ...props.favourites,
+                                    props.product,
                                 ]);
                                 // window.location.reload();
                             }}

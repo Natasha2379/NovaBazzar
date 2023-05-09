@@ -11,7 +11,9 @@ const cartSlice = createSlice({
     reducers: {
         addItem: (state, action) => {
             state.items.push({
-                id: action.payload.id,
+                productId: action.payload.productId,
+                shopId: action.payload.shopId,
+                sellerId: action.payload.sellerId,
                 quantity: action.payload.quantity,
                 price: action.payload.price,
             });
@@ -19,7 +21,7 @@ const cartSlice = createSlice({
         },
         increaseItem: (state, action) => {
             state.items = state.items.map((item) => {
-                if (item.id === action.payload.id) {
+                if (item.productId === action.payload.productId) {
                     state.totalCost -= item.price * item.quantity;
 
                     state.totalCost +=

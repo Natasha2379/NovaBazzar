@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./UserAccount.scss";
 // import Product from "../productCard/Product";
-import MyOrders from "../shopComponents/SellerOrders/SellerOrders";
+import MyOrders from "../ShopComponents/sellerOrders/SellerOrders";
 import { useSelector } from "react-redux";
 import { selectUser_ID } from "../../redux/slices/userSlice";
 import { deleteOrderDetails, getOrdersOfUser } from "../../services/api";

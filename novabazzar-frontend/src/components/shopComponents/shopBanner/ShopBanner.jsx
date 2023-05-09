@@ -39,7 +39,7 @@ const ShopBanner = () => {
     return (
         <div className="shopBanner flex align-center ">
             <div className="shop-img">
-                <img src={bannerImage} alt="" />
+                <img src={shopDetails?.shopImage || bannerImage} alt="" />
             </div>
             <div className="shopkepperDetails flex column ">
                 <div className="shop-name">{shopDetails?.shopName}</div>

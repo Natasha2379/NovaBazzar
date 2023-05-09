@@ -5,9 +5,7 @@ import Item from "./Item";
 const SellerOrders = (props) => {
     return (
         <div className="seller-orders flex column">
-            {props?.order?.items?.map((item, index) => (
-                <Item item={item} key={index} />
-            ))}
+            <Item item={props?.order} />
         </div>
     );
 };

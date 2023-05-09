@@ -1,6 +1,6 @@
 import axios from "axios";
-// const REACT_APP_SERVER_DOMAIN = "http://localhost:8000"; //local server
-const REACT_APP_SERVER_DOMAIN = "https://ijpkaushik-novabazzar.onrender.com"; // deployed server
+const REACT_APP_SERVER_DOMAIN = "http://localhost:8000"; //local server
+// const REACT_APP_SERVER_DOMAIN = "https://ijpkaushik-novabazzar.onrender.com"; // deployed server
 
 /***************************** USERS *****************************/
 //function to register
@@ -138,9 +138,12 @@ export const getShopOfUser = (user_id) => {
 };
 
 //get all shops data
-export const getAllShopsDetails = (search, type) => {
+export const getAllShopsDetails = (search, type, location) => {
+    console.log(search, type, location);
+
     return axios.get(
-        REACT_APP_SERVER_DOMAIN + `/api/shops/?type=${type}&search=${search}`,
+        REACT_APP_SERVER_DOMAIN +
+            `/api/shops/?type=${type}&search=${search}&location=${location}`,
     );
 };
 
@@ -180,6 +183,13 @@ export const getOrderDetails = (order_id) => {
 export const getOrdersOfUser = (user_id) => {
     return axios.get(
         REACT_APP_SERVER_DOMAIN + "/api/orders/user-order/" + user_id,
+    );
+};
+
+//get order of user
+export const getOrdersOfShop = (shop_id) => {
+    return axios.get(
+        REACT_APP_SERVER_DOMAIN + "/api/orders/seller-order/" + shop_id,
     );
 };
 

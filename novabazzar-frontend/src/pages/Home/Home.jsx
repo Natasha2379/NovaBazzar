@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Home.scss";
 
 import FeaturedShops from "../../components/FeaturedShops/FeaturedShops";
@@ -9,9 +9,15 @@ import Navbar from "../../components/Navbar/Navbar";
 import MainFeatured from "../../components/MainFeatured/MainFeatured";
 import Footer from "../../components/Footer/Footer";
 const Home = () => {
+    const [userLocation, setUserLocation] = useState();
+    useEffect(() => {
+        const userLocation = localStorage.getItem("location");
+        setUserLocation(userLocation);
+    }, []);
+
     return (
         <div className="homePage">
-            <Navbar />
+            <Navbar userLocation={userLocation} />
             <div className="home-container">
                 <MainFeatured />
                 <FeaturedShops />

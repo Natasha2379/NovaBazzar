@@ -120,17 +120,17 @@ const OpenShop = () => {
                                 onChange={(e) => setShopType(e.target.value)}
                             >
                                 <option hidden>Select Shop Type</option>
-                                <option value="Kirana shop">Kirana shop</option>
-                                <option value="Medical shop">
+                                <option value="Kiranashop">Kirana shop</option>
+                                <option value="Medicalshop">
                                     Medical shop
                                 </option>
-                                <option value="Clothes shop">
+                                <option value="Clothesshop">
                                     Clothes shop
                                 </option>
-                                <option value="Electronics shop">
+                                <option value="Electronicsshop">
                                     Electronics shop
                                 </option>
-                                <option value="Electronics shop">
+                                <option value="Electronicsshop">
                                     Parlour shop
                                 </option>
                             </select>

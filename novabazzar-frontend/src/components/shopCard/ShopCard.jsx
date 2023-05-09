@@ -23,7 +23,7 @@ const ShopCard = (props) => {
     return (
         <div className="shop-card flex column link">
             <Link className="shop-img" to={`/shop/${props.shop._id}`}>
-                <img src={image} alt="" />
+                <img src={props?.shop?.shopImage || image} alt="" />
             </Link>
             <div className="shop-detail flex column">
                 <div className="col1 flex align-center column">

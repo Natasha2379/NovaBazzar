@@ -14,7 +14,7 @@ const CartItem = (props) => {
     useEffect(() => {
         const fetchProduct = async () => {
             try {
-                const res = await getProductDetails(props.item.id);
+                const res = await getProductDetails(props.item.productId);
                 setProduct(res.data.product);
             } catch (error) {
                 console.log(error);
@@ -38,7 +38,6 @@ const CartItem = (props) => {
     }, [product]);
 
     useEffect(() => {
-        console.log(quantity);
         if (!quantity) {
             handleRemoveFromCart();
         }
@@ -47,7 +46,9 @@ const CartItem = (props) => {
     const handleItemIncrease = (value) => {
         dispatch(
             increaseItem({
-                id: props.item.id,
+                productId: props.item.productId,
+                shopId: props.item.shopId,
+                sellerId: props.item.sellerId,
                 price: product.price,
                 quantity: value,
             }),
