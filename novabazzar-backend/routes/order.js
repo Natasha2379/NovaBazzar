@@ -7,6 +7,7 @@ const {
 	editOrderDetails,
 	deleteOrder,
 	getAllOrdersOfUser,
+	getAllOrdersOfSeller,
 } = require("../controllers/order");
 
 //ADD A ORDER
@@ -23,5 +24,8 @@ router.delete("/order/:orderid", deleteOrder);
 
 //GET ALL ORDERS OF A USER
 router.get("/user-order/:userid", getAllOrdersOfUser);
+
+//GET ALL ORDERS OF A SELLER
+router.get("/seller-order/:shopid", getAllOrdersOfSeller);
 
 module.exports = router;

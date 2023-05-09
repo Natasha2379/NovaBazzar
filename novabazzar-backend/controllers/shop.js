@@ -116,6 +116,7 @@ const editShopDetails = async (req, res, next) => {
 
 		const updatedShop = {
 			...shop._doc,
+			fullName: req.body.name,
 			shopName: req.body.shopName,
 			shopType: req.body.shopType,
 			categories: req.body.categories,
@@ -152,6 +153,7 @@ const deleteShop = async (req, res, next) => {
 
 const getAllShops = async (req, res, next) => {
 	const search = req.query.search || "";
+	const location = req.query.location || "";
 
 	let typeFilter;
 	if (req.query.type === "null") {
@@ -161,11 +163,11 @@ const getAllShops = async (req, res, next) => {
 	}
 
 	const types = [
-		"Kirana shop",
-		"Medical shop",
-		"Clothes shop",
-		"Parlour shop",
-		"Electronics shop",
+		"Kiranashop",
+		"Medicalshop",
+		"Clothesshop",
+		"Parlourshop",
+		"Electronicsshop",
 	];
 	typeFilter === "all"
 		? (typeFilter = [...types])
@@ -174,12 +176,12 @@ const getAllShops = async (req, res, next) => {
 	try {
 		const shops = await Shop.find({
 			$or: [
-				{ shopName: { $regex: search, $options: "i" } },
-				{ location: { $regex: search, $options: "i" } },
-				{ city: { $regex: search, $options: "i" } },
-				{ state: { $regex: search, $options: "i" } },
+				{ location: { $regex: location, $options: "i" } },
+				{ city: { $regex: location, $options: "i" } },
+				{ state: { $regex: location, $options: "i" } },
 			],
 			shopType: { $in: [...typeFilter] },
+			shopName: { $regex: search, $options: "i" },
 		}).sort({ timestamp: -1 });
 
 		res.status(200).json({ shops, message: "all shops" });
