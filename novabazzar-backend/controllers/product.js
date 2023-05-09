@@ -53,19 +53,27 @@ const getProduct = async (req, res, next) => {
 };
 
 const editProductDetails = async (req, res, next) => {
+	const name = req.body.name;
+	const desc = req.body.desc;
+	const categories = req.body.categories;
+	const coverImage = req.body.coverImage;
+	const galleryImages = req.body.galleryImages;
+	const quantity = req.body.quantity;
+	const price = req.body.price;
 	try {
 		const product = await Product.findOne({ _id: req.params.productid });
 
 		if (!product) return next(createError(404, "product not found!"));
 
-		const categories = req.body.categories.split(",");
-
 		const updatedProduct = {
 			...product._doc,
-			name: req.body.name,
+			name,
+			desc,
 			categories,
-			quantity: req.body.quantity,
-			price: req.body.price,
+			coverImage,
+			galleryImages,
+			quantity,
+			price,
 		};
 
 		const latestProduct = await Product.findByIdAndUpdate(
@@ -105,6 +113,7 @@ const getAllProducts = async (req, res, next) => {
 	}
 
 	let typeFilter;
+	// console.log(req.query.type);
 	if (req.query.type != "null" && req.query.type != "undefined") {
 		typeFilter = req.query.type;
 	} else {
@@ -112,74 +121,72 @@ const getAllProducts = async (req, res, next) => {
 	}
 
 	const types = [
-		"Laptops & Desktops & Computer Accessories",
+		"LaptopsAndDesktopsAndComputerAccessories",
 		"Headphones",
-		"Smart Wearables",
-		"Styling Devices",
+		"SmartWearables",
+		"StylingDevices",
 		"Cameras",
 		"Tablets",
-		"Mobile Accessories",
-		"Speakers & Video",
-		"Gaming Accessories",
-		"TVs & Smart Televisions",
-		"Washing Machines & ",
-		"Kitchen Appliances",
-		"Air Conditioners & Fans & Air Coolers",
-		"Home Appliances",
-		"Microwace Ovens",
-		"Hair cutting & color",
-		"Manicure & Pedicure",
-		"Threading & Face wax",
-		"Facial & Cleanup",
-		"Bleach & Detan",
-		"Wedding special",
+		"MobileAccessories",
+		"SpeakersAndVideo",
+		"GamingAccessories",
+		"TVsAndSmartTelevisions",
+		"WashingMachines",
+		"KitchenAppliances",
+		"AirConditionersAndFansAndAirCoolers",
+		"HomeAppliances",
+		"MicrowaceOvens",
+		"HaircuttingAndcolor",
+		"ManicureAndPedicure",
+		"ThreadingAndFace wax",
+		"FacialAndCleanup",
+		"BleachAndDetan",
+		"Weddingspecial",
 		"Waxing",
-		"Face care",
-		"Shave/beard grooming",
-		"Vitamins & Supplements",
-		"Nutritional Drinks",
-		"Personal Care",
+		"Facecare",
+		"Shave/beardgrooming",
+		"VitaminsAndSupplements",
+		"NutritionalDrinks",
+		"PersonalCare",
 		"Ayruveda",
-		"Pain Relief",
+		"PainRelief",
 		"Homeopathy",
-		"Health Condition",
-		"Accessories & Wearables",
-		"Diabetic Care",
-		"Mother and Baby Care",
-		"Health Food and Drinks",
-		"Healthcare Devices",
-		"Home Care",
-		"Skin Care",
-		"Pet Care",
+		"HealthCondition",
+		"AccessoriesAndWearables",
+		"DiabeticCare",
+		"MotherandBabyCare",
+		"HealthFoodandDrinks",
+		"HealthcareDevices",
+		"HomeCare",
+		"SkinCare",
+		"PetCare",
 		"Jeans",
-		"T-Shirts & Shirts",
+		"T-ShirtsAndShirts",
 		"Trousers",
-		"Kurta & Sets",
+		"KurtaAndSets",
 		"Accessories",
 		"Dresses",
-		"Tops & Tees",
-		"Kurti & Sets",
+		"TopsAndTees",
+		"KurtiAndSets",
 		"Sarees",
-		"Heels & Flats",
+		"HeelsAndFlats",
 		"Footwear",
-		"Fruits & Vegetables",
-		"Atta,Rice & Dal",
-		"Home & Office",
-		"Daily ,Bread & egg",
-		"Cold Drinks & Juice",
-		"Snacks & Munchies",
-		"Breakfast & Instant Food",
-		"Tea ,Coffee & Health Drinks",
-		"Sauces & Spread",
-		"Cleaning Essentials",
-		"Sweet Tooth",
-		"Bakery & Biscuits",
+		"FruitsAndVegetables",
+		"Atta,RiceAndDal",
+		"HomeAndOffice",
+		"Daily,BreadAndegg",
+		"ColdDrinksAndJuice",
+		"SnacksAndMunchies",
+		"BreakfastAndInstantFood",
+		"Tea,CoffeeAndHealthDrinks",
+		"SaucesAndSpread",
+		"CleaningEssentials",
+		"SweetTooth",
+		"BakeryAndBiscuits",
 	];
 
-	typeFilter === "all"
-		? (typeFilter = [...types])
-		: (typeFilter = typeFilter.split(","));
-
+	typeFilter === "all" ? (typeFilter = [...types]) : (typeFilter = typeFilter);
+	// console.log(typeFilter);
 	try {
 		const products = await Product.find({
 			$and: [
@@ -188,10 +195,9 @@ const getAllProducts = async (req, res, next) => {
 						{
 							name: { $regex: search, $options: "i" },
 						},
-						{ categories: { $regex: search, $options: "i" } },
 					],
 				},
-				{ categories: { $in: [...typeFilter] } },
+				{ categories: typeFilter },
 			],
 		}).sort(sortBy);
 
@@ -221,80 +227,78 @@ const getAllShopProducts = async (req, res, next) => {
 	}
 
 	const types = [
-		"Laptops & Desktops & Computer Accessories",
+		"LaptopsAndDesktopsAndComputerAccessories",
 		"Headphones",
-		"Smart Wearables",
-		"Styling Devices",
+		"SmartWearables",
+		"StylingDevices",
 		"Cameras",
 		"Tablets",
-		"Mobile Accessories",
-		"Speakers & Video",
-		"Gaming Accessories",
-		"TVs & Smart Televisions",
-		"Washing Machines & ",
-		"Kitchen Appliances",
-		"Air Conditioners & Fans & Air Coolers",
-		"Home Appliances",
-		"Microwace Ovens",
-		"Hair cutting & color",
-		"Manicure & Pedicure",
-		"Threading & Face wax",
-		"Facial & Cleanup",
-		"Bleach & Detan",
-		"Wedding special",
+		"MobileAccessories",
+		"SpeakersAndVideo",
+		"GamingAccessories",
+		"TVsAndSmartTelevisions",
+		"WashingMachines",
+		"KitchenAppliances",
+		"AirConditionersAndFansAndAirCoolers",
+		"HomeAppliances",
+		"MicrowaceOvens",
+		"HaircuttingAndcolor",
+		"ManicureAndPedicure",
+		"ThreadingAndFace wax",
+		"FacialAndCleanup",
+		"BleachAndDetan",
+		"Weddingspecial",
 		"Waxing",
-		"Face care",
-		"Shave/beard grooming",
-		"Vitamins & Supplements",
-		"Nutritional Drinks",
-		"Personal Care",
+		"Facecare",
+		"Shave/beardgrooming",
+		"VitaminsAndSupplements",
+		"NutritionalDrinks",
+		"PersonalCare",
 		"Ayruveda",
-		"Pain Relief",
+		"PainRelief",
 		"Homeopathy",
-		"Health Condition",
-		"Accessories & Wearables",
-		"Diabetic Care",
-		"Mother and Baby Care",
-		"Health Food and Drinks",
-		"Healthcare Devices",
-		"Home Care",
-		"Skin Care",
-		"Pet Care",
+		"HealthCondition",
+		"AccessoriesAndWearables",
+		"DiabeticCare",
+		"MotherandBabyCare",
+		"HealthFoodandDrinks",
+		"HealthcareDevices",
+		"HomeCare",
+		"SkinCare",
+		"PetCare",
 		"Jeans",
-		"T-Shirts & Shirts",
+		"T-ShirtsAndShirts",
 		"Trousers",
-		"Kurta & Sets",
+		"KurtaAndSets",
 		"Accessories",
 		"Dresses",
-		"Tops & Tees",
-		"Kurti & Sets",
+		"TopsAndTees",
+		"KurtiAndSets",
 		"Sarees",
-		"Heels & Flats",
+		"HeelsAndFlats",
 		"Footwear",
-		"Fruits & Vegetables",
-		"Atta,Rice & Dal",
-		"Home & Office",
-		"Daily ,Bread & egg",
-		"Cold Drinks & Juice",
-		"Snacks & Munchies",
-		"Breakfast & Instant Food",
-		"Tea ,Coffee & Health Drinks",
-		"Sauces & Spread",
-		"Cleaning Essentials",
-		"Sweet Tooth",
-		"Bakery & Biscuits",
+		"FruitsAndVegetables",
+		"Atta,RiceAndDal",
+		"HomeAndOffice",
+		"Daily,BreadAndegg",
+		"ColdDrinksAndJuice",
+		"SnacksAndMunchies",
+		"BreakfastAndInstantFood",
+		"Tea,CoffeeAndHealthDrinks",
+		"SaucesAndSpread",
+		"CleaningEssentials",
+		"SweetTooth",
+		"BakeryAndBiscuits",
 	];
 
-	typeFilter === "all"
-		? (typeFilter = [...types])
-		: (typeFilter = typeFilter.split(","));
+	typeFilter === "all" ? (typeFilter = [...types]) : (typeFilter = typeFilter);
 
 	try {
 		const products = await Product.find({
 			$and: [
 				{ shopId: req.params.shopid },
 				{ name: { $regex: search, $options: "i" } },
-				{ categories: { $in: [...typeFilter] } },
+				{ categories: typeFilter },
 			],
 		}).sort(sortBy);
 

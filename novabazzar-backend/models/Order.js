@@ -7,15 +7,23 @@ const OrderSchema = new Schema(
 			type: String,
 			default: "",
 		},
-		// shopId: {
-		// 	type: String,
-		// 	default: "",
-		// },
-		items: {
-			type: [Object],
-			required: true,
+		productId: {
+			type: String,
+			default: "",
 		},
-		totalPrice: {
+		shopId: {
+			type: String,
+			default: "",
+		},
+		sellerId: {
+			type: String,
+			default: "",
+		},
+		quantity: {
+			type: String,
+			default: "",
+		},
+		price: {
 			type: Number,
 			required: true,
 		},

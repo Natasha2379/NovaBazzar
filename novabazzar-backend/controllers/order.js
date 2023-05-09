@@ -3,27 +3,24 @@ const { createError } = require("../utils/Error");
 
 const addOrder = async (req, res, next) => {
 	const buyerId = req.body.buyerId;
-	// const shopId = req.body.shopId;
-	const userId = req.body.userId;
 	const items = req.body.items;
-	const totalPrice = req.body.totalPrice;
-
-	const newOrderData = {
-		buyerId,
-		// shopId,
-		userId,
-		items,
-		totalPrice,
-	};
-
-	const newOrder = new Order(newOrderData);
 
 	try {
-		const order = await newOrder.save();
+		items.map(async (item) => {
+			const newOrderData = {
+				buyerId,
+				productId: item.productId,
+				shopId: item.shopId,
+				sellerId: item.sellerId,
+				quantity: item.quantity,
+				price: item.price,
+			};
+			const newOrder = new Order(newOrderData);
+			await newOrder.save();
+		});
 
 		return res.status(200).json({
-			message: "Order Added Successfully!",
-			order,
+			message: "Order Placed!",
 		});
 	} catch (err) {
 		next(err);
@@ -90,10 +87,23 @@ const getAllOrdersOfUser = async (req, res, next) => {
 	}
 };
 
+const getAllOrdersOfSeller = async (req, res, next) => {
+	try {
+		const orders = await Order.find({
+			shopId: req.params.shopid,
+		}).sort({ timestamp: -1 });
+
+		res.status(200).json({ orders, message: "all orders" });
+	} catch (err) {
+		next(err);
+	}
+};
+
 module.exports = {
 	addOrder,
 	getOrder,
 	editOrderDetails,
 	deleteOrder,
 	getAllOrdersOfUser,
+	getAllOrdersOfSeller,
 };
