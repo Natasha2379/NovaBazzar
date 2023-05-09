@@ -68,10 +68,10 @@ const ProductDetail = () => {
         <div className="ProductDetailPage">
             <Navbar />
             <div className="product-detail">
-                <Link to={`/shop/${shop?._id}`} className="shop-detail-section">
+                <Link to={`/shop/${shop?._id}`} className="shop-detail-section link">
                     <div className="shop-name">{shop?.shopName}</div>
                     <div className="shop-location">
-                        {shop?.location}, {shop?.city}
+                        {shop?.location},{shop?.city}
                     </div>
                 </Link>
                 <div className="product-detail-section">
@@ -139,6 +139,7 @@ const ProductDetail = () => {
                     </div>
                 </div>
             </div>
+            
         </div>
     );
 };
