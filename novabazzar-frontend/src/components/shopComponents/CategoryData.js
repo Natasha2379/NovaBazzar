@@ -10,7 +10,7 @@ export const KiranaProductCategoryData = {
         "Cold Drinks And Juice",
         "Snacks And Munchies",
         "Breakfast And Instant Food",
-        "Tea ,Coffee And Health Drinks",
+        "Tea And Coffee And Health Drinks",
         "Sauces And Spread",
         "Cleaning Essentials",
         "Sweet Tooth",

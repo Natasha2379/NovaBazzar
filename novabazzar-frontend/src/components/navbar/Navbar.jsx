@@ -51,7 +51,7 @@ const Navbar = (props) => {
                                         <i className="fa-solid fa-location-dot"></i>
                                     </span>
                                     <span className="location">
-                                        Add your location
+                                       Select a location
                                     </span>
                                     <span>
                                         <i className="fa-solid fa-angle-down"></i>
@@ -61,15 +61,23 @@ const Navbar = (props) => {
                         </Link>
                     </div>
                     <div className="links flex align-center">
-                        <Link to="/buyer/cart" className="link">
-                            Cart ({items.length && <span>{items.length}</span>})
+                        <Link to="/buyer/cart" className="link cart">
+                            <span className="icon">
+                                <i className="fa-solid fa-shopping-cart"></i>
+                            </span>
+                            <span className="cart-items">
+                                {items.length && <span>{items.length}</span>}
+                            </span>
                         </Link>
                         {shop ? (
-                            <Link to={`/shop/${shop._id}`} className="link">
+                            <Link
+                                to={`/shop/${shop._id}`}
+                                className="link shop"
+                            >
                                 My Shop
                             </Link>
                         ) : (
-                            <Link to="/seller/addshop" className="link">
+                            <Link to="/seller/addshop" className="link shop">
                                 Become a Seller
                             </Link>
                         )}

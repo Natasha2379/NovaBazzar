@@ -29,7 +29,7 @@ const ShopCard = (props) => {
                 <div className="col1 flex align-center column">
                     <h3>{props.shop.shopName}</h3>
                     <p>
-                        {props.shop.location}, {props.shop.city}
+                        {props.shop.location},{props.shop.city}
                     </p>
                 </div>
                 <div className="col2 flex align-center ">

@@ -10,10 +10,10 @@
             align-items: center;
             justify-content: center;
             gap: 30px;
-            background: linear-gradient(to right, aqua, rgb(0, 115, 255));
+            background-color: var(--color-dark);
 
             div {
-                font-size: 1.5rem;
+                font-size: 1.2rem;
                 font-weight: 600;
                 color: white;
             }
@@ -80,10 +80,7 @@
                         border: none;
                     }
                     .cartbtn {
-                        background-color: green;
-                    }
-                    .buybtn {
-                        background-color: orangered;
+                        background-color:var(--add-cart);
                     }
                 }
                 .product-desc {
@@ -94,15 +91,17 @@
             }
         }
     }
+    h2 {
+        margin-left: 50px;
+       
+    }
     .related-products-section {
-        display: flex;
-        gap: 1rem;
-        padding: 5%;
-        margin-block: 20px;
+        height: 100%;
+        width: 100%;
+        gap: 20px;
+        padding: 0 5%;
 
-        h2 {
-            margin-block: 20px;
-        }
+
     }
 }
 
@@ -156,6 +155,16 @@
                     }
                 }
             }
+            .related-products-section {
+                height: 100%;
+                width: 100%;
+                gap: 0px;
+                padding:0 0;
+                margin-block: 10px;
+                
+        
+            }
+           
         }
     }
 }
@@ -198,6 +207,14 @@
                       font-weight: 600;
                     }
                   }
+            }
+            .related-products-section {
+                height: 100%;
+                width: 100%;
+                gap: 0px;
+                padding: 0 0;
+        
+        
             }
             
         }

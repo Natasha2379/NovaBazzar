@@ -20,7 +20,7 @@
                 .logo {
                     font-size: 2.3rem;
                     font-weight: 600;
-                    color: #0d6efd;
+                    color: var(--color-primary);
                 }
                 .setLocation {
                     gap: 7px;
@@ -41,22 +41,50 @@
                 .link {
                     font-size: 1.1rem;
                     font-weight: 600;
-                    color: #333;
+                    color: var(--color-nav-link);
                     position: relative;
+                }
+                .cart{
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
 
+                    .icon{
+                        position: relative;
+                        font-size: 1.5rem;
+                        color: #0d6efd;
+
+                    }
+                    .cart-items{
+                        position: absolute;
+                        top: -10px;
+                       left: 30px;
+                       font-size: 1rem;
+                       color: var( --color-price );
+                    }
+                }
+                .shop {
+                    padding: 12px 25px;
+                    border-radius: 30px;
+                    background-color: var(--footer-bg-color);
+                    color: white;
                 }
 
                 .createAccount {
                     border-radius: 30px;
                     padding: 12px 25px;
-                    background-color: black;
+                    background-color: var(--add-cart);
                     color: white;
                 }
+            }
+            .setLocation{
+                color: var(--icon-color);
             }
         }
     }
     .bottom-navbar {
-        background-color: black;
+        background-color: var(--footer-bg-color);
         width: 100%;
         padding: 10px;
 
@@ -71,7 +99,7 @@
             span {
                 width: 150px;
                 height: 40px;
-                background-color: #0d6efd;
+                background-color: var(--add-cart);
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -88,8 +116,9 @@
                 border: 1px solid #e2e2e2;
 
                 &::placeholder {
-                    font-size: 1rem;
+                    font-size: 14px;
                     font-weight: 500;
+                    color: var(--color-placeholder);
                 }
             }
         }

@@ -30,19 +30,19 @@ const Footer = () => {
             <div className="row flex column">
                 <div className="footer-heading">Get in touch</div>
                 <Link to="/" className="link">
-                    Instagram
+                    <i className="fa-brands fa-instagram"></i>
                 </Link>
                 <Link to="/" className="link">
-                    Facebook
+                    <i class="fa-brands fa-facebook"></i>
                 </Link>
                 <Link to="/" className="link">
-                    Twitter
+                    <i class="fa-brands fa-twitter"></i>
                 </Link>
                 <Link to="/" className="link">
-                    Linkedin
+                    <i class="fa-brands fa-linkedin"></i>
                 </Link>
                 <Link to="/" className="link">
-                    Whatsapp
+                    <i class="fa-brands fa-whatsapp"></i>
                 </Link>
             </div>
         </div>

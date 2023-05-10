@@ -108,9 +108,9 @@ const Product = (props) => {
                         {shop?.city}
                     </h5>
                 </div>
-                <div className="price-rating flex space align-center">
-                    <h3 style={{ color: "black" }}>
-                        ₹ {props.product?.price}kg
+                <div className="price-rating flex space">
+                    <h3>
+                        ₹{props.product?.price}
                     </h3>
                     <div className="rating">
                         <i className="fa fa-star"></i>

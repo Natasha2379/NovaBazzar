@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./SearchPage.scss";
 import Navbar from "../../components/Navbar/Navbar";
 import ShopCard from "../../components/shopCard/ShopCard";
-import Product from "../../components/ProductCard/Product";
+import Product from "../../components/productCard/Product";
 import Footer from "../../components/Footer/Footer";
 import { getAllProductsDetails, getAllShopsDetails } from "../../services/api";
 import { useSelector } from "react-redux";
@@ -65,11 +65,11 @@ const SearchPage = () => {
         fetchProducts();
         setsType(shoptype);
         setpType(producttype);
-        // if (ptype) {
-        //     setActiveItem("products");
-        // } else {
-        //     setActiveItem("shops");
-        // }
+        if (ptype) {
+            setActiveItem("products");
+        } else {
+            setActiveItem("shops");
+        }
     }, [search, stype, ptype, sort, producttype, shoptype, userLocation]);
 
     useEffect(() => {
@@ -117,7 +117,7 @@ const SearchPage = () => {
                                     })
                                 }
                             >
-                                ASC
+                                Price low to high
                             </span>{" "}
                             <br />
                             <span
@@ -128,19 +128,16 @@ const SearchPage = () => {
                                     })
                                 }
                             >
-                                DESC
+                                Price high to low
                             </span>
                         </div>
                     </ul>
 
-                    <div className="result-section flex wrap ">
+                    <div className="result-section flex wrap">
                         {activeItem === "shops" && (
                             <>
                                 {userLocation && (
-                                    <>
-                                        <span>SHOPS IN {userLocation}</span>
-
-                                        <div>
+                                        <div className="selected-shops flex wrap">
                                             {shops?.map((shop) => (
                                                 <ShopCard
                                                     shop={shop}
@@ -148,7 +145,6 @@ const SearchPage = () => {
                                                 />
                                             ))}
                                         </div>
-                                    </>
                                 )}
                             </>
                         )}

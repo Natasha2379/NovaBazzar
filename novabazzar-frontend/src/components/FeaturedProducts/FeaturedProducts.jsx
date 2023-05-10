@@ -65,35 +65,35 @@ const FeaturedProducts = () => {
                 </div>
                 <div className="categories flex align-center wrap">
                     <Link
-                        to={`search/?ptype=FruitsAndVegetables`}
+                        to={`search/?ptype=Fruits And Vegetables`}
                         className="products-category link"
                     >
                         <img src={Grocery} alt="" />
                         <p>Fruits & Vegetables</p>
                     </Link>
                     <Link
-                        to={`search/?ptype=DrinkItems`}
+                        to={`search/?ptype=Drink Items`}
                         className="products-category link"
                     >
                         <img src={Drinks} alt="" />
                         <p>Drink Items</p>
                     </Link>
                     <Link
-                        to={`search/?ptype=CleaningEssentials`}
+                        to={`search/?ptype=Cleaning Essentials`}
                         className="products-category link"
                     >
                         <img src={CleaningAccessories} alt="" />
                         <p>Cleaning Essentials</p>
                     </Link>
                     <Link
-                        to={`search/?ptype=InstantFoods`}
+                        to={`search/?ptype=Breakfast And Instant Food`}
                         className="products-category link"
                     >
                         <img src={Instantfood} alt="" />
-                        <p>Instant Foods</p>
+                        <p>Breakfast And Instant Food</p>
                     </Link>
                     <Link
-                        to={`search/?ptype=MorningItems`}
+                        to={`search/?ptype=Morning Items`}
                         className="products-category link"
                     >
                         <img src={Dailyitems} alt="" />

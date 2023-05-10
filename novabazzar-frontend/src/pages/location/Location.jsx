@@ -9,8 +9,6 @@ import usePlacesAutocomplete, {
 import useOnclickOutside from "react-cool-onclickoutside";
 
 const Location = (props) => {
-
-
     const {
         ready,
         value,
@@ -66,8 +64,9 @@ const Location = (props) => {
                     style={{
                         padding: "0.5rem",
                         margin: "0.5rem",
-                        backgroundColor: "grey",
+                        backgroundColor: "white",
                         cursor: "pointer",
+                       
                     }}
                 >
                     <span>
