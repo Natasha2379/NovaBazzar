@@ -106,7 +106,8 @@ const Navbar = (props) => {
                         placeholder="Search shops/Products in your area"
                         onChange={(e) => props.setSearch(e.target.value)}
                     />
-                    <span>Search</span>
+                    <span className="big-device">Search</span>
+                    <span className="mobile"><i className="fa-solid fa-magnifying-glass"></i></span>
                 </Link>
             </div>
         </div>

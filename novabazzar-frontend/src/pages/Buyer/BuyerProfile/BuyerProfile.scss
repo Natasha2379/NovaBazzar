@@ -19,7 +19,7 @@
                 font-family: inherit;
                 cursor: pointer;
                 padding: 20px 30px;
-                font-size: 1rem;
+                font-size: 14px;
                 font-weight: 600;
             }
             .activeTab {
@@ -27,7 +27,7 @@
                 color: aliceblue;
                 cursor: pointer;
                 padding: 20px 30px;
-                background-color: rgb(0, 102, 255);
+                background-color: var(--color-price);
             }
 
             li {
@@ -66,13 +66,15 @@
                     font-family: inherit;
                     cursor: pointer;
                     padding: 20px 30px;
+                    font-weight: 500;
+                    
                 }
                 .activeTab {
                     font-family: inherit;
                     color: aliceblue;
                     cursor: pointer;
                     padding: 20px 30px;
-                    background-color: rgb(0, 102, 255);
+                    
                 }
 
                 li {
