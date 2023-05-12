@@ -43,14 +43,13 @@
         }
         button {
             padding: 12px 24px;
-            border-radius: 10px;
             font-size: 1rem;
             font-weight: 500;
             margin-right: 20px;
             background-color: red;
             color: white;
             border: none;
-            width: 120px;
+            width: max-content;
             cursor: pointer;
         }
     }
@@ -73,6 +72,10 @@
                     object-fit: cover;
                 }
             }
+            .item-name {
+                font-size: .9rem;
+                font-weight: 600;
+            }
         }
     }
 }
@@ -93,6 +96,13 @@
                     width: 100%;
                     object-fit: cover;
                 }
+            }
+            .item-name {
+                font-size: 14px;
+                font-weight: 600;
+            }
+            button{
+                padding: 10px 15px;
             }
         }
     }

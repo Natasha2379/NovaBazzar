@@ -52,15 +52,21 @@ const ShopBanner = () => {
 
                 <div className="shop-status">
                     {shopDetails?.open ? (
-                        <i
-                            className="fa-solid fa-unlock"
-                            onClick={() => handleUpdateShop(false)}
-                        ></i>
+                        <div className="flex align-center">
+                            <i
+                                className="fa-solid fa-unlock"
+                                onClick={() => handleUpdateShop(false)}
+                            ></i>
+                            <span className="active">Close your shop</span>
+                        </div>
                     ) : (
-                        <i
-                            className="fa-solid fa-lock"
-                            onClick={() => handleUpdateShop(true)}
-                        ></i>
+                        <div className="flex align-center">
+                            <i
+                                className="fa-solid fa-lock"
+                                onClick={() => handleUpdateShop(true)}
+                            ></i>
+                            <span className="active">Open your shop</span>
+                        </div>
                     )}
                 </div>
             </div>

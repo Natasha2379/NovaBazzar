@@ -17,7 +17,7 @@ import img3 from "../../assets/jacket.jpg";
 import img4 from "../../assets/sellerLogin.jpg";
 import img5 from "../../assets/openshop.jpg";
 import img6 from "../../assets/banner.jpg";
-// import Product from "../../components/ProductCard/Product";
+import Product from "../../components/productCard/Product";
 import {
     getAllProductsDetails,
     getProductDetails,
@@ -26,7 +26,7 @@ import {
 import { addItem } from "../../redux/slices/cartSlice";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import Product from "../../components/ProductCard/Product";
+
 
 const ProductDetail = () => {
     const navigate = useNavigate();
@@ -180,13 +180,13 @@ const ProductDetail = () => {
             </div>
             <h2>Related items</h2>
             <div
-                className="related-products-section"
+                className="related-products-section flex wrap"
                 onClick={() => {
                     window.scrollTo(0, 0);
                 }}
             >
                 {relatedProducts?.map((product) => (
-                    <Product product={product} key={product._id} />
+                    <Product  product={product} key={product._id} />
                 ))}
             </div>
         </div>

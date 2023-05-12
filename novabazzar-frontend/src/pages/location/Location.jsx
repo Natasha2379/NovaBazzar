@@ -9,8 +9,6 @@ import usePlacesAutocomplete, {
 import useOnclickOutside from "react-cool-onclickoutside";
 
 const Location = (props) => {
-
-
     const {
         ready,
         value,
@@ -66,8 +64,10 @@ const Location = (props) => {
                     style={{
                         padding: "0.5rem",
                         margin: "0.5rem",
-                        backgroundColor: "grey",
+                        backgroundColor: "white",
                         cursor: "pointer",
+                        
+                       
                     }}
                 >
                     <span>
@@ -91,7 +91,7 @@ const Location = (props) => {
                             value={value}
                             onChange={handleInput}
                             disabled={!ready}
-                            placeholder="Where are you going?"
+                            placeholder="Search for an area,village name"
                         />
                         {/* We can use the "status" to decide whether we should display the dropdown or not */}
                     </div>

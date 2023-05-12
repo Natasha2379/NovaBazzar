@@ -65,7 +65,7 @@ const FeaturedProducts = () => {
                 </div>
                 <div className="categories flex align-center wrap">
                     <Link
-                        to={`search/?ptype=FruitsAndVegetables`}
+                        to={`search/?ptype=Fruits And Vegetables`}
                         className="products-category link"
                     >
                         <img src={Grocery} alt="" />
@@ -79,7 +79,7 @@ const FeaturedProducts = () => {
                         <p>Drink Items</p>
                     </Link>
                     <Link
-                        to={`search/?ptype=CleaningEssentials`}
+                        to={`search/?ptype=Cleaning Essentials`}
                         className="products-category link"
                     >
                         <img src={CleaningAccessories} alt="" />
@@ -90,7 +90,7 @@ const FeaturedProducts = () => {
                         className="products-category link"
                     >
                         <img src={Instantfood} alt="" />
-                        <p>Instant Foods</p>
+                        <p>Breakfast And Instant Food</p>
                     </Link>
                     <Link
                         to={`search/?ptype=Daily,BreadAndegg`}

@@ -29,21 +29,21 @@ const Footer = () => {
             </div>
             <div className="row flex column">
                 <div className="footer-heading">Get in touch</div>
-                <Link to="/" className="link">
-                    Instagram
-                </Link>
-                <Link to="/" className="link">
-                    Facebook
-                </Link>
-                <Link to="/" className="link">
-                    Twitter
-                </Link>
-                <Link to="/" className="link">
-                    Linkedin
-                </Link>
-                <Link to="/" className="link">
-                    Whatsapp
-                </Link>
+                <a href="https://www.instagram.com" className="link">
+                    <i className="fa-brands fa-instagram"></i>
+                </a>
+                <a href="/https://www.facebook.com" className="link">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a href="/https://www.itwitter.com" className="link">
+                    <i class="fa-brands fa-twitter"></i>
+                </a>
+                <a href="/https://www.linkedin.com" className="link">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="/https://www.whatsapp.com" className="link">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
             </div>
         </div>
     );

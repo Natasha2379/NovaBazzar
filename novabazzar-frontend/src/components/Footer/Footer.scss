@@ -1,9 +1,9 @@
 .footer{
     min-height: 300px;
     width: 100%;
-    background-color: black;
+    background-color: var(--footer-bg-color);
     color: white;
-    padding: 1% 10%;
+    padding: 3% 10%;
     gap: 30px;
 
 
@@ -24,6 +24,10 @@
 
         .link{
             color: white;
+
+            i{
+                font-size: 1.5rem;
+            }
         }
     }
 }

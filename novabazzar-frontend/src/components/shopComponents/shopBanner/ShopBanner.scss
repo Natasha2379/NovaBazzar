@@ -3,7 +3,7 @@
     width: 100%;
     padding: 0 5%;
     color: white;
-    background: linear-gradient(to left, aqua, rgb(24, 126, 221));
+    background-color: var(--color-secondary);
     .shop-img {
         flex: 1;
         padding: 20px;
@@ -38,9 +38,21 @@
                 font-size: 3rem;
                 color: white;
 
-                &:hover {
-                    color: black;
-                }
+            }
+            span{
+                display: none;
+            }
+
+            &:hover{
+                 div{
+                    gap: 20px;
+                     span{
+                         display: block;
+                         font-size: 20px;
+                         font-weight: 600;
+                     }
+
+                 }
             }
             .shop-location {
                 font-size: 15px;
@@ -63,46 +75,53 @@
         }
     }
 }
-@media screen and (max-width : 500px){
+
+@media screen and (max-width : 500px) {
     .shopBanner{
-        height: 250px;
         width: 100%;
-        gap: 30px;
-        padding: 0 2%;
+        height: 370px;
+        overflow: hidden;
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
         .shop-img{
+            width: 100%;
+            height:60%;
+            padding: 10px;
+            
+            
             img{
-                width: 200px;
-                height: 200px;
+                width: 100%;
+                height: 100%;
+                margin: auto;
             }
+
         }
         .shopkepperDetails{
-            gap: 10px;
-
+            gap: 4px;
+            align-items: flex-start;
             .shop-name {
-                font-size: 20px;
+                font-size: 15px;
                 font-weight: 600;
             }
             .shopkepper-name,
             .shop-type {
-                font-size: 18px;
+                font-size: 12px;
                 font-weight: 500;
             }
             .shop-type {
-                font-size: 15px;
-                font-weight: 500;
+                font-size: 10px;
+                font-weight: 600;
             }
             .shop-status {
                 i {
                     font-size: 2rem;
                     color: white;
     
-                    &:hover {
-                        color: black;
-                    }
                 }
                 .shop-location {
-                    font-size: 17px;
-                    font-weight: 500;
+                    font-size: 10px;
+                    font-weight: 600;
                 }
             }
         }
@@ -130,6 +149,7 @@
         }
         .shopkepperDetails{
             gap: 4px;
+            align-items: flex-start;
             .shop-name {
                 font-size: 15px;
                 font-weight: 600;
@@ -148,9 +168,6 @@
                     font-size: 2rem;
                     color: white;
     
-                    &:hover {
-                        color: black;
-                    }
                 }
                 .shop-location {
                     font-size: 10px;

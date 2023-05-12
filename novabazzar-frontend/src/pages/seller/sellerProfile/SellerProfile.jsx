@@ -2,15 +2,15 @@ import React, { useEffect, useState } from "react";
 import "./SellerProfile.scss";
 import image from "../../../assets/sellerLogin.jpg";
 
-import SellerBussiness from "../../../components/ShopComponents/sellerProfileParts/SellerBussiness/SellerBussiness";
-import EditShopProfile from "../../../components/ShopComponents/sellerProfileParts/ProfileArea/EditShopProfile";
+import SellerBussiness from "../../../components/shopComponents/sellerProfileParts/SellerBussiness/SellerBussiness";
+import EditShopProfile from "../../../components/shopComponents/sellerProfileParts/ProfileArea/EditShopProfile";
 import { getShopOfUser } from "../../../services/api";
 import { useSelector } from "react-redux";
 import { selectUser_ID } from "../../../redux/slices/userSlice";
 
 const SellerProfile = () => {
     const userid = useSelector(selectUser_ID);
-    const [active, setActive] = useState("MyBusiness");
+    const [active, setActive] = useState("editProfile");
     const [shop, setShop] = useState();
 
     const fetchShop = async () => {
@@ -39,7 +39,7 @@ const SellerProfile = () => {
             </div>
             <div className="shop-details-area flex ">
                 <ul className="SellerTabs flex column">
-                    <li
+                    {/* <li
                         onClick={() => setActive("MyBusiness")}
                         className={
                             active === "MyBusiness" ? "activeTab" : "Tab"
@@ -47,7 +47,7 @@ const SellerProfile = () => {
                     >
                         {" "}
                         My Business
-                    </li>
+                    </li> */}
 
                     <li
                         onClick={() => setActive("editProfile")}
@@ -60,7 +60,7 @@ const SellerProfile = () => {
                     </li>
                 </ul>
                 <div className="details">
-                    {active === "MyBusiness" && <SellerBussiness />}
+                    {/* {active === "MyBusiness" && <SellerBussiness />} */}
                     {active === "editProfile" && (
                         <EditShopProfile
                             shop={shop}

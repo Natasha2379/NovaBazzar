@@ -2,18 +2,17 @@
     height: 100%;
     width: 100%;
     margin-block: 50px;
-    gap: 20px;
-    padding: 0 20px;
+    gap: 7px;
+    padding: 0 0px;
 
     .shop-box{
-        height: 270px;
-        width: 23%;
+        height: 300px;
+        width: 19.5%;
         background-color: white;
-        color: rgb(5, 121, 237);
         text-align: center;
-        border-radius: 10px;
         overflow: hidden;
-         box-shadow:  0 0 3px gray;
+        padding: 15px;
+        border: 1px solid var(--color-border);
 
         img{
             height: 80%;
@@ -22,9 +21,10 @@
             background-color: white;
         }
         p{
-            font-size: 1.3rem;
+            font-size: 16px;
             font-weight: 600;
             margin-top: 10px;
+            color: var(--color-secondary);
         }
     }
 }

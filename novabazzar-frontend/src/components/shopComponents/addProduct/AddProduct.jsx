@@ -206,7 +206,7 @@ const AddProduct = (props) => {
                     <p className="addProductSubHeading">
                         Add Product Gallery Images
                     </p>
-                    <div className="images-section flex align-center">
+                    <div className="images-section flex align-center ">
                         <div
                             className="addProductImageInputContainer"
                             onClick={handleProductGalleryImageUpload}
@@ -218,7 +218,7 @@ const AddProduct = (props) => {
                                 backgroundRepeat: "no-repeat",
                             }}
                         >
-                            <span className="gallery-img">
+                            <span className="gallery-img ">
                                 <input
                                     type="file"
                                     className="addProductImageInput"

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./SearchPage.scss";
 import Navbar from "../../components/Navbar/Navbar";
 import ShopCard from "../../components/shopCard/ShopCard";
-import Product from "../../components/ProductCard/Product";
+import Product from "../../components/productCard/Product";
 import Footer from "../../components/Footer/Footer";
 import { getAllProductsDetails, getAllShopsDetails } from "../../services/api";
 import { useSelector } from "react-redux";
@@ -112,7 +112,7 @@ const SearchPage = () => {
                                     })
                                 }
                             >
-                                ASC
+                                Price low to high
                             </span>{" "}
                             <br />
                             <span
@@ -123,7 +123,7 @@ const SearchPage = () => {
                                     })
                                 }
                             >
-                                DESC
+                                Price high to low
                             </span>
                         </div>
                     )}
@@ -136,7 +136,7 @@ const SearchPage = () => {
                                     {shops?.map((shop) => (
                                         <ShopCard shop={shop} key={shop._id} />
                                     ))}
-                                </div>
+                                </div> 
                             </div>
                         )}
                         {activeItem === "products" &&
