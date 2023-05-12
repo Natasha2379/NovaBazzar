@@ -154,7 +154,7 @@ const deleteShop = async (req, res, next) => {
 const getAllShops = async (req, res, next) => {
 	const search = req.query.search || "";
 	let location = req.query.location || "";
-	console.log(req.query.location);
+
 	let typeFilter;
 	if (req.query.type === "null") {
 		typeFilter = "all";
@@ -177,7 +177,7 @@ const getAllShops = async (req, res, next) => {
 		? (typeFilter = [...types])
 		: (typeFilter = typeFilter.split(","));
 
-	try {
+		try {
 		const shops = await Shop.find({
 			$or: [
 				{ location: { $regex: location, $options: "i" } },

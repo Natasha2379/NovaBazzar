@@ -8,6 +8,7 @@ const {
 	deleteOrder,
 	getAllOrdersOfUser,
 	getAllOrdersOfSeller,
+	changeStatusOfOrder,
 } = require("../controllers/order");
 
 //ADD A ORDER
@@ -19,8 +20,11 @@ router.get("/order/:orderid", getOrder);
 //EDIT ORDER DETAILS
 router.put("/order/:orderid", editOrderDetails);
 
+//CHANGE STATUS ORDER DETAILS
+router.put("/status/:orderid", changeStatusOfOrder);
+
 //DELETE ORDER
-router.delete("/order/:orderid", deleteOrder);
+router.put("/delete/:orderid", deleteOrder);
 
 //GET ALL ORDERS OF A USER
 router.get("/user-order/:userid", getAllOrdersOfUser);

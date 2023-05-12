@@ -14,6 +14,7 @@ const addOrder = async (req, res, next) => {
 				sellerId: item.sellerId,
 				quantity: item.quantity,
 				price: item.price,
+				status: "Pending",
 			};
 			const newOrder = new Order(newOrderData);
 			await newOrder.save();
@@ -66,10 +67,58 @@ const editOrderDetails = async (req, res, next) => {
 };
 
 const deleteOrder = async (req, res, next) => {
+	const { userId } = req.body;
+
 	try {
-		await Order.findByIdAndDelete(req.params.orderid);
+		let updatedOrder;
+
+		const order = await Order.findOne({ _id: req.params.orderid });
+		if (!order) return next(createError(404, "order not found!"));
+
+		if (order.sellerId === userId) {
+			updatedOrder = {
+				...order._doc,
+				sellerId: "",
+			};
+		}
+
+		if (order.buyerId === userId) {
+			updatedOrder = {
+				...order._doc,
+				buyerId: "",
+			};
+		}
+
+		await Order.findByIdAndUpdate(
+			req.params.orderid,
+			{ $set: updatedOrder },
+			{ new: true }
+		);
 
 		res.status(200).json({ message: "order has been deleted" });
+	} catch (err) {
+		next(err);
+	}
+};
+
+const changeStatusOfOrder = async (req, res, next) => {
+	const { status } = req.body;
+	try {
+		const order = await Order.findOne({ _id: req.params.orderid });
+		if (!order) return next(createError(404, "order not found!"));
+
+		const updatedOrder = {
+			...order._doc,
+			status,
+		};
+
+		await Order.findByIdAndUpdate(
+			req.params.orderid,
+			{ $set: updatedOrder },
+			{ new: true }
+		);
+
+		res.status(200).json({ message: "order has been cancelled" });
 	} catch (err) {
 		next(err);
 	}
@@ -103,6 +152,7 @@ module.exports = {
 	addOrder,
 	getOrder,
 	editOrderDetails,
+	changeStatusOfOrder,
 	deleteOrder,
 	getAllOrdersOfUser,
 	getAllOrdersOfSeller,

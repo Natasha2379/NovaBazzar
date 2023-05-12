@@ -19,13 +19,17 @@ const OrderSchema = new Schema(
 			type: String,
 			default: "",
 		},
-		quantity: {
+		status: {
 			type: String,
 			default: "",
 		},
+		quantity: {
+			type: Number,
+			default: 1,
+		},
 		price: {
 			type: Number,
-			required: true,
+			required: 0,
 		},
 	},
 	{ timestamps: true }

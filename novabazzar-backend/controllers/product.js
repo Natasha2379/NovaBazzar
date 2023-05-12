@@ -113,7 +113,6 @@ const getAllProducts = async (req, res, next) => {
 	}
 
 	let typeFilter;
-	// console.log(req.query.type);
 	if (req.query.type != "null" && req.query.type != "undefined") {
 		typeFilter = req.query.type;
 	} else {
@@ -186,17 +185,11 @@ const getAllProducts = async (req, res, next) => {
 	];
 
 	typeFilter === "all" ? (typeFilter = [...types]) : (typeFilter = typeFilter);
-	// console.log(typeFilter);
+
 	try {
 		const products = await Product.find({
 			$and: [
-				{
-					$or: [
-						{
-							name: { $regex: search, $options: "i" },
-						},
-					],
-				},
+				{ name: { $regex: search, $options: "i" } },
 				{ categories: typeFilter },
 			],
 		}).sort(sortBy);
