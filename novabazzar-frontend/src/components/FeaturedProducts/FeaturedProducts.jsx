@@ -72,7 +72,7 @@ const FeaturedProducts = () => {
                         <p>Fruits & Vegetables</p>
                     </Link>
                     <Link
-                        to={`search/?ptype=DrinkItems`}
+                        to={`search/?ptype=ColdDrinksAndJuice`}
                         className="products-category link"
                     >
                         <img src={Drinks} alt="" />
@@ -86,14 +86,14 @@ const FeaturedProducts = () => {
                         <p>Cleaning Essentials</p>
                     </Link>
                     <Link
-                        to={`search/?ptype=InstantFoods`}
+                        to={`search/?ptype=BreakfastAndInstantFood`}
                         className="products-category link"
                     >
                         <img src={Instantfood} alt="" />
                         <p>Instant Foods</p>
                     </Link>
                     <Link
-                        to={`search/?ptype=MorningItems`}
+                        to={`search/?ptype=Daily,BreadAndegg`}
                         className="products-category link"
                     >
                         <img src={Dailyitems} alt="" />
@@ -108,7 +108,7 @@ const FeaturedProducts = () => {
                 </div>
                 <div className="categories flex align-center wrap">
                     <Link
-                        to={`search/?ptype=T-shirtsAndShirts`}
+                        to={`search/?ptype=T-ShirtsAndShirts`}
                         className="products-category link"
                     >
                         <img src={Men} alt="" />
@@ -122,7 +122,7 @@ const FeaturedProducts = () => {
                         <p>Tops & Tees</p>
                     </Link>
                     <Link
-                        to={`search/?ptype=Footware`}
+                        to={`search/?ptype=Footwear`}
                         className="products-category link"
                     >
                         <img src={Footwear} alt="" />
@@ -136,7 +136,7 @@ const FeaturedProducts = () => {
                         <p>Watches</p>
                     </Link>
                     <Link
-                        to={`search/?ptype=FashionAccessories`}
+                        to={`search/?ptype=Accessories`}
                         className="products-category link"
                     >
                         <img src={Fashion} alt="" />
@@ -150,35 +150,35 @@ const FeaturedProducts = () => {
                 </div>
                 <div className="categories flex align-center wrap">
                     <Link
-                        to={`search/?ptype=HaircutAndcolor`}
+                        to={`search/?ptype=HaircuttingAndcolor`}
                         className="products-category link"
                     >
                         <img src={haircut} alt="" />
                         <p>Hair cut & color</p>
                     </Link>
                     <Link
-                        to={`search/?ptype=Facecare`}
+                        to={`search/?ptype=FacialAndCleanup`}
                         className="products-category link"
                     >
                         <img src={facecare} alt="" />
                         <p>Face care</p>
                     </Link>
                     <Link
-                        to={`search/?ptype=ThreadingAndwaxing`}
+                        to={`search/?ptype=ThreadingAndFacewax`}
                         className="products-category link"
                     >
                         <img src={threading} alt="" />
                         <p>Threading & Waxing</p>
                     </Link>
                     <Link
-                        to={`search/?ptype=WeddingSpecial`}
+                        to={`search/?ptype=Weddingspecial`}
                         className="products-category link"
                     >
                         <img src={wedding} alt="" />
                         <p>Wedding Special</p>
                     </Link>
                     <Link
-                        to={`search/?ptype=MenicureAndPedicure`}
+                        to={`search/?ptype=ManicureAndPedicure`}
                         className="products-category link"
                     >
                         <img src={menicure} alt="" />
@@ -192,28 +192,28 @@ const FeaturedProducts = () => {
                 </div>
                 <div className="categories flex align-center wrap">
                     <Link
-                        to={`search/?ptype=HeadphonesAndSmartWatches`}
+                        to={`search/?ptype=HeadphonesandSmartWatches`}
                         className="products-category link"
                     >
                         <img src={headphones} alt="" />
                         <p>Headphones & Smart Watches</p>
                     </Link>
                     <Link
-                        to={`search/?ptype=SmarttelevisionsAndSpeakers`}
+                        to={`search/?ptype=SmartTelevisionsAndSpeakers`}
                         className="products-category link"
                     >
                         <img src={tv} alt="" />
                         <p>Smart televisions & Speakers</p>
                     </Link>
                     <Link
-                        to={`search/?ptype=WashingMachineAndRefrigators`}
+                        to={`search/?ptype=WashingMachinesAndRefrigators`}
                         className="products-category link"
                     >
                         <img src={machine} alt="" />
                         <p>Washing Machine & Refrigators</p>
                     </Link>
                     <Link
-                        to={`search/?ptype=Airconditioner,CoolerAndFans`}
+                        to={`search/?ptype=AirConditionersAndFansAndAirCoolers`}
                         className="products-category link"
                     >
                         <img src={fans} alt="" />
@@ -235,35 +235,35 @@ const FeaturedProducts = () => {
                 </div>
                 <div className="categories flex align-center wrap">
                     <Link
-                        to={`search/?ptype=Vitamins,NutrisionsAndSupplements`}
+                        to={`search/?ptype=VitaminsAndSupplements`}
                         className="products-category link"
                     >
                         <img src={Vitamins} alt="" />
                         <p>Vitamins,Nutrisions & Supplements</p>
                     </Link>
                     <Link
-                        to={`search/?ptype=Aryuveda`}
+                        to={`search/?ptype=Ayruveda`}
                         className="products-category link"
                     >
                         <img src={aryuveda} alt="" />
                         <p>Aryuveda</p>
                     </Link>
                     <Link
-                        to={`search/?ptype=Healthcaredevices`}
+                        to={`search/?ptype=HealthcareDevices`}
                         className="products-category link"
                     >
                         <img src={devices} alt="" />
                         <p>Health care devices</p>
                     </Link>
                     <Link
-                        to={`search/?ptype=PersonalAndHomecare`}
+                        to={`search/?ptype=PersonalCare`}
                         className="products-category link"
                     >
                         <img src={care} alt="" />
                         <p>Personal & Home care</p>
                     </Link>
                     <Link
-                        to={`search/?ptype=Homapathy`}
+                        to={`search/?ptype=Homeopathy`}
                         className="products-category link"
                     >
                         <img src={homapathy} alt="" />

@@ -34,6 +34,7 @@ export const ClothesProductCategoryData = {
         "Sarees",
         "Heels And Flats",
         "Footwear",
+        "Watches",
     ],
 };
 
@@ -66,16 +67,15 @@ export const ElectronicsProductCategoryData = {
     ElectronicsProductCategories: [
         // "All",
         "Laptops And Desktops And Computer Accessories",
-        "Headphones",
-        "Smart Wearables",
+        "Headphones and Smart Watches",
         "Styling Devices",
         "Cameras",
         "Tablets",
         "Mobile Accessories",
         "Speakers And Video",
         "Gaming Accessories",
-        "TVs And Smart Televisions",
-        "Washing Machines",
+        "Smart Televisions And Speakers",
+        "Washing Machines And Refrigators",
         "Kitchen Appliances",
         "Air Conditioners And Fans And Air Coolers",
         "Home Appliances",

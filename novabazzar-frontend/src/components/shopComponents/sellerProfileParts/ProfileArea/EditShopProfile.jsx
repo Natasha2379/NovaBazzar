@@ -4,12 +4,12 @@ import shopimg from "../../../../assets/clothes-img.avif";
 import { editShopDetails, uploadShopImage } from "../../../../services/api";
 
 const EditShopProfile = (props) => {
-    const [shopImage, setProfileImage] = useState();
-    const [name, setName] = useState("");
-    const [shopName, setShopName] = useState("");
+    const [shopImage, setShopImage] = useState();
+    const [name, setName] = useState();
+    const [shopName, setShopName] = useState();
     const [location, setLocation] = useState();
-    const [email, setEmail] = useState("");
-    const [phone, setPhone] = useState("");
+    const [email, setEmail] = useState();
+    const [phone, setPhone] = useState();
 
     const handleProfileImageUpload = () => {
         document.getElementById("shopImage").click();
@@ -24,7 +24,7 @@ const EditShopProfile = (props) => {
             await editShopDetails(props.shop?._id, {
                 shopImage: res.data.url,
             });
-            setProfileImage(res.data.url);
+            setShopImage(res.data.url);
             props.fetchShop();
         } catch (error) {
             console.log(error);

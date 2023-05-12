@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
-import { getProductDetails } from "../../../services/api";
+import { deleteOrderDetails, getProductDetails } from "../../../services/api";
+import { useSelector } from "react-redux";
+import { selectUser_ID } from "../../../redux/slices/userSlice";
 
 const Item = (props) => {
+    const userid = useSelector(selectUser_ID);
     const [product, setProduct] = useState();
 
     useEffect(() => {
@@ -16,14 +19,38 @@ const Item = (props) => {
         fetchProduct();
     }, [props]);
 
+    const handleDeleteOrder = async (id) => {
+        try {
+            const confirm = window.confirm(
+                "are you sure you want to delete the order from records!!",
+            );
+            if (confirm) {
+                await deleteOrderDetails(id, userid);
+                window.alert("order deleted");
+                window.location.reload();
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
     return (
         <div className="product-detail flex align-center space wrap">
             <div className="img-area">
                 <img src={product?.coverImage} alt="" />
+                <i
+                    className="fa-solid fa-trash"
+                    style={{ cursor: "pointer" }}
+                    onClick={() => handleDeleteOrder(props.item._id)}
+                ></i>
             </div>
             <div className="product-name">{product?.name}</div>
+            <div className="product-quantity">{props.item?.status}</div>
             <div className="product-quantity">{props.item?.quantity}</div>
             <div className="product-quantity">Rs. {props.item?.price}</div>
+            <div className="product-quantity">
+                Rs. {props.item?.price * props.item?.quantity}
+            </div>
         </div>
     );
 };

@@ -199,9 +199,18 @@ export const editOrderDetails = (order_id, orderData) => {
     );
 };
 
+//change order status
+export const changeOrderStatus = (order_id, status) => {
+    return axios.put(
+        REACT_APP_SERVER_DOMAIN + "/api/orders/status/" + order_id,
+        { status },
+    );
+};
+
 //delete order data
-export const deleteOrderDetails = (order_id) => {
-    return axios.delete(
-        REACT_APP_SERVER_DOMAIN + "/api/orders/order/" + order_id,
+export const deleteOrderDetails = (order_id, user_id) => {
+    return axios.put(
+        REACT_APP_SERVER_DOMAIN + "/api/orders/delete/" + order_id,
+        { userId: user_id },
     );
 };

@@ -11,13 +11,8 @@ import { selectUserData } from "../../redux/slices/userSlice";
 const SearchPage = () => {
     const [favourites, setFavourites] = useState([]);
     const user = useSelector(selectUserData);
-    const [userLocation, setUserLocation] = useState("");
-    useEffect(() => {
-        const userLocation = localStorage.getItem("location");
-        if (userLocation) {
-            setUserLocation(userLocation);
-        }
-    }, []);
+    // const [userLocation, setUserLocation] = useState("");
+    const usercity = localStorage.getItem("location");
 
     const queryString = window.location.search;
     const queryParams = new URLSearchParams(queryString);
@@ -26,20 +21,33 @@ const SearchPage = () => {
 
     const [activeItem, setActiveItem] = useState();
     const [search, setSearch] = useState("");
-    const [stype, setsType] = useState(shoptype);
-    const [ptype, setpType] = useState(shoptype);
     const [shops, setShops] = useState();
     const [products, setProducts] = useState();
     const [sort, setSort] = useState({ sort: "price", order: "desc" });
 
     useEffect(() => {
-        console.log(search, stype, userLocation);
+        const fetchProducts = async () => {
+            try {
+                const res = await getAllProductsDetails(
+                    search,
+                    sort,
+                    producttype,
+                );
+                setProducts(res.data.products);
+            } catch (error) {
+                console.log(error);
+            }
+        };
+        fetchProducts();
+    }, [search, sort, producttype]);
+
+    useEffect(() => {
         const fetchShops = async () => {
             try {
                 const res = await getAllShopsDetails(
                     search,
-                    stype,
-                    userLocation,
+                    shoptype,
+                    usercity,
                 );
                 setShops(res.data.shops);
             } catch (error) {
@@ -47,33 +55,15 @@ const SearchPage = () => {
             }
         };
         fetchShops();
-        setsType(shoptype);
-        setpType(producttype);
-        if (ptype) {
+    }, [search, shoptype, usercity]);
+
+    useEffect(() => {
+        if (producttype) {
             setActiveItem("products");
         } else {
             setActiveItem("shops");
         }
-    }, [search, stype, ptype, producttype, shoptype, userLocation]);
-
-    useEffect(() => {
-        const fetchProducts = async () => {
-            try {
-                const res = await getAllProductsDetails(search, sort, ptype);
-                setProducts(res.data.products);
-            } catch (error) {
-                console.log(error);
-            }
-        };
-        fetchProducts();
-        setsType(shoptype);
-        setpType(producttype);
-        // if (ptype) {
-        //     setActiveItem("products");
-        // } else {
-        //     setActiveItem("shops");
-        // }
-    }, [search, stype, ptype, sort, producttype, shoptype, userLocation]);
+    }, []);
 
     useEffect(() => {
         setFavourites(user?.favourites);
@@ -84,7 +74,7 @@ const SearchPage = () => {
             <Navbar
                 search={search}
                 setSearch={setSearch}
-                userLocation={userLocation}
+                userLocation={usercity}
             />
             <div className="searchsection">
                 <div className="shops-items-section flex  column">
@@ -111,7 +101,9 @@ const SearchPage = () => {
                             {" "}
                             Products{`(${products?.length})`}
                         </li>
-                        <div style={{ cursor: "pointer" }}>
+                    </ul>
+                    {activeItem === "products" && (
+                        <div className="ASC_DESC">
                             <span
                                 onClick={() =>
                                     setSort({
@@ -134,14 +126,11 @@ const SearchPage = () => {
                                 DESC
                             </span>
                         </div>
-                    </ul>
-
+                    )}
                     <div className="result-section flex wrap ">
                         {activeItem === "shops" && (
                             <div>
-                                {userLocation && (
-                                    <span>SHOPS IN {userLocation}</span>
-                                )}
+                                {usercity && <span>SHOPS IN {usercity}</span>}
 
                                 <div className="shopResult">
                                     {shops?.map((shop) => (

@@ -59,6 +59,17 @@ const Navbar = (props) => {
                                 </div>
                             )}
                         </Link>
+                        {props.userLocation && (
+                            <span
+                                onClick={() => {
+                                    localStorage.removeItem("location");
+                                    window.location.reload();
+                                }}
+                                style={{ cursor: "pointer" }}
+                            >
+                                clear location
+                            </span>
+                        )}
                     </div>
                     <div className="links flex align-center">
                         <Link to="/buyer/cart" className="link">

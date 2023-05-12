@@ -23,6 +23,16 @@
                     color: #777;
                 }
             }
+
+            .ASC_DESC {
+                display: flex;
+                justify-content: center;
+                span {
+                    cursor: pointer;
+                    padding: 0 1rem;
+                }
+            }
+
             .result-section {
                 width: 95%;
                 height: 100%;

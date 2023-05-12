@@ -4,7 +4,7 @@ import "./UserAccount.scss";
 import MyOrders from "../ShopComponents/sellerOrders/SellerOrders";
 import { useSelector } from "react-redux";
 import { selectUser_ID } from "../../redux/slices/userSlice";
-import { deleteOrderDetails, getOrdersOfUser } from "../../services/api";
+import { changeOrderStatus, getOrdersOfUser } from "../../services/api";
 
 const Orders = () => {
     const userid = useSelector(selectUser_ID);
@@ -12,9 +12,15 @@ const Orders = () => {
 
     const handleOrderCancel = async (id) => {
         try {
-            await deleteOrderDetails(id);
-            window.alert("order cancelled");
-            window.location.reload();
+            const confirm = window.confirm(
+                "are you sure you want to cancel the order!!",
+            );
+            console.log(confirm);
+            if (confirm) {
+                await changeOrderStatus(id, "Cancelled");
+                window.alert("order cancelled");
+                window.location.reload();
+            }
         } catch (error) {
             console.log(error);
         }
@@ -37,17 +43,17 @@ const Orders = () => {
             {orders?.length
                 ? orders?.map((order) => (
                       <div className="orderContainer">
-                          {/* <div className="orderHeading">
+                          <div className="orderHeading">
                               <b>OrderID:</b> {order?._id}
-                          </div> */}
+                          </div>
                           <MyOrders order={order} key={order._id} />
-                          {/* <div className="book-btn">
+                          <div className="book-btn">
                               <button
                                   onClick={() => handleOrderCancel(order._id)}
                               >
                                   Cancel
                               </button>
-                          </div> */}
+                          </div>
                       </div>
                   ))
                 : "YOU HAVE NO ORDERS..."}
