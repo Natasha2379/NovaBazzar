@@ -66,6 +66,7 @@ const Location = (props) => {
                         margin: "0.5rem",
                         backgroundColor: "white",
                         cursor: "pointer",
+                        
                        
                     }}
                 >

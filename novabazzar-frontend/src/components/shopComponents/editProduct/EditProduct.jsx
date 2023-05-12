@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./EditProduct.scss";
+import "../AddProduct/AddProduct.scss";
 import {
     editProductDetails,
     getProductDetails,

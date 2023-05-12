@@ -140,24 +140,20 @@ const SearchPage = () => {
                         {activeItem === "shops" && (
                             <div>
                                 {userLocation && (
-                                    <>
-                                        <div className="selected-shops flex wrap">
-                                            {shops?.map((shop) => (
-                                                <ShopCard
-                                                    shop={shop}
-                                                    key={shop._id}
-                                                />
-                                            ))}
-                                        </div>
-                                        <span>SHOPS IN {userLocation}</span>
-                                    </>
-                                )}
-
-                                <div className="shopResult">
+                                    <div className="selected-shops flex wrap">
+                                        {shops?.map((shop) => (
+                                            <ShopCard
+                                                shop={shop}
+                                                key={shop._id}
+                                            />
+                                        ))}
+                                    </div>
+                                )} 
+                                {/* <div className="shopResult flex wrap">
                                     {shops?.map((shop) => (
                                         <ShopCard shop={shop} key={shop._id} />
                                     ))}
-                                </div>
+                                </div> */}
                             </div>
                         )}
                         {activeItem === "products" &&

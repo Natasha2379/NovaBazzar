@@ -10,7 +10,7 @@ import { selectUser_ID } from "../../../redux/slices/userSlice";
 
 const SellerProfile = () => {
     const userid = useSelector(selectUser_ID);
-    const [active, setActive] = useState("MyBusiness");
+    const [active, setActive] = useState("editProfile");
     const [shop, setShop] = useState();
 
     const fetchShop = async () => {
@@ -39,7 +39,7 @@ const SellerProfile = () => {
             </div>
             <div className="shop-details-area flex ">
                 <ul className="SellerTabs flex column">
-                    <li
+                    {/* <li
                         onClick={() => setActive("MyBusiness")}
                         className={
                             active === "MyBusiness" ? "activeTab" : "Tab"
@@ -47,7 +47,7 @@ const SellerProfile = () => {
                     >
                         {" "}
                         My Business
-                    </li>
+                    </li> */}
 
                     <li
                         onClick={() => setActive("editProfile")}
@@ -60,7 +60,7 @@ const SellerProfile = () => {
                     </li>
                 </ul>
                 <div className="details">
-                    {active === "MyBusiness" && <SellerBussiness />}
+                    {/* {active === "MyBusiness" && <SellerBussiness />} */}
                     {active === "editProfile" && (
                         <EditShopProfile
                             shop={shop}

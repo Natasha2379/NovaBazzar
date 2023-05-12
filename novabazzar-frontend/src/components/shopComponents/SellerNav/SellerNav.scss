@@ -23,3 +23,11 @@
         color: var(--color-price);
     }
 }
+
+@media screen and (max-width : 500px) {
+    .seller-navbar{
+        .logo{
+            font-size: 1.5rem;
+        }
+    }
+}

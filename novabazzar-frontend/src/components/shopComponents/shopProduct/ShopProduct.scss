@@ -108,10 +108,6 @@
         width: 90px;
         border-radius: 20px;
         margin: auto;
-        position: absolute;
-        bottom: 10px;
-        left: 50px;
-        right: 50px;
         cursor: pointer;
     }
 }
@@ -120,6 +116,19 @@
     .shop-product-card{
         height: 300px;
         width: 230px;
+
+        .content {
+
+            .product-name {
+                font-size: 14px;
+                font-weight: 400;
+                color: var(--color-secondary);
+
+            }
+            
+
+        }
+
     }
 }
 @media screen and (max-width : 500px) {
@@ -154,6 +163,16 @@
                 }
             }
         }
+        .content {
+
+            .product-name {
+                font-size: 12px;
+                font-weight: 300;
+                color: var(--color-secondary);
+
+            }
+        }
+
     
     }
 }
@@ -191,33 +210,7 @@
             }
         }
 
-        .content {
-            margin-top: 10px;
-            gap: 10px;
-            .product-name {
-                font-size: .89rem;
-                color: black;
-                h3 {
-                    text-decoration: none;
-                }
-            }
-            .product-shop-name {
-                font-size: 13px;
-                font-weight: 500;
-                color: #666;
-            }
-            .price-rating {
-                h3 {
-                    color: #ff2020;
-                }
-                .rating {
-                    i {
-                        color: #ffd513;
-                        cursor: pointer;
-                    }
-                }
-            }
-        }
+       
 
     }
 

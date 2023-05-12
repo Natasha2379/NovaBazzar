@@ -5,7 +5,7 @@
     right: 0;
     left: 0;
     background-color: white;
-    z-index: 9999;
+    z-index: 9;
     overflow: hidden;
     padding-top: 15px;
     gap: 10px;
@@ -192,6 +192,16 @@
 @media screen and (max-width: 500px) {
     .navbar {
         width: 100%;
+
+        .top-navbar{
+            .container{
+                .main{
+                    .logo{
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+        }
 
         .bottom-navbar {
             .search-bar {
