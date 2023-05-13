@@ -35,21 +35,22 @@ const Item = (props) => {
     };
 
     return (
-        <div className="product-detail flex align-center space wrap">
+        <div className="product-detail flex align-center  wrap">
             <div className="img-area">
                 <img src={product?.coverImage} alt="" />
+            </div>
+            <div className="product-name">{product?.name}</div>
+            <div className="product-status">{props.item?.status}</div>
+            <div className="product-quantity">{props.item?.quantity}</div>
+            <div className="product-total-price">
+                Rs. {props.item?.price * props.item?.quantity}
+            </div>
+            <div className="product-remove">
                 <i
                     className="fa-solid fa-trash"
                     style={{ cursor: "pointer" }}
                     onClick={() => handleDeleteOrder(props.item._id)}
                 ></i>
-            </div>
-            <div className="product-name">{product?.name}</div>
-            <div className="product-quantity">{props.item?.status}</div>
-            <div className="product-quantity">{props.item?.quantity}</div>
-            <div className="product-quantity">Rs. {props.item?.price}</div>
-            <div className="product-quantity">
-                Rs. {props.item?.price * props.item?.quantity}
             </div>
         </div>
     );

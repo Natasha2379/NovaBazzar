@@ -29,16 +29,16 @@ const SellerOrders = (props) => {
             <Item item={props?.order} />
             {props.order?.sellerId === userid &&
                 props.order?.status === "Pending" && (
-                    <div>
+                    <div className="control-order flex abs-center">
                         <div
                             onClick={() => handleStatus("Cancelled")}
-                            style={{ cursor: "pointer" }}
+                            style={{ cursor: "pointer" , color : "white" , backgroundColor : "red"}}
                         >
-                            Cancel
+                            Cancel order
                         </div>
                         <div
                             onClick={() => handleStatus("Completed")}
-                            style={{ cursor: "pointer" }}
+                            style={{ cursor: "pointer", color : "white",backgroundColor : "green" }}
                         >
                             Mark as Complete
                         </div>
