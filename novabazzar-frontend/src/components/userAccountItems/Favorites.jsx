@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import Product from "../ProductCard/Product";
+import Product from "../productCard/Product";
 import { useSelector } from "react-redux";
 import { selectUserData } from "../../redux/slices/userSlice";
 import { getProductDetails } from "../../services/api";

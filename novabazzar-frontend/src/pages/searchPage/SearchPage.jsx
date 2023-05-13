@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./SearchPage.scss";
 import Navbar from "../../components/Navbar/Navbar";
 import ShopCard from "../../components/shopCard/ShopCard";
-import Product from "../../components/ProductCard/Product";
+import Product from "../../components/productCard/Product";
 import Footer from "../../components/Footer/Footer";
 import { getAllProductsDetails, getAllShopsDetails } from "../../services/api";
 import { useSelector } from "react-redux";
@@ -128,11 +128,11 @@ const SearchPage = () => {
                             </span>
                         </div>
                     )}
-                    <div className="result-section flex wrap ">
+                    <div className="result-section flex wrap">
                         {activeItem === "shops" && (
-                            <div className="shopResult flex wrap">
+                            <div className="shopResult">
                                 {
-                                    <div className="shops">
+                                    <div className="my-shops">
                                         {shops?.map((shop) => (
                                             <ShopCard
                                                 shop={shop}

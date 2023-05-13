@@ -65,7 +65,7 @@ const FeaturedProducts = () => {
                 </div>
                 <div className="categories flex align-center wrap">
                     <Link
-                        to={`search/?ptype=Fruits And Vegetables`}
+                        to={`search/?ptype=FruitsAndVegetables`}
                         className="products-category link"
                     >
                         <img src={Grocery} alt="" />
