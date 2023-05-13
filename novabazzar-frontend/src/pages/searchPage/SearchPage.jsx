@@ -32,6 +32,7 @@ const SearchPage = () => {
                     search,
                     sort,
                     producttype,
+                    usercity
                 );
                 setProducts(res.data.products);
             } catch (error) {
@@ -39,7 +40,7 @@ const SearchPage = () => {
             }
         };
         fetchProducts();
-    }, [search, sort, producttype]);
+    }, [search, sort, producttype, usercity]);
 
     useEffect(() => {
         const fetchShops = async () => {

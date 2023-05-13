@@ -1,6 +1,6 @@
 import axios from "axios";
-// const REACT_APP_SERVER_DOMAIN = "http://localhost:8000"; //local server
-const REACT_APP_SERVER_DOMAIN = "https://ijpkaushik-novabazzar.onrender.com"; // deployed server
+const REACT_APP_SERVER_DOMAIN = "http://localhost:8000"; //local server
+// const REACT_APP_SERVER_DOMAIN = "https://ijpkaushik-novabazzar.onrender.com"; // deployed server
 
 /***************************** USERS *****************************/
 //function to register
@@ -74,10 +74,10 @@ export const getProductDetails = (product_id) => {
 };
 
 //get all products data
-export const getAllProductsDetails = (search, sort, type) => {
+export const getAllProductsDetails = (search, sort, type, location) => {
     return axios.get(
         REACT_APP_SERVER_DOMAIN +
-            `/api/products/?search=${search}&sort=${sort?.sort},${sort?.order}&type=${type}`,
+            `/api/products/?search=${search}&sort=${sort?.sort},${sort?.order}&type=${type}&location=${location}`,
     );
 };
 
