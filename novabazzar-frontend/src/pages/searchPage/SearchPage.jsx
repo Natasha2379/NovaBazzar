@@ -130,7 +130,7 @@ const SearchPage = () => {
                     <div className="result-section flex wrap ">
                         {activeItem === "shops" && (
                             <div className="shopResult flex wrap">
-                                {usercity && (
+                                {
                                     <div className="shops">
                                         {shops?.map((shop) => (
                                             <ShopCard
@@ -139,7 +139,7 @@ const SearchPage = () => {
                                             />
                                         ))}
                                     </div>
-                                )}
+                                }
                             </div>
                         )}
                         {activeItem === "products" &&
