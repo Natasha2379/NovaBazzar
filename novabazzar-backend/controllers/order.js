@@ -139,7 +139,7 @@ const getAllOrdersOfUser = async (req, res, next) => {
 const getAllOrdersOfSeller = async (req, res, next) => {
 	try {
 		const orders = await Order.find({
-			shopId: req.params.shopid,
+			sellerId: req.params.userid,
 		}).sort({ timestamp: -1 });
 
 		res.status(200).json({ orders, message: "all orders" });

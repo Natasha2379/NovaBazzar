@@ -30,6 +30,6 @@ router.put("/delete/:orderid", deleteOrder);
 router.get("/user-order/:userid", getAllOrdersOfUser);
 
 //GET ALL ORDERS OF A SELLER
-router.get("/seller-order/:shopid", getAllOrdersOfSeller);
+router.get("/seller-order/:userid", getAllOrdersOfSeller);
 
 module.exports = router;
