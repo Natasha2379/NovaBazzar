@@ -177,13 +177,9 @@ const getAllShops = async (req, res, next) => {
 		? (typeFilter = [...types])
 		: (typeFilter = typeFilter.split(","));
 
-		try {
+	try {
 		const shops = await Shop.find({
-			$or: [
-				{ location: { $regex: location, $options: "i" } },
-				{ city: { $regex: location, $options: "i" } },
-				{ state: { $regex: location, $options: "i" } },
-			],
+			location: { $regex: location, $options: "i" },
 			shopType: { $in: [...typeFilter] },
 			shopName: { $regex: search, $options: "i" },
 		}).sort({ timestamp: -1 });

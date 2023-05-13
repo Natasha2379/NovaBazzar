@@ -23,6 +23,10 @@ const ProductSchema = new Schema(
 			type: String,
 			required: true,
 		},
+		location: {
+			type: String,
+			required: true,
+		},
 		coverImage: {
 			type: String,
 			default: "",

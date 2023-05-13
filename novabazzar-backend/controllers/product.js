@@ -13,6 +13,7 @@ const addProduct = async (req, res, next) => {
 	const userId = req.body.userId;
 	const quantity = req.body.quantity;
 	const price = req.body.price;
+	const location = req.body.location;
 
 	const newProductData = {
 		name,
@@ -24,6 +25,7 @@ const addProduct = async (req, res, next) => {
 		galleryImages,
 		quantity,
 		price,
+		location,
 	};
 
 	const newProduct = new Product(newProductData);
@@ -102,6 +104,7 @@ const deleteProduct = async (req, res, next) => {
 
 const getAllProducts = async (req, res, next) => {
 	const search = req.query.search || "";
+	let location = req.query.location || "";
 
 	let sort = req.query.sort || "price";
 	req.query.sort ? (sort = req.query.sort.split(",")) : (sort = [sort]);
@@ -117,6 +120,10 @@ const getAllProducts = async (req, res, next) => {
 		typeFilter = req.query.type;
 	} else {
 		typeFilter = "all";
+	}
+
+	if (location === "null" || location === "undefined") {
+		location = "";
 	}
 
 	const types = [
@@ -191,6 +198,7 @@ const getAllProducts = async (req, res, next) => {
 			$and: [
 				{ name: { $regex: search, $options: "i" } },
 				{ categories: typeFilter },
+				{ location: { $regex: location, $options: "i" } },
 			],
 		}).sort(sortBy);
 
@@ -202,6 +210,7 @@ const getAllProducts = async (req, res, next) => {
 
 const getAllShopProducts = async (req, res, next) => {
 	const search = req.query.search || "";
+	let location = req.query.location || "";
 
 	let typeFilter;
 	if (req.query.type) {
@@ -217,6 +226,10 @@ const getAllShopProducts = async (req, res, next) => {
 		sortBy[sort[0]] = sort[1];
 	} else {
 		sortBy[sort[0]] = "asc";
+	}
+
+	if (location === "null" || location === "undefined") {
+		location = "";
 	}
 
 	const types = [
@@ -292,6 +305,7 @@ const getAllShopProducts = async (req, res, next) => {
 				{ shopId: req.params.shopid },
 				{ name: { $regex: search, $options: "i" } },
 				{ categories: typeFilter },
+				{ location: { $regex: location, $options: "i" } },
 			],
 		}).sort(sortBy);
 
