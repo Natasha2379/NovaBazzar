@@ -1,5 +1,5 @@
 import axios from "axios";
-// const REACT_APP_SERVER_DOMAIN = "http://localhost:8000"; //local server
+//const REACT_APP_SERVER_DOMAIN = "http://localhost:8000"; //local server
 const REACT_APP_SERVER_DOMAIN = "https://ijpkaushik-novabazzar.onrender.com"; // deployed server
 
 /***************************** USERS *****************************/

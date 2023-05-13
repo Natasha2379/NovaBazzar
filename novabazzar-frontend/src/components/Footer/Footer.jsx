@@ -23,9 +23,6 @@ const Footer = () => {
                 <Link to="/seller/addshop" className="link">
                     Be a Partner
                 </Link>
-                <Link to="/" className="link">
-                    About
-                </Link>
             </div>
             <div className="row flex column">
                 <div className="footer-heading">Get in touch</div>
