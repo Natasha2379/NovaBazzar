@@ -46,8 +46,7 @@ const ShopBanner = () => {
                 <div className="shopkepper-name">{shopDetails?.fullName}</div>
                 <div className="shop-type">{shopDetails?.type}</div>
                 <div className="shop-location">
-                    {shopDetails?.location}, {shopDetails?.city},{" "}
-                    {shopDetails?.state}
+                    {shopDetails?.location}
                 </div>
 
                 <div className="shop-status">

@@ -36,8 +36,8 @@ const Location = (props) => {
     const handleSelect = ({ description }) => {
         // When user selects a place, we can replace the keyword without request data from API
         // by setting the second parameter to "false"
-        props.setUserLocation(description.split(",")[0], false);
-        localStorage.setItem("location", description.split(",")[0]);
+        props.setUserLocation(description, false);
+        localStorage.setItem("location", description);
 
         // clearSuggestions();
 
@@ -98,7 +98,7 @@ const Location = (props) => {
                 </div>
                 {/* if input area is not empty show this type of results */}
                 <div className="search-results flex column ">
-                    <h4>Searche Results</h4>
+                    <h4>Search Results</h4>
                     {status === "OK" && (
                         <div className="location">
                             <span>{renderSuggestions()}</span>

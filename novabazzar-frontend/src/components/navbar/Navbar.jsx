@@ -10,6 +10,8 @@ const Navbar = (props) => {
     const items = useSelector(selectCartItems);
     const user = useSelector(selectUserData);
     const [shop, setShop] = useState();
+    const [mobileView, setMobileView] = useState(false);
+    console.log(mobileView);
 
     useEffect(() => {
         const fetchShop = async () => {
@@ -51,7 +53,7 @@ const Navbar = (props) => {
                                         <i className="fa-solid fa-location-dot"></i>
                                     </span>
                                     <span className="location">
-                                       Select a location
+                                        Select a location
                                     </span>
                                     <span>
                                         <i className="fa-solid fa-angle-down"></i>
@@ -71,7 +73,54 @@ const Navbar = (props) => {
                             </span>
                         )}
                     </div>
-                    <div className="links flex align-center">
+                    <i
+                        className="fa-solid fa-bars hamburger"
+                        onClick={() => setMobileView(!mobileView)}
+                    ></i>
+                    {mobileView ? (
+                        <div className="links flex align-center mobile">
+                            <Link to="/buyer/cart" className="link cart">
+                                <span className="icon">
+                                    <i className="fa-solid fa-shopping-cart"></i>
+                                </span>
+                                <span className="cart-items">
+                                    {items.length && (
+                                        <span>{items.length}</span>
+                                    )}
+                                </span>
+                            </Link>
+                            {shop ? (
+                                <Link
+                                    to={`/shop/${shop._id}`}
+                                    className="link shop"
+                                >
+                                    My Shop
+                                </Link>
+                            ) : (
+                                <Link
+                                    to="/seller/addshop"
+                                    className="link shop"
+                                >
+                                    Become a Seller
+                                </Link>
+                            )}
+                            {user ? (
+                                <Link to="/buyer/profile" className="link">
+                                    {user?.name}
+                                </Link>
+                            ) : (
+                                <Link
+                                    to="/buyer/register"
+                                    className="link createAccount"
+                                >
+                                    Sign up
+                                </Link>
+                            )}
+                        </div>
+                    ) : (
+                        ""
+                    )}
+                    <div className="links flex align-center desktop">
                         <Link to="/buyer/cart" className="link cart">
                             <span className="icon">
                                 <i className="fa-solid fa-shopping-cart"></i>
@@ -118,7 +167,9 @@ const Navbar = (props) => {
                         onChange={(e) => props.setSearch(e.target.value)}
                     />
                     <span className="big-device">Search</span>
-                    <span className="mobile"><i className="fa-solid fa-magnifying-glass"></i></span>
+                    <span className="mobileSerach">
+                        <i className="fa-solid fa-magnifying-glass"></i>
+                    </span>
                 </Link>
             </div>
         </div>

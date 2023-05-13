@@ -79,6 +79,7 @@ const AddProduct = (props) => {
             price,
             userId,
             shopId,
+            location: props.shop?.location,
         };
 
         try {

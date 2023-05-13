@@ -1,14 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./UserAccount.scss";
 // import Product from "../productCard/Product";
-import MyOrders from "../shopComponents/SellerOrders/SellerOrders";
-import { useSelector } from "react-redux";
-import { selectUser_ID } from "../../redux/slices/userSlice";
-import { changeOrderStatus, getOrdersOfUser } from "../../services/api";
+import MyOrders from "../ShopComponents/sellerOrders/SellerOrders";
+import { changeOrderStatus } from "../../services/api";
 
-const Orders = () => {
-    const userid = useSelector(selectUser_ID);
-    const [orders, setOrders] = useState();
+const Orders = (props) => {
 
     const handleOrderCancel = async (id) => {
         try {
@@ -26,34 +22,27 @@ const Orders = () => {
         }
     };
 
-    useEffect(() => {
-        const fetchOrders = async () => {
-            try {
-                const res = await getOrdersOfUser(userid);
-                setOrders(res.data.orders);
-            } catch (err) {
-                console.log(err);
-            }
-        };
-        fetchOrders();
-    }, [userid]);
 
     return (
         <div className="ordersTab">
-            {orders?.length
-                ? orders?.map((order) => (
+            {props.orders?.length
+                ? props.orders?.map((order) => (
                       <div className="orderContainer">
                           <div className="orderHeading">
                               <b>OrderID:</b> {order?._id}
                           </div>
                           <MyOrders order={order} key={order._id} />
-                          <div className="book-btn">
-                              <button
-                                  onClick={() => handleOrderCancel(order._id)}
-                              >
-                                  Cancel
-                              </button>
-                          </div>
+                          {order?.status === "Pending" && (
+                              <div className="book-btn">
+                                  <button
+                                      onClick={() =>
+                                          handleOrderCancel(order._id)
+                                      }
+                                  >
+                                      Cancel
+                                  </button>
+                              </div>
+                          )}
                       </div>
                   ))
                 : "YOU HAVE NO ORDERS..."}

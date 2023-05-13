@@ -7,6 +7,7 @@ import { changeOrderStatus } from "../../../services/api";
 
 const SellerOrders = (props) => {
     const userid = useSelector(selectUser_ID);
+
     const handleStatus = async (status) => {
         const confirm = window.confirm(
             `are you sure you want to mark the order as ${status}!!`,
@@ -21,6 +22,7 @@ const SellerOrders = (props) => {
             console.log(error);
         }
     };
+    
     console.log(props.order);
     return (
         <div className="seller-orders flex column">

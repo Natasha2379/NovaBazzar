@@ -35,6 +35,14 @@
                 }
             }
 
+            .hamburger {
+                display: none;
+            }
+
+            .mobile {
+                display: none;
+            }
+
             .links {
                 gap: 50px;
 
@@ -80,7 +88,7 @@
             .setLocation {
                 color: var(--icon-color);
 
-                i{
+                i {
                     margin-inline: 7px;
                 }
             }
@@ -118,7 +126,7 @@
                 align-items: center;
                 justify-content: center;
             }
-            .mobile {
+            .mobileSerach {
                 display: none;
             }
 
@@ -175,7 +183,7 @@
                     align-items: center;
                     justify-content: center;
                 }
-                .mobile {
+                .mobileSerach {
                     display: none;
                 }
                 input {
@@ -193,12 +201,32 @@
     .navbar {
         width: 100%;
 
-        .top-navbar{
-            .container{
-                .main{
-                    .logo{
+        .top-navbar {
+            .container {
+                .main {
+                    .logo {
                         font-size: 1.5rem;
                     }
+                }
+
+                .mobile {
+                    // background-color: rgb(189, 186, 186);
+                    display: flex;
+                    padding: 1rem;
+                    flex-direction: column;
+                    // align-items: flex-end;
+                    width: 100%;
+                }
+                .links {
+                    gap: 1rem;
+                }
+
+                .hamburger {
+                    display: flex;
+                }
+
+                .desktop {
+                    display: none;
                 }
             }
         }
@@ -212,7 +240,7 @@
                 .big-device {
                     display: none;
                 }
-                .mobile {
+                .mobileSerach {
                     display: block;
                     display: flex;
                     align-items: center;
@@ -246,7 +274,7 @@
                 .big-device {
                     display: none;
                 }
-                .mobile {
+                .mobileSerach {
                     display: block;
                     display: flex;
                     align-items: center;

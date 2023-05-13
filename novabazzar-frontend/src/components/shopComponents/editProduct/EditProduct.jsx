@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../AddProduct/AddProduct.scss";
+import "./EditProduct.scss";
 import {
     editProductDetails,
     getProductDetails,
@@ -117,7 +117,7 @@ const AddProduct = () => {
         try {
             await editProductDetails(product._id, productData);
             window.alert("product updated");
-            window.location.reload();
+            window.location(`/shop/${product?.shopId}`);
         } catch (error) {
             console.log(error);
         }

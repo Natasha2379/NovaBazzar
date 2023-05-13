@@ -24,7 +24,7 @@ const ShopCard = (props) => {
                 </div>
                 <div className={styles.shopCardShopAddress}>
                     <div className={styles.shopCardLocation}>
-                        {props?.shop?.city}, {props?.shop?.state}
+                        {props?.shop?.location}
                     </div>
                     <div className={styles.shopCardTimeContainer}>
                         <div>25.6km</div>

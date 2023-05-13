@@ -104,7 +104,12 @@ const EditShopProfile = (props) => {
                         <span>
                             <input
                                 type="text"
+                                style={{
+                                    cursor: "not-allowed",
+                                    backgroundColor: "#dad4d4",
+                                }}
                                 placeholder={props.shop?.location}
+                                disabled
                                 onChange={(e) => setLocation(e.target.value)}
                             />
                         </span>
@@ -114,6 +119,11 @@ const EditShopProfile = (props) => {
                         <span>
                             <input
                                 type="email"
+                                style={{
+                                    cursor: "not-allowed",
+                                    backgroundColor: "#dad4d4",
+                                }}
+                                disabled
                                 placeholder={props.shop?.email}
                                 onChange={(e) => setEmail(e.target.value)}
                             />
