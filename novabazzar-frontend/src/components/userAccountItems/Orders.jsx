@@ -39,20 +39,29 @@ const Orders = () => {
     }, [userid]);
 
     return (
-        <div className="ordersTab">
+        <div className="ordersTab flex ">
             {orders?.length
                 ? orders?.map((order) => (
-                      <div className="orderContainer">
-                          <div className="orderHeading">
-                              <b>OrderID:</b> {order?._id}
-                          </div>
-                          <MyOrders order={order} key={order._id} />
-                          <div className="book-btn">
-                              <button
-                                  onClick={() => handleOrderCancel(order._id)}
-                              >
-                                  Cancel
-                              </button>
+                      <div className="orderContainer flex column">
+                          <MyOrders
+                              className="myorder"
+                              order={order}
+                              key={order._id}
+                          />
+                          <div className="orderHeading flex align-center">
+                              <p>
+                                  <span>OrderID:</span> <span>{order?._id}</span>
+                              </p>
+
+                              <div className="book-btn">
+                                  <button
+                                      onClick={() =>
+                                          handleOrderCancel(order._id)
+                                      }
+                                  >
+                                      Cancel this item
+                                  </button>
+                              </div>
                           </div>
                       </div>
                   ))

@@ -58,10 +58,10 @@ const EditShopProfile = (props) => {
                             backgroundImage: `url(${
                                 props.shop?.shopImage || shopimg
                             })`,
-                            // backgroundColor: "red",
                             backgroundSize: "profile",
                             backgroundPosition: "center",
                             backgroundRepeat: "no-repeat",
+                            backgroundSize : "cover"
                         }}
                     ></span>
                     <div

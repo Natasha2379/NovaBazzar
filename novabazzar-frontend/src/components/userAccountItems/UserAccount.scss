@@ -57,7 +57,7 @@
         }
     }
     button {
-        background-color:var(--color-dark);
+        background-color: var(--color-dark);
         color: white;
         padding: 12px 25px;
         font-size: 17px;
@@ -71,18 +71,26 @@
 }
 
 .ordersTab {
-    display: flex;
-    flex-direction: column;
     width: 100%;
-    gap: 1rem;
+    gap: 10px;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+   
 
     .orderContainer {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 1rem;
+        height: max-content;
+        width: 100%;
+        border: 1px solid black;
 
         .orderHeading {
-            padding: 0.5rem 0;
+            padding: 10px;
+            height: 30%;
+            width: 100%;
+        }
+        .myorder {
+            height: 70%;
+            width: 100%;
         }
         .book-btn {
             display: flex;
@@ -154,8 +162,6 @@
                     object-fit: cover;
                 }
             }
-
-
         }
         .user-name,
         .user-email,
@@ -167,46 +173,7 @@
             padding: 20px 30px;
         }
     }
-    .ordersTab {
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-        gap: 10px;
-        flex-wrap: wrap;
 
-        .orderContainer {
-            display: flex;
-            margin-bottom: 1rem;
-            width: 235px;
-            height: 300px;
-
-            .orderHeading {
-                padding: 0.5rem 0;
-            }
-            .book-btn {
-                display: flex;
-                justify-content: flex-end;
-                align-items: flex-end;
-                width: 100%;
-                margin-right: 20px;
-
-                button {
-                    padding: 12px 0;
-                    font-size: 1rem;
-                    border-radius: 20px;
-                }
-            }
-            .book-btn {
-                button {
-                    margin-block: 10px;
-                    background-color: red;
-                    cursor: pointer;
-                    color: white;
-                    padding: 12px;
-                }
-            }
-        }
-    }
     .myfavourites {
         gap: 10px;
         width: 100%;
@@ -216,6 +183,18 @@
         .fav-product {
             width: 100%;
             height: 100%;
+        }
+    }
+    .ordersTab {
+        .orderContainer {
+            .orderHeading {
+                button {
+                    font-size: 12px;
+                }
+                p{
+                    font-size: 12px;
+                }
+            }
         }
     }
 }
@@ -240,8 +219,6 @@
                     object-fit: cover;
                 }
             }
-
-
         }
         .user-name,
         .user-email,
@@ -289,6 +266,27 @@
             font-weight: 500;
         }
     }
+    .ordersTab {
+        gap: 0;
+        flex-wrap: wrap;
+        flex-direction: row;
+        .orderContainer {
+            width: 100%;
+           
+            .orderHeading {
+                flex-direction: column;
+                justify-content: center;
+                button {
+                    font-size: 10px;
+                }
+                p {
+                    flex: 1;
+                        font-size: 12px;
+                    
+                }
+            }
+        }
+    }
 }
 @media screen and (max-width: 320px) {
     .EditProfile {
@@ -311,8 +309,6 @@
                     object-fit: cover;
                 }
             }
-
-
         }
         .user-name,
         .user-email,
