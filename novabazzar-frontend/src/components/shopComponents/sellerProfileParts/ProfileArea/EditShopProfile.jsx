@@ -10,6 +10,7 @@ const EditShopProfile = (props) => {
     const [location, setLocation] = useState();
     const [email, setEmail] = useState();
     const [phone, setPhone] = useState();
+    const [shopType, setShopType] = useState("");
 
     const handleProfileImageUpload = () => {
         document.getElementById("shopImage").click();
@@ -39,6 +40,7 @@ const EditShopProfile = (props) => {
                 location,
                 phone,
                 email,
+                shopType
             });
             console.log(res);
         } catch (error) {
@@ -61,7 +63,7 @@ const EditShopProfile = (props) => {
                             backgroundSize: "profile",
                             backgroundPosition: "center",
                             backgroundRepeat: "no-repeat",
-                            backgroundSize : "cover"
+                            backgroundSize: "cover",
                         }}
                     ></span>
                     <div
@@ -89,6 +91,21 @@ const EditShopProfile = (props) => {
                             />
                         </span>
                     </div>
+                    <select
+                        name=""
+                        id="ProductCategory"
+                        className="addShopInput"
+                        onChange={(e) => setShopType(e.target.value)}
+                    >
+                        <option hidden>Select Shop Type</option>
+                        <option value="Kiranashop">Kirana shop</option>
+                        <option value="Medicalshop">Medical shop</option>
+                        <option value="Clothesshop">Clothes shop</option>
+                        <option value="Electronicsshop">
+                            Electronics shop
+                        </option>
+                        <option value="Electronicsshop">Parlour shop</option>
+                    </select>
                     <div className="user-name">
                         <span className="title">My Shop Name</span>
                         <span>
