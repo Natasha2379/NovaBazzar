@@ -61,7 +61,7 @@ const Navbar = (props) => {
                                 </div>
                             )}
                         </Link>
-                        {props.userLocation && (
+                        {/* {props.userLocation && (
                             <span
                                 onClick={() => {
                                     localStorage.removeItem("location");
@@ -71,7 +71,7 @@ const Navbar = (props) => {
                             >
                                 clear location
                             </span>
-                        )}
+                        )} */}
                     </div>
                     <i
                         className="fa-solid fa-bars hamburger"
