@@ -38,7 +38,7 @@
         display: flex;
         align-items: center;
         gap: 20px;
-        padding: 20px 30px;
+        padding: 20px;
 
         span {
             flex: 1;
@@ -52,7 +52,7 @@
             padding: 12px 0;
 
             &::placeholder {
-                font-size: 17px;
+                font-size: 12px;
             }
         }
     }
@@ -76,7 +76,6 @@
     height: 100%;
     width: 100%;
     flex-direction: column;
-   
 
     .orderContainer {
         height: max-content;
@@ -191,7 +190,7 @@
                 button {
                     font-size: 12px;
                 }
-                p{
+                p {
                     font-size: 12px;
                 }
             }
@@ -223,16 +222,18 @@
         .user-name,
         .user-email,
         .user-number {
-            width: 100%;
-            display: flex;
-            align-items: flex-start;
-            gap: 0px;
-            padding: 20px;
             flex-direction: column;
-
-            input {
-                font-size: 1rem;
-            }
+            gap: 10px;
+            
+    
+           
+        }
+        .uploadImageDiv {
+            background-color: var(--color-success-dark);
+            color: white;
+            padding: 10px 12px;
+            width: 90%;
+            margin: auto;
         }
     }
     .myfavourites {
@@ -272,7 +273,7 @@
         flex-direction: row;
         .orderContainer {
             width: 100%;
-           
+
             .orderHeading {
                 flex-direction: column;
                 justify-content: center;
@@ -281,8 +282,7 @@
                 }
                 p {
                     flex: 1;
-                        font-size: 12px;
-                    
+                    font-size: 12px;
                 }
             }
         }
@@ -295,31 +295,10 @@
         gap: 10px;
 
         .profile-img {
-            .image {
-                margin-bottom: 30px;
-                height: 130px;
-                width: 130px;
-                border-radius: 50%;
-                border: 1px solid black;
-                overflow: hidden;
-
-                img {
-                    height: 100%;
-                    width: 100%;
-                    object-fit: cover;
-                }
-            }
+          
         }
-        .user-name,
-        .user-email,
-        .user-number {
-            width: 100%;
-            display: flex;
-            align-items: flex-start;
-            gap: 0px;
-            padding: 20px 30px;
-            flex-direction: column;
-        }
+     
+      
     }
     .myfavourites {
         gap: 10px;

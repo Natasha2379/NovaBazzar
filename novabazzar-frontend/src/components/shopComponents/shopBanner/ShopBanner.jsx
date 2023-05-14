@@ -10,6 +10,7 @@ const ShopBanner = () => {
     const shopId = window.location.pathname.split("/")[2];
     const [shopDetails, setShopDetails] = useState();
 
+    
     const handleUpdateShop = async (status) => {
         try {
             if (userid === shopDetails?.userId) {
@@ -44,7 +45,7 @@ const ShopBanner = () => {
             <div className="shopkepperDetails flex column ">
                 <div className="shop-name">{shopDetails?.shopName}</div>
                 <div className="shopkepper-name">{shopDetails?.fullName}</div>
-                <div className="shop-type">{shopDetails?.type}</div>
+                <div className="shop-type">{shopDetails?.shoptype}</div>
                 <div className="shop-location">
                     {shopDetails?.location}
                 </div>

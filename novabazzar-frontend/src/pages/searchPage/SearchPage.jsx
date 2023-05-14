@@ -128,11 +128,11 @@ const SearchPage = () => {
                             </span>
                         </div>
                     )}
-                    <div className="result-section flex wrap">
+                    <div className="result-section">
                         {activeItem === "shops" && (
                             <div className="shopResult">
                                 {
-                                    <div className="my-shops">
+                                    <div className="my-shops flex wrap">
                                         {shops?.map((shop) => (
                                             <ShopCard
                                                 shop={shop}

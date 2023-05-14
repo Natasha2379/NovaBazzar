@@ -30,16 +30,16 @@ const Footer = () => {
                     <i className="fa-brands fa-instagram"></i>
                 </a>
                 <a href="/https://www.facebook.com" className="link">
-                    <i class="fa-brands fa-facebook"></i>
+                    <i className="fa-brands fa-facebook"></i>
                 </a>
                 <a href="/https://www.itwitter.com" className="link">
-                    <i class="fa-brands fa-twitter"></i>
+                    <i className="fa-brands fa-twitter"></i>
                 </a>
                 <a href="/https://www.linkedin.com" className="link">
-                    <i class="fa-brands fa-linkedin"></i>
+                    <i className="fa-brands fa-linkedin"></i>
                 </a>
                 <a href="/https://www.whatsapp.com" className="link">
-                    <i class="fa-brands fa-whatsapp"></i>
+                    <i className="fa-brands fa-whatsapp"></i>
                 </a>
             </div>
         </div>

@@ -25,7 +25,7 @@ const SellerNav = () => {
     return (
         <div className="seller-navbar flex align-center space">
             <Link to="/" className="logo link">
-                NovaBazzar
+                novabazzar
             </Link>
             {shop?.userId === userId && (
                 <Link to="/sellerprofile" className="seller-account link">
