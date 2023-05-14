@@ -128,7 +128,7 @@ const SearchPage = () => {
                             </span>
                         </div>
                     )}
-                    <div className="result-section">
+                    <div className="result-section flex wrap">
                         {activeItem === "shops" && (
                             <div className="shopResult">
                                 {
