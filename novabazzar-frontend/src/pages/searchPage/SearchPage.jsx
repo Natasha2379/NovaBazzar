@@ -32,7 +32,7 @@ const SearchPage = () => {
                     search,
                     sort,
                     producttype,
-                    usercity
+                    usercity,
                 );
                 setProducts(res.data.products);
             } catch (error) {
@@ -88,8 +88,8 @@ const SearchPage = () => {
                                     : "notactive"
                             }
                         >
-                            {" "}
-                            Shops{`(${shops?.length})`}
+                            <span className="my-top">Shops</span>
+                            <span className="top">{`${shops?.length}`}</span>
                         </li>
                         <li
                             onClick={() => setActiveItem("products")}
@@ -99,8 +99,8 @@ const SearchPage = () => {
                                     : "notactive"
                             }
                         >
-                            {" "}
-                            Products{`(${products?.length})`}
+                            <span className="my-top">Products</span>
+                            <span className="top">{`${products?.length}`}</span>
                         </li>
                     </ul>
                     {activeItem === "products" && (

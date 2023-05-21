@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./SellerProfile.scss";
-import image from "../../../assets/sellerLogin.jpg";
 
-// import SellerBussiness from "../../../components/ShopComponents/sellerProfileParts/SellerBussiness/SellerBussiness";
 import EditShopProfile from "../../../components/shopComponents/sellerProfileParts/ProfileArea/EditShopProfile";
 import { getShopOfUser } from "../../../services/api";
 import { useSelector } from "react-redux";
@@ -29,26 +27,14 @@ const SellerProfile = () => {
     return (
         <div className="sellerAccountPage">
             <h2>My Shop Profile page</h2>
-            <img src={image} alt="" />
+
             <div className="shop-banner-details flex align-center space">
                 <div className="shop-name">{shop?.shopName}</div>
                 <div className="shop-type">{shop?.shopType}</div>
-                <div className="shop-location">
-                    {shop?.location}
-                </div>
+                <div className="shop-location">{shop?.location}</div>
             </div>
             <div className="shop-details-area flex ">
                 <ul className="SellerTabs flex column">
-                    {/* <li
-                        onClick={() => setActive("MyBusiness")}
-                        className={
-                            active === "MyBusiness" ? "activeTab" : "Tab"
-                        }
-                    >
-                        {" "}
-                        My Business
-                    </li> */}
-
                     <li
                         onClick={() => setActive("editProfile")}
                         className={
@@ -60,7 +46,6 @@ const SellerProfile = () => {
                     </li>
                 </ul>
                 <div className="details">
-                    {/* {active === "MyBusiness" && <SellerBussiness />} */}
                     {active === "editProfile" && (
                         <EditShopProfile
                             shop={shop}

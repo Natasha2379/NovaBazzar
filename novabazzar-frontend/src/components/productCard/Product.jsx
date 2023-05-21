@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Product.scss";
-import image from "../../assets/shoes.jpg";
+import image from "../../assets/dummy-img.jpg";
 import { editUserFavs, getShopDetails } from "../../services/api";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser, selectUserData } from "../../redux/slices/userSlice";
@@ -103,15 +103,10 @@ const Product = (props) => {
                     <h3>{props.product?.name}</h3>
                 </div>
                 <div className="product-shop-name">
-                    <h5>
-                        {shop?.shopName},&nbsp;{shop?.location},&nbsp;
-                        {shop?.city}
-                    </h5>
+                    <h5>{shop?.shopName}</h5>
                 </div>
                 <div className="price-rating flex space">
-                    <h3>
-                        ₹{props.product?.price}
-                    </h3>
+                    <h3>₹{props.product?.price}</h3>
                     <div className="rating">
                         <i className="fa fa-star"></i>
                         <i className="fa fa-star"></i>

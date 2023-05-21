@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./ShopBanner.scss";
-import bannerImage from "../../../assets/banner.jpg";
+import bannerImage from "../../../assets/dummy-img.jpg";
 import { editShopDetails, getShopDetails } from "../../../services/api";
 import { useSelector } from "react-redux";
 import { selectUser_ID } from "../../../redux/slices/userSlice";
@@ -10,7 +10,6 @@ const ShopBanner = () => {
     const shopId = window.location.pathname.split("/")[2];
     const [shopDetails, setShopDetails] = useState();
 
-    
     const handleUpdateShop = async (status) => {
         try {
             if (userid === shopDetails?.userId) {
@@ -46,9 +45,7 @@ const ShopBanner = () => {
                 <div className="shop-name">{shopDetails?.shopName}</div>
                 <div className="shopkepper-name">{shopDetails?.fullName}</div>
                 <div className="shop-type">{shopDetails?.shoptype}</div>
-                <div className="shop-location">
-                    {shopDetails?.location}
-                </div>
+                <div className="shop-location">{shopDetails?.location}</div>
 
                 <div className="shop-status">
                     {shopDetails?.open ? (
@@ -57,7 +54,6 @@ const ShopBanner = () => {
                                 className="fa-solid fa-unlock"
                                 onClick={() => handleUpdateShop(false)}
                             ></i>
-                            <span className="active">Close your shop</span>
                         </div>
                     ) : (
                         <div className="flex align-center">
@@ -65,7 +61,6 @@ const ShopBanner = () => {
                                 className="fa-solid fa-lock"
                                 onClick={() => handleUpdateShop(true)}
                             ></i>
-                            <span className="active">Open your shop</span>
                         </div>
                     )}
                 </div>

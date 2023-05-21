@@ -11,12 +11,12 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper";
 
 import Navbar from "../../components/Navbar/Navbar";
-import img1 from "../../assets/shoes.jpg";
-import img2 from "../../assets/apple.jpg";
-import img3 from "../../assets/jacket.jpg";
-import img4 from "../../assets/sellerLogin.jpg";
-import img5 from "../../assets/openshop.jpg";
-import img6 from "../../assets/banner.jpg";
+import img1 from "../../assets/dummy-img.jpg";
+import img2 from "../../assets/dummy-img.jpg";
+import img3 from "../../assets//dummy-img.jpg";
+import img4 from "../../assets/dummy-img.jpg";
+import img5 from "../../assets/dummy-img.jpg";
+import img6 from "../../assets/dummy-img.jpg";
 import Product from "../../components/productCard/Product";
 import {
     getAllProductsDetails,

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./ShopProduct.scss";
-import image from "../../../assets/apple.jpg";
+import image from "../../../assets/dummy-img.jpg";
 import PropTypes from "prop-types";
 import { Link, useNavigate } from "react-router-dom";
 import {

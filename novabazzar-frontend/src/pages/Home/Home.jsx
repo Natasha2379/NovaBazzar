@@ -18,8 +18,9 @@ const Home = () => {
     return (
         <div className="homePage">
             <Navbar userLocation={userLocation} />
+            {/* <div className="hero-section"></div> */}
+            <MainFeatured />
             <div className="home-container">
-                <MainFeatured />
                 <FeaturedShops />
                 <FeaturedProducts />
             </div>

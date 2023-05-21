@@ -2,14 +2,21 @@
     height: 70vh;
     width: 100%;
     background-color: white;
-
+    background-image: linear-gradient(
+            rgb(0, 174, 255),
+            rgb(37, 114, 238)
+        ),
+        url("../../assets/hero1.png");
+    background-repeat: no-repeat;
+    background-size: coover;
     .main-text {
         flex: 1;
         text-align: center;
         h1 {
             font-size: 3rem;
             font-weight: 600;
-            color: var(--color-price);
+          color: white;
+          
 
             span {
                 color: var(--color-dark);
@@ -33,27 +40,25 @@
         margin-inline: 10px;
         gap: 0;
         margin: auto;
+        height: 70vh;
         .main-text {
             h1 {
                 font-size: 1.7rem;
             }
         }
-        .hero-img {
-        }
+  
     }
 }
 @media screen and (max-width: 500px) {
     .main-sliders {
-        margin-block: 30px;
-        gap: 50px;
-        height: 100%;
-        flex-direction: column;
+        
+        height: 50vh;
+       
         .main-text {
             h1 {
                 font-size: 1.2rem;
             }
         }
-        .hero-img {
-        }
+     
     }
 }

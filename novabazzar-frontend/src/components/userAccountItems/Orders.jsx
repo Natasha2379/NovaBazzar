@@ -5,7 +5,6 @@ import MyOrders from "../shopComponents/SellerOrders/SellerOrders";
 import { changeOrderStatus } from "../../services/api";
 
 const Orders = (props) => {
-
     const handleOrderCancel = async (id) => {
         try {
             const confirm = window.confirm(
@@ -21,7 +20,6 @@ const Orders = (props) => {
             console.log(error);
         }
     };
-
 
     return (
         <div className="ordersTab">
@@ -39,7 +37,7 @@ const Orders = (props) => {
                                           handleOrderCancel(order._id)
                                       }
                                   >
-                                      Cancel
+                                      Cancel this item
                                   </button>
                               </div>
                           )}

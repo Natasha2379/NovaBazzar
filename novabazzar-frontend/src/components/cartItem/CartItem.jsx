@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./CartItem.scss";
-import image from "../../assets/shoes.jpg";
+import image from "../../assets/dummy-img.jpg";
 import { useDispatch } from "react-redux";
 import { increaseItem, removeItem } from "../../redux/slices/cartSlice";
 import { getProductDetails, getShopDetails } from "../../services/api";

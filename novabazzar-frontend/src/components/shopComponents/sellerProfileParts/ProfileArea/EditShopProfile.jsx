@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./ProfileStyle.scss";
-import shopimg from "../../../../assets/clothes-img.avif";
+import shopimg from "../../../../assets/dummy-img.jpg";
 import { editShopDetails, uploadShopImage } from "../../../../services/api";
 
 const EditShopProfile = (props) => {

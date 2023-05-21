@@ -1,6 +1,6 @@
 import React from "react";
 import "./ShopCard.scss";
-import image from "../../assets/banner.jpg";
+import image from "../../assets/dummy-img.jpg";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectUser_ID } from "../../redux/slices/userSlice";

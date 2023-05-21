@@ -8,10 +8,9 @@
     .shop-box{
         height: 300px;
         width: 19.5%;
-        background-color: white;
+        background-color: var(--color-success-dark);
         text-align: center;
         overflow: hidden;
-        padding: 15px;
         border: 1px solid var(--color-border);
 
         img{
@@ -24,7 +23,8 @@
             font-size: 16px;
             font-weight: 600;
             margin-top: 10px;
-            color: var(--color-secondary);
+            color: white;
+            
         }
     }
 }

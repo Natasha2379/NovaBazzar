@@ -6,7 +6,7 @@ const Footer = () => {
         <div className="footer flex space ">
             <div className="row flex ">
                 <Link to="/" className="logo link">
-                    NovaBazzar
+                    novabazzar
                 </Link>
             </div>
             <div className="row flex column">
@@ -26,7 +26,7 @@ const Footer = () => {
             </div>
             <div className="row flex column">
                 <div className="footer-heading">Get in touch</div>
-                <a href="https://www.instagram.com" className="link">
+                <a href="https://www.instagram.com/sachin.gurjar01/" className="link">
                     <i className="fa-brands fa-instagram"></i>
                 </a>
                 <a href="/https://www.facebook.com" className="link">

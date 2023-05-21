@@ -92,25 +92,14 @@
             width: 100%;
         }
         .book-btn {
-            display: flex;
-            justify-content: flex-end;
-            align-items: flex-end;
-            width: 100%;
-            margin-right: 20px;
-
-            button {
-                padding: 12px 0;
-                font-size: 1rem;
-                border-radius: 20px;
-            }
-        }
-        .book-btn {
+            padding-left: 10px;
             button {
                 margin-block: 10px;
                 background-color: red;
                 cursor: pointer;
                 color: white;
                 padding: 12px;
+                border-radius: 20px;
             }
         }
     }

@@ -10,7 +10,6 @@ import {
     MedicalProductCategoryData,
     ParlourProductCategoryData,
 } from "../CategoryData";
-// import ProductCategoryData from "../CategoryData";
 
 const AddProduct = (props) => {
     const userId = useSelector(selectUser_ID);
@@ -182,7 +181,6 @@ const AddProduct = (props) => {
                         onClick={handleCoverImageUpload}
                         style={{
                             backgroundImage: `url(${coverImage})`,
-                            // backgroundColor: "red",
                             backgroundSize: "cover",
                             backgroundPosition: "center",
                             backgroundRepeat: "no-repeat",
@@ -213,7 +211,6 @@ const AddProduct = (props) => {
                             onClick={handleProductGalleryImageUpload}
                             style={{
                                 backgroundImage: `url(${galleryImages[0]})`,
-                                // backgroundColor: "red",
                                 backgroundSize: "cover",
                                 backgroundPosition: "center",
                                 backgroundRepeat: "no-repeat",
@@ -240,7 +237,6 @@ const AddProduct = (props) => {
                             onClick={handleProductGalleryImageUpload}
                             style={{
                                 backgroundImage: `url(${galleryImages[1]})`,
-                                // backgroundColor: "red",
                                 backgroundSize: "cover",
                                 backgroundPosition: "center",
                                 backgroundRepeat: "no-repeat",
@@ -267,7 +263,6 @@ const AddProduct = (props) => {
                             onClick={handleProductGalleryImageUpload}
                             style={{
                                 backgroundImage: `url(${galleryImages[2]})`,
-                                // backgroundColor: "red",
                                 backgroundSize: "cover",
                                 backgroundPosition: "center",
                                 backgroundRepeat: "no-repeat",
@@ -294,7 +289,6 @@ const AddProduct = (props) => {
                             onClick={handleProductGalleryImageUpload}
                             style={{
                                 backgroundImage: `url(${galleryImages[3]})`,
-                                // backgroundColor: "red",
                                 backgroundSize: "cover",
                                 backgroundPosition: "center",
                                 backgroundRepeat: "no-repeat",
@@ -321,7 +315,6 @@ const AddProduct = (props) => {
                             onClick={handleProductGalleryImageUpload}
                             style={{
                                 backgroundImage: `url(${galleryImages[4]})`,
-                                // backgroundColor: "red",
                                 backgroundSize: "cover",
                                 backgroundPosition: "center",
                                 backgroundRepeat: "no-repeat",

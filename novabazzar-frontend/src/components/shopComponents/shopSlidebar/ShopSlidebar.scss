@@ -15,7 +15,7 @@
                 color: var(--color-category);
 
                 &:hover{
-                    color: var(--color-dark );
+                    color: var(--color-success);
                 }
             }
         }
@@ -41,8 +41,7 @@
                     color: var(--color-category);
 
                     &:hover{
-                        color: var(--color-dark );
-
+                        color: var(--color-success);
                     }
                 }
             }

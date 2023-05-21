@@ -1,6 +1,6 @@
 import React from "react";
 import "./UserAccount.scss";
-import image from "../../assets/banner.jpg";
+import image from "../../assets/dummy-img.jpg";
 import { useSelector } from "react-redux";
 import { selectUserData } from "../../redux/slices/userSlice";
 

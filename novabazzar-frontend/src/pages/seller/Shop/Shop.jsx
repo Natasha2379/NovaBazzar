@@ -65,8 +65,16 @@ const Shop = () => {
                                 : "shopOption"
                         }
                     >
-                        {shop?.userId === userid ? `My Orders (${orders?.length})` : ""}
+                        {shop?.userId === userid ? (
+                            <div className="orders">
+                                <span>My Orders</span>{" "}
+                                <span className="top">{orders?.length}</span>
+                            </div>
+                        ) : (
+                            ""
+                        )}
                     </li>
+
                     <li
                         onClick={() => setActiveItem("addproduct")}
                         className={

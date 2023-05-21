@@ -3,9 +3,9 @@ import "./FeaturedProducts.scss";
 import { Link } from "react-router-dom";
 
 // kirana
-import Grocery from "../../assets/fruits-veg.jpg";
+import Grocery from "../../assets/fruits-vegs.webp";
 import Drinks from "../../assets/drink-items.jpg";
-import CleaningAccessories from "../../assets/cleaning-items2.jpg";
+import CleaningAccessories from "../../assets/cleaning-items.jpg";
 import Instantfood from "../../assets/instant-foods.jpg";
 import Dailyitems from "../../assets/morning-items.jpg";
 
@@ -35,7 +35,7 @@ import haircut from "../../assets/haircut.png";
 import threading from "../../assets/threading.jpg";
 import menicure from "../../assets/menicure.jpg";
 import wedding from "../../assets/weddingspecial.jpg";
-import facecare from "../../assets/facecare1.jpg";
+import facecare from "../../assets/facecare2.jpg";
 // import { getAllProductsDetails } from "../../services/api";
 
 const FeaturedProducts = () => {
