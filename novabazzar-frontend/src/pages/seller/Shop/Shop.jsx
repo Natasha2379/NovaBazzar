@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./Shop.scss";
 
-import ShopBanner from "../../../components/shopComponents/ShopBanner/ShopBanner";
-import MyShop from "../../../components/shopComponents/SellerShop/SellerShop";
-import MyOrders from "../../../components/shopComponents/SellerOrders/SellerOrders";
-import AddProduct from "../../../components/shopComponents/AddProduct/AddProduct";
+import ShopBanner from "../../../components/shopComponents/shopBanner/ShopBanner";
+import MyShop from "../../../components/shopComponents/sellerShop/SellerShop";
+import MyOrders from "../../../components/shopComponents/sellerOrders/SellerOrders";
+import AddProduct from "../../../components/shopComponents/addProduct/AddProduct";
 import SellerNav from "../../../components/shopComponents/SellerNav/SellerNav";
 import { getOrdersOfShop, getShopDetails } from "../../../services/api";
 import { useSelector } from "react-redux";

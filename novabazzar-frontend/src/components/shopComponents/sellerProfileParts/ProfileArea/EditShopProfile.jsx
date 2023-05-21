@@ -40,7 +40,7 @@ const EditShopProfile = (props) => {
                 location,
                 phone,
                 email,
-                shopType
+                shopType,
             });
             console.log(res);
         } catch (error) {
@@ -91,21 +91,26 @@ const EditShopProfile = (props) => {
                             />
                         </span>
                     </div>
-                    <select
-                        name=""
-                        id="ProductCategory"
-                        className="addShopInput"
-                        onChange={(e) => setShopType(e.target.value)}
-                    >
-                        <option hidden>Select Shop Type</option>
-                        <option value="Kiranashop">Kirana shop</option>
-                        <option value="Medicalshop">Medical shop</option>
-                        <option value="Clothesshop">Clothes shop</option>
-                        <option value="Electronicsshop">
-                            Electronics shop
-                        </option>
-                        <option value="Electronicsshop">Parlour shop</option>
-                    </select>
+                    <div className="shop-type user-name">
+                        <span className="title">My Shop Type</span>
+                        <select
+                            name=""
+                            id="ProductCategory"
+                            className="addShopInput"
+                            onChange={(e) => setShopType(e.target.value)}
+                        >
+                            <option hidden>Select Shop Type</option>
+                            <option value="Kiranashop">Kirana shop</option>
+                            <option value="Medicalshop">Medical shop</option>
+                            <option value="Clothesshop">Clothes shop</option>
+                            <option value="Electronicsshop">
+                                Electronics shop
+                            </option>
+                            <option value="Electronicsshop">
+                                Parlour shop
+                            </option>
+                        </select>
+                    </div>
                     <div className="user-name">
                         <span className="title">My Shop Name</span>
                         <span>

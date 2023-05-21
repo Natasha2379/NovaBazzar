@@ -7,8 +7,7 @@ const MainFeatured = () => {
     return (
         <div className="main-sliders flex abs-center">
             <div className="main-text ">
-                <p>NovaBazzar</p>
-                <span>book online from your local shops</span>
+               <h1>One for all solution, for <br />shopping from <span>nearby shops</span></h1>
             </div>
             <div className="hero-img">
                 <img src={hero1} alt="" />
