@@ -37,11 +37,11 @@ const CartItem = (props) => {
         fetchShop();
     }, [product]);
 
-    useEffect(() => {
-        if (!quantity) {
-            handleRemoveFromCart();
-        }
-    }, [quantity]);
+    // useEffect(() => {
+    //     if (quantity===0) {
+    //         handleRemoveFromCart();
+    //     }
+    // }, [quantity]);
 
     const handleItemIncrease = (value) => {
         dispatch(
