@@ -1,0 +1,135 @@
+.cart-item {
+    height: 120px;
+    width: 100%;
+    background-color: white;
+    border-bottom: 2px solid #d4cfcf;
+    gap: 10px;
+
+    .row {
+        padding: 10px;
+
+        flex: 1;
+
+        .img-area {
+            height: 100%;
+            width: 100px;
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+        .item-name {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        .item-quantity {
+            input {
+                height: 40px;
+                width: 100px;
+                border-radius: 5px;
+                font-size: 1.3rem;
+                padding: 0 10px;
+                color: gray;
+                outline: none;
+                background-color: aliceblue;
+            }
+        }
+
+        .item-price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: green;
+        }
+        button {
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: 500;
+            margin-right: 20px;
+            background-color: red;
+            color: white;
+            border: none;
+            width: max-content;
+            cursor: pointer;
+        }
+    }
+}
+@media screen and (max-width : 768px) {
+    .cart-item{
+        height: 100%;
+        width: 100%;
+
+        .row{
+            flex-direction: column;
+            gap: 20px;
+
+            .img-area {
+                height: 100px;
+                width: 100px;
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+            .item-name {
+                font-size: .9rem;
+                font-weight: 600;
+            }
+        }
+    }
+}
+@media screen and (max-width : 500px) {
+    .cart-item{
+        height: 100%;
+        width: 100%;
+
+        .row{
+            flex-direction: column;
+            gap: 20px;
+
+            .img-area {
+                height: 100px;
+                width: 100px;
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+            .item-name {
+                font-size: 14px;
+                font-weight: 600;
+            }
+            button{
+                padding: 10px 15px;
+            }
+        }
+    }
+}
+@media screen and (max-width : 320px) {
+    .cart-item{
+        height: 100%;
+        width: 100%;
+        flex-direction: column;
+
+        .row{
+            flex-direction: column;
+            gap: 10px;
+
+            .img-area {
+                height: 100px;
+                width: 100px;
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            button{
+                padding: 10px ;
+            }
+        }
+    }
+}

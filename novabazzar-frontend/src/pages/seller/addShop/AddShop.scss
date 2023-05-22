@@ -1,0 +1,297 @@
+.addshopPage {
+    position: relative;
+    .ShopOpenForm {
+        height: 100%;
+
+        .image-section,
+        .form-section {
+            flex: 1;
+        }
+
+        .image-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            height: 100%;
+            img {
+                height: 90%;
+                width: 90%;
+            }
+        }
+        .form-section {
+            background: linear-gradient(
+                to bottom,
+                var(--footer-bg-color),
+                var(--color-dark)
+            );
+            height: 100%;
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 100px;
+
+            .addShopForm {
+                gap: 30px;
+
+                .addShopHeading {
+                    font-size: 2rem;
+                    font-weight: 600;
+                    color: white;
+                }
+                .addShopDesc {
+                    font-size: 1rem;
+                    font-weight: 500;
+                    color: white;
+                }
+                input,
+                select {
+                    height: 50px;
+                    width: 100%;
+                    border: 1px solid #999;
+                    padding: 10px 20px;
+
+                    &::placeholder {
+                        font-weight: 500;
+                        font-weight: 1.3rem;
+                    }
+                }
+                .col {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    input {
+                        width: 49%;
+                    }
+                    select {
+                        width: 49%;
+                        outline: none;
+                        font-size: 1rem;
+                        font-weight: 500;
+
+                        option {
+                            font-size: 1rem;
+                            font-weight: 500;
+                        }
+                    }
+
+                    button {
+                        background-color: var(--category-bg-color);
+                        width: 49%;
+                    }
+                }
+                .exact-location {
+                    p {
+                        margin-bottom: 20px;
+                        color: white;
+                    }
+                    .addShopLocation {
+                        height: 100px;
+                        width: 100%;
+                    }
+
+                    input {
+                        margin-top: 290px;
+                    }
+                }
+                button {
+                    height: 50px;
+                    width: 150px;
+                    background-color: var(--color-success);
+                    color: white;
+                    border-radius: 3px;
+                    cursor: pointer;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .addshopPage {
+        position: relative;
+        .ShopOpenForm {
+            padding: 0%;
+            height: 100%;
+            flex-direction: column;
+
+            .image-section {
+            }
+            .form-section {
+                flex: 1;
+            }
+
+            .image-section {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 1rem;
+                height: 100%;
+                img {
+                    height: 90%;
+                    width: 90%;
+                }
+            }
+            .form-section {
+                background: linear-gradient(
+                    to bottom,
+                    var(--footer-bg-color),
+                    var(--color-dark)
+                );
+                height: 100%;
+                width: 100%;
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 100px;
+
+                .addShopForm {
+                    gap: 30px;
+
+                    .addShopHeading {
+                        font-size: 2rem;
+                        font-weight: 600;
+                        color: white;
+                    }
+                    .addShopDesc {
+                        font-size: 1rem;
+                        font-weight: 500;
+                        color: white;
+                    }
+                    input,
+                    select {
+                        height: 50px;
+                        width: 100%;
+                        border: 1px solid #999;
+                        padding: 10px 20px;
+
+                        &::placeholder {
+                            font-weight: 500;
+                            font-weight: 1.3rem;
+                        }
+                    }
+                    .col {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+
+                        input {
+                            width: 49%;
+                        }
+                        select {
+                            width: 49%;
+                            outline: none;
+                            font-size: 1rem;
+                            font-weight: 500;
+
+                            option {
+                                font-size: 1rem;
+                                font-weight: 500;
+                            }
+                        }
+
+                        button {
+                            background-color: rgb(6, 98, 184);
+                            width: 49%;
+                        }
+                    }
+                    .exact-location {
+                        width: 100%;
+
+                        p {
+                            margin-bottom: 20px;
+                            color: white;
+                        }
+                        .addShopLocation {
+                            height: 100px;
+                            width: 100%;
+                            box-sizing: content-box;
+                        }
+
+                        input {
+                            margin-top: 290px;
+                        }
+                    }
+                    button {
+                        height: 50px;
+                        width: 150px;
+                        background-color: black;
+                        color: white;
+                        border-radius: 3px;
+                        cursor: pointer;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 500px) {
+    .addshopPage {
+        position: relative;
+        .ShopOpenForm {
+            padding: 0%;
+            height: 100%;
+            flex-direction: column;
+
+            .form-section {
+                background: linear-gradient(
+                    to bottom,
+                    var(--footer-bg-color),
+                    var(--color-dark)
+                );
+                height: 100%;
+                width: 100%;
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 100px;
+
+                .addShopForm {
+                    gap: 30px;
+
+                    .addShopHeading {
+                        font-size: 1.5rem;
+                        font-weight: 600;
+                        color: white;
+                    }
+                    .addShopDesc {
+                        font-size: 14px;
+                        font-weight: 500;
+                        color: white;
+                    }
+                    .col {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        flex-direction: column;
+    
+                        input {
+                            width: 100%;
+                        }
+                        select {
+                            width: 100%;
+                            outline: none;
+                            font-size: 1rem;
+                            font-weight: 500;
+    
+                            option {
+                                font-size: 1rem;
+                                font-weight: 500;
+                            }
+                        }
+    
+                        button {
+                            background-color: rgb(6, 98, 184);
+                            width: 49%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

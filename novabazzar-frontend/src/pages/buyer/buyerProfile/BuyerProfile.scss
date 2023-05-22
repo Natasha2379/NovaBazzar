@@ -1,0 +1,92 @@
+.CreateAccountPage {
+    .accountInfo {
+        padding: 2%;
+        background-color: rgb(245, 241, 241);
+        min-height: 70vh;
+        gap: 10px;
+
+        .userTabs {
+            flex: 1;
+            gap: 20px;
+            background-color: white;
+
+            .profileArea {
+                min-height: 300px;
+                padding: 20px;
+            }
+
+            .Tab {
+                font-family: inherit;
+                cursor: pointer;
+                padding: 20px 30px;
+                font-size: 14px;
+                font-weight: 600;
+            }
+            .activeTab {
+                font-family: inherit;
+                color: aliceblue;
+                cursor: pointer;
+                padding: 20px 30px;
+                background-color: var(--color-price);
+            }
+
+            li {
+                cursor: pointer;
+                list-style: none;
+            }
+        }
+        .details {
+            flex: 3;
+            background-color: white;
+            padding: 20px 30px;
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .CreateAccountPage {
+        .accountInfo {
+            padding: 0%;
+            background-color: rgb(245, 241, 241);
+            min-height: 70vh;
+            gap: 5px;
+            flex-direction: column;
+
+            .userTabs {
+                flex: 0.5;
+                gap: 20px;
+                background-color: white;
+
+                .profileArea {
+                    min-height: 150px;
+                    padding: 20px;
+                }
+
+                .Tab {
+                    font-family: inherit;
+                    cursor: pointer;
+                    padding: 20px 30px;
+                    font-weight: 500;
+                    
+                }
+                .activeTab {
+                    font-family: inherit;
+                    color: aliceblue;
+                    cursor: pointer;
+                    padding: 20px 30px;
+                    
+                }
+
+                li {
+                    cursor: pointer;
+                    list-style: none;
+                }
+            }
+            .details {
+                flex: 5;
+                background-color: white;
+                padding: 10px;
+            }
+        }
+    }
+}

@@ -1,0 +1,217 @@
+.shop-product-card {
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+    height: 320px;
+    width: 250px;
+    padding: 0.5rem;
+    border: 1px solid #edeaea;
+    display: flex;
+    flex-direction: column;
+
+    .product-img {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+        flex: 1.5;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            transition: 0.5s ease-in-out;
+            transform-origin: right;
+        }
+        .fav {
+            z-index:1;
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            cursor: pointer;
+            height: 40px;
+            width: 40px;
+            transition: 0.3s ease-in-out;
+
+            i {
+                font-size: 1.7rem;
+            }
+            &:hover {
+                color: crimson;
+            }
+        }
+        .delete{
+            z-index: 1;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            cursor: pointer;
+            height: 40px;
+            width: 40px;
+            transition: 0.3s ease-in-out;
+
+            i {
+                font-size: 1.7rem;
+            }
+        }
+    }
+    //   hover effect for image
+    &:hover {
+        .product-img {
+            img {
+                transform: scale(1.5);
+            }
+        }
+    }
+    .content {
+        flex: 1;
+        margin-top: 10px;
+        gap: 10px;
+        .product-name {
+            font-size: 14px;
+            color: black;
+            h3 {
+                text-decoration: none;
+            }
+        }
+        .product-shop-name {
+            font-size: 12px;
+            font-weight: 500;
+            color: #666;
+        }
+        .price-rating {
+            h3 {
+                font-size: 15px;
+                color: var(--color-price);
+            }
+            .rating {
+                i {
+                    color: var(--color-rating);
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    .shopProductEditButton {
+        border: 2px solid var(--color-primary);
+        background-color: var(--color-primary);
+        color: white;
+        font-size: 1.2rem;
+        font-weight: 500;
+        padding: 7px 20px;
+        text-align: center;
+        width: 90px;
+        border-radius: 20px;
+        margin: auto;
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-width : 768px) {
+    .shop-product-card{
+        height: 300px;
+        width: 230px;
+
+        .content {
+
+            .product-name {
+                font-size: 14px;
+                font-weight: 400;
+                color: var(--color-secondary);
+
+            }
+            
+
+        }
+
+    }
+}
+@media screen and (max-width : 500px) {
+    .shop-product-card{
+        height: 300px;
+        width: 50%;
+
+        .product-img{
+            .fav{
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                cursor: pointer;
+                height: 20px;
+                width: 20px;
+
+                i {
+                    font-size: 1.3rem;
+                }
+                   
+            }
+            .delete{
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                cursor: pointer;
+                height: 20px;
+                width: 20px;
+
+                i {
+                    font-size: 1.3rem;
+                }
+            }
+        }
+        .content {
+
+            .product-name {
+                font-size: 12px;
+                font-weight: 300;
+                color: var(--color-secondary);
+
+            }
+        }
+
+    
+    }
+}
+
+@media screen and (max-width : 320px) {
+    .shop-product-card{
+        width: 50%;
+        height: 300px;
+
+        .product-img{
+            .fav{
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                cursor: pointer;
+                height: 20px;
+                width: 20px;
+
+                i {
+                    font-size: 1.1rem;
+                }
+                   
+            }
+            .delete{
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                cursor: pointer;
+                height: 20px;
+                width: 20px;
+
+                i {
+                    font-size: 1.1rem;
+                }
+            }
+        }
+
+       
+
+    }
+
+}

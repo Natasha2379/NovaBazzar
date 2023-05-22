@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+/* common styling  */
+.flex{
+    display: flex;
+}
+.abs-center{
+    align-items: center;
+    justify-content: center;
+}
+.justify-center{
+    justify-content: center;
+}
+.align-center{
+    align-items: center;
+}
+.space{
+    justify-content: space-between;
+}
+.wrap{
+    flex-wrap: wrap;
+}
+.column{
+    flex-direction: column;
+}
+.link{
+    text-decoration: none;
+}
+
+#googleMaps > div{
+    /* background-color: aquamarine; */
+    width: 45% !important;
+    height: 30% !important;
+}
+
+
+button:focus,
+textarea:focus,
+input:focus {
+    outline: none;
+    border: none;
+}
+
+button,
+textarea,
+input {
+    outline: none;
+    border: none;
+}
+
+/* scrollBar */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #7b7979;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(49, 46, 46);
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+/* Hide Number Input Arrows */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* input[type=number] {
+  -moz-appearance: textfield;
+} */
+
+
+:root{
+    --color-primary : #233A95;
+    --color-secondary : #202435;
+    --color-dark : #202435;
+    --icon-color : #A7A7B5;
+    --add-cart : #FFCD00;
+    --color-border : #e4e5ee;
+    --footer-bg-color : #233A95;
+    --color-category : #71778e;
+    --color-nav-link : #3E445A;
+    --category-bg-color : #2bbef9;
+    --color-price : #d51243;
+    --color-rating: #ffcd00;
+    --color-text: #202435;
+    --color-text-light: #3e445a;
+    --color-text-lighter: #71778e;
+    --color-light: #f7f8fd;
+    --color-lighter: #fbfcfe;
+    --color-border: #e4e5ee;
+    --color-border-dark: #d9d9e9;
+    --color-border-light: #edeef5;
+    --color-info: #c2c2d3;
+    --color-info-dark: #9b9bb4;
+    --color-info-light: #f3f3f6;
+    --color-success: #00b853;
+    --color-success-dark: #038e42;
+    --color-success-light: #e5f8ed;
+    --color-danger: #ed174a;
+    --color-danger-dark: #be143c;
+    --color-danger-light: #ffeef2;
+    --color-warning: #ff6048;
+    --color-warning-dark: #ea2b0f;
+    --color-warning-light: #ffefec;
+    --color-form-background: #f3f4f7;
+    --color-placeholder: #9595a9;
+
+}
