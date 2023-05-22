@@ -1,6 +1,6 @@
 import axios from "axios";
-//const REACT_APP_SERVER_DOMAIN = "http://localhost:8000"; //local server
-const REACT_APP_SERVER_DOMAIN = "https://api.novabazzar.in/api"; // deployed server
+const REACT_APP_SERVER_DOMAIN = "http://localhost:8000"; //local server
+// const REACT_APP_SERVER_DOMAIN = "https://api.novabazzar.in/api"; // deployed server
 
 /***************************** USERS *****************************/
 //function to register
