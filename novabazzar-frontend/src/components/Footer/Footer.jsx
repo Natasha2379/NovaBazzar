@@ -6,7 +6,7 @@ const Footer = () => {
         <div className="footer flex space ">
             <div className="row flex ">
                 <Link to="/" className="logo link">
-                    novabazzar
+                    NovaBazzar
                 </Link>
             </div>
             <div className="row flex column">

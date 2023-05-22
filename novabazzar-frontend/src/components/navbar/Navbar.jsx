@@ -33,7 +33,7 @@ const Navbar = (props) => {
                 <div className="container flex align-center space wrap">
                     <div className="main ">
                         <Link to="/" className="logo link">
-                            NOVABAZZAR
+                            NovaBazzar
                         </Link>
 
                         <Link
