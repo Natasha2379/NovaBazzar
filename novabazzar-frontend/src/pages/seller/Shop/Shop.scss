@@ -41,7 +41,7 @@
         .shopMainArea {
             width: 100%;
             .shopTabs {
-                gap: 50px;
+                justify-content: space-evenly;
 
                 li {
                     font-size: 1rem;

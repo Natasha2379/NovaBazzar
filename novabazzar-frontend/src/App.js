@@ -2,23 +2,23 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import Home from "./pages/Home/Home";
-import Shop from "./pages/seller/Shop/Shop";
-import AddShop from "./pages/seller/AddShop/AddShop";
-import EditProduct from "./components/shopComponents/EditProduct/EditProduct";
+import Home from "./pages/home/Home";
+import Shop from "./pages/seller/shop/Shop";
+import AddShop from "./pages/seller/addShop/AddShop";
+import EditProduct from "./components/shopComponents/editProduct/EditProduct";
 import ProductDetail from "./pages/productDetail/ProductDetail";
-import SearchPage from "./pages/SearchPage/SearchPage";
-import SellerProfile from "./pages/seller/SellerProfile/SellerProfile";
+import SearchPage from "./pages/searchPage/SearchPage";
+import SellerProfile from "./pages/seller/sellerProfile/SellerProfile";
 // user account pages
-import ProfilePage from "./pages/Buyer/BuyerProfile/BuyerProfile";
-import Register from "./pages/Buyer/Forms/RegisterPage";
-import Login from "./pages/Buyer/Forms/LoginPage";
+import ProfilePage from "./pages/buyer/buyerProfile/BuyerProfile";
+import Register from "./pages/buyer/forms/RegisterPage";
+import Login from "./pages/buyer/forms/LoginPage";
 import Location from "./pages/location/Location";
 
 import { addUser, addUserID, selectUserData } from "./redux/slices/userSlice";
 import jwtDecode from "jwt-decode";
 import { getUserDetails } from "./services/api";
-import Cart from "./pages/Cart/Cart";
+import Cart from "./pages/cart/Cart";
 
 function App() {
     const user = useSelector(selectUserData);

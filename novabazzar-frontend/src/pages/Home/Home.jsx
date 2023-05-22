@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "./Home.scss";
 
-import FeaturedShops from "../../components/FeaturedShops/FeaturedShops";
-import FeaturedProducts from "../../components/FeaturedProducts/FeaturedProducts";
+import FeaturedShops from "../../components/featuredShops/FeaturedShops";
+import FeaturedProducts from "../../components/featuredProducts/FeaturedProducts";
 
 //Natasha styling components
-import Navbar from "../../components/Navbar/Navbar";
-import MainFeatured from "../../components/MainFeatured/MainFeatured";
-import Footer from "../../components/Footer/Footer";
+import Navbar from "../../components/navbar/Navbar";
+import MainFeatured from "../../components/mainFeatured/MainFeatured";
+import Footer from "../../components/footer/Footer";
 const Home = () => {
     const [userLocation, setUserLocation] = useState();
     useEffect(() => {

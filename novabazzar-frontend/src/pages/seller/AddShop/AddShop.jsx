@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./AddShop.scss";
-import GoogleMap from "../../../utils/GoogleMap";
 import { addShop, getOTP } from "../../../services/api";
 import ShopOpen from "../../../assets/openshop.jpg";
 import { useSelector } from "react-redux";
