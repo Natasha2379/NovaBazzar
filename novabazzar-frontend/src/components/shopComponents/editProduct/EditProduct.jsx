@@ -50,6 +50,7 @@ const AddProduct = () => {
         fetchShop();
     }, [product]);
 
+
     useEffect(() => {
         const fetchProduct = async () => {
             try {

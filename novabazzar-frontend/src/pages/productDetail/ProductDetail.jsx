@@ -17,6 +17,7 @@ import img3 from "../../assets//dummy-img.jpg";
 import img4 from "../../assets/dummy-img.jpg";
 import img5 from "../../assets/dummy-img.jpg";
 import img6 from "../../assets/dummy-img.jpg";
+
 import Product from "../../components/productCard/Product";
 import {
     getAllProductsDetails,
@@ -26,7 +27,6 @@ import {
 import { addItem } from "../../redux/slices/cartSlice";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-
 
 const ProductDetail = () => {
     const navigate = useNavigate();
@@ -107,7 +107,10 @@ const ProductDetail = () => {
         <div className="ProductDetailPage">
             <Navbar userLocation={userLocation} />
             <div className="product-detail">
-                <Link to={`/shop/${shop?._id}`} className="shop-detail-section link">
+                <Link
+                    to={`/shop/${shop?._id}`}
+                    className="shop-detail-section link"
+                >
                     <div className="shop-name">{shop?.shopName}</div>
                     <div className="shop-location">
                         {shop?.location},{shop?.city}
@@ -186,7 +189,7 @@ const ProductDetail = () => {
                 }}
             >
                 {relatedProducts?.map((product) => (
-                    <Product  product={product} key={product._id} />
+                    <Product product={product} key={product._id} />
                 ))}
             </div>
         </div>
