@@ -1,16 +1,16 @@
 import axios from "axios";
-//const REACT_APP_SERVER_DOMAIN = "http://localhost:8000"; //local server
-const REACT_APP_SERVER_DOMAIN = "https://api.novabazzar.in/"; // deployed server
+// const REACT_APP_SERVER_DOMAIN = "http://localhost:8000"; //local server
+const REACT_APP_SERVER_DOMAIN = "https://api.novabazzar.in"; // deployed server
 
 /***************************** USERS *****************************/
 //function to register
 export const registerUser = (form) => {
-    return axios.post(REACT_APP_SERVER_DOMAIN + "/api/users/register", form);
+    return axios.post(`${REACT_APP_SERVER_DOMAIN}/api/users/register`, form);
 };
 
 //function to login
 export const loginUser = (form) => {
-    return axios.post(REACT_APP_SERVER_DOMAIN + "/api/users/login", form);
+    return axios.post(`${REACT_APP_SERVER_DOMAIN}/api/users/login`, form);
 };
 
 //get user data
