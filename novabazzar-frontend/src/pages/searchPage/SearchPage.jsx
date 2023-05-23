@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./SearchPage.scss";
-import Navbar from "../../components/Navbar/Navbar";
+import Navbar from "../../components/navbar/Navbar";
 import ShopCard from "../../components/shopCard/ShopCard";
-import Product from "../../components/ProductCard/Product";
+import Product from "../../components/productCard/Product";
 import Footer from "../../components/footer/Footer";
 import { getAllProductsDetails, getAllShopsDetails } from "../../services/api";
 import { useSelector } from "react-redux";

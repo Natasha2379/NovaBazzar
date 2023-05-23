@@ -5,8 +5,8 @@ import FeaturedShops from "../../components/featuredShops/FeaturedShops";
 import FeaturedProducts from "../../components/featuredProducts/FeaturedProducts";
 
 //Natasha styling components
-import Navbar from "../../components/Navbar/Navbar";
-import MainFeatured from "../../components/MainFeatured/MainFeatured";
+import Navbar from "../../components/navbar/Navbar";
+import MainFeatured from "../../components/mainFeatured/MainFeatured";
 import Footer from "../../components/footer/Footer";
 const Home = () => {
     const [userLocation, setUserLocation] = useState();

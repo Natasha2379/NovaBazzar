@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./SellerProfile.scss";
 
-import EditShopProfile from "../../../components/ShopComponents/sellerProfileParts/profileArea/EditShopProfile";
+import EditShopProfile from "../../../components/shopComponents/sellerProfileParts/profileArea/EditShopProfile";
 import { getShopOfUser } from "../../../services/api";
 import { useSelector } from "react-redux";
 import { selectUser_ID } from "../../../redux/slices/userSlice";
