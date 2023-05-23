@@ -88,8 +88,9 @@ const SearchPage = () => {
                                     : "notactive"
                             }
                         >
-                            <span className="my-top">Shops</span>
-                            <span className="top">{`${shops?.length}`}</span>
+                            Shops
+                            {/* <span className="my-top">Shops</span> */}
+                            {/* <span className="top">{`${shops?.length}`}</span> */}
                         </li>
                         <li
                             onClick={() => setActiveItem("products")}
@@ -99,8 +100,9 @@ const SearchPage = () => {
                                     : "notactive"
                             }
                         >
-                            <span className="my-top">Products</span>
-                            <span className="top">{`${products?.length}`}</span>
+                            Products
+                            {/* <span className="my-top">Products</span> */}
+                            {/* <span className="top">{`${products?.length}`}</span> */}
                         </li>
                     </ul>
                     {activeItem === "products" && (
@@ -113,7 +115,7 @@ const SearchPage = () => {
                                     })
                                 }
                             >
-                                Price low to high
+                                Low Price
                             </span>{" "}
                             <br />
                             <span
@@ -124,7 +126,7 @@ const SearchPage = () => {
                                     })
                                 }
                             >
-                                Price high to low
+                                High Price
                             </span>
                         </div>
                     )}

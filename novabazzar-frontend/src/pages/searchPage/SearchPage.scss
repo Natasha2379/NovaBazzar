@@ -15,6 +15,8 @@
                     font-weight: 500;
                     cursor: pointer;
                     padding-bottom: 10px;
+                    border-radius: 30px;
+                    border: 1px solid #777;
                     position: relative;
                     .my-top {
                     }
@@ -30,6 +32,7 @@
                 }
                 .activeit {
                     color: var(--color-primary);
+                    border: 1px solid var(--color-primary);
                     font-weight: 600;
                 }
                 .notactive {
