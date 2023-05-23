@@ -10,7 +10,7 @@ import "swiper/css/pagination";
 // import required modules
 import { Pagination } from "swiper";
 
-import Navbar from "../../components/navbar/Navbar";
+import Navbar from "../../components/Navbar/Navbar";
 import img1 from "../../assets/dummy-img.jpg";
 import img2 from "../../assets/dummy-img.jpg";
 import img3 from "../../assets//dummy-img.jpg";
@@ -18,7 +18,7 @@ import img4 from "../../assets/dummy-img.jpg";
 import img5 from "../../assets/dummy-img.jpg";
 import img6 from "../../assets/dummy-img.jpg";
 
-import Product from "../../components/productCard/Product";
+import Product from "../../components/ProductCard/Product";
 import {
     getAllProductsDetails,
     getProductDetails,

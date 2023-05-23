@@ -1,7 +1,7 @@
 import React from "react";
 import "./UserAccount.scss";
 // import Product from "../productCard/Product";
-import MyOrders from "../shopComponents/sellerOrders/SellerOrders";
+import MyOrders from "../ShopComponents/sellerOrders/SellerOrders";
 import { changeOrderStatus } from "../../services/api";
 
 const Orders = (props) => {

@@ -1,6 +1,6 @@
 import React from "react";
 import "./Location.scss";
-import Navbar from "../../components/navbar/Navbar";
+import Navbar from "../../components/Navbar/Navbar";
 // export default Location;
 import usePlacesAutocomplete, {
     getGeocode,

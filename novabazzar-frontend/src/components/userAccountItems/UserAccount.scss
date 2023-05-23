@@ -22,8 +22,10 @@
 
         .uploadImageDiv {
             font-size: 1.3rem;
+            width: 100%;
+            background-color: black;
             font-weight: 500;
-            background-color: var(--color-success-dark);
+            // background-color: var(--color-success-dark);
             color: white;
             padding: 10px 12px;
             input {

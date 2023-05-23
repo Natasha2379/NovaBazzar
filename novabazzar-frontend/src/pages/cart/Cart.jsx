@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Cart.scss";
-import Navbar from "../../components/navbar/Navbar";
+import Navbar from "../../components/Navbar/Navbar";
 import CartShop from "../../components/cartShop/CartShop";
 
 const Cart = () => {

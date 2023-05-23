@@ -26,10 +26,13 @@ const Footer = () => {
             </div>
             <div className="row flex column">
                 <div className="footer-heading">Get in touch</div>
-                <a href="https://www.instagram.com/mnagar_27/" className="link">
+                <a
+                    href="https://www.instagram.com/novabazzar_official/"
+                    className="link"
+                >
                     <i className="fa-brands fa-instagram"></i>
                 </a>
-                <a href="https://twitter.com/gujjar_natasha" className="link">
+                <a href="https://twitter.com/novabazzar" className="link">
                     <i className="fa-brands fa-twitter"></i>
                 </a>
                 <a
