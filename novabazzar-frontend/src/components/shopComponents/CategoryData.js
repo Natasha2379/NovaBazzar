@@ -86,7 +86,7 @@ export const ElectronicsProductCategoryData = {
 export const ParlourProductCategoryData = {
     id: 4,
     ShopCategory: "Parlour Shop",
-    ParlourServiceCategories: [
+    ParlourProductCategories: [
         // "All",
         "Hair cutting And color",
         "Manicure And Pedicure",
