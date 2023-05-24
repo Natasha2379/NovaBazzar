@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./ProfileStyle.scss";
 import shopimg from "../../../../assets/dummy-img.jpg";
 import { editShopDetails, uploadShopImage } from "../../../../services/api";
+import { useNavigate } from "react-router-dom";
 
 const EditShopProfile = (props) => {
     const [shopImage, setShopImage] = useState();
@@ -11,6 +12,7 @@ const EditShopProfile = (props) => {
     const [email, setEmail] = useState();
     const [phone, setPhone] = useState();
     const [shopType, setShopType] = useState("");
+    const navigator = useNavigate();
 
     const handleProfileImageUpload = () => {
         document.getElementById("shopImage").click();
@@ -46,6 +48,7 @@ const EditShopProfile = (props) => {
                 shopType,
             });
             console.log(res);
+            navigator(`/shop/${props.shop?._id}`);
         } catch (error) {
             console.log(error);
         }
@@ -54,7 +57,7 @@ const EditShopProfile = (props) => {
         <div className="edit-seller-profile">
             <form
                 className="EditProfile flex abs-center column"
-                onSubmit={handleShopEdit}
+                // onSubmit={handleShopEdit}
             >
                 <div className="shop-img flex  column align--center">
                     <span
@@ -165,8 +168,8 @@ const EditShopProfile = (props) => {
                     </div>
                     <button
                         className="submit"
-                        type="submit"
-                        // onClick={handleShopEdit}
+                        type="button"
+                        onClick={handleShopEdit}
                     >
                         Submit
                     </button>
