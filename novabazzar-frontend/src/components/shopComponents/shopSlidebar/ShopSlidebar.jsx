@@ -211,7 +211,7 @@ const ShopSlidebar = (props) => {
                         )}
                     </Swiper>
                 )}
-                {props.shop?.shopType === "Parlourshopp" && (
+                {props.shop?.shopType === "Parlourshop" && (
                     <Swiper
                         slidesPerView={2}
                         modules={[Pagination]}
