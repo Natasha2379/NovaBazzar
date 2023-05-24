@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./ProfileStyle.scss";
 import shopimg from "../../../../assets/dummy-img.jpg";
 import { editShopDetails, uploadShopImage } from "../../../../services/api";
@@ -15,13 +15,15 @@ const EditShopProfile = (props) => {
     const handleProfileImageUpload = () => {
         document.getElementById("shopImage").click();
     };
+    useEffect(() => {
+        setShopType(props.shop?.shopType);
+    }, [props.shop?.shopType]);
 
     const handleProfileImageChange = async (e) => {
         try {
             const formData = new FormData();
             formData.append("shop-image", e.target.files[0]);
             const res = await uploadShopImage(formData);
-console.log(res);
             const uploadedImgShop = await editShopDetails(props.shop?._id, {
                 shopImage: res.data.url,
             });
@@ -98,6 +100,7 @@ console.log(res);
                             name=""
                             id="ProductCategory"
                             className="addShopInput"
+                            value={shopType}
                             onChange={(e) => setShopType(e.target.value)}
                         >
                             <option hidden>Select Shop Type</option>
@@ -107,9 +110,7 @@ console.log(res);
                             <option value="Electronicsshop">
                                 Electronics shop
                             </option>
-                            <option value="Electronicsshop">
-                                Parlour shop
-                            </option>
+                            <option value="Parlourshop">Parlour shop</option>
                         </select>
                     </div>
                     <div className="user-name">
