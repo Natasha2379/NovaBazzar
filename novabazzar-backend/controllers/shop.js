@@ -1,7 +1,18 @@
 const Shop = require("../models/Shop");
 const { createError } = require("../utils/Error");
-const { s3 } = require("../utils/awsS3");
+// const { s3 } = require("../utils/awsS3");
 const { v4: uuidv4 } = require("uuid");
+
+const {
+	ref,
+	uploadBytes,
+	getDownloadURL,
+	deleteObject,
+	getStorage,
+} = require("firebase/storage");
+
+// Initialize Firebase Storage
+const storage = require("../firebase");
 
 // const { EMAIL_FROM, SIB_API } = require("../config/dev");
 
@@ -198,24 +209,30 @@ const uploadShopImage = async (req, res, next) => {
 	}
 
 	try {
-		const params = {
-			Bucket: process.env.BUCKET,
-			Key: `${filename}`,
-			Body: file.buffer,
-		};
+		// const params = {
+		//   Bucket: process.env.BUCKET,
+		//   Key: `${filename}`,
+		//   Body: file.buffer,
+		// };
 
-		// Uploading files to the bucket
-		s3.upload(params, function (err, data) {
-			if (err) {
-				next(err);
-			}
+		// // Uploading files to the bucket
+		// s3.upload(params, function (err, data) {
+		//   if (err) {
+		//     next(err);
+		//   }
 
-			console.log(`File uploaded successfully. ${data?.Location}`);
-			return res.status(200).json({
-				message: "image uploaded",
-				url: data?.Location,
-			});
-		});
+		//   console.log(`File uploaded successfully. ${data?.Location}`);
+		//   return res.status(200).json({
+		//     message: "image uploaded",
+		//     url: data?.Location,
+		//   });
+		// };
+
+		const imageRef = ref(storage, `${filename}`);
+		const metatype = { contentType: file.mimetype, name: filename };
+		await uploadBytes(imageRef, file.buffer, metatype);
+		const url = await getDownloadURL(imageRef);
+		return res.status(200).json({ message: "image uploaded", url: url });
 	} catch (err) {
 		next(err);
 	}
