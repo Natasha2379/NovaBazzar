@@ -10,6 +10,7 @@ const {
 	deleteObject,
 	getStorage,
 } = require("firebase/storage");
+require("dotenv").config();
 
 // Initialize Firebase Storage
 const storage = require("../firebase");
