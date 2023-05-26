@@ -25,7 +25,7 @@ apiKey.apiKey = process.env.SIB_API;
 
 const tranEmailApi = new Sib.TransactionalEmailsApi();
 const sender = {
-	email: "noreply@spotlet.in",
+	email: "monan5450@gmail.com",
 	name: "NovaBazzar",
 };
 
