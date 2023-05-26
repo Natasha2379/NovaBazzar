@@ -10,7 +10,6 @@ const Orders = (props) => {
             const confirm = window.confirm(
                 "are you sure you want to cancel the order!!",
             );
-            console.log(confirm);
             if (confirm) {
                 await changeOrderStatus(id, "Cancelled");
                 window.alert("order cancelled");

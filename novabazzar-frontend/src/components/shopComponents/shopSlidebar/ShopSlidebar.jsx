@@ -18,7 +18,6 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper";
 
 const ShopSlidebar = (props) => {
-    console.log(props.type);
     return (
         <div className="shopSlidebar-area">
             <div className="shopSlidebar">

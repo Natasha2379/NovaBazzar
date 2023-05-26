@@ -13,10 +13,9 @@ const ShopBanner = () => {
     const handleUpdateShop = async (status) => {
         try {
             if (userid === shopDetails?.userId) {
-                const res = await editShopDetails(shopDetails._id, {
+               await editShopDetails(shopDetails._id, {
                     open: status,
                 });
-                console.log(res);
                 window.location.reload();
             }
         } catch (error) {

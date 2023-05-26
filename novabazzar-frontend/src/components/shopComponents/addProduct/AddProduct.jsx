@@ -46,7 +46,6 @@ const AddProduct = (props) => {
         try {
             const formData = new FormData();
             formData.append("product-image", e.target.files[0]);
-            console.log([...formData]);
             const res = await uploadProductImage(formData);
             console.log(res);
             setGalleryImages([...galleryImages, res.data.url]);

@@ -11,7 +11,6 @@ const Navbar = (props) => {
     const user = useSelector(selectUserData);
     const [shop, setShop] = useState();
     const [mobileView, setMobileView] = useState(false);
-    console.log(mobileView);
 
     useEffect(() => {
         const fetchShop = async () => {

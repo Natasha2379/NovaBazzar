@@ -26,10 +26,9 @@ const EditShopProfile = (props) => {
             const formData = new FormData();
             formData.append("shop-image", e.target.files[0]);
             const res = await uploadShopImage(formData);
-            const uploadedImgShop = await editShopDetails(props.shop?._id, {
+            await editShopDetails(props.shop?._id, {
                 shopImage: res.data.url,
             });
-            console.log(uploadedImgShop);
             setShopImage(res.data.url);
             props.fetchShop();
         } catch (error) {
