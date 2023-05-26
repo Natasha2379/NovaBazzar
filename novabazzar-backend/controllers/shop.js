@@ -21,12 +21,11 @@ const Sib = require("sib-api-v3-sdk");
 const client = Sib.ApiClient.instance;
 
 const apiKey = client.authentications["api-key"];
-apiKey.apiKey =
-	"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";
+apiKey.apiKey = process.env.SIB_API;
 
 const tranEmailApi = new Sib.TransactionalEmailsApi();
 const sender = {
-	email: "jaiprakash02082001@gmail.com",
+	email: "noreply@spotlet.in",
 	name: "NovaBazzar",
 };
 
@@ -53,7 +52,6 @@ const getOtpForShopVerification = async (req, res, next) => {
 			otp,
 		});
 	} catch (err) {
-		console.log(err);
 		next(err);
 	}
 };
