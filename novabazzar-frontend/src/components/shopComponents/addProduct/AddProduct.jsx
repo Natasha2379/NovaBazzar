@@ -7,8 +7,7 @@ import {
     ClothesProductCategoryData,
     ElectronicsProductCategoryData,
     KiranaProductCategoryData,
-    MedicalProductCategoryData,
-    ParlourProductCategoryData,
+    FastFoodProductCategoryData,
 } from "../CategoryData";
 
 const AddProduct = (props) => {
@@ -130,8 +129,8 @@ const AddProduct = (props) => {
                                 </option>
                             ),
                         )}
-                    {props.shop?.shopType === "Medicalshop" &&
-                        MedicalProductCategoryData.MedicalProductCategories.map(
+                    {props.shop?.shopType === "Fastfoodshop" &&
+                        FastFoodProductCategoryData.FastFoodProductCategories.map(
                             (category, indx) => (
                                 <option
                                     key={indx}
@@ -143,17 +142,6 @@ const AddProduct = (props) => {
                         )}
                     {props.shop?.shopType === "Electronicsshop" &&
                         ElectronicsProductCategoryData.ElectronicsProductCategories.map(
-                            (category, indx) => (
-                                <option
-                                    key={indx}
-                                    value={category.replaceAll(" ", "")}
-                                >
-                                    {category}
-                                </option>
-                            ),
-                        )}
-                    {props.shop?.shopType === "Parlourshop" &&
-                        ParlourProductCategoryData.ParlourProductCategories.map(
                             (category, indx) => (
                                 <option
                                     key={indx}

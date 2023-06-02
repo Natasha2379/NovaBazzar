@@ -16,12 +16,14 @@ import "swiper/css/pagination";
 // import required modules
 import { Pagination } from "swiper";
 
+
+
 const ShopSlidebar = (props) => {
     return (
         <div className="shopSlidebar-area">
             <div className="shopSlidebar">
                 <h3>Product Categories</h3>
-                {props.shop?.shopType === "FastFood" && (
+                {props.shop?.shopType === "Fastfoodshop" && (
                     <ul className="flex column ">
                         {FastFoodProductCategoryData.FastFoodProductCategories.map(
                             (category) => (
@@ -131,6 +133,30 @@ const ShopSlidebar = (props) => {
                 )} */}
             </div>
             <div className="mobile-slider">
+            {props.shop?.shopType === "Fastfoodshop" && (
+                    <Swiper
+                        slidesPerView={2}
+                        modules={[Pagination]}
+                        loop={true}
+                        className="my-cats"
+                    >
+                        {FastFoodProductCategoryData.FastFoodProductCategories.map(
+                            (category) => (
+                                <SwiperSlide
+                                    className="my-cat"
+                                    onClick={() =>
+                                        props.setType(
+                                            category.replaceAll("   ", ""),
+                                        )
+                                    }
+                                    key={category}
+                                >
+                                    {category}
+                                </SwiperSlide>
+                            ),
+                        )}
+                    </Swiper>
+                )}
                 {props.shop?.shopType === "Kiranashop" && (
                     <Swiper
                         slidesPerView={2}

@@ -104,7 +104,7 @@ const EditShopProfile = (props) => {
                         >
                             <option hidden>Select Shop Type</option>
                             <option value="Kiranashop">Kirana shop</option>
-                            <option value="FastFoodShop">FastFood shop</option>
+                            <option value="Fastfoodshop">FastFood shop</option>
                             <option value="Clothesshop">Clothes shop</option>
                             <option value="Electronicsshop">
                                 Electronics shop

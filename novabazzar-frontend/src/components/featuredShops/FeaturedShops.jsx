@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 const FeaturedShops = () => {
     return (
         <div className="featured-shops flex align-center wrap">
-            <Link to={`search/?stype=Fastfood`} className="shop-box link">
+            <Link to={`search/?stype=Fastfoodshop`} className="shop-box link">
                 <img src={Fastfood} alt="" />
                 <p>Fastfood shops</p>
             </Link>

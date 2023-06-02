@@ -66,28 +66,28 @@ export const ClothesProductCategoryData = {
     ],
 };
 
-export const MedicalProductCategoryData = {
-    id: 3,
-    ShopCategory: "Medical shop",
-    MedicalProductCategories: [
-        // "All",
-        "Vitamins And Supplements",
-        "Nutritional Drinks",
-        "Personal Care",
-        "Ayruveda",
-        "Pain Relief",
-        "Homeopathy",
-        "Health Condition",
-        "Accessories And Wearables",
-        "Diabetic Care",
-        "Mother and Baby Care",
-        "Health Food and Drinks",
-        "Healthcare Devices",
-        "Home Care",
-        "Skin Care",
-        "Pet Care",
-    ],
-};
+// export const MedicalProductCategoryData = {
+//     id: 3,
+//     ShopCategory: "Medical shop",
+//     MedicalProductCategories: [
+//         // "All",
+//         "Vitamins And Supplements",
+//         "Nutritional Drinks",
+//         "Personal Care",
+//         "Ayruveda",
+//         "Pain Relief",
+//         "Homeopathy",
+//         "Health Condition",
+//         "Accessories And Wearables",
+//         "Diabetic Care",
+//         "Mother and Baby Care",
+//         "Health Food and Drinks",
+//         "Healthcare Devices",
+//         "Home Care",
+//         "Skin Care",
+//         "Pet Care",
+//     ],
+// };
 
 export const ElectronicsProductCategoryData = {
     id: 4,
@@ -118,26 +118,26 @@ export const ElectronicsProductCategoryData = {
     ],
 };
 
-export const ParlourProductCategoryData = {
-    id: 4,
-    ShopCategory: "Parlour Shop",
-    ParlourProductCategories: [
-        // "All",
-        "Hair cutting And color",
-        "Manicure And Pedicure",
-        "Threading And Face wax",
-        "Facial And Cleanup",
-        "Bleach And Detan",
-        "Wedding special",
-        "Waxing",
-        "Face care",
-        "Shave/beard grooming",
-    ],
-};
+// export const ParlourProductCategoryData = {
+//     id: 4,
+//     ShopCategory: "Parlour Shop",
+//     ParlourProductCategories: [
+//         // "All",
+//         "Hair cutting And color",
+//         "Manicure And Pedicure",
+//         "Threading And Face wax",
+//         "Facial And Cleanup",
+//         "Bleach And Detan",
+//         "Wedding special",
+//         "Waxing",
+//         "Face care",
+//         "Shave/beard grooming",
+//     ],
+// };
 
 export const FastFoodProductCategoryData = {
     id: 5,
-    ShopCategory: "Fast Food",
+    ShopCategory: "Fastfood Shop",
     FastFoodProductCategories: [
        "Indian Snacks",
        "Burger",
@@ -154,7 +154,7 @@ export const FastFoodProductCategoryData = {
        "Breakfast",
        "Lunch",
        "Dinner",
-       ""
+       "Others"
 
     ],
 };

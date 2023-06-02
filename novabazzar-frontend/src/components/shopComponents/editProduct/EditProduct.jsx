@@ -10,8 +10,7 @@ import {
     ClothesProductCategoryData,
     ElectronicsProductCategoryData,
     KiranaProductCategoryData,
-    MedicalProductCategoryData,
-    ParlourProductCategoryData,
+    FastFoodProductCategoryData,
 } from "../CategoryData";
 // import ProductCategoryData from "../CategoryData";
 
@@ -167,8 +166,8 @@ const AddProduct = () => {
                                 </option>
                             ),
                         )}
-                    {shop?.shopType === "Medicalshop" &&
-                        MedicalProductCategoryData.MedicalProductCategories.map(
+                     {shop?.shopType === "Fastfoodshop" &&
+                        FastFoodProductCategoryData.FastFoodProductCategories.map(
                             (category, indx) => (
                                 <option
                                     key={indx}
@@ -180,17 +179,6 @@ const AddProduct = () => {
                         )}
                     {shop?.shopType === "Electronicsshop" &&
                         ElectronicsProductCategoryData.ElectronicsProductCategories.map(
-                            (category, indx) => (
-                                <option
-                                    key={indx}
-                                    value={category.replaceAll(" ", "")}
-                                >
-                                    {category}
-                                </option>
-                            ),
-                        )}
-                    {shop?.shopType === "Parlourshop" &&
-                        ParlourProductCategoryData.ParlourProductCategories.map(
                             (category, indx) => (
                                 <option
                                     key={indx}
