@@ -7,8 +7,7 @@
     .kirana,
     .clothes,
     .electronics,
-    .medical,
-    .salon {
+    .fastfood {
         width: 100%;
 
         h2 {
@@ -18,26 +17,34 @@
 
         .categories {
             width: 100%;
-            gap: 5px;
+            gap: 10px;
+        }
+        h5{
+            margin-block: 10px;
         }
 
         .products-category {
-            width: 19.5%;
-            height: 270px;
+            width: 10%;
+            height:150px;
             background-color: white;
             padding: 5px;
             box-shadow: 0 0 2px var(--color-border-dark);
+            
 
             img {
-                height: 80%;
+                height: 70%;
                 width: 100%;
-                object-fit: cover;
-                object-position: center center;
+                
+                object-fit: contain;
+                object-position: center;
+                
             }
-            p {
+            p{
                 text-align: center;
                 margin-top: 10px;
                 color:var(--color-secondary);
+                font-size: 12px;
+                font-weight: 500;
             }
         }
     }
@@ -49,8 +56,7 @@
         .kirana,
         .clothes,
         .electronics,
-        .medical,
-        .salon {
+        .fastfood {
             width: 100%;
 
             h2 {
@@ -73,8 +79,7 @@
                 img {
                     height: 90%;
                     width: 100%;
-                    object-fit: cover;
-                    object-position: center;
+                   
                 }
                 p {
                     text-align: center;
@@ -93,8 +98,7 @@
         .kirana,
         .clothes,
         .electronics,
-        .medical,
-        .salon {
+        .fastfood {
             width: 100%;
 
             h2 {
@@ -119,8 +123,7 @@
                 img {
                     height: 80%;
                     width: 100%;
-                    object-fit: cover;
-                    object-position: center center;
+                    
                 }
                 p {
                     text-align: center;
@@ -139,8 +142,7 @@
         .kirana,
         .clothes,
         .electronics,
-        .medical,
-        .salon {
+        .fastfood {
             width: 100%;
 
             h2 {
@@ -162,8 +164,7 @@
                 img {
                     height: 80%;
                     width: 100%;
-                    object-fit: cover;
-                    object-position: center center;
+               
                 }
                 p {
                     text-align: center;

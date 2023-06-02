@@ -4,8 +4,7 @@ import {
     ClothesProductCategoryData,
     ElectronicsProductCategoryData,
     KiranaProductCategoryData,
-    MedicalProductCategoryData,
-    ParlourProductCategoryData,
+    FastFoodProductCategoryData,
 } from "../CategoryData";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -23,6 +22,24 @@ const ShopSlidebar = (props) => {
         <div className="shopSlidebar-area">
             <div className="shopSlidebar">
                 <h3>Product Categories</h3>
+                {props.shop?.shopType === "FastFood" && (
+                    <ul className="flex column ">
+                        {FastFoodProductCategoryData.FastFoodProductCategories.map(
+                            (category) => (
+                                <li
+                                    onClick={() =>
+                                        props.setType(
+                                            category.replaceAll(" ", ""),
+                                        )
+                                    }
+                                    key={category}
+                                >
+                                    {category}
+                                </li>
+                            ),
+                        )}
+                    </ul>
+                )}
                 {props.shop?.shopType === "Kiranashop" && (
                     <ul className="flex column ">
                         {KiranaProductCategoryData.KiranaProductCategories.map(
@@ -59,7 +76,7 @@ const ShopSlidebar = (props) => {
                         )}
                     </ul>
                 )}
-                {props.shop?.shopType === "Medicalshop" && (
+                {/* {props.shop?.shopType === "Medicalshop" && (
                     <ul className="flex column ">
                         {MedicalProductCategoryData.MedicalProductCategories.map(
                             (category) => (
@@ -76,7 +93,7 @@ const ShopSlidebar = (props) => {
                             ),
                         )}
                     </ul>
-                )}
+                )} */}
                 {props.shop?.shopType === "Electronicsshop" && (
                     <ul className="flex column ">
                         {ElectronicsProductCategoryData.ElectronicsProductCategories.map(
@@ -95,7 +112,7 @@ const ShopSlidebar = (props) => {
                         )}
                     </ul>
                 )}
-                {props.shop?.shopType === "Parlourshop" && (
+                {/* {props.shop?.shopType === "Parlourshop" && (
                     <ul className="flex column ">
                         {ParlourProductCategoryData.ParlourProductCategories.map(
                             (category) => (
@@ -112,7 +129,7 @@ const ShopSlidebar = (props) => {
                             ),
                         )}
                     </ul>
-                )}
+                )} */}
             </div>
             <div className="mobile-slider">
                 {props.shop?.shopType === "Kiranashop" && (
@@ -163,7 +180,7 @@ const ShopSlidebar = (props) => {
                         )}
                     </Swiper>
                 )}
-                {props.shop?.shopType === "Medicalshop" && (
+                {/* {props.shop?.shopType === "Medicalshop" && (
                     <Swiper
                         slidesPerView={2}
                         modules={[Pagination]}
@@ -186,7 +203,7 @@ const ShopSlidebar = (props) => {
                             ),
                         )}
                     </Swiper>
-                )}
+                )} */}
                 {props.shop?.shopType === "Electronicsshop" && (
                     <Swiper
                         slidesPerView={2}
@@ -211,7 +228,7 @@ const ShopSlidebar = (props) => {
                         )}
                     </Swiper>
                 )}
-                {props.shop?.shopType === "Parlourshopp" && (
+                {/* {props.shop?.shopType === "Parlourshopp" && (
                     <Swiper
                         slidesPerView={2}
                         modules={[Pagination]}
@@ -234,7 +251,7 @@ const ShopSlidebar = (props) => {
                             ),
                         )}
                     </Swiper>
-                )}
+                )} */}
             </div>
         </div>
     );

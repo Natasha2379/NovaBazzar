@@ -193,17 +193,14 @@ const OpenShop = () => {
                             >
                                 <option hidden>Select Shop Type</option>
                                 <option value="Kiranashop">Kirana shop</option>
-                                <option value="Medicalshop">
-                                    Medical shop
+                                <option value="FastFoodShop">
+                                    FastFood shop
                                 </option>
                                 <option value="Clothesshop">
                                     Clothes shop
                                 </option>
                                 <option value="Electronicsshop">
                                     Electronics shop
-                                </option>
-                                <option value="Electronicsshop">
-                                    Parlour shop
                                 </option>
                             </select>
                         </div>

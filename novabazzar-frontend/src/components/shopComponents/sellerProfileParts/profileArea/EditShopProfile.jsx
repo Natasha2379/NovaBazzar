@@ -21,7 +21,7 @@ const EditShopProfile = (props) => {
             const formData = new FormData();
             formData.append("shop-image", e.target.files[0]);
             const res = await uploadShopImage(formData);
-console.log(res);
+            console.log(res);
             const uploadedImgShop = await editShopDetails(props.shop?._id, {
                 shopImage: res.data.url,
             });
@@ -102,13 +102,10 @@ console.log(res);
                         >
                             <option hidden>Select Shop Type</option>
                             <option value="Kiranashop">Kirana shop</option>
-                            <option value="Medicalshop">Medical shop</option>
+                            <option value="FastFoodShop">FastFood shop</option>
                             <option value="Clothesshop">Clothes shop</option>
                             <option value="Electronicsshop">
                                 Electronics shop
-                            </option>
-                            <option value="Electronicsshop">
-                                Parlour shop
                             </option>
                         </select>
                     </div>
