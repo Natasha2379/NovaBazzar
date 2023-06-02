@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./ProfileStyle.scss";
 import shopimg from "../../../../assets/dummy-img.jpg";
 import { editShopDetails, uploadShopImage } from "../../../../services/api";
+import { useNavigate } from "react-router-dom";
 
 const EditShopProfile = (props) => {
     const [shopImage, setShopImage] = useState();
@@ -11,21 +12,20 @@ const EditShopProfile = (props) => {
     const [email, setEmail] = useState();
     const [phone, setPhone] = useState();
     const [shopType, setShopType] = useState("");
+    const navigator = useNavigate();
 
     const handleProfileImageUpload = () => {
         document.getElementById("shopImage").click();
     };
+    useEffect(() => {
+        setShopType(props.shop?.shopType);
+    }, [props.shop?.shopType]);
 
     const handleProfileImageChange = async (e) => {
         try {
             const formData = new FormData();
             formData.append("shop-image", e.target.files[0]);
             const res = await uploadShopImage(formData);
-            console.log(res);
-            const uploadedImgShop = await editShopDetails(props.shop?._id, {
-                shopImage: res.data.url,
-            });
-            console.log(uploadedImgShop);
             setShopImage(res.data.url);
             props.fetchShop();
         } catch (error) {
@@ -44,6 +44,7 @@ const EditShopProfile = (props) => {
                 shopType,
             });
             console.log(res);
+            navigator(`/shop/${props.shop?._id}`);
         } catch (error) {
             console.log(error);
         }
@@ -52,7 +53,7 @@ const EditShopProfile = (props) => {
         <div className="edit-seller-profile">
             <form
                 className="EditProfile flex abs-center column"
-                onSubmit={handleShopEdit}
+                // onSubmit={handleShopEdit}
             >
                 <div className="shop-img flex  column align--center">
                     <span
@@ -98,6 +99,7 @@ const EditShopProfile = (props) => {
                             name=""
                             id="ProductCategory"
                             className="addShopInput"
+                            value={shopType}
                             onChange={(e) => setShopType(e.target.value)}
                         >
                             <option hidden>Select Shop Type</option>
@@ -107,6 +109,8 @@ const EditShopProfile = (props) => {
                             <option value="Electronicsshop">
                                 Electronics shop
                             </option>
+
+                            
                         </select>
                     </div>
                     <div className="user-name">
@@ -161,8 +165,8 @@ const EditShopProfile = (props) => {
                     </div>
                     <button
                         className="submit"
-                        type="submit"
-                        // onClick={handleShopEdit}
+                        type="button"
+                        onClick={handleShopEdit}
                     >
                         Submit
                     </button>

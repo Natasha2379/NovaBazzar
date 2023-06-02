@@ -81,7 +81,6 @@ const OpenShop = () => {
         };
         try {
             const res = await addShop(shopData);
-            console.log(res.data.shop._id);
             navigate(`/shop/${res.data.shop._id}`);
         } catch (error) {
             console.log(error);

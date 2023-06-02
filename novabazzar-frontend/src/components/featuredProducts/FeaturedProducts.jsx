@@ -103,24 +103,7 @@ import dinner from "../../assets/dinner.jpg";
 // import facecare from "../../assets/facecare2.jpg";
 // import { getAllProductsDetails } from "../../services/api";
 
-const FeaturedProducts = () => {
-    // const [products, setProducts] = useState();
-    // console.log(products);
-
-    // useEffect(() => {
-    //     const fetchProducts = async () => {
-    //         try {
-    //             const res = await getAllProductsDetails("", {
-    //                 sort: "price",
-    //                 order: "desc",
-    //             }, );
-    //             setProducts(res.data.products);
-    //         } catch (error) {
-    //             console.log(error);
-    //         }
-    //     };
-    //     fetchProducts();
-    // }, []);
+const FeaturedProducts = () => {   
 
     return (
         <div className="featured-products flex column">

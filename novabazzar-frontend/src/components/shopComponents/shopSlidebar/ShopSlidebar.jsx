@@ -17,7 +17,6 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper";
 
 const ShopSlidebar = (props) => {
-    console.log(props.type);
     return (
         <div className="shopSlidebar-area">
             <div className="shopSlidebar">
@@ -180,30 +179,6 @@ const ShopSlidebar = (props) => {
                         )}
                     </Swiper>
                 )}
-                {/* {props.shop?.shopType === "Medicalshop" && (
-                    <Swiper
-                        slidesPerView={2}
-                        modules={[Pagination]}
-                        loop={true}
-                        className="my-cats"
-                    >
-                        {MedicalProductCategoryData.MedicalProductCategories.map(
-                            (category) => (
-                                <SwiperSlide
-                                    className="my-cat"
-                                    onClick={() =>
-                                        props.setType(
-                                            category.replaceAll("   ", ""),
-                                        )
-                                    }
-                                    key={category}
-                                >
-                                    {category}
-                                </SwiperSlide>
-                            ),
-                        )}
-                    </Swiper>
-                )} */}
                 {props.shop?.shopType === "Electronicsshop" && (
                     <Swiper
                         slidesPerView={2}
@@ -228,30 +203,6 @@ const ShopSlidebar = (props) => {
                         )}
                     </Swiper>
                 )}
-                {/* {props.shop?.shopType === "Parlourshopp" && (
-                    <Swiper
-                        slidesPerView={2}
-                        modules={[Pagination]}
-                        loop={true}
-                        className="my-cats"
-                    >
-                        {ParlourProductCategoryData.ParlourProductCategories.map(
-                            (category) => (
-                                <SwiperSlide
-                                    className="my-cat"
-                                    onClick={() =>
-                                        props.setType(
-                                            category.replaceAll(" ", ""),
-                                        )
-                                    }
-                                    key={category}
-                                >
-                                    {category}
-                                </SwiperSlide>
-                            ),
-                        )}
-                    </Swiper>
-                )} */}
             </div>
         </div>
     );
